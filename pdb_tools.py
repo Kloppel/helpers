@@ -71,22 +71,15 @@ class lines():
         line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_sequence_no"]}    {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]}{line_dict["temp_fac"]}      {line_dict["segment"]} {line_dict["element_symbol"]}  \n'
         return line
 
-    def fill_serial(serial_no, line_dict):
+    def fill_serial(serial_no: int, line_dict: dict):
         """
         lines.fill_serial() takes a serial number (serial_no) and a line_dict and creates line_dict["serial_no"] objects with
         the appropriate number of spaces inserted in front, so that the serial number is inserted at the place the .pdb-format
         dictates. It returns the line_dict with the appropriate serial_no.
         """
-        if serial_no < 10:
-            line_dict["serial_no"] = f"    {serial_no}"
-        if serial_no < 100 and serial_no >= 10:
-            line_dict["serial_no"] = f"   {serial_no}"
-        if serial_no < 1000 and serial_no >= 100:
-            line_dict["serial_no"] = f"  {serial_no}"
-        if serial_no < 10000 and serial_no >= 1000:
-            line_dict["serial_no"] = f" {serial_no}"
-        if serial_no >= 10000:
-            line_dict["serial_no"] = f"{serial_no}"
+        if serial_no >= 100000:
+            raise ValueError("Only serial numbers until 99.999 allowed. ")
+        line_dict["serial_no"] = f"{serial_no: >5}"
         return line_dict
 
     def fill_resi_sequence_no(resi_no, line_dict):
@@ -141,15 +134,18 @@ class operations():
     def __init__(self):
         return self
 
-    def split_segment(pdb_file, segname, pdb_id):
+    def _filter_segment(lines, segname):
+        lines=[k for k in lines if segname in k]
+        return lines
+
+    def _split_segment(pdb_file, segname, pdb_id):
         """
         operations.split_segment() takes a pdb_file, a segname, and a pdb_id; then reads the file and drops all instances that
         do not have the segname within them. It writes the file as "coords/{pdb_id}_{segname}.pdb. Not having a folder "coords"
         will produce an error until the writefile function checks if the folder exists.
         """
         lines=files.read_file(pdb_file=pdb_file)
-        lines=[k for k in lines if segname in k]
-        #lines=lines.add_terminus(lines)
+        lines=operations._filter_segment(lines=lines, segname=segname)
         files.write_file(file=f'coords/{pdb_id}_{segname}.pdb', lines=lines)
         return
 
@@ -160,7 +156,7 @@ class operations():
         lines in the pdb that had the segname in them.
         """
         for segname in segnames:
-            operations.split_segment(pdb_file=pdb_file, segname=segname, pdb_id=pdb_id)
+            operations._split_segment(pdb_file=pdb_file, segname=segname, pdb_id=pdb_id)
         return
 
     def split_waterchains(pdb_file, output_name):
