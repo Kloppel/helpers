@@ -1,6 +1,6 @@
 import unittest
 import pdb_tools
-from abc import ABC
+from abc import ABC, abstractmethod
 
 class TestLineOperations(unittest.TestCase):
    
@@ -48,22 +48,40 @@ class TestLineOperations(unittest.TestCase):
             self.assertEqual( line_dict["ins_code"].strip().isnumeric(), True, " The insertion code is not an integer.")
         #TO-DO add the rest of the test in the afternoon from the flashdrive at home
     
-    @unittest.skip
-    class general_fill_function(ABC, unittest.TestCase):
-        def __init__(self):
-                self.maximum
-                self.type
-                self.test_number
-                self.wrongType
-                self.wrongMessage
-                self.fill_function
-        def test_wrongType(self):
-            for wrong in enumerate(self.wrongType):
-                with self.assertRaises(TypeError, f"The input is taken although {wrong} is not the right type.") as error:
-                    self.fill_function(self.test_number)
-                
-                    
-                
+class general_fill_function(ABC):
+    """
+    List of attributes:
+    self.maximum; self.test_value; self.wrongType; 
+    self.fill_function; self.dict_key; self.string_length
+    """
+    def test_wrongType(self):
+        for wrong in self.wrongType:
+            with self.assertRaises(TypeError, msg=f"The value {wrong} is taken although it has a wrong type."):
+                self.fill_function(wrong, self.test_line_dict)
+    def test_wrongValue(self):
+        with self.assertRaises(ValueError, msg=f"The value is over the maximum {self.maximum} but no error was raised."):
+            self.fill_function(int(self.maximum+1), self.test_line_dict)
+    def test_string_length(self):
+        new_dict=self.fill_function(self.test_value, self.test_line_dict)
+        self.assertEqual(len(new_dict[self.dict_key]), self.string_length, "The method does not fill with the correct number of spaces.")
+
+
+class test_fill_resno(general_fill_function, TestLineOperations):
+    def setUp(self):
+        super().setUp()            
+        self.maximum=1e4; self.test_value=123
+        self.wrongType=["error", 12.4]
+        self.fill_function=self.Line_operations.fill_resi_no
+        self.dict_key="resi_no"; self.string_length=4
+class test_fill_serial(general_fill_function, TestLineOperations):
+    def setUp(self):
+        super().setUp()            
+        self.maximum=1e5; self.test_value=123
+        self.wrongType=["error", 12.4]
+        self.fill_function=self.Line_operations.fill_serial
+        self.dict_key="serial_no"; self.string_length=5
+
+            
                 
 
 

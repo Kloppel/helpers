@@ -50,3 +50,5 @@ Log changes (nereumobu):
             line=f"{line: <81}"
 	-# Changed the character limit to the supposed 80 and correctly set variable line to be changed
       
+      
+      
