@@ -48,6 +48,13 @@ class TestLineOperations(unittest.TestCase):
             self.assertEqual( line_dict["ins_code"].strip().isnumeric(), True, " The insertion code is not an integer.")
         #TO-DO add the rest of the test in the afternoon from the flashdrive at home
     
+    def test_add_terminus(self):
+        line_list=["test0", "test1"]
+        updated_line=self.Line_operations.add_terminus(line_list)
+        self.assertEqual(updated_line[-1]=="TER", True, f"Line {updated_line} did not finish in TER")
+        updated_lineRepeat=self.Line_operations.add_terminus(updated_line)
+        self.assertEqual(updated_lineRepeat[-2]!="TER" , True, f"TER was not detected or added two times in {updated_line}.")
+    
 class general_fill_function(ABC):
     """
     List of attributes:
