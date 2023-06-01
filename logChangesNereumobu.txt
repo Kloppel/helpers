@@ -1,0 +1,52 @@
+++++++++++++++++++++++++++++++++++++++
+Log changes (nereumobu):
+--------------------------------------
+-x "Deleted line"
+-> "Written line"
+-+ "Added line"
+-# "Explanation"
+=> "Main change"
+&> "Additional change"
+====01/06/23/=========================
+=> Line 40 pdb_tools.py: 
+		-x return self
+		-> return None 
+	-# A return statement is not necessary in an __init()__ method anymore
+		
+=> Line 94, funciton line_operations.fill_serial():
+      	->
+      	if isinstance(serial_no, int):
+            if serial_no >= 1e5:
+                raise ValueError("Only serial numbers until 99.999 allowed. ")
+            line_dict["serial_no"] = f"{serial_no: >5}"
+        else:
+            raise TypeError(f"The serial number {serial_no} is not an integer !!")
+        return line_dict
+&> Line 107 function line_operations.fill_res_no():
+	->
+        
+      -# Want to check for integer, changed the check to 1e format for readability.    
+
+=> Line  67, line_operations.read_pdb_line():
+	-+
+	"charge": line[79:81]
+	-+ 
+	if "\n" in line_dict["charge"]:
+            line_dict["charge"] = line_dict["elem_symb"].replace("\n", "")
+        if line_dict["charge"]=="":
+            line_dict["charge"]="  "  
+      -# decommented the charge line and added the same check as for the elem_symb
+      
+&> Line 85, line_operations.create_line():
+	-x
+	if len(line) > 81:
+            line=line.strip()
+        if len(line) < 81:
+            line=f"{line: <81}"
+	->
+	if len(line) > 81:
+            line=line.strip()
+        if len(line) < 81:
+            line=f"{line: <81}"
+	-# Changed the character limit to the supposed 80 and correctly set variable line to be changed
+      

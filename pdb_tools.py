@@ -37,7 +37,7 @@ class line_operations():
     It relies on being handed a single line or line_dict object as input.
     """
     def __init__(self):
-        return self
+        return None
 
     def read_pdb_line(line):
         """
@@ -62,13 +62,17 @@ class line_operations():
             "temp_fac": line[60:66],
             "segment": line[72:76],
             "elem_symb": line[77:79],
-            #"charge": line[79:81]
+            "charge": line[79:81]
         }
         if "\n" in line_dict["elem_symb"]:
             line_dict["elem_symb"] = line_dict["elem_symb"].replace("\n", "")
         line_dict["elem_symb"] = line_dict["elem_symb"].strip()
         if line_dict["elem_symb"] == "":
             line_dict["elem_symb"] = "  "
+        if "\n" in line_dict["charge"]:
+            line_dict["charge"] = line_dict["elem_symb"].replace("\n", "")
+        if line_dict["charge"]=="":
+            line_dict["charge"]="  "
         return line_dict
 
     def create_line(line_dict):
@@ -78,10 +82,10 @@ class line_operations():
         """
         line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}    {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]}{line_dict["temp_fac"]}      {line_dict["segment"]} {line_dict["elem_symb"]}      '
         #line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}   {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]} {line_dict["temp_fac"]}       {line_dict["segment"]} {line_dict["elem_symb"]}{line_dict["charge"]}\n'
-        if len(line) > 80:
+        if len(line) > 81:
             line=line.strip()
-        if len(line) < 80:
-            f"{line: <80}"
+        if len(line) < 81:
+            line=f"{line: <81}"
         line = line + "\n"
         return line
 
@@ -91,9 +95,12 @@ class line_operations():
         the appropriate number of spaces inserted in front, so that the serial number is inserted at the place the .pdb-format
         dictates. It returns the line_dict with the appropriate serial_no.
         """
-        if serial_no >= 100000:
-            raise ValueError("Only serial numbers until 99.999 allowed. ")
-        line_dict["serial_no"] = f"{serial_no: >5}"
+        if isinstance(serial_no, int):
+            if serial_no >= 1e5:
+                raise ValueError("Only serial numbers until 99.999 allowed. ")
+            line_dict["serial_no"] = f"{serial_no: >5}"
+        else:
+            raise TypeError(f"The serial number {serial_no} is not an integer !!")
         return line_dict
 
     def fill_resi_no(resi_no, line_dict):
@@ -101,9 +108,12 @@ class line_operations():
         line_operations.fill_resi_no() takes a residue number (resi_no) and a line_dict and creates a line_dict with the serial
         number and the appropriate number of spaces inserted into line_dict["resi_no"]. It returns the line_dict.
         """
-        if resi_no >= 10000:
-            raise ValueError("Only residue numbers until 9.999 allowed. ")
-        line_dict["resi_no"] = f"{resi_no: >4}"
+        if isinstance(resi_no, int):
+            if resi_no >= 1e4:
+                raise ValueError("Only residue numbers until 9.999 allowed. ")
+            line_dict["resi_no"] = f"{resi_no: >4}"
+        else:
+            raise TypeError(f"The residue number {resi_no} is not an integer !!")
         return line_dict
 
     def add_terminus(lines):
