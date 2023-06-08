@@ -148,7 +148,66 @@ class test_fill_serial(general_fill_function, LineOperations, unittest.TestCase)
         self.fill_function=self.Line_operations.fill_serial
         self.dict_key="serial_no"; self.string_length=5
 
-                
+
+class test_operations(unittest.TestCase):
+    def setUp(self): 
+        self.test_pdb_file="tests/3hb3_ooxox.pdb"
+        self.test_pdb_id="3hb3_ooxox"
+        self.operations=pdb_tools.operations
+        self.files=pdb_tools.files
+        return
+    def test__split_segment(self):
+        """
+        Tests the function _split_segment of the class operations. Looks wether it really filters out the desired segment names.
+        """
+        segname="MEMB"
+        self.operations._split_segment(self.test_pdb_file, segname, self.test_pdb_id)
+        lines=self.files.read_file(pdb_file=f"coords/{self.test_pdb_id}_{segname}.pdb")
+        for line in lines:
+            self.assertIn(segname, line, msg=f"The line {line} does not contain {segname}.")
+    def TODO_test_waterchains(self):
+        pass
+    def TOOLONG_test_fuse_segments(self):
+        """
+        Tests the fuse_segments function of the class operations. Makes sure that the files are correctly fused.
+        """
+        test_pdb_files=["tests/8sze.pdb","tests/3hb3_ooxox.pdb"]
+        test_pdb_output="tests/test_fused.pdb"
+        self.operations.fuse_segments(test_pdb_files, test_pdb_output)
+        lines_fused=pdb_tools.files.read_file(test_pdb_output)
+        for pdb in test_pdb_files:
+            lines_pdb=pdb_tools.files.read_file(pdb)
+            for line in lines_pdb:
+                self.assertIn(line, lines_fused, msg=f"The line {line} of {pdb} is not in {test_pdb_output}.")
+    def test_add_segment(self):
+        """
+        Tests the function add_segments in pdb_tools.  The test is twofold:
+            > Test that the segment is indeed changed
+            > Test that the segment insertion is correct.
+        """
+        test_output="tests/SEG_test.pdb"
+        test_segment="SEG"
+        self.operations.add_segment(self.test_pdb_file, test_output, test_segment)
+        with self.assertRaises(ValueError, msg="The add_segment function has added a residue with more than 4 letters!"):
+            self.operations.add_segment(self.test_pdb_file, "tests/SEGMENT_test.pdb", "SEGMENT")
+        for line in self.files.read_file(test_output):
+            if "ATOM" in line:
+                self.assertIn(test_segment, line, f"The segment {test_segment} is not in {test_output}.")
+    
+    def test_change_temp_factors(self):
+        test_restraints="tests/tests_restraints.pdb"
+        self.operations.change_temp_factors(self.test_pdb_file, test_restraints)
+        lines=self.files.read_file(test_restraints)
+        for line in lines:
+            line_dict=pdb_tools.line_operations.read_pdb_line(line)
+            temp_fact=line_dict["temp_fac"]
+            atom_name=line_dict["atom_name"]
+            if atom_name.startswith("H"):
+                self.assertEqual(temp_fact, "  0.00")
+            elif atom_name.startswith("C") and not atom_name.startswith("CA"):
+                self.assertEqual(temp_fact, "  0.50")
+            else:
+                self.assertEqual(temp_fact, "  1.00")
 
 
 if __name__=="__main__":

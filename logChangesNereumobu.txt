@@ -49,6 +49,48 @@ Log changes (nereumobu):
         if len(line) < 81:
             line=f"{line: <81}"
 	-# Changed the character limit to the supposed 80 and correctly set variable line to be changed
-      
+
+====08/06/23/=========================
+=> Line 154 pdb_tools.py:
+		-x return self
+		-> return None
+	-# A return statement is not necessary in an __init()__ method anymore    
+=> Line 12 pdb_tools.py:
+	-x
+	lines = open(pdb_file, 'r').readlines()
+	->
+	f=open(pdb_file, 'r')
+	lines = f.readlines()
+	f.close()
+	-# file would not be closed 
+
+!! If the general line reader is built it would be good to ensure that the types are indeed right. Should not let our functions write erroneous types. (exchange_segment, exchange_chainID)
+
+=> Line 225-234 pdb_tools.py in add_segment() function:
+	->
+        for line in lines:
+            if "ATOM" in line:
+                line_dict=line_operations.read_pdb_line(line=line)
+                line_dict=line_operations.exchange_segment(line_dict=line_dict, segment=segment)
+                line_=line_operations.create_line(line_dict=line_dict)
+                lines_.append(line_)
+            else:
+                lines_.append(line)
+            serial_no+=1
+	-# We made sure that the read_pdb_line reads something that it can read, that is the ATOM type lines.
+
+=> Line 21 in files.read_file of pdb_tools.py:
+	-+
+	lines = [k for k in lines if "END" not in k]
+	-# 
+	Checks for the "END" record in the file
+	
+=> Line 32-33 in files.write_file of pdb_tools.py:
+	-+
+	if "END" not in lines_[-1]:
+            lines.append("END")
+        -#
+        Checks wether there is or not an END record in the last line and if not it adds it.
+        	
       
       
