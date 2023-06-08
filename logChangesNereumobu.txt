@@ -66,18 +66,6 @@ Log changes (nereumobu):
 
 !! If the general line reader is built it would be good to ensure that the types are indeed right. Should not let our functions write erroneous types. (exchange_segment, exchange_chainID)
 
-=> Line 225-234 pdb_tools.py in add_segment() function:
-	->
-        for line in lines:
-            if "ATOM" in line:
-                line_dict=line_operations.read_pdb_line(line=line)
-                line_dict=line_operations.exchange_segment(line_dict=line_dict, segment=segment)
-                line_=line_operations.create_line(line_dict=line_dict)
-                lines_.append(line_)
-            else:
-                lines_.append(line)
-            serial_no+=1
-	-# We made sure that the read_pdb_line reads something that it can read, that is the ATOM type lines.
 
 => Line 21 in files.read_file of pdb_tools.py:
 	-+
@@ -91,6 +79,17 @@ Log changes (nereumobu):
             lines.append("END")
         -#
         Checks wether there is or not an END record in the last line and if not it adds it.
-        	
+        
+=> Line 92-100 in operations.renumber:
+	->
+        if "ATOM" in line:
+        	line_dict=line_operations.read_pdb_line(line=line)
+        	line_dict=line_operations.fill_serial(serial_no=serial_no, line_dict=line_dict)
+        	line_=line_operations.create_line(line_dict=line_dict)
+        	lines_.append(line_)
+        	serial_no+=1
+    	else:
+        	lines_.append(line)
+        -# Checks that the is dealing with an "ATOM" type line	
       
       

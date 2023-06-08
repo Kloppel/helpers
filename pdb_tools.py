@@ -226,13 +226,10 @@ class operations():
         lines_ = []
         serial_no=1
         for line in lines:
-            if "ATOM" in line:
-                line_dict=line_operations.read_pdb_line(line=line)
-                line_dict=line_operations.exchange_segment(line_dict=line_dict, segment=segment)
-                line_=line_operations.create_line(line_dict=line_dict)
-                lines_.append(line_)
-            else:
-                lines_.append(line)
+            line_dict=line_operations.read_pdb_line(line=line)
+            line_dict=line_operations.exchange_segment(line_dict=line_dict, segment=segment)
+            line_=line_operations.create_line(line_dict=line_dict)
+            lines_.append(line_)
             serial_no+=1
         files.write_file(file=pdb_file_output, lines=lines_)
         return

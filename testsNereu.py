@@ -152,6 +152,7 @@ class test_fill_serial(general_fill_function, LineOperations, unittest.TestCase)
 class test_operations(unittest.TestCase):
     def setUp(self): 
         self.test_pdb_file="tests/3hb3_ooxox.pdb"
+        self.test_pdb_file2="tests/8sze.pdb"
         self.test_pdb_id="3hb3_ooxox"
         self.operations=pdb_tools.operations
         self.files=pdb_tools.files
@@ -192,9 +193,29 @@ class test_operations(unittest.TestCase):
             self.operations.add_segment(self.test_pdb_file, "tests/SEGMENT_test.pdb", "SEGMENT")
         for line in self.files.read_file(test_output):
             if "ATOM" in line:
-                self.assertIn(test_segment, line, f"The segment {test_segment} is not in {test_output}.")
+                line_dict=pdb_tools.line_operations.read_pdb_line(line)
+                self.assertEqual(" SEG", line_dict["segment"], f"The segment  {test_segment} is not in {test_output}.")
     
+    def test_add_chainID(self):
+        """
+        Tests the function add_segments in pdb_tools.  The test is twofold:
+            > Test that the chainID is indeed changed
+            > Test that the chainID insertion is correct.
+        """
+        test_output="tests/T_test.pdb"
+        test_chainID="T"
+        self.operations.add_chainID(self.test_pdb_file, test_output, test_chainID)
+        with self.assertRaises(ValueError, msg="The add_chainID function has added a residue with more than 1 letter!"):
+            self.operations.add_chainID(self.test_pdb_file, "tests/NO_test.pdb", "NO")
+        for line in self.files.read_file(test_output):
+            if "ATOM" in line:
+                line_dict=pdb_tools.line_operations.read_pdb_line(line)
+                self.assertEqual(test_chainID, line_dict["chainID"], f"The chainID {test_chainID} is not in {test_output}.")
+
     def test_change_temp_factors(self):
+        """
+        Tests that the function operations.test_temp_factors, looks that the temperature factors are indeed as desired.
+        """
         test_restraints="tests/tests_restraints.pdb"
         self.operations.change_temp_factors(self.test_pdb_file, test_restraints)
         lines=self.files.read_file(test_restraints)
@@ -208,7 +229,16 @@ class test_operations(unittest.TestCase):
                 self.assertEqual(temp_fact, "  0.50")
             else:
                 self.assertEqual(temp_fact, "  1.00")
-
+    
+    def test_renumber(self):
+        """
+        Tests the function options.renumber(),       
+            > Looks that it effectively raises an error for pdb files with too many atoms.
+        """
+        with self.assertRaises(ValueError, msg="The test_renumber function did not raise an error"):
+            self.operations.renumber(self.test_pdb_file, "tests/toomanyatoms.pdb")
+        self.operations.renumber(self.test_pdb_file2, "tests/test_renumber.pdb")
+        
 
 if __name__=="__main__":
     unittest.main()
