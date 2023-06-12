@@ -31,9 +31,10 @@ class files():
         Using this write method, files.writefile writes the lines into a file that is saved, and closes the write-method.
         It returns nothing.
         """
-        lines_ = line_operations.add_terminus(lines=lines)
-        if "END" not in lines_[-1]:
-            lines.append("END")
+        #lines_ = line_operations.add_terminus(lines=lines)
+        #if "END" not in lines_[-1]:
+        #    lines.append("END")
+        lines_ = line_operations.add_ending(lines=lines)
         f = open(file, mode="w", encoding="utf-8")
         f.writelines(lines_)
         f.close()
@@ -130,6 +131,14 @@ class line_operations():
         """
         if lines[-1] != "TER":
             lines.append("TER")
+        return lines
+
+    def add_ending(lines):
+        """
+        line_operations.add_terminus() takes a list of strings (lines) and adds the string "TER" as the very last string in the list.
+        """
+        if lines[-1] != "END":
+            lines.append("END")
         return lines
 
     def exchange_segment(line_dict, segment):
