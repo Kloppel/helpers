@@ -10,12 +10,15 @@ class files():
         REMARK, TER, TITLE, CRYST1, SCALE
         and returns the list containing the lines (strings)
         """
-        lines = open(pdb_file, 'r').readlines()
+        f=open(pdb_file, 'r')
+        lines = f.readlines()
+        f.close()
         lines = [k for k in lines if "REMARK" not in k]
         lines = [k for k in lines if "TER" not in k]
         lines = [k for k in lines if "TITLE" not in k]
         lines = [k for k in lines if "CRYST1" not in k]
         lines = [k for k in lines if "SCALE" not in k]
+        lines = [k for k in lines if "END" not in k]
         #lines = [k.replace("\n", '') for k in lines]
         return lines
 
@@ -26,6 +29,8 @@ class files():
         It returns nothing.
         """
         lines_ = line_operations.add_terminus(lines=lines)
+        if "END" not in lines_[-1]:
+            lines.append("END")
         f = open(file, mode="w", encoding="utf-8")
         f.writelines(lines_)
         f.close()
@@ -151,7 +156,7 @@ class line_operations():
 
 class operations():
     def __init__(self):
-        return self
+        return 
 
     def _filter_segment(lines, segname):
         lines=[k for k in lines if segname in k]
