@@ -13,11 +13,14 @@ class files():
         f=open(pdb_file, 'r')
         lines = f.readlines()
         f.close()
-        lines = [k for k in lines if "REMARK" not in k]
-        lines = [k for k in lines if "TER" not in k]
+        lines = [k for k in lines if "HEADER" not in k]
         lines = [k for k in lines if "TITLE" not in k]
         lines = [k for k in lines if "CRYST1" not in k]
+        lines = [k for k in lines if "REMARK" not in k]
         lines = [k for k in lines if "SCALE" not in k]
+        lines = [k for k in lines if "MODEL" not in k]
+        lines = [k for k in lines if "ENDMDL" not in k]
+        lines = [k for k in lines if "TER" not in k]
         lines = [k for k in lines if "END" not in k]
         #lines = [k.replace("\n", '') for k in lines]
         return lines
@@ -87,10 +90,10 @@ class line_operations():
         """
         line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}    {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]}{line_dict["temp_fac"]}      {line_dict["segment"]} {line_dict["elem_symb"]}      '
         #line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}   {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]} {line_dict["temp_fac"]}       {line_dict["segment"]} {line_dict["elem_symb"]}{line_dict["charge"]}\n'
-        if len(line) > 81:
+        if len(line) > 82:
             line=line.strip()
-        if len(line) < 81:
-            line=f"{line: <81}"
+        if len(line) < 82:
+            line=f"{line: <82}"
         line = line + "\n"
         return line
 
