@@ -8,7 +8,7 @@ class LineOperations(ABC):
     Abstract class with the necessary contents for the tests of line_operations functions
     """
     def contents(self):
-        self.test_line="ATOM      1  N   GLY    17     -29.474   4.513 -19.989  1.00101.81      ACHA     \n"
+        self.test_line="ATOM      1  N   GLY    17     -29.474   4.513 -19.989  1.00101.81      ACHA      \n"
         self.test_line_dict= {'atom': 'ATOM  ',
             'serial_no': '    1',
             'atom_name': ' N  ',
@@ -238,7 +238,17 @@ class test_operations(unittest.TestCase):
         with self.assertRaises(ValueError, msg="The test_renumber function did not raise an error"):
             self.operations.renumber(self.test_pdb_file, "tests/toomanyatoms.pdb")
         self.operations.renumber(self.test_pdb_file2, "tests/test_renumber.pdb")
-        
+    
+    #test function for the function pdb_tools.operations.renumber_tip3p
+    def test_renumber_tip3(self):
+        """
+        Tests the function options.renumber_tip3(),       
+            > Looks that it effectively raises an error for pdb files with too many atoms.
+        """
+        with self.assertRaises(ValueError, msg="The test_renumber_tip3 function did not raise an error"):
+            self.operations.renumber_tip3(self.test_pdb_file, "tests/toomanyatoms.pdb", "SEGM")
+        self.operations.renumber_tip3(self.test_pdb_file2, "tests/test_renumber_tip3p.pdb", "SEGM")
+
 
 if __name__=="__main__":
     unittest.main()

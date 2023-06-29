@@ -72,7 +72,7 @@ def HETATM_to_ATM(pdb_id):
 
 if __name__ == "__main__":
     data = pd.read_csv('pyDISH_data.csv')
-    data = data.drop('Unnamed: 0', axis=1)
+    #data = data.drop('Unnamed: 0', axis=1)
     universes, hemes = {}, {}
     for pdb_id in data['# PDB'].iloc[:10]:
         filename = PDB.PDBList().retrieve_pdb_file(pdb_id, pdir='PDB', file_format='pdb');
