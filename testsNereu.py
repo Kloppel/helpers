@@ -28,7 +28,7 @@ class LineOperations(ABC):
         return
 
 class TestLineOperations(unittest.TestCase, LineOperations):
-   
+
     def setUp(self):
         super().contents()
         return
@@ -45,17 +45,18 @@ class TestLineOperations(unittest.TestCase, LineOperations):
         """
         self.assertEqual(self.Line_operations.read_pdb_line(self.Line_operations.create_line(self.test_line_dict)),self.test_line_dict,
                          "The conversion write->read for a single line dictionary is not clean. In other words writting and then reading a line does not return the same dictionary.")
-    
+
     def notready_test_types(self):
         line_dict=self.Line_operations.read_pdb_line(self.test_line)
         self.assertEqual(line_dict["atom"].strip(), "ATOM", " The atom key is not correct. String other than ATOM.")
+        #Here we need a clause that checks if the tests fails, because there is another valied value: "HETATM", because of which the length is set to 6 characters and not 4. JJ
         self.assertEqual(line_dict["serial_no"].strip().isnumeric(), True, " The serial number is not an integer.")
         self.assertEqual(line_dict["atom_name"].strip().isalpha(), True, " The atom name does not contain only letters.")
         self.assertEqual(line_dict["resname"].strip().isalpha(), True, " The residue name does not contain only letters.")
         if line_dict["ins_code"].strip()!="":
             self.assertEqual( line_dict["ins_code"].strip().isnumeric(), True, " The insertion code is not an integer.")
         #TO-DO add the rest of the test in the afternoon from the flashdrive at home
-    
+
     def test_add_terminus(self):
         """
         Tests the add_terminus function from the class line_operations. The test is twofold:
@@ -67,7 +68,8 @@ class TestLineOperations(unittest.TestCase, LineOperations):
         self.assertEqual(updated_line[-1]=="TER", True, f"Line {updated_line} did not finish in TER")
         updated_lineRepeat=self.Line_operations.add_terminus(updated_line)
         self.assertEqual(updated_lineRepeat[-2]!="TER" , True, f"TER was not detected or added two times in {updated_line}.")
-    
+        #can you change variable names here so they align with the naming conventions in the original document? adding the plural "s" to line(s) is important, because one refers to the string, while the other refers to the list. JJ
+
     def test_read_pdb_line_size(self):
         """
         Tests that the function read_pdb_line from the class line_operations saves strings with the correct length into the dictionary.
@@ -76,6 +78,7 @@ class TestLineOperations(unittest.TestCase, LineOperations):
         dict_sizes=[6,5,4,4,1,4,1,7,7,7,5,6,4,2,2]
         for indx, key in enumerate(line_dict.keys()):
             self.assertEqual(len(line_dict[key]), dict_sizes[indx], f"The entry {key} is not the correct length.")
+
     def test_exchange_segment(self):
         """
         This tests the function exchange_segment of the class line_operations. The test is threefold:
@@ -91,6 +94,8 @@ class TestLineOperations(unittest.TestCase, LineOperations):
         new_segment=updated_line_dict["segment"]
         self.assertEqual(len(new_segment), 4, f"The new segment {new_segment} does not have the desired length.")
         self.assertEqual(new_segment, "  12", f"The new segment {new_segment} is not the desired   12.")
+        #shouldn't we check this with alphanumeric characters so that it is consistent with the type checks? JJ
+
     def test_chainID(self):
         """
         This tests the function exchange_chianID of the class line_operations. The test is twofold:
@@ -104,11 +109,12 @@ class TestLineOperations(unittest.TestCase, LineOperations):
         updated_line_dict=exchange_chainId(line_dict, "1")
         new_segment=updated_line_dict["chainID"]
         self.assertEqual(new_segment, "1", f"The new segment {new_segment} is not the desired 1.")
+        #Can we rename the variables here so that we do not mix up chainID and segment? JJ
 
 class general_fill_function(ABC):
     """
     List of attributes:
-    self.maximum; self.test_value; self.wrongType; 
+    self.maximum; self.test_value; self.wrongType;
     self.fill_function; self.dict_key; self.string_length
     """
     def test_wrongType(self):
@@ -118,31 +124,35 @@ class general_fill_function(ABC):
         for wrong in self.wrongType:
             with self.assertRaises(TypeError, msg=f"The value {wrong} is taken although it has a wrong type."):
                 self.fill_function(wrong, self.test_line_dict)
+
     def test_wrongValue(self):
         """
         Test that the value is within range and not over a certain maximum.
         """
         with self.assertRaises(ValueError, msg=f"The value is over the maximum {self.maximum} but no error was raised."):
             self.fill_function(int(self.maximum+1), self.test_line_dict)
+
     def test_string_length(self):
         """
         Tests that when the new value is introduced into the dictionary it has the correct length.
         """
         new_dict=self.fill_function(self.test_value, self.test_line_dict)
         self.assertEqual(len(new_dict[self.dict_key]), self.string_length, "The method does not fill with the correct number of spaces.")
-    
+
 
 
 class test_fill_resno(general_fill_function, LineOperations, unittest.TestCase):
     def setUp(self):
-        super().contents()            
+        super().contents()
         self.maximum=1e4; self.test_value=123
         self.wrongType=["error", 12.4]
         self.fill_function=self.Line_operations.fill_resi_no
         self.dict_key="resi_no"; self.string_length=4
+
+
 class test_fill_serial(general_fill_function, LineOperations, unittest.TestCase):
     def setUp(self):
-        super().contents()            
+        super().contents()
         self.maximum=1e5; self.test_value=123
         self.wrongType=["error", 12.4]
         self.fill_function=self.Line_operations.fill_serial
@@ -150,13 +160,14 @@ class test_fill_serial(general_fill_function, LineOperations, unittest.TestCase)
 
 
 class test_operations(unittest.TestCase):
-    def setUp(self): 
+    def setUp(self):
         self.test_pdb_file="tests/3hb3_ooxox.pdb"
         self.test_pdb_file2="tests/8sze.pdb"
         self.test_pdb_id="3hb3_ooxox"
         self.operations=pdb_tools.operations
         self.files=pdb_tools.files
         return
+
     def test__split_segment(self):
         """
         Tests the function _split_segment of the class operations. Looks wether it really filters out the desired segment names.
@@ -166,8 +177,11 @@ class test_operations(unittest.TestCase):
         lines=self.files.read_file(pdb_file=f"coords/{self.test_pdb_id}_{segname}.pdb")
         for line in lines:
             self.assertIn(segname, line, msg=f"The line {line} does not contain {segname}.")
+        return
+
     def TODO_test_waterchains(self):
         pass
+
     def TOOLONG_test_fuse_segments(self):
         """
         Tests the fuse_segments function of the class operations. Makes sure that the files are correctly fused.
@@ -180,6 +194,7 @@ class test_operations(unittest.TestCase):
             lines_pdb=pdb_tools.files.read_file(pdb)
             for line in lines_pdb:
                 self.assertIn(line, lines_fused, msg=f"The line {line} of {pdb} is not in {test_pdb_output}.")
+
     def test_add_segment(self):
         """
         Tests the function add_segments in pdb_tools.  The test is twofold:
@@ -195,7 +210,7 @@ class test_operations(unittest.TestCase):
             if "ATOM" in line:
                 line_dict=pdb_tools.line_operations.read_pdb_line(line)
                 self.assertEqual(" SEG", line_dict["segment"], f"The segment  {test_segment} is not in {test_output}.")
-    
+
     def test_add_chainID(self):
         """
         Tests the function add_segments in pdb_tools.  The test is twofold:
@@ -209,6 +224,7 @@ class test_operations(unittest.TestCase):
             self.operations.add_chainID(self.test_pdb_file, "tests/NO_test.pdb", "NO")
         for line in self.files.read_file(test_output):
             if "ATOM" in line:
+                #Here also the HETATM thing mentioned above JJ
                 line_dict=pdb_tools.line_operations.read_pdb_line(line)
                 self.assertEqual(test_chainID, line_dict["chainID"], f"The chainID {test_chainID} is not in {test_output}.")
 
@@ -229,20 +245,21 @@ class test_operations(unittest.TestCase):
                 self.assertEqual(temp_fact, "  0.50")
             else:
                 self.assertEqual(temp_fact, "  1.00")
-    
+                #These are only examples, maybe we should rewrite this so that it has the option of taking in a set of values? Just as the function should have had tbh. JJ
+
     def test_renumber(self):
         """
-        Tests the function options.renumber(),       
+        Tests the function options.renumber(),
             > Looks that it effectively raises an error for pdb files with too many atoms.
         """
         with self.assertRaises(ValueError, msg="The test_renumber function did not raise an error"):
             self.operations.renumber(self.test_pdb_file, "tests/toomanyatoms.pdb")
         self.operations.renumber(self.test_pdb_file2, "tests/test_renumber.pdb")
-    
+
     #test function for the function pdb_tools.operations.renumber_tip3p
     def test_renumber_tip3(self):
         """
-        Tests the function options.renumber_tip3(),       
+        Tests the function options.renumber_tip3(),
             > Looks that it effectively raises an error for pdb files with too many atoms.
         """
         with self.assertRaises(ValueError, msg="The test_renumber_tip3 function did not raise an error"):
@@ -252,5 +269,3 @@ class test_operations(unittest.TestCase):
 
 if __name__=="__main__":
     unittest.main()
-    
-
