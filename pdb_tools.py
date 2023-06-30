@@ -83,6 +83,90 @@ class line_operations():
         if line_dict["charge"]=="":
             line_dict["charge"]="  "
         return line_dict
+    
+    
+    def read_pdb_lineflwxible(line):
+        """
+        This function takes a line (string) and returns a dictionary containing the information in the line.
+
+        This function should ignore any errors in column placement, as it does not see white spaces.
+        The algorithm used is as follows:
+        1. Split the line into words
+        2. Iterate over the words, and check if the word is shorter than the expected length of the key.
+        3.      If it is shorter, add it to the dictionary and take the next dictionary key.
+        4.      If it is longer, check if the next word could be made up of concatenated words (check condition maximum_concatenated_length-wordlength<maximumkeylength).
+        
+
+        """
+        words=line.split()
+        dict_keys=["atom", "serial_no", "atom_name",
+                "resname", "chainID", "resi_no",
+                "ins_code", "x_coord", "y_coord",
+                "z_coord", "occupancy", "temp_fac",
+                "segment","elem_symb", "charge"]
+        key_sizes=[6,5,4,
+                3,1,4,
+                1,8,8,
+                8,6,6,
+                4,2,2]
+        output_dict={
+            "atom":None,
+            "serial_no":None,
+            "atom_name":None,
+            "resname":None,
+            "chainID":None,
+            "resi_no":None,
+            "ins_code":None,
+            "x_coord":None,
+            "y_coord":None,
+            "z_coord":None,
+            "occupancy":None,
+            "temp_fac":None,
+            "segment": None,
+            "elem_symb":None,
+            "charge":None
+        }
+
+        count=0; word_count=0
+        while word_count<len(words):
+            word=words[word_count]
+            if len(word)<=key_sizes[count]:
+                output_dict[dict_keys[count]]=word
+                count+=1
+            #check if it can
+            elif len(word)>key_sizes[count]:
+                count2=count+1
+                expected=key_sizes[count]+key_sizes[count2]
+                while len(word)>expected:
+                    count2+=1
+                    expected+=key_sizes[count2]
+                if expected-len(word)<=key_sizes[count]:      
+                    count2=count+1; ccount2=count2
+                    word2=word[::-1]
+                    while count2>count:
+                        output_dict[dict_keys[count2]]=word2[:key_sizes[count2]][::-1]
+                        word2=word2[key_sizes[count2]:]
+                        count2-=1
+                    output_dict[dict_keys[count2]]=word2[::-1]
+                    count=ccount2+1
+                else:
+                    word_count-=1
+                    count+=1
+                    
+            word_count+=1
+        for indx,key in enumerate(output_dict.keys()):
+            if output_dict[key]==None:
+                output_dict[key]=" "*key_sizes[indx]
+            #atom key is left justified
+            elif key=="atom":
+                output_dict[key]=output_dict[key].ljust(key_sizes[indx])
+            else:
+                print(key)
+                output_dict[key]=output_dict[key].rjust(key_sizes[indx])
+
+        return output_dict            
+                
+
 
     def create_line(line_dict):
         """
