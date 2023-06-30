@@ -48,7 +48,7 @@ class line_operations():
     def __init__(self):
         return None
 
-    def read_pdb_line(line):
+    def read_pdb_lineold(line):
         """
         line_operations.read_pdb_line() creates a dictionary (line_dict) which is filled with the content of the line it is given based on
         string indexing. Based on the typical .pdb format, line_dict then knows:
@@ -85,7 +85,7 @@ class line_operations():
         return line_dict
     
     
-    def read_pdb_lineflwxible(line):
+    def read_pdb_line(line):
         """
         This function takes a line (string) and returns a dictionary containing the information in the line.
 
@@ -106,8 +106,8 @@ class line_operations():
                 "segment","elem_symb", "charge"]
         key_sizes=[6,5,4,
                 3,1,4,
-                1,8,8,
-                8,6,6,
+                1,7,7,
+                7,5,6,
                 4,2,2]
         output_dict={
             "atom":None,
@@ -126,46 +126,115 @@ class line_operations():
             "elem_symb":None,
             "charge":None
         }
+        dict_types={
+            "atom":str,
+            "serial_no":str,
+            "atom_name":str,
+            "resname":str,
+            "chainID":str,
+            "resi_no":int,
+            "ins_code":str,
+            "x_coord":float,
+            "y_coord":float,
+            "z_coord":float,
+            "occupancy":float,
+            "temp_fac":float,
+            "segment": str,
+            "elem_symb":str,
+            "charge":str
+        }
+        
 
         count=0; word_count=0
-        while word_count<len(words):
+        while word_count<len(words) and count<len(key_sizes):
             word=words[word_count]
             if len(word)<=key_sizes[count]:
-                output_dict[dict_keys[count]]=word
-                count+=1
+                try:
+                    dict_types[dict_keys[count]](word)
+                    output_dict[dict_keys[count]]=word
+                    count+=1
+                except:
+                    word_count-=1
+                    count+=1
             #check if it can
-            elif len(word)>key_sizes[count]:
+            elif len(word)>key_sizes[count] and count+1<len(key_sizes):
                 count2=count+1
                 expected=key_sizes[count]+key_sizes[count2]
-                while len(word)>expected:
+                while len(word)>expected and count2<len(key_sizes)-1:
                     count2+=1
                     expected+=key_sizes[count2]
-                if expected-len(word)<=key_sizes[count]:      
-                    count2=count+1; ccount2=count2
+                if expected-len(word)<=key_sizes[count]:  
+                    ccount2=count2
                     word2=word[::-1]
+                    olddict=output_dict.copy()
+                    validType=True
                     while count2>count:
-                        output_dict[dict_keys[count2]]=word2[:key_sizes[count2]][::-1]
-                        word2=word2[key_sizes[count2]:]
-                        count2-=1
-                    output_dict[dict_keys[count2]]=word2[::-1]
-                    count=ccount2+1
+                        try:
+                            dict_types[dict_keys[count2]](word2[:key_sizes[count2]][::-1])
+                            #sometimes people use chainID to expand the resi_no
+                            #therefore one has to check if the chainID is numeric
+                            if dict_keys[count2]=="ins_code":
+                                if word2[:key_sizes[count2]][::-1].isnumeric():
+                                    try:
+                                        dict_types["resi_no"](word2[:5][::-1])
+                                        output_dict["resi_no"]=word2[:5][::-1]
+                                        word2=word2[5:]
+                                        count2-=2
+                                    except:
+                                        output_dict=olddict.copy()
+                                        validType=False
+                                        break
+                                else:
+                                    output_dict[dict_keys[count2]]=word2[:key_sizes[count2]][::-1]
+                                    word2=word2[key_sizes[count2]:]
+                                    count2-=1 
+                            else:
+                                output_dict[dict_keys[count2]]=word2[:key_sizes[count2]][::-1]
+                                word2=word2[key_sizes[count2]:]
+                                count2-=1
+                        except:
+                            output_dict=olddict.copy()
+                            validType=False
+                            break
+                    if validType:     
+                        try:
+                            dict_types[dict_keys[count2]](word2[::-1])
+                            output_dict[dict_keys[count2]]=word2[::-1]
+                            count=ccount2+1
+                        except:
+                            output_dict=olddict.copy()
+                            word_count-=1
+                            count+=1
+                    else:
+                        word_count-=1
+                        count+=1    
                 else:
                     word_count-=1
                     count+=1
                     
             word_count+=1
+
         for indx,key in enumerate(output_dict.keys()):
             if output_dict[key]==None:
                 output_dict[key]=" "*key_sizes[indx]
             #atom key is left justified
             elif key=="atom":
                 output_dict[key]=output_dict[key].ljust(key_sizes[indx])
+            elif key=="atom_name":
+                if len(output_dict[key])<2:
+                    output_dict[key]=output_dict[key].rjust(2)+" "*2
+                else:
+                    output_dict[key]=output_dict[key].ljust(key_sizes[indx])
+            elif key=="resname":
+                output_dict[key]=output_dict[key].rjust(3)+" "*1
+            elif key=="resi_no":
+                if len(output_dict[key])<4:
+                    output_dict[key]=output_dict[key].rjust(4)
             else:
-                print(key)
                 output_dict[key]=output_dict[key].rjust(key_sizes[indx])
 
-        return output_dict            
-                
+        return output_dict 
+
 
 
     def create_line(line_dict):
@@ -174,6 +243,8 @@ class line_operations():
         It returns "line", an object containing the string that was produced.
         """
         line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}    {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]}{line_dict["temp_fac"]}      {line_dict["segment"]} {line_dict["elem_symb"]}      '
+        if len(line_dict["resi_no"])==5:
+            line=line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}    {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]}{line_dict["temp_fac"]}      {line_dict["segment"]} {line_dict["elem_symb"]}      '
         #line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}   {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]} {line_dict["temp_fac"]}       {line_dict["segment"]} {line_dict["elem_symb"]}{line_dict["charge"]}\n'
         if len(line) > 82:
             line=line.strip()
