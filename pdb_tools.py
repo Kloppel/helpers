@@ -1,5 +1,8 @@
 import itertools
-
+import numpy as np
+import pandas as pd
+import pickle as pkl
+import Bio.PDB as PDB
 class files():
     def __init__(self):
         return self
@@ -165,6 +168,55 @@ class line_operations():
             raise ValueError("chainID value given is longer than 1. ")
         line_dict["chainID"] = chainID
         return line_dict
+    
+    def read_pdb_line_numpy(line):
+        """
+        line_operations.read_pdb_line_numpy() takes a line from a .pdb file and returns a numpy array containing the information
+        contained in the line.
+        """
+        dictline=line_operations.read_pdb_line(line)
+        return np.array(list(dictline.values()))
+    
+    def read_pdb_line_pandas(line):
+        """
+        line_operations.read_pdb_line_pandas() takes a line from a .pdb file and returns a pandas dataframe containing the information
+        contained in the line.
+        """
+        dictline=line_operations.read_pdb_line(line)
+        return pd.DataFrame(dictline, index=[0])
+    
+    def read_pdb_line_pickle(line):
+        """
+        line_operations.read_pdb_line_pickle() takes a line from a .pdb file and returns a pickle containing the information
+        contained in the line.
+        """
+        dictline=line_operations.read_pdb_line(line)
+        return pkl.dumps(dictline)
+    
+    def read_pdb_line_json(line):
+        """
+        line_operations.read_pdb_line_json() takes a line from a .pdb file and returns a json containing the information
+        contained in the line.
+        """
+        dictline=line_operations.read_pdb_line(line)
+        return json.dumps(dictline)
+    
+    def read_pdb_line_BIO(line):
+        """
+        line_operations.read_pdb_line_BIO() takes a line from a .pdb file and returns a BioPython Atom object containing the information
+        contained in the line.
+        """
+        dictline=line_operations.read_pdb_line(line)
+        atom=PDB.Atom.Atom(dictline["atom_name"].strip(),
+              (float(dictline["x_coord"]),float(dictline["y_coord"]),float(dictline["z_coord"])),
+              0.0,
+              float(dictline["occupancy"]),
+              "",
+              dictline["atom_name"],
+              dictline["elem_symb"],
+              dictline["charge"],
+            )
+        return atom
 
 class operations():
     def __init__(self):
