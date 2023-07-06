@@ -115,6 +115,7 @@ class TestLineOperations(unittest.TestCase, LineOperations):
         """"
         Tests to see if the read->write process is correct for the other formats.
         """
+        
         testline=self.test_line
         lo=self.Line_operations
         self.assertEqual(lo.create_line_numpy(lo.read_pdb_line_numpy(testline)), testline,
