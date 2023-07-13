@@ -48,14 +48,13 @@ class TestLineOperations(unittest.TestCase, LineOperations):
 
     def notready_test_types(self):
         line_dict=self.Line_operations.read_pdb_line(self.test_line)
-        self.assertEqual(line_dict["atom"].strip(), "ATOM", " The atom key is not correct. String other than ATOM.")
-        #Here we need a clause that checks if the tests fails, because there is another valied value: "HETATM", because of which the length is set to 6 characters and not 4. JJ
+        self.assertEqual(line_dict["atom"].strip(), "ATOM" or "HETATM", " The atom key is not correct. String other than ATOM.")
         self.assertEqual(line_dict["serial_no"].strip().isnumeric(), True, " The serial number is not an integer.")
         self.assertEqual(line_dict["atom_name"].strip().isalpha(), True, " The atom name does not contain only letters.")
         self.assertEqual(line_dict["resname"].strip().isalpha(), True, " The residue name does not contain only letters.")
         if line_dict["ins_code"].strip()!="":
             self.assertEqual( line_dict["ins_code"].strip().isnumeric(), True, " The insertion code is not an integer.")
-        #TO-DO add the rest of the test in the afternoon from the flashdrive at home
+        #TO-DO add the rest of the tests and double check
 
     def test_add_terminus(self):
         """
@@ -63,13 +62,12 @@ class TestLineOperations(unittest.TestCase, LineOperations):
             > Tests that the terminus is correctly appended.
             > Tests that the terminus is not doubled.
         """
-        line_list=["test0", "test1"]
-        updated_line=self.Line_operations.add_terminus(line_list)
-        self.assertEqual(updated_line[-1]=="TER", True, f"Line {updated_line} did not finish in TER")
-        updated_lineRepeat=self.Line_operations.add_terminus(updated_line)
-        self.assertEqual(updated_lineRepeat[-2]!="TER" , True, f"TER was not detected or added two times in {updated_line}.")
-        #can you change variable names here so they align with the naming conventions in the original document? adding the plural "s" to line(s) is important, because one refers to the string, while the other refers to the list. JJ
-
+        lines=["test0", "test1"]
+        updated_lines=self.Line_operations.add_terminus(lines)
+        self.assertEqual(updated_lines[-1]=="TER", True, f"Line {updated_lines} did not finish in TER")
+        updated_linesRepeat=self.Line_operations.add_terminus(updated_lines)
+        self.assertEqual(updated_linesRepeat[-2]!="TER" , True, f"TER was not detected or added two times in {updated_lines}.")
+        
     def test_read_pdb_line_size(self):
         """
         Tests that the function read_pdb_line from the class line_operations saves strings with the correct length into the dictionary.
@@ -90,11 +88,10 @@ class TestLineOperations(unittest.TestCase, LineOperations):
         line_dict=self.test_line_dict
         with self.assertRaises(ValueError, msg=f"The function does not raise the desired error."):
             exchange_segment(line_dict,"12345")
-        updated_line_dict=exchange_segment(line_dict, "12")
+        updated_line_dict=exchange_segment(line_dict, "12a")
         new_segment=updated_line_dict["segment"]
         self.assertEqual(len(new_segment), 4, f"The new segment {new_segment} does not have the desired length.")
-        self.assertEqual(new_segment, "  12", f"The new segment {new_segment} is not the desired   12.")
-        #shouldn't we check this with alphanumeric characters so that it is consistent with the type checks? JJ
+        self.assertEqual(new_segment, " 12a", f"The new segment {new_segment} is not the desired   12a.")
 
     def test_chainID(self):
         """
@@ -102,14 +99,13 @@ class TestLineOperations(unittest.TestCase, LineOperations):
             > Test that it accurately raises a ValueError when the segment is too long.
             > Test that the segment is indeed introduced.
         """
-        exchange_chainId=self.Line_operations.exchange_chainID
+        exchange_chainID=self.Line_operations.exchange_chainID
         line_dict=self.test_line_dict
         with self.assertRaises(ValueError, msg=f"The function does not raise the desired error."):
-            exchange_chainId(line_dict,"12345")
-        updated_line_dict=exchange_chainId(line_dict, "1")
-        new_segment=updated_line_dict["chainID"]
-        self.assertEqual(new_segment, "1", f"The new segment {new_segment} is not the desired 1.")
-        #Can we rename the variables here so that we do not mix up chainID and segment? JJ
+            exchange_chainID(line_dict,"12345")
+        updated_line_dict=exchange_chainID(line_dict, "1")
+        new_chainID=updated_line_dict["chainID"]
+        self.assertEqual(new_chainID, "1", f"The new segment {new_chainID} is not the desired 1.")
 
 class general_fill_function(ABC):
     """
@@ -234,7 +230,14 @@ class test_operations(unittest.TestCase):
         """
         test_restraints="tests/tests_restraints.pdb"
         self.operations.change_temp_factors(self.test_pdb_file, test_restraints)
+        test_temp_fact={
+            "H": "0.00",
+            "CB":   0.75,
+            "C": "  0.50",
+            "CA": 1,  
+        }
         lines=self.files.read_file(test_restraints)
+        #Checks the default values
         for line in lines:
             line_dict=pdb_tools.line_operations.read_pdb_line(line)
             temp_fact=line_dict["temp_fac"]
@@ -245,7 +248,35 @@ class test_operations(unittest.TestCase):
                 self.assertEqual(temp_fact, "  0.50")
             else:
                 self.assertEqual(temp_fact, "  1.00")
-                #These are only examples, maybe we should rewrite this so that it has the option of taking in a set of values? Just as the function should have had tbh. JJ
+        #Checks for wrong values
+        wrong_temp_fact=test_temp_fact.copy()
+        with self.assertRaises(ValueError, msg="The function did not raise an error when the default temperature factor was not a float."):
+            self.operations.change_temp_factors(self.test_pdb_file, test_restraints, default="a")
+        with self.assertRaises(ValueError, msg="The function did not raise an error when the default temperature factor was too long."):
+            self.operations.change_temp_factors(self.test_pdb_file, test_restraints, default="1234567")
+        with self.assertRaises(ValueError, msg="The function did not raise an error when one of the temperature factors was not a float."):       
+            wrong_temp_fact["H"]="zz"
+            self.operations.change_temp_factors(self.test_pdb_file, test_restraints,wrong_temp_fact)
+        with self.assertRaises(ValueError, msg="The function did not raise an error when one of the temperature factors was too long."):       
+            wrong_temp_fact["H"]="1234567"
+            self.operations.change_temp_factors(self.test_pdb_file, test_restraints,wrong_temp_fact)
+        #Test when introducing personalized temperature factors in different formats
+        self.operations.change_temp_factors(self.test_pdb_file, test_restraints, test_temp_fact, default="2.00")
+        lines=self.files.read_file(test_restraints)
+        for line in lines:
+            line_dict=pdb_tools.line_operations.read_pdb_line(line)
+            temp_fact=line_dict["temp_fac"]
+            atom_name=line_dict["atom_name"]
+            if atom_name.startswith("H"):
+                self.assertEqual(temp_fact, "  0.00")
+            elif atom_name.startswith("CB"):
+                self.assertEqual(temp_fact, "  0.75")
+            elif atom_name.startswith("CA"):
+                self.assertEqual(temp_fact, "  1.00")
+            elif atom_name.startswith("C"):
+                self.assertEqual(temp_fact, "  0.50")
+            else:
+                self.assertEqual(temp_fact, "  2.00")
 
     def test_renumber(self):
         """
@@ -256,7 +287,7 @@ class test_operations(unittest.TestCase):
             self.operations.renumber(self.test_pdb_file, "tests/toomanyatoms.pdb")
         self.operations.renumber(self.test_pdb_file2, "tests/test_renumber.pdb")
 
-    #test function for the function pdb_tools.operations.renumber_tip3p
+
     def test_renumber_tip3(self):
         """
         Tests the function options.renumber_tip3(),

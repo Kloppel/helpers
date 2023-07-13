@@ -416,25 +416,62 @@ class operations():
         files.write_file(file=pdb_file_output, lines=lines_)
         return
 
-    def change_temp_factors(pdb_file, restraints_file):
+    def change_temp_factors(pdb_file, restraints_file, temp_dict=None, default="  1.00"):
         """
         operations.change_temp_factors() takes a pdb_file and a name for a restraints_file; then it
         creates a restraints file based on the specifications of CHARMM-GUIs NAMD constraint files.
-        H-atoms will recieve the temp_fac 0.00
-        All C-atoms but CA (C-alphas) will recieve temp_fac 0.50
-        All other atoms will recieve temp_fac 1.00.
+
+        The function takes a dictionary temp_dict that contains the atom names as keys and the temp_factors as values.
+        It also takes a default value to set to the other atoms.
+            
+            IMPORTANT: The temp_factors can overwrite each other. For example, if you set the temp_factor for "C" to 1.00 but
+            also set the temp_factor for "CA" to 0.50, then all atoms that start with "C" will have a temp_factor of 1.00 except
+            for the ones that start with "CA" which will have a temp_factor of 0.50. If "CA" is not in the dictionary then it will have the "C" value.
+        
+        Default settings are:
+            H-atoms will recieve the temp_fac 0.00
+            All C-atoms but CA (C-alphas) will recieve temp_fac 0.50
+            All other atoms will recieve temp_fac 1.00.
         """
         lines=files.read_file(pdb_file=pdb_file)
         lines_ = []
+        if temp_dict==None:
+            temp_dict={
+                "H": "  0.00",
+                "C": "  0.50",
+                "CA": "  1.00",
+            }
+        def convert_temp_fact(temp_fact, key=None):
+            """
+            Inner function to check and convert the temperature factor appropriately.
+            """
+            try:
+                temp_fact=float(temp_fact)
+            except:
+                raise ValueError(f"{key} temperature factor {temp_fact} is not a float. ")
+            temp_fact=f"{temp_fact:.2f}" .rjust(6, " ")
+            if len(temp_fact)>6:
+                raise ValueError(f"{key} temperature factor {temp_fact} is longer than 6 characters. ")
+            return temp_fact
+        
+        #First check that the temp factors are valid
+        for key in temp_dict.keys():
+            temp_dict[key]=convert_temp_fact(temp_fact=temp_dict[key], key=key)
+        default=convert_temp_fact(temp_fact=default, key="default")
+        #Sort the keys by length
+        ordered_keys=list(temp_dict.keys())
+        ordered_keys.sort(key=len)
+        
+
         for line in lines:
             line_dict=line_operations.read_pdb_line(line)
-            if line_dict["atom_name"].startswith("H"):
-                line_dict["temp_fac"] = "  0.00"
-            else:
-                if line_dict["atom_name"].startswith("C") and not line_dict["atom_name"].startswith("CA"):
-                    line_dict["temp_fac"] = "  0.50"
-                else:
-                    line_dict["temp_fac"] = "  1.00"
+            is_default=True
+            for key in ordered_keys:
+                if line_dict["atom_name"].startswith(key):
+                    line_dict["temp_fac"]=temp_dict[key]
+                    is_default=False
+            if is_default:
+                line_dict["temp_fac"]=default
             line_ = line_operations.create_line(line_dict=line_dict)
             lines_.append(line_)
             if line.startswith("TER"):
