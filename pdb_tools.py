@@ -84,6 +84,32 @@ class line_operations():
             line_dict["charge"]="  "
         return line_dict
     
+    def read_pdb_lines(lines):
+        """
+        line_operations.read_pdb_lines() takes a list of strings (lines) and iterates over them, calling the line_operations.read_pdb_line()
+        function on each line. It returns a list of dictionaries (line_dicts) that contain the information of each line.
+
+        This function keeps track of the serial and residue numbers even when they exceed 5 digits. However when written into a file they
+        should be written as 5 asterisks "*****" as the .pdb format does not allow for more than 5 digits.
+        """
+        line_dicts=[]
+        counter_serial=1
+        counter_resi=1
+        segment=None; residue=None
+        for line in lines:
+            line_dict=line_operations.read_pdb_line(line=line)
+            if residue!=line_dict["resname"]:
+                counter_resi+=1
+            if segment!=line_dict["segment"]:
+                counter_resi=1; counter_serial=1
+                segment=line_dict["segment"]
+            line_dict["serial_no"]=f"{counter_serial}"
+            line_dict["resi_no"]=f"{counter_resi}"
+            line_dicts.append(line_dict)
+            counter_serial+=1
+        return line_dicts
+
+    
     
     def read_pdb_line(line):
         """
@@ -233,18 +259,51 @@ class line_operations():
             else:
                 output_dict[key]=output_dict[key].rjust(key_sizes[indx])
 
-        return output_dict 
+        return output_dict
 
+    def correct_dict_formatting(line_dict):
+        """
+        line_operations.correct_dict_formatting() takes a line_dict and corrects the formatting of the line_dict so that it is
+        in the correct format for the .pdb file. It returns the corrected line_dict.
+        """
+        key_sizes=[6,5,4,
+                3,1,4,
+                1,7,7,
+                7,5,6,
+                4,2,2]
+        for indx,key in enumerate(line_dict.keys()):
+            if line_dict[key]==None:
+                line_dict[key]=" "*key_sizes[indx]
+            #atom key is left justified
+            elif key=="atom":
+                line_dict[key]=line_dict[key].ljust(key_sizes[indx])
+            elif key=="atom_name":
+                if len(line_dict[key])<2:
+                    line_dict[key]=line_dict[key].rjust(2)+" "*2
+                else:
+                    line_dict[key]=line_dict[key].ljust(key_sizes[indx])
+            elif key=="resname":
+                line_dict[key]=line_dict[key].rjust(3)+" "*1
+            elif key=="resi_no":
+                if len(line_dict[key])<4:
+                    line_dict[key]=line_dict[key].rjust(4)
+            else:
+                line_dict[key]=line_dict[key].rjust(key_sizes[indx])
+        return line_dict
 
 
     def create_line(line_dict):
         """
         line_operations.create_line() takes a line_dict and creates the PDB-style line with the information contained in the dictionary.
         It returns "line", an object containing the string that was produced.
+
+        If the serial number has more than 5 digits (i.e >99.999) it will output ******
         """
+        if len(str(int(line_dict["resi_no"])))>=5:
+            line_dict["serial_no"]="*****"
+        if len(str(int(line_dict["serial_no"])))>=5:
+            line_dict["serial_no"]="*****"
         line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}    {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]}{line_dict["temp_fac"]}      {line_dict["segment"]} {line_dict["elem_symb"]}      '
-        if len(line_dict["resi_no"])==5:
-            line=line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}    {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]}{line_dict["temp_fac"]}      {line_dict["segment"]} {line_dict["elem_symb"]}      '
         #line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}   {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]} {line_dict["temp_fac"]}       {line_dict["segment"]} {line_dict["elem_symb"]}{line_dict["charge"]}\n'
         if len(line) > 82:
             line=line.strip()
