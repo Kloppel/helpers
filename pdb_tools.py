@@ -13,17 +13,25 @@ class files():
         f=open(pdb_file, 'r')
         lines = f.readlines()
         f.close()
-        lines = [k for k in lines if "HEADER" not in k]
-        lines = [k for k in lines if "TITLE" not in k]
-        lines = [k for k in lines if "CRYST1" not in k]
-        lines = [k for k in lines if "REMARK" not in k]
-        lines = [k for k in lines if "SCALE" not in k]
-        lines = [k for k in lines if "MODEL" not in k]
-        lines = [k for k in lines if "ENDMDL" not in k]
-        lines = [k for k in lines if "TER" not in k]
-        lines = [k for k in lines if "END" not in k]
+        #Only select lines with ATOM or HETATM which are the ones we can read
+        lines = [k for k in lines if k[:6]=="ATOM  " or k[:6]=="HETATM"]
         #lines = [k.replace("\n", '') for k in lines]
         return lines
+
+    def read_long_file(pdb_file):
+        """
+        read_long_file reads a long file and keeps track of the serial numbers and the residue numbers.
+        It outputs a list of dictionaries, where each dictionary contains the information for one line.
+        """
+        lines=files.read_file(pdb_file=pdb_file)
+        line_dicts = []
+        i=0
+        for line in lines:
+            i+=1
+            line_dict=line_operations.read_pdb_line(line=line)
+            line_dict["serial_no"]=i
+            line_dicts.append(line_dict)
+        return line_dicts
 
     def write_file(file, lines):
         """
@@ -84,6 +92,78 @@ class line_operations():
             line_dict["charge"]="  "
         return line_dict
     
+    def get_key_sizes():
+        """
+        Function that returns the key sizes for the .pdb format.
+        """
+
+        key_sizes=[6,5,4,
+                4,1,4,
+                1,7,7,
+                7,5,6,
+                4,2,2]
+        return key_sizes
+    def get_dict_types():
+        """
+        Function that returns the dictionary types for the .pdb format.
+        """
+        dict_types={
+            "atom":str,
+            "serial_no":str,
+            "atom_name":str,
+            "resname":str,
+            "chainID":str,
+            "resi_no":int,
+            "ins_code":str,
+            "x_coord":float,
+            "y_coord":float,
+            "z_coord":float,
+            "occupancy":float,
+            "temp_fac":float,
+            "segment": str,
+            "elem_symb":str,
+            "charge":str
+        }
+        return dict_types
+    def get_string_types():
+        """
+        Function that returns the string types for the .pdb format.
+        """
+        string_types={
+            "atom": str.isalpha,
+            "serial_no": lambda x: x.isnumeric() or x=="*****",
+            "atom_name": str.isalnum,
+            "resname": str.isalnum,
+            "chainID": str.isalpha,
+            "resi_no": str.isdigit,
+            "ins_code": str.isalpha,
+            "x_coord": str.isascii,
+            "y_coord": str.isascii,
+            "z_coord": str.isascii,
+            "occupancy": str.isascii,
+            "temp_fac": str.isascii,
+            "segment": str.isalnum,
+            "elem_symb": str.isalpha,
+            "charge": str.isascii
+        }
+        return string_types
+    
+    def check_type(word, key):
+        """
+        Function that checks if the word is of the correct type for the key.
+        """
+        dict_types=line_operations.get_dict_types()
+        string_types=line_operations.get_string_types()
+        validType=True
+        try:
+            dict_types[key](word)
+        except:
+            validType=False
+        if validType and dict_types[key]==str and word.strip()!="":
+            if not string_types[key](word):
+                validType=False
+        return validType
+
     
     def read_pdb_line(line):
         """
@@ -104,11 +184,7 @@ class line_operations():
                 "ins_code", "x_coord", "y_coord",
                 "z_coord", "occupancy", "temp_fac",
                 "segment","elem_symb", "charge"]
-        key_sizes=[6,5,4,
-                3,1,4,
-                1,7,7,
-                7,5,6,
-                4,2,2]
+        key_sizes=line_operations.get_key_sizes()
         output_dict={
             "atom":None,
             "serial_no":None,
@@ -126,34 +202,20 @@ class line_operations():
             "elem_symb":None,
             "charge":None
         }
-        dict_types={
-            "atom":str,
-            "serial_no":str,
-            "atom_name":str,
-            "resname":str,
-            "chainID":str,
-            "resi_no":int,
-            "ins_code":str,
-            "x_coord":float,
-            "y_coord":float,
-            "z_coord":float,
-            "occupancy":float,
-            "temp_fac":float,
-            "segment": str,
-            "elem_symb":str,
-            "charge":str
-        }
+        dict_types=line_operations.get_dict_types()
+        string_types=line_operations.get_string_types()
+        check_type=line_operations.check_type
+
         
 
         count=0; word_count=0
         while word_count<len(words) and count<len(key_sizes):
             word=words[word_count]
             if len(word)<=key_sizes[count]:
-                try:
-                    dict_types[dict_keys[count]](word)
+                if check_type(word, dict_keys[count]):
                     output_dict[dict_keys[count]]=word
                     count+=1
-                except:
+                else:
                     word_count-=1
                     count+=1
             #check if it can
@@ -167,12 +229,11 @@ class line_operations():
                     ccount2=count2
                     word2=word[::-1]
                     olddict=output_dict.copy()
-                    validType=True
+                    validType=check_type(word2[:key_sizes[count2]][::-1], dict_keys[count2])
                     while count2>count:
-                        try:
-                            dict_types[dict_keys[count2]](word2[:key_sizes[count2]][::-1])
-                            #sometimes people use chainID to expand the resi_no
-                            #therefore one has to check if the chainID is numeric
+                        if validType:
+                            #sometimes people use ins_code to expand the resi_no
+                            #therefore one has to check if the ins_code is numeric
                             if dict_keys[count2]=="ins_code":
                                 if word2[:key_sizes[count2]][::-1].isnumeric():
                                     try:
@@ -192,7 +253,7 @@ class line_operations():
                                 output_dict[dict_keys[count2]]=word2[:key_sizes[count2]][::-1]
                                 word2=word2[key_sizes[count2]:]
                                 count2-=1
-                        except:
+                        else:
                             output_dict=olddict.copy()
                             validType=False
                             break
@@ -213,38 +274,55 @@ class line_operations():
                     count+=1
                     
             word_count+=1
-
-        for indx,key in enumerate(output_dict.keys()):
-            if output_dict[key]==None:
-                output_dict[key]=" "*key_sizes[indx]
-            #atom key is left justified
-            elif key=="atom":
-                output_dict[key]=output_dict[key].ljust(key_sizes[indx])
-            elif key=="atom_name":
-                if len(output_dict[key])<2:
-                    output_dict[key]=output_dict[key].rjust(2)+" "*2
-                else:
-                    output_dict[key]=output_dict[key].ljust(key_sizes[indx])
-            elif key=="resname":
-                output_dict[key]=output_dict[key].rjust(3)+" "*1
-            elif key=="resi_no":
-                if len(output_dict[key])<4:
-                    output_dict[key]=output_dict[key].rjust(4)
-            else:
-                output_dict[key]=output_dict[key].rjust(key_sizes[indx])
-
+        output_dict=line_operations.correct_dict_formatting(line_dict=output_dict)
         return output_dict 
 
+    def correct_dict_formatting(line_dict):
+        """
+        line_operations.correct_dict_formatting() takes a line_dict and corrects the formatting of the line_dict so that it is
+        in the correct format for the .pdb file. It returns the corrected line_dict.
+        """
+        key_sizes=line_operations.get_key_sizes()
+        for indx,key in enumerate(line_dict.keys()):
+            if line_dict[key]==None:
+                line_dict[key]=" "*key_sizes[indx]
+            #atom key is left justified
+            elif key=="atom":
+                line_dict[key]=line_dict[key].ljust(key_sizes[indx])
+            #atom_name justification depends on its length
+            elif key=="atom_name":
+                if len(line_dict[key])<2:
+                    line_dict[key]=line_dict[key].rjust(2)+" "*2
+                else:
+                    line_dict[key]=line_dict[key].ljust(key_sizes[indx])
+            #resname justification depends on its length
+            elif key=="resname":
+                if len(line_dict[key])<3:
+                    line_dict[key]=line_dict[key].rjust(3)+" "*1
+                else:
+                    line_dict[key]=line_dict[key].ljust(key_sizes[indx])
+            elif key=="resi_no":
+                if len(line_dict[key])<4:
+                    line_dict[key]=line_dict[key].rjust(4)
+            else:
+                line_dict[key]=line_dict[key].rjust(key_sizes[indx])
+        return line_dict
 
 
     def create_line(line_dict):
         """
         line_operations.create_line() takes a line_dict and creates the PDB-style line with the information contained in the dictionary.
         It returns "line", an object containing the string that was produced.
+
+        If the serial number has more than 5 digits (i.e >99.999) it will output ******
         """
+        if line_dict["resi_no"].isdigit():
+            if len(line_dict["resi_no"].strip())>=5:
+                line_dict["resi_no"]="*****"
+        if line_dict["serial_no"].isdigit():
+            if len(line_dict["serial_no"].strip())>=5:
+                line_dict["serial_no"]="*****"
         line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}    {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]}{line_dict["temp_fac"]}      {line_dict["segment"]} {line_dict["elem_symb"]}      '
-        if len(line_dict["resi_no"])==5:
-            line=line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}    {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]}{line_dict["temp_fac"]}      {line_dict["segment"]} {line_dict["elem_symb"]}      '
         #line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}   {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]} {line_dict["temp_fac"]}       {line_dict["segment"]} {line_dict["elem_symb"]}{line_dict["charge"]}\n'
         if len(line) > 82:
             line=line.strip()
