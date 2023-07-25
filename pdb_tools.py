@@ -18,7 +18,7 @@ class files():
         #lines = [k.replace("\n", '') for k in lines]
         return lines
 
-    def read_long_file(pdb_file):
+    def read_file_dict(pdb_file):
         """
         read_long_file reads a long file and keeps track of the serial numbers and the residue numbers.
         It outputs a list of dictionaries, where each dictionary contains the information for one line.
@@ -467,16 +467,15 @@ class operations():
         calls the line_operations.exchange_segment() function to exchange the segment identifier in the line_dict. In the end it
         writes the file based on pdb_file_output.
         """
-        lines=files.read_file(pdb_file=pdb_file)
-        lines_ = []
+        lines_dict=files.read_file_dict(pdb_file=pdb_file)
+        lines_dict_ = []
         serial_no=1
         for line in lines:
-            line_dict=line_operations.read_pdb_line(line=line)
             line_dict=line_operations.exchange_segment(line_dict=line_dict, segment=segment)
-            line_=line_operations.create_line(line_dict=line_dict)
-            lines_.append(line_)
+            line_dict_=line_operations.create_line(line_dict=line_dict)
+            lines_dict_.append(line_dict_)
             serial_no+=1
-        files.write_file(file=pdb_file_output, lines=lines_)
+        files.write_file(file=pdb_file_output, lines=lines_dict_)
         return
 
     def add_chainID(pdb_file, pdb_file_output, chainID):
@@ -484,14 +483,13 @@ class operations():
         operations.add_chainID() takes a pdb_file and a output name pdb_file_output and a segment name; then iterates over
         all lines in the PDB file changing the chainID. In the end it saves the new file according to pdb_file_output.
         """
-        lines=files.read_file(pdb_file=pdb_file)
-        lines_ = []
-        for line in lines:
-            line_dict=line_operations.read_pdb_line(line=line)
+        lines_dict=files.read_file_dict(pdb_file=pdb_file)
+        lines_dict_ = []
+        for line_dict in lines_dict:
             line_dict=line_operations.exchange_chainID(line_dict=line_dict, chainID=chainID)
-            line_=line_operations.create_line(line_dict=line_dict)
-            lines_.append(line_)
-        files.write_file(file=pdb_file_output, lines=lines_)
+            line_dict_=line_operations.create_line(line_dict=line_dict)
+            lines_dict_.append(line_dict_)
+        files.write_file(file=pdb_file_output, lines=lines_dict_)
         return
 
     def change_temp_factors(pdb_file, restraints_file, temp_dict=None, default="  1.00"):
@@ -511,7 +509,7 @@ class operations():
             All C-atoms but CA (C-alphas) will recieve temp_fac 0.50
             All other atoms will recieve temp_fac 1.00.
         """
-        lines=files.read_file(pdb_file=pdb_file)
+        lines_dict=files.read_file_dict(pdb_file=pdb_file)
         lines_ = []
         if temp_dict==None:
             temp_dict={
@@ -540,9 +538,8 @@ class operations():
         ordered_keys=list(temp_dict.keys())
         ordered_keys.sort(key=len)
         
-
-        for line in lines:
-            line_dict=line_operations.read_pdb_line(line)
+        lines_dict=[]
+        for line_dict in lines_dict:
             is_default=True
             for key in ordered_keys:
                 if line_dict["atom_name"].startswith(key):
@@ -552,12 +549,9 @@ class operations():
                 line_dict["temp_fac"]=default
             line_ = line_operations.create_line(line_dict=line_dict)
             lines_.append(line_)
-            if line.startswith("TER"):
-                line_ = line
-                lines_.append("line_")
+            lines_dict.append(line_dict)
         files.write_file(file=restraints_file, lines=lines_)
-        lines=lines_
-        return
+        return lines_dict
 
     def renumber(pdb_file, pdb_file_output):
         """
