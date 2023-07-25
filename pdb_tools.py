@@ -469,10 +469,11 @@ class operations():
         calls the line_operations.exchange_segment() function to exchange the segment identifier in the line_dict. In the end it
         writes the file based on pdb_file_output.
         """
+        #This might be innecesary 
         lines_dict=files.read_file_dict(pdb_file=pdb_file)
         lines_dict_ = []
         serial_no=1
-        for line in lines:
+        for line_dict in lines_dict:
             line_dict=line_operations.exchange_segment(line_dict=line_dict, segment=segment)
             line_dict_=line_operations.create_line(line_dict=line_dict)
             lines_dict_.append(line_dict_)
@@ -540,7 +541,7 @@ class operations():
         ordered_keys=list(temp_dict.keys())
         ordered_keys.sort(key=len)
         
-        lines_dict=[]
+        _lines_dict=[]
         for line_dict in lines_dict:
             is_default=True
             for key in ordered_keys:
@@ -551,9 +552,9 @@ class operations():
                 line_dict["temp_fac"]=default
             line_ = line_operations.create_line(line_dict=line_dict)
             lines_.append(line_)
-            lines_dict.append(line_dict)
+            _lines_dict.append(line_dict)
         files.write_file(file=restraints_file, lines=lines_)
-        return lines_dict
+        return _lines_dict
 
     def renumber(pdb_file, pdb_file_output):
         """
