@@ -288,24 +288,24 @@ class line_operations():
                 line_dict[key]=" "*key_sizes[indx]
             #atom key is left justified
             elif key=="atom":
-                line_dict[key]=line_dict[key].ljust(key_sizes[indx])
+                line_dict[key]=str(line_dict[key]).ljust(key_sizes[indx])
             #atom_name justification depends on its length
             elif key=="atom_name":
                 if len(line_dict[key])<2:
-                    line_dict[key]=line_dict[key].rjust(2)+" "*2
+                    line_dict[key]=str(line_dict[key]).rjust(2)+" "*2
                 else:
-                    line_dict[key]=line_dict[key].ljust(key_sizes[indx])
+                    line_dict[key]=str(line_dict[key]).ljust(key_sizes[indx])
             #resname justification depends on its length
             elif key=="resname":
                 if len(line_dict[key])<3:
-                    line_dict[key]=line_dict[key].rjust(3)+" "*1
+                    line_dict[key]=str(line_dict[key]).rjust(3)+" "*1
                 else:
-                    line_dict[key]=line_dict[key].ljust(key_sizes[indx])
+                    line_dict[key]=str(line_dict[key]).ljust(key_sizes[indx])
             elif key=="resi_no":
                 if len(line_dict[key])<4:
-                    line_dict[key]=line_dict[key].rjust(4)
+                    line_dict[key]=str(line_dict[key]).rjust(4)
             else:
-                line_dict[key]=line_dict[key].rjust(key_sizes[indx])
+                line_dict[key]=str(line_dict[key]).rjust(key_sizes[indx])
         return line_dict
 
 
@@ -316,6 +316,8 @@ class line_operations():
 
         If the serial number has more than 5 digits (i.e >99.999) it will output ******
         """
+        #We make sure that all the entries are in string format
+        line_dict=line_operations.correct_dict_formatting(line_dict=line_dict)
         if line_dict["resi_no"].isdigit():
             if len(line_dict["resi_no"].strip())>=5:
                 line_dict["resi_no"]="*****"
