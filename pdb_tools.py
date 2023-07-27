@@ -18,18 +18,33 @@ class files():
         #lines = [k.replace("\n", '') for k in lines]
         return lines
 
-    def read_file_dict(pdb_file):
+    def read_file_dict(pdb_file, absResNumbering=False):
         """
-        read_long_file reads a long file and keeps track of the serial numbers and the residue numbers.
+        read_long_file reads a long file and keeps track of the serial numbers.
+        It can alos keep track of the residue numbers in the file is absResNumbering=True, in this case
+        every preceeding residue in the same segment will be numbered sequentially.
         It outputs a list of dictionaries, where each dictionary contains the information for one line.
         """
         lines=files.read_file(pdb_file=pdb_file)
         line_dicts = []
-        i=0
+        i_ser=0
+        i_res=0; res_last=None; segment_last=None
         for line in lines:
-            i+=1
+            i_ser+=1
             line_dict=line_operations.read_pdb_line(line=line)
-            line_dict["serial_no"]=i
+            if absResNumbering and line_dict["segment"]!=segment_last:
+                i_res=1
+                segment_last=line_dict["segment"]
+                res_last=line_dict["resi_no"]
+                line_dict["resi_no"]=i_res
+            elif absResNumbering and line_dict["resi_no"]!=res_last:
+                i_res+=1
+                res_last=line_dict["resi_no"]
+                line_dict["resi_no"]=i_res
+            elif absResNumbering:
+                line_dict["resi_no"]=i_res
+        
+            line_dict["serial_no"]=i_ser
             line_dicts.append(line_dict)
         return line_dicts
 
@@ -203,7 +218,6 @@ class line_operations():
             "charge":None
         }
         dict_types=line_operations.get_dict_types()
-        string_types=line_operations.get_string_types()
         check_type=line_operations.check_type
 
         

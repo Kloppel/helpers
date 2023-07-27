@@ -154,7 +154,33 @@ class test_fill_serial(general_fill_function, LineOperations, unittest.TestCase)
         self.fill_function=self.Line_operations.fill_serial
         self.dict_key="serial_no"; self.string_length=5
 
-
+class test_files(unittest.TestCase):
+    def setUp(self):
+        self.files=pdb_tools.files
+        self.test_pdb_file="tests/3hb3_ooxox.pdb"
+        self.test_pdb_file2="tests/8sze.pdb"
+        self.test_pdb_id="3hb3_ooxox"
+        return
+    def test_read_file_dict(self):
+        """
+        Tests that the function read_file_dict correctly takes note of the serial numbers and residue numbers when asked.
+        """
+        dict_lines_renumbered=self.files.read_file_dict(self.test_pdb_file, absResNumbering=True)
+        dict_lines=self.files.read_file_dict(self.test_pdb_file, absResNumbering=False)
+        segment_last=None; resi_last=dict_lines[0]["resi_no"]
+        resi_no_indx=0; serial_no_indx=0
+        for indx,dict_line in enumerate(dict_lines_renumbered):
+            if segment_last!=dict_line["segment"]:
+                segment_last=dict_line["segment"]
+                resi_last=dict_lines[indx]["resi_no"]
+                resi_no_indx=1
+            elif resi_last!=dict_lines[indx]["resi_no"]:
+                resi_last=dict_lines[indx]["resi_no"]
+                resi_no_indx+=1
+            serial_no_indx+=1
+            self.assertEqual(int(dict_line["resi_no"]), resi_no_indx, f"The residue number in segment {dict_line['segment']} (serial_no {dict_line['serial_no']}) is {dict_line['resi_no']} but should be {resi_no_indx}.")
+            self.assertEqual(int(dict_line["serial_no"]), serial_no_indx, f"The serial number in segment {dict_line['segment']} is {dict_line['serial_no']} but should be {serial_no_indx}.")
+        return
 class test_operations(unittest.TestCase):
     def setUp(self):
         self.test_pdb_file="tests/3hb3_ooxox.pdb"
