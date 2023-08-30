@@ -18,7 +18,7 @@ class files():
         #lines = [k.replace("\n", '') for k in lines]
         return lines
 
-    def read_long_file(pdb_file):
+    def read_long_file(pdb_file, keep_serial=False):
         """
         read_long_file reads a long file and keeps track of the serial numbers and the residue numbers.
         It outputs a list of dictionaries, where each dictionary contains the information for one line.
@@ -29,9 +29,21 @@ class files():
         for line in lines:
             i+=1
             line_dict=line_operations.read_pdb_line(line=line)
-            line_dict["serial_no"]=i
+            if not keep_serial:
+                line_dict["serial_no"]=i
             line_dicts.append(line_dict)
         return line_dicts
+    
+    def write_long_file(file, line_dicts):
+        """
+        write_long_file writes a long file based on the line_dicts.
+        """
+        lines=[]
+        for line_dict in line_dicts:
+            line=line_operations.create_line(line_dict=line_dict)
+            lines.append(line)
+        files.write_file(file=file, lines=lines)
+        return
 
     def write_file(file, lines):
         """
@@ -148,6 +160,16 @@ class line_operations():
         }
         return string_types
     
+    def get_list_element_symbols():
+        """
+        Returns list of all possible symbols
+        """
+        elements=[
+            "H",
+            "N", "C", "O", "S", "FE",
+            "MG"
+        ]
+        return elements
     def check_type(word, key):
         """
         Function that checks if the word is of the correct type for the key.
@@ -231,38 +253,43 @@ class line_operations():
                     olddict=output_dict.copy()
                     validType=check_type(word2[:key_sizes[count2]][::-1], dict_keys[count2])
                     while count2>count:
-                        if validType:
+                        if dict_keys[count2]=="ins_code":
                             #sometimes people use ins_code to expand the resi_no
                             #therefore one has to check if the ins_code is numeric
-                            if dict_keys[count2]=="ins_code":
-                                if word2[:key_sizes[count2]][::-1].isnumeric():
-                                    try:
-                                        dict_types["resi_no"](word2[:5][::-1])
-                                        output_dict["resi_no"]=word2[:5][::-1]
-                                        word2=word2[5:]
-                                        count2-=2
-                                    except:
-                                        output_dict=olddict.copy()
-                                        validType=False
-                                        break
-                                else:
-                                    output_dict[dict_keys[count2]]=word2[:key_sizes[count2]][::-1]
-                                    word2=word2[key_sizes[count2]:]
-                                    count2-=1 
+                            if word2[:key_sizes[count2]][::-1].isnumeric():
+                                try:
+                                    dict_types["resi_no"](word2[:5][::-1])
+                                    output_dict["resi_no"]=word2[:5][::-1]
+                                    word2=word2[5:]
+                                    count2-=2
+                                    validType=True
+                                except:
+                                    output_dict=olddict.copy()
+                                    validType=False
+                                    break
                             else:
                                 output_dict[dict_keys[count2]]=word2[:key_sizes[count2]][::-1]
                                 word2=word2[key_sizes[count2]:]
-                                count2-=1
+                                count2-=1 
+                        elif validType:
+                            output_dict[dict_keys[count2]]=word2[:key_sizes[count2]][::-1]
+                            word2=word2[key_sizes[count2]:]
+                            count2-=1
                         else:
                             output_dict=olddict.copy()
                             validType=False
                             break
-                    if validType:     
-                        try:
-                            dict_types[dict_keys[count2]](word2[::-1])
-                            output_dict[dict_keys[count2]]=word2[::-1]
-                            count=ccount2+1
-                        except:
+                    if validType:
+                        if check_type(word2[:key_sizes[count2]][::-1], dict_keys[count2]):   
+                            try:
+                                dict_types[dict_keys[count2]](word2[::-1])
+                                output_dict[dict_keys[count2]]=word2[::-1]
+                                count=ccount2+1
+                            except:
+                                output_dict=olddict.copy()
+                                word_count-=1
+                                count+=1
+                        else:
                             output_dict=olddict.copy()
                             word_count-=1
                             count+=1
@@ -291,21 +318,54 @@ class line_operations():
                 line_dict[key]=str(line_dict[key]).ljust(key_sizes[indx])
             #atom_name justification depends on its length
             elif key=="atom_name":
-                if len(line_dict[key])<2:
-                    line_dict[key]=str(line_dict[key]).rjust(2)+" "*2
-                else:
+                """
+                From  https://www.cgl.ucsf.edu/chimera/docs/UsersGuide/tutorials/pdbintro.html#misalignment
+
+                Incorrectly aligned atom names in PDB records can cause problems. 
+                Atom names are composed of an atomic (element) symbol right-justified in columns 13-14, 
+                and trailing identifying characters left-justified in columns 15-16. 
+                A single-character element symbol should not appear in column 13 unless the atom name has four characters 
+                (for example, see Hydrogen Atoms). Many programs simply left-justify all atom names starting in column 13.
+
+                However most programs just start at 13 when the atom name is 4 characters long
+                and start at 14 otherwise. With the current way of reading lines the correct version
+                would be difficult to implement as one can not differentiate between a carbon alpha ( CA )
+                or a calcium (CA  ), thus we left the ideal approach commented but applied the simpler version
+                
+                element_symbols=line_operations.get_list_element_symbols()
+                if len(line_dict[key].strip())>=4:
+                    line_dict[key]=str(line_dict[key]).ljust(4)
+                elif line_dict[key][:2] in element_symbols and len(line_dict[key].strip())>=2:
                     line_dict[key]=str(line_dict[key]).ljust(key_sizes[indx])
+                elif line_dict[key][0] in element_symbols:
+                    line_dict[key]=" "+str(line_dict[key]).ljust(3)
+                
+                """
+                if len(line_dict[key].strip())>=4:
+                    line_dict[key]=str(line_dict[key].strip()).ljust(4)
+                else:
+                    line_dict[key]=" "+str(line_dict[key].strip()).ljust(3)
+                
             #resname justification depends on its length
             elif key=="resname":
                 if len(line_dict[key])<3:
-                    line_dict[key]=str(line_dict[key]).rjust(3)+" "*1
+                    line_dict[key]=str(line_dict[key].strip()).rjust(3)+" "*1
                 else:
-                    line_dict[key]=str(line_dict[key]).ljust(key_sizes[indx])
+                    line_dict[key]=str(line_dict[key].strip()).ljust(key_sizes[indx])
             elif key=="resi_no":
-                if len(line_dict[key])<4:
-                    line_dict[key]=str(line_dict[key]).rjust(4)
+                if len(line_dict[key])<=4:
+                    line_dict[key]=str(line_dict[key].strip()).rjust(4)
+                else:
+                    #Sometimes people use insertion code to expand the residue number
+                    line_dict[key]=str(line_dict[key].strip()).rjust(5)
+            elif key=="ins_code":
+                #Sometimes people use insertion code to expand the residue number
+                if len(line_dict["resi_no"])>4:
+                    line_dict[key]=""
+                else:
+                    line_dict[key]=str(line_dict[key].strip()).rjust(key_sizes[indx])
             else:
-                line_dict[key]=str(line_dict[key]).rjust(key_sizes[indx])
+                line_dict[key]=str(line_dict[key].strip()).rjust(key_sizes[indx])
         return line_dict
 
 
@@ -319,10 +379,10 @@ class line_operations():
         #We make sure that all the entries are in string format
         line_dict=line_operations.correct_dict_formatting(line_dict=line_dict)
         if line_dict["resi_no"].isdigit():
-            if len(line_dict["resi_no"].strip())>=5:
+            if len(line_dict["resi_no"].strip())>5:
                 line_dict["resi_no"]="*****"
         if line_dict["serial_no"].isdigit():
-            if len(line_dict["serial_no"].strip())>=5:
+            if len(line_dict["serial_no"].strip())>5:
                 line_dict["serial_no"]="*****"
         line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}    {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]}{line_dict["temp_fac"]}      {line_dict["segment"]} {line_dict["elem_symb"]}      '
         #line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}   {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]} {line_dict["temp_fac"]}       {line_dict["segment"]} {line_dict["elem_symb"]}{line_dict["charge"]}\n'
