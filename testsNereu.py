@@ -12,7 +12,8 @@ class LineOperations(ABC):
         self.test_line_dict= {'atom': 'ATOM  ',
             'serial_no': '    1',
             'atom_name': ' N  ',
-            'resname': 'GLY ',
+            "altLoc": " ",
+            'resname': ' GLY',
             'chainID': ' ',
             'resi_no': '  17',
             'ins_code': ' ',
@@ -73,7 +74,7 @@ class TestLineOperations(unittest.TestCase, LineOperations):
         Tests that the function read_pdb_line from the class line_operations saves strings with the correct length into the dictionary.
         """
         line_dict=self.Line_operations.read_pdb_line(self.test_line)
-        dict_sizes=[6,5,4,4,1,4,1,7,7,7,5,6,4,2,2]
+        dict_sizes=self.Line_operations.get_key_sizes()
         for indx, key in enumerate(line_dict.keys()):
             self.assertEqual(len(line_dict[key]), dict_sizes[indx], f"The entry {key} is not the correct length.")
 
@@ -205,7 +206,7 @@ class test_operations(unittest.TestCase):
         for line in self.files.read_file(test_output):
             if "ATOM" in line:
                 line_dict=pdb_tools.line_operations.read_pdb_line(line)
-                self.assertEqual(" SEG", line_dict["segment"], f"The segment  {test_segment} is not in {test_output}.")
+                self.assertEqual("SEG ", line_dict["segment"], f"The segment  {test_segment} is not in {test_output}.")
 
     def test_add_chainID(self):
         """

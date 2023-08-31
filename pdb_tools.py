@@ -68,7 +68,7 @@ class line_operations():
     def __init__(self):
         return None
 
-    def read_pdb_lineold(line):
+    def read_pdb_line(line):
         """
         line_operations.read_pdb_line() creates a dictionary (line_dict) which is filled with the content of the line it is given based on
         string indexing. Based on the typical .pdb format, line_dict then knows:
@@ -80,6 +80,7 @@ class line_operations():
             "atom": line[0:6],
             "serial_no": line[6:11],
             "atom_name": line[12:16],
+            "altLoc": line[16],
             "resname": line[17:21],
             "chainID": line[21],
             "resi_no": line[22:26],
@@ -90,18 +91,14 @@ class line_operations():
             "occupancy": line[55:60],
             "temp_fac": line[60:66],
             "segment": line[72:76],
-            "elem_symb": line[77:79],
+            "elem_symb": line[76:78],
             "charge": line[79:81]
         }
-        if "\n" in line_dict["elem_symb"]:
-            line_dict["elem_symb"] = line_dict["elem_symb"].replace("\n", "")
-        line_dict["elem_symb"] = line_dict["elem_symb"].strip()
-        if line_dict["elem_symb"] == "":
-            line_dict["elem_symb"] = "  "
-        if "\n" in line_dict["charge"]:
-            line_dict["charge"] = line_dict["elem_symb"].replace("\n", "")
-        if line_dict["charge"]=="":
-            line_dict["charge"]="  "
+        if len(line_dict["resi_no"].strip())==4 and line_dict["ins_code"].isdigit():
+            line_dict["resi_no"]=line_dict["resi_no"]+line_dict["ins_code"]
+            line_dict["ins_code"]=" "
+        #line_operations.correct_dict_formatting(line_dict=line_dict)
+
         return line_dict
     
     def get_key_sizes():
@@ -110,6 +107,7 @@ class line_operations():
         """
 
         key_sizes=[6,5,4,
+                1,
                 4,1,4,
                 1,7,7,
                 7,5,6,
@@ -123,6 +121,7 @@ class line_operations():
             "atom":str,
             "serial_no":str,
             "atom_name":str,
+            "altLoc": str,
             "resname":str,
             "chainID":str,
             "resi_no":int,
@@ -145,6 +144,7 @@ class line_operations():
             "atom": str.isalpha,
             "serial_no": lambda x: x.isnumeric() or x=="*****",
             "atom_name": str.isalnum,
+            "altLoc": str.isalpha,
             "resname": str.isalnum,
             "chainID": str.isalpha,
             "resi_no": str.isdigit,
@@ -167,7 +167,6 @@ class line_operations():
         elements=[
             "H",
             "N", "C", "O", "S", "FE",
-            "MG"
         ]
         return elements
     def check_type(word, key):
@@ -187,7 +186,7 @@ class line_operations():
         return validType
 
     
-    def read_pdb_line(line):
+    def read_pdb_line_v2(line):
         """
         This function takes a line (string) and returns a dictionary containing the information in the line.
 
@@ -202,6 +201,7 @@ class line_operations():
         """
         words=line.split()
         dict_keys=["atom", "serial_no", "atom_name",
+                "altLoc",
                 "resname", "chainID", "resi_no",
                 "ins_code", "x_coord", "y_coord",
                 "z_coord", "occupancy", "temp_fac",
@@ -211,6 +211,7 @@ class line_operations():
             "atom":None,
             "serial_no":None,
             "atom_name":None,
+            "altLoc": None, 
             "resname":None,
             "chainID":None,
             "resi_no":None,
@@ -331,7 +332,7 @@ class line_operations():
                 and start at 14 otherwise. With the current way of reading lines the correct version
                 would be difficult to implement as one can not differentiate between a carbon alpha ( CA )
                 or a calcium (CA  ), thus we left the ideal approach commented but applied the simpler version
-                
+                """
                 element_symbols=line_operations.get_list_element_symbols()
                 if len(line_dict[key].strip())>=4:
                     line_dict[key]=str(line_dict[key]).ljust(4)
@@ -340,18 +341,8 @@ class line_operations():
                 elif line_dict[key][0] in element_symbols:
                     line_dict[key]=" "+str(line_dict[key]).ljust(3)
                 
-                """
-                if len(line_dict[key].strip())>=4:
-                    line_dict[key]=str(line_dict[key].strip()).ljust(4)
-                else:
-                    line_dict[key]=" "+str(line_dict[key].strip()).ljust(3)
                 
             #resname justification depends on its length
-            elif key=="resname":
-                if len(line_dict[key])<3:
-                    line_dict[key]=str(line_dict[key].strip()).rjust(3)+" "*1
-                else:
-                    line_dict[key]=str(line_dict[key].strip()).ljust(key_sizes[indx])
             elif key=="resi_no":
                 if len(line_dict[key])<=4:
                     line_dict[key]=str(line_dict[key].strip()).rjust(4)
@@ -364,6 +355,12 @@ class line_operations():
                     line_dict[key]=""
                 else:
                     line_dict[key]=str(line_dict[key].strip()).rjust(key_sizes[indx])
+            elif key=="segment":
+                line_dict[key]=str(line_dict[key].strip()).ljust(key_sizes[indx])
+            elif key=="resname":
+                line_dict[key]=str(line_dict[key].strip()).ljust(key_sizes[indx])
+            elif key=="chainID":
+                continue
             else:
                 line_dict[key]=str(line_dict[key].strip()).rjust(key_sizes[indx])
         return line_dict
@@ -384,7 +381,7 @@ class line_operations():
         if line_dict["serial_no"].isdigit():
             if len(line_dict["serial_no"].strip())>5:
                 line_dict["serial_no"]="*****"
-        line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}    {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]}{line_dict["temp_fac"]}      {line_dict["segment"]} {line_dict["elem_symb"]}      '
+        line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]}{line_dict["altLoc"]}{line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}    {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]}{line_dict["temp_fac"]}      {line_dict["segment"]}{line_dict["elem_symb"]}      '
         #line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}   {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]} {line_dict["temp_fac"]}       {line_dict["segment"]} {line_dict["elem_symb"]}{line_dict["charge"]}\n'
         if len(line) > 82:
             line=line.strip()
