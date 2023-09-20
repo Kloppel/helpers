@@ -17,17 +17,25 @@ class files():
         f=open(pdb_file, 'r')
         lines = f.readlines()
         f.close()
-        lines = [k for k in lines if "HEADER" not in k]
-        lines = [k for k in lines if "TITLE" not in k]
-        lines = [k for k in lines if "CRYST1" not in k]
-        lines = [k for k in lines if "REMARK" not in k]
-        lines = [k for k in lines if "SCALE" not in k]
-        lines = [k for k in lines if "MODEL" not in k]
-        lines = [k for k in lines if "ENDMDL" not in k]
-        lines = [k for k in lines if "TER" not in k]
-        lines = [k for k in lines if "END" not in k]
+        #Only select lines with ATOM or HETATM which are the ones we can read
+        lines = [k for k in lines if k[:6]=="ATOM  " or k[:6]=="HETATM"]
         #lines = [k.replace("\n", '') for k in lines]
         return lines
+
+    def read_long_file(pdb_file):
+        """
+        read_long_file reads a long file and keeps track of the serial numbers and the residue numbers.
+        It outputs a list of dictionaries, where each dictionary contains the information for one line.
+        """
+        lines=files.read_file(pdb_file=pdb_file)
+        line_dicts = []
+        i=0
+        for line in lines:
+            i+=1
+            line_dict=line_operations.read_pdb_line(line=line)
+            line_dict["serial_no"]=i
+            line_dicts.append(line_dict)
+        return line_dicts
 
     def write_file(file, lines):
         """
@@ -52,7 +60,7 @@ class line_operations():
     def __init__(self):
         return None
 
-    def read_pdb_line(line):
+    def read_pdb_lineold(line):
         """
         line_operations.read_pdb_line() creates a dictionary (line_dict) which is filled with the content of the line it is given based on
         string indexing. Based on the typical .pdb format, line_dict then knows:
@@ -87,12 +95,239 @@ class line_operations():
         if line_dict["charge"]=="":
             line_dict["charge"]="  "
         return line_dict
+    
+    def get_key_sizes():
+        """
+        Function that returns the key sizes for the .pdb format.
+        """
+
+        key_sizes=[6,5,4,
+                4,1,4,
+                1,7,7,
+                7,5,6,
+                4,2,2]
+        return key_sizes
+    def get_dict_types():
+        """
+        Function that returns the dictionary types for the .pdb format.
+        """
+        dict_types={
+            "atom":str,
+            "serial_no":str,
+            "atom_name":str,
+            "resname":str,
+            "chainID":str,
+            "resi_no":int,
+            "ins_code":str,
+            "x_coord":float,
+            "y_coord":float,
+            "z_coord":float,
+            "occupancy":float,
+            "temp_fac":float,
+            "segment": str,
+            "elem_symb":str,
+            "charge":str
+        }
+        return dict_types
+    def get_string_types():
+        """
+        Function that returns the string types for the .pdb format.
+        """
+        string_types={
+            "atom": str.isalpha,
+            "serial_no": lambda x: x.isnumeric() or x=="*****",
+            "atom_name": str.isalnum,
+            "resname": str.isalnum,
+            "chainID": str.isalpha,
+            "resi_no": str.isdigit,
+            "ins_code": str.isalpha,
+            "x_coord": str.isascii,
+            "y_coord": str.isascii,
+            "z_coord": str.isascii,
+            "occupancy": str.isascii,
+            "temp_fac": str.isascii,
+            "segment": str.isalnum,
+            "elem_symb": str.isalpha,
+            "charge": str.isascii
+        }
+        return string_types
+    
+    def check_type(word, key):
+        """
+        Function that checks if the word is of the correct type for the key.
+        """
+        dict_types=line_operations.get_dict_types()
+        string_types=line_operations.get_string_types()
+        validType=True
+        try:
+            dict_types[key](word)
+        except:
+            validType=False
+        if validType and dict_types[key]==str and word.strip()!="":
+            if not string_types[key](word):
+                validType=False
+        return validType
+
+    
+    def read_pdb_line(line):
+        """
+        This function takes a line (string) and returns a dictionary containing the information in the line.
+
+        This function should ignore any errors in column placement, as it does not see white spaces.
+        The algorithm used is as follows:
+        1. Split the line into words
+        2. Iterate over the words, and check if the word is shorter than the expected length of the key.
+        3.      If it is shorter, add it to the dictionary and take the next dictionary key.
+        4.      If it is longer, check if the next word could be made up of concatenated words (check condition maximum_concatenated_length-wordlength<maximumkeylength).
+        
+
+        """
+        words=line.split()
+        dict_keys=["atom", "serial_no", "atom_name",
+                "resname", "chainID", "resi_no",
+                "ins_code", "x_coord", "y_coord",
+                "z_coord", "occupancy", "temp_fac",
+                "segment","elem_symb", "charge"]
+        key_sizes=line_operations.get_key_sizes()
+        output_dict={
+            "atom":None,
+            "serial_no":None,
+            "atom_name":None,
+            "resname":None,
+            "chainID":None,
+            "resi_no":None,
+            "ins_code":None,
+            "x_coord":None,
+            "y_coord":None,
+            "z_coord":None,
+            "occupancy":None,
+            "temp_fac":None,
+            "segment": None,
+            "elem_symb":None,
+            "charge":None
+        }
+        dict_types=line_operations.get_dict_types()
+        string_types=line_operations.get_string_types()
+        check_type=line_operations.check_type
+
+        
+
+        count=0; word_count=0
+        while word_count<len(words) and count<len(key_sizes):
+            word=words[word_count]
+            if len(word)<=key_sizes[count]:
+                if check_type(word, dict_keys[count]):
+                    output_dict[dict_keys[count]]=word
+                    count+=1
+                else:
+                    word_count-=1
+                    count+=1
+            #check if it can
+            elif len(word)>key_sizes[count] and count+1<len(key_sizes):
+                count2=count+1
+                expected=key_sizes[count]+key_sizes[count2]
+                while len(word)>expected and count2<len(key_sizes)-1:
+                    count2+=1
+                    expected+=key_sizes[count2]
+                if expected-len(word)<=key_sizes[count]:  
+                    ccount2=count2
+                    word2=word[::-1]
+                    olddict=output_dict.copy()
+                    validType=check_type(word2[:key_sizes[count2]][::-1], dict_keys[count2])
+                    while count2>count:
+                        if validType:
+                            #sometimes people use ins_code to expand the resi_no
+                            #therefore one has to check if the ins_code is numeric
+                            if dict_keys[count2]=="ins_code":
+                                if word2[:key_sizes[count2]][::-1].isnumeric():
+                                    try:
+                                        dict_types["resi_no"](word2[:5][::-1])
+                                        output_dict["resi_no"]=word2[:5][::-1]
+                                        word2=word2[5:]
+                                        count2-=2
+                                    except:
+                                        output_dict=olddict.copy()
+                                        validType=False
+                                        break
+                                else:
+                                    output_dict[dict_keys[count2]]=word2[:key_sizes[count2]][::-1]
+                                    word2=word2[key_sizes[count2]:]
+                                    count2-=1 
+                            else:
+                                output_dict[dict_keys[count2]]=word2[:key_sizes[count2]][::-1]
+                                word2=word2[key_sizes[count2]:]
+                                count2-=1
+                        else:
+                            output_dict=olddict.copy()
+                            validType=False
+                            break
+                    if validType:     
+                        try:
+                            dict_types[dict_keys[count2]](word2[::-1])
+                            output_dict[dict_keys[count2]]=word2[::-1]
+                            count=ccount2+1
+                        except:
+                            output_dict=olddict.copy()
+                            word_count-=1
+                            count+=1
+                    else:
+                        word_count-=1
+                        count+=1    
+                else:
+                    word_count-=1
+                    count+=1
+                    
+            word_count+=1
+        output_dict=line_operations.correct_dict_formatting(line_dict=output_dict)
+        return output_dict 
+
+    def correct_dict_formatting(line_dict):
+        """
+        line_operations.correct_dict_formatting() takes a line_dict and corrects the formatting of the line_dict so that it is
+        in the correct format for the .pdb file. It returns the corrected line_dict.
+        """
+        key_sizes=line_operations.get_key_sizes()
+        for indx,key in enumerate(line_dict.keys()):
+            if line_dict[key]==None:
+                line_dict[key]=" "*key_sizes[indx]
+            #atom key is left justified
+            elif key=="atom":
+                line_dict[key]=str(line_dict[key]).ljust(key_sizes[indx])
+            #atom_name justification depends on its length
+            elif key=="atom_name":
+                if len(line_dict[key])<2:
+                    line_dict[key]=str(line_dict[key]).rjust(2)+" "*2
+                else:
+                    line_dict[key]=str(line_dict[key]).ljust(key_sizes[indx])
+            #resname justification depends on its length
+            elif key=="resname":
+                if len(line_dict[key])<3:
+                    line_dict[key]=str(line_dict[key]).rjust(3)+" "*1
+                else:
+                    line_dict[key]=str(line_dict[key]).ljust(key_sizes[indx])
+            elif key=="resi_no":
+                if len(line_dict[key])<4:
+                    line_dict[key]=str(line_dict[key]).rjust(4)
+            else:
+                line_dict[key]=str(line_dict[key]).rjust(key_sizes[indx])
+        return line_dict
+
 
     def create_line(line_dict):
         """
         line_operations.create_line() takes a line_dict and creates the PDB-style line with the information contained in the dictionary.
         It returns "line", an object containing the string that was produced.
+
+        If the serial number has more than 5 digits (i.e >99.999) it will output ******
         """
+        #We make sure that all the entries are in string format
+        line_dict=line_operations.correct_dict_formatting(line_dict=line_dict)
+        if line_dict["resi_no"].isdigit():
+            if len(line_dict["resi_no"].strip())>=5:
+                line_dict["resi_no"]="*****"
+        if line_dict["serial_no"].isdigit():
+            if len(line_dict["serial_no"].strip())>=5:
+                line_dict["serial_no"]="*****"
         line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}    {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]}{line_dict["temp_fac"]}      {line_dict["segment"]} {line_dict["elem_symb"]}      '
         #line = f'{line_dict["atom"]}{line_dict["serial_no"]} {line_dict["atom_name"]} {line_dict["resname"]}{line_dict["chainID"]}{line_dict["resi_no"]}{line_dict["ins_code"]}   {line_dict["x_coord"]} {line_dict["y_coord"]} {line_dict["z_coord"]} {line_dict["occupancy"]} {line_dict["temp_fac"]}       {line_dict["segment"]} {line_dict["elem_symb"]}{line_dict["charge"]}\n'
         if len(line) > 82:
@@ -401,25 +636,62 @@ class operations():
         files.write_file(file=pdb_file_output, lines=lines_)
         return
 
-    def change_temp_factors(pdb_file, restraints_file):
+    def change_temp_factors(pdb_file, restraints_file, temp_dict=None, default="  1.00"):
         """
         operations.change_temp_factors() takes a pdb_file and a name for a restraints_file; then it
         creates a restraints file based on the specifications of CHARMM-GUIs NAMD constraint files.
-        H-atoms will recieve the temp_fac 0.00
-        All C-atoms but CA (C-alphas) will recieve temp_fac 0.50
-        All other atoms will recieve temp_fac 1.00.
+
+        The function takes a dictionary temp_dict that contains the atom names as keys and the temp_factors as values.
+        It also takes a default value to set to the other atoms.
+            
+            IMPORTANT: The temp_factors can overwrite each other. For example, if you set the temp_factor for "C" to 1.00 but
+            also set the temp_factor for "CA" to 0.50, then all atoms that start with "C" will have a temp_factor of 1.00 except
+            for the ones that start with "CA" which will have a temp_factor of 0.50. If "CA" is not in the dictionary then it will have the "C" value.
+        
+        Default settings are:
+            H-atoms will recieve the temp_fac 0.00
+            All C-atoms but CA (C-alphas) will recieve temp_fac 0.50
+            All other atoms will recieve temp_fac 1.00.
         """
         lines=files.read_file(pdb_file=pdb_file)
         lines_ = []
+        if temp_dict==None:
+            temp_dict={
+                "H": "  0.00",
+                "C": "  0.50",
+                "CA": "  1.00",
+            }
+        def convert_temp_fact(temp_fact, key=None):
+            """
+            Inner function to check and convert the temperature factor appropriately.
+            """
+            try:
+                temp_fact=float(temp_fact)
+            except:
+                raise ValueError(f"{key} temperature factor {temp_fact} is not a float. ")
+            temp_fact=f"{temp_fact:.2f}" .rjust(6, " ")
+            if len(temp_fact)>6:
+                raise ValueError(f"{key} temperature factor {temp_fact} is longer than 6 characters. ")
+            return temp_fact
+        
+        #First check that the temp factors are valid
+        for key in temp_dict.keys():
+            temp_dict[key]=convert_temp_fact(temp_fact=temp_dict[key], key=key)
+        default=convert_temp_fact(temp_fact=default, key="default")
+        #Sort the keys by length
+        ordered_keys=list(temp_dict.keys())
+        ordered_keys.sort(key=len)
+        
+
         for line in lines:
             line_dict=line_operations.read_pdb_line(line)
-            if line_dict["atom_name"].startswith("H"):
-                line_dict["temp_fac"] = "  0.00"
-            else:
-                if line_dict["atom_name"].startswith("C") and not line_dict["atom_name"].startswith("CA"):
-                    line_dict["temp_fac"] = "  0.50"
-                else:
-                    line_dict["temp_fac"] = "  1.00"
+            is_default=True
+            for key in ordered_keys:
+                if line_dict["atom_name"].startswith(key):
+                    line_dict["temp_fac"]=temp_dict[key]
+                    is_default=False
+            if is_default:
+                line_dict["temp_fac"]=default
             line_ = line_operations.create_line(line_dict=line_dict)
             lines_.append(line_)
             if line.startswith("TER"):
