@@ -111,6 +111,21 @@ class TestLineOperations(unittest.TestCase, LineOperations):
         self.assertEqual(new_segment, "1", f"The new segment {new_segment} is not the desired 1.")
         #Can we rename the variables here so that we do not mix up chainID and segment? JJ
 
+    def test_read_write_other_formats(self):
+        """"
+        Tests to see if the read->write process is correct for the other formats.
+        """
+        
+        testline=self.test_line
+        lo=self.Line_operations
+        self.assertEqual(lo.create_line_numpy(lo.read_pdb_line_numpy(testline)), testline,
+                          "The read->write process changes the line when done in numpy format.")
+        self.assertEqual(lo.create_line_pandas(lo.read_pdb_line_pandas(testline)), testline,
+                            "The read->write process changes the line when done in pandas format.")
+        self.assertEqual(lo.create_line_pickle(lo.read_pdb_line_pickle(testline)), testline,
+                            "The read->write process changes the line when done in pickle format.")
+        self.assertEqual(lo.create_line_json(lo.read_pdb_line_json(testline)), testline,
+                            "The read->write process changes the line when done in json format.")
 class general_fill_function(ABC):
     """
     List of attributes:

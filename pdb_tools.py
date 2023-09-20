@@ -1,5 +1,9 @@
 import itertools
-
+import numpy as np
+import pandas as pd
+import pickle as pkl
+import Bio.PDB as PDB
+import json
 class files():
     def __init__(self):
         return self
@@ -165,6 +169,142 @@ class line_operations():
             raise ValueError("chainID value given is longer than 1. ")
         line_dict["chainID"] = chainID
         return line_dict
+    
+    def read_pdb_line_numpy(line):
+        """
+        line_operations.read_pdb_line_numpy() takes a line from a .pdb file and returns a numpy array containing the information
+        contained in the line.
+        """
+        dictline=line_operations.read_pdb_line(line)
+        return np.array(list(dictline.values()))
+    
+    def read_pdb_line_pandas(line):
+        """
+        line_operations.read_pdb_line_pandas() takes a line from a .pdb file and returns a pandas dataframe containing the information
+        contained in the line.
+        """
+        dictline=line_operations.read_pdb_line(line)
+        return pd.DataFrame(dictline, index=[0])
+    
+    def read_pdb_line_pickle(line):
+        """
+        line_operations.read_pdb_line_pickle() takes a line from a .pdb file and returns a pickle containing the information
+        contained in the line.
+        """
+        dictline=line_operations.read_pdb_line(line)
+        return pkl.dumps(dictline)
+    
+    def read_pdb_line_json(line):
+        """
+        line_operations.read_pdb_line_json() takes a line from a .pdb file and returns a json containing the information
+        contained in the line.
+        """
+        dictline=line_operations.read_pdb_line(line)
+        return json.dumps(dictline)
+    
+    #I am not sure about BIO suppport it is not ready.
+    # def read_pdb_line_BIO(line):
+    #     """
+    #     line_operations.read_pdb_line_BIO() takes a line from a .pdb file and returns a BioPython Atom object containing the information
+    #     contained in the line.
+    #     """
+    #     dictline=line_operations.read_pdb_line(line)
+    #     chain=PDB.Chain.Chain(dictline["chainID"])
+    #     residue=PDB.Residue.Residue(dictline["residue_name"],
+    #                                 dictline["resi_no"],"")
+    #     atom=PDB.Atom.Atom(dictline["atom_name"].strip(),
+    #           (float(dictline["x_coord"]),float(dictline["y_coord"]),float(dictline["z_coord"])),
+    #           float(dictline["temp_factor"]),
+    #           float(dictline["occupancy"]),
+    #           float(dictline["alt_loc"]),
+    #           dictline["atom_name"],
+    #           dictline["serial_no"],
+    #           dictline["elem_symb"],
+    #           dictline["charge"],
+    #         )
+    #     return atom
+    
+    def create_empty_line_dict():
+        """
+        line_operations.create_empty_line_dict() creates an empty line_dict and returns it.
+        """
+        line_dict={
+                "atom": "ATOM  ",
+                "serial_no": "",
+                "atom_name": "",
+                "resname": "",
+                "chainID": "",
+                "resi_no": "",
+                "ins_code": "",
+                "x_coord": "",
+                "y_coord": "",
+                "z_coord": "",
+                "occupancy": "",
+                "temp_fac": "",
+                "segment": "",
+                "elem_symb": "",
+                "charge": "",
+                  }
+        return line_dict
+    
+    def create_line_numpy(line_numpy):
+        """
+        line_operations.write_pdb_line_numpy() takes a numpy array containing the information of a .pdb file line and returns a string
+        containing the information of a .pdb file line.
+        """
+        line_dict=line_operations.create_empty_line_dict()
+        for index,key in enumerate(line_dict.keys()):
+            line_dict[key]=line_numpy[index]
+        return line_operations.create_line(line_dict)
+    
+    def create_line_pandas(line_pandas):
+        """
+        line_operations.write_pdb_line_pandas() takes a pandas dataframe containing the information of a .pdb file line and returns a string
+        containing the information of a .pdb file line.
+        """
+        line_dict=line_operations.create_empty_line_dict()
+        for key in line_dict.keys():
+            line_dict[key]=line_pandas[key].values[0]
+        return line_operations.create_line(line_dict)
+    
+    def create_line_pickle(line_pickle):
+        """
+        line_operations.write_pdb_line_pickle() takes a pickle containing the information of a .pdb file line and returns a string
+        containing the information of a .pdb file line.
+        """
+        line_dict=pkl.loads(line_pickle)
+        return line_operations.create_line(line_dict)
+    
+    def create_line_json(line_json):
+        """
+        line_operations.write_pdb_line_json() takes a json containing the information of a .pdb file line and returns a string
+        """
+        line_dict=json.loads(line_json)
+        return line_operations.create_line(line_dict)
+    
+    #I am not sure about BIO suppport it is not ready.
+    # def create_line_BIO(line_BIO):
+    #     """
+    #     line_operations.write_pdb_line_BIO() takes a BioPython Atom object containing the information of a .pdb file line and returns a string
+    #     """
+    #     line_dict=line_operations.create_empty_line_dict()
+    #     line_dict["atom"]=line_BIO.get_id()
+    #     line_dict["serial_no"]=line_BIO.get_serial_number()
+    #     line_dict["atom_name"]=line_BIO.get_name()
+    #     line_dict["resname"]=line_BIO.get_parent().get_resname()
+    #     line_dict["chainID"]=line_BIO.get_parent().get_parent().get_id()
+    #     line_dict["resi_no"]=line_BIO.get_parent().get_id()[1]
+    #     line_dict["ins_code"]=line_BIO.get_parent().get_id()[2]
+    #     line_dict["x_coord"]=line_BIO.get_coord()[0]
+    #     line_dict["y_coord"]=line_BIO.get_coord()[1]
+    #     line_dict["z_coord"]=line_BIO.get_coord()[2]
+    #     line_dict["occupancy"]=line_BIO.get_occupancy()
+    #     line_dict["temp_fac"]=line_BIO.get_bfactor()
+    #     line_dict["segment"]=line_BIO.get_parent().get_parent().get_parent().get_id()
+    #     line_dict["elem_symbol"]=line_BIO.element
+    #     line_dict["charge"]=line_BIO.charge
+
+    #     return line_operations.create_line(line_dict)
 
 class operations():
     def __init__(self):
