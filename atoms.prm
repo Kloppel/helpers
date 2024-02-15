@@ -1,0 +1,86 @@
+MASS  -1  CGCPY1    12.01100   ! analogy to CA / allow for BV ring A
+MASS  -1  CGCPY2    12.01100   ! analogy to CPM / allow for BV methine bridge ring C-D
+MASS  -1  CGCPY3    12.01100   ! analogy to CPM / allow for BV methine bridge ring A-B
+MASS  -1  CGCPY4    12.01100   ! analogy to CPM / allow for BV ring C
+MASS  -1  CGCPY5    12.01100   ! analogy to CA / allow for BV ring D
+MASS  -1  CGCPY6    12.01100   ! analogy to CA / allow for BV ring D
+MASS  -1  CG1T2     12.01100   ! terminal alkyne H-C#C
+MASS  -1  CG1N1     12.01100   ! C for cyano group
+MASS  -1  CG2D1     12.01100   ! alkene; RHC= ; imine C
+MASS  -1  CG2D2     12.01100   ! alkene; H2C=
+MASS  -1  CG2D1O    12.01100   ! double bond carbon adjacent to heteroatom. In conjugated systems, the atom to which it is double bonded must be CG2DC1.
+MASS  -1  CG2D2O    12.01100   ! double bond carbon adjacent to heteroatom. In conjugated systems, the atom to which it is double bonded must be CG2DC2.
+MASS  -1  CG2DC1    12.01100   ! conjugated alkenes, R2C=CR2
+MASS  -1  CG2DC2    12.01100   ! conjugated alkenes, R2C=CR2
+MASS  -1  CG2DC3    12.01100   ! conjugated alkenes, H2C=
+MASS  -1  CG2N1     12.01100   ! conjugated C in guanidine/guanidinium
+MASS  -1  CG2N2     12.01100   ! conjugated C in amidinium cation
+MASS  -1  CG2O1     12.01100   ! carbonyl C: amides
+MASS  -1  CG2O2     12.01100   ! carbonyl C: esters, [neutral] carboxylic acids
+MASS  -1  CG2O3     12.01100   ! carbonyl C: [negative] carboxylates
+MASS  -1  CG2O4     12.01100   ! carbonyl C: aldehydes
+MASS  -1  CG2O5     12.01100   ! carbonyl C: ketones
+MASS  -1  CG2O6     12.01100   ! carbonyl C: urea, carbonate
+MASS  -1  CG2O7     12.01100   ! CO2 carbon
+MASS  -1  CG2R51    12.01100   ! 5-mem ring, his CG, CD2(0), trp
+MASS  -1  CG2R52    12.01100   ! 5-mem ring, double bound to N, PYRZ, pyrazole
+MASS  -1  CG2R53    12.01100   ! 5-mem ring, double bound to N and adjacent to another heteroatom, purine C8, his CE1 (0,+1), 2PDO, kevo
+MASS  -1  CG2R57    12.01100   ! 5-mem ring, bipyrroles
+MASS  -1  CG25C1    12.01100   ! same as CG2DC1 but in 5-membered ring with exocyclic double bond
+MASS  -1  CG25C2    12.01100   ! same as CG2DC2 but in 5-membered ring with exocyclic double bond
+MASS  -1  CG251O    12.01100   ! same as CG2D1O but in 5-membered ring with exocyclic double bond
+MASS  -1  CG252O    12.01100   ! same as CG2D2O but in 5-membered ring with exocyclic double bond
+MASS  -1  CG2R61    12.01100   ! 6-mem aromatic C
+MASS  -1  CG2R62    12.01100   ! 6-mem aromatic C for protonated pyridine (NIC) and rings containing carbonyls (see CG2R63) (NA)
+MASS  -1  CG2R63    12.01100   ! 6-mem aromatic amide carbon (NA) (and other 6-mem aromatic carbonyls?)
+MASS  -1  CG3C51    12.01100   ! 5-mem ring aliphatic CH  (proline CA, furanoses)
+MASS  -1  CG2R64    12.01100   ! 6-mem aromatic amidine and guanidine carbon (between 2 or 3 Ns and double-bound to one of them), NA, PYRM
+MASS  -1  CG2R66    12.01100   ! 6-mem aromatic carbon bound to F
+MASS  -1  CG2R67    12.01100   ! 6-mem aromatic carbon of biphenyl
+MASS  -1  CG2RC0    12.01100   ! 6/5-mem ring bridging C, guanine C4,C5, trp
+MASS  -1  CG2R71    12.01100   ! 7-mem ring arom C, AZUL, azulene, kevo
+MASS  -1  CG2RC7    12.01100   ! sp2 ring connection with single bond(!), AZUL, azulene, kevo
+MASS  -1  CG321     12.01100   ! aliphatic C for CH2
+MASS  -1  CG323     12.01100   ! aliphatic C for CH2, thiolate carbon
+MASS  -1  CG324     12.01100   ! aliphatic C for CH2, adjacent to positive N (piperidine) (+)
+MASS  -1  CG331     12.01100   ! aliphatic C for methyl group (-CH3)
+MASS  -1  CG334     12.01100   ! aliphatic C for methyl group (-CH3), adjacent to positive N (PROT NTER) (+)
+MASS  -1  CG3AM1    12.01100   ! aliphatic C for CH3, NEUTRAL dimethylamine methyl carbon (#)
+MASS  -1  CG3AM2    12.01100   ! aliphatic C for CH3, NEUTRAL methylamine methyl carbon (#)
+MASS  -1  CG311     12.01100   ! aliphatic C with 1 H, CH
+MASS  -1  HGA1       1.00800   ! alphatic proton, CH
+MASS  -1  HGA2       1.00800   ! alphatic proton, CH2
+MASS  -1  HGA3       1.00800   ! alphatic proton, CH3
+MASS  -1  HGA4       1.00800   ! alkene proton; RHC=
+MASS  -1  HGA5       1.00800   ! alkene proton; H2C=CR
+MASS  -1  HGP1       1.00800 ! polar H
+MASS  -1  NG2R50    14.00700   ! double bound neutral 5-mem planar ring, purine N7
+MASS  -1  NG2R51    14.00700   ! single bound neutral 5-mem planar (all atom types sp2) ring, his, trp pyrrole (fused)
+MASS  -1  NG2R52    14.00700   ! protonated schiff base, amidinium, guanidinium in 5-membered ring, HIS, 2HPP, kevo
+MASS  -1  NG2R53    14.00700   ! amide in 5-memebered NON-SP2 ring (slightly pyramidized), 2PDO, kevo
+MASS  -1  NG2R57    14.00700   ! 5-mem ring, bipyrroles
+MASS  -1  NG2R60    14.00700   ! double bound neutral 6-mem planar ring, pyr1, pyzn
+MASS  -1  NG2R61    14.00700   ! single bound neutral 6-mem planar ring imino nitrogen; glycosyl linkage
+MASS  -1  NG2R62    14.00700   ! double bound 6-mem planar ring with heteroatoms in o or m, pyrd, pyrm
+MASS  -1  NG2R67    14.00700   ! 6-mem planar ring substituted with 6-mem planar ring (N-phenyl pyridinones etc.)
+MASS  -1  NG321     14.00700   ! neutral methylamine nitrogen
+MASS  -1  HGPAM2     1.00800   ! polar H, NEUTRAL methylamine (#)
+MASS  -1  OG2D1     15.99940   ! carbonyl O: amides, esters, [neutral] carboxylic acids, aldehydes, uera
+MASS  -1  OG2D2     15.99940   ! carbonyl O: negative groups: carboxylates, carbonate
+MASS  -1  OG2D3     15.99940   ! carbonyl O: ketones
+MASS  -1  OG2D4     15.99940   ! 6-mem aromatic carbonyl oxygen (nucleic bases)
+MASS  -1  OG2D5     15.99940   ! CO2 oxygen
+MASS  -1  OG2N1     15.99940   ! NITB, nitrobenzene
+MASS  -1  OG2P1     15.99940   ! =O in phosphate or sulfate
+MASS  -1  OG2R50    15.99940   ! FURA, furan
+MASS  -1  OG3R60    15.99940   ! O in 6-mem cyclic enol ether (PY01, PY02) or ester
+MASS  -1  OG301     15.99940   ! ether -O- !SHOULD WE HAVE A SEPARATE ENOL ETHER??? IF YES, SHOULD WE MERGE IT WITH OG3R60???
+MASS  -1  OG302     15.99940   ! ester -O-
+MASS  -1  OG303     15.99940   ! phosphate/sulfate ester oxygen
+MASS  -1  OG304     15.99940   ! linkage oxygen in pyrophosphate/pyrosulphate
+MASS  -1  OG311     15.99940   ! hydroxyl oxygen
+MASS  -1  OG312     15.99940   ! ionized alcohol oxygen
+MASS  -1  OG3C31    15.99940   ! epoxide oxygen, 1EOX, 1BOX, sc
+MASS  -1  OG3C51    15.99940   ! 5-mem furanose ring oxygen (ether)
+MASS  -1  OG3C61    15.99940   ! DIOX, dioxane, ether in 6-membered ring !SHOULD WE MERGE THIS WITH OG3R60???
+MASS  -1  SG311     32.06000   ! sulphur, SH, -S-

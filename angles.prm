@@ -1,0 +1,147 @@
+CG2DC1   CG251O   CGCPY4   40.00    119.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53,   PENALTY=   6.5
+CGCPY4   CG251O   NG2R51   116.00   111.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   NG2R53,   PENALTY=   12
+CGCPY3   CG252O   NG2R53   40.00    130.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53,   PENALTY=   3.5
+CGCPY1   CG252O   CGCPY3   40.00    119.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53,   PENALTY=   9
+CG2R51   CGCPY4   CG321    45.80    130.00   !   PROT   his,   ADM   JR.,   7/22/89,   FC=>CT2CA   CA,BA=>   CRYSTALS
+CG251O   CGCPY4   CG2R51   100.00   116.50   !   bv-pfr-c   ,   from   CGCPY4   CGCPY4   CG2R53,   PENALTY=   3.5
+CGCPY4   CG2R51   CG251O   100.00   116.50   !   bv-pfr-c   ,   from   CGCPY4   CGCPY4   CG2R53,   PENALTY=   3.5
+CGCPY4   CG2R51   CG331    45.80    130.00   !   PROT   his,   ADM   JR.,   7/22/89,   FC=>CT2CA   CA,BA=>   CRYSTALS
+CGCPY2   CG251O   NG2R51   40.00    130.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53,   PENALTY=   12.5
+CGCPY2   CG251O   CG2R51   40.00    119.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53,   PENALTY=   6.5
+CGCPY6   CG2R51   NG2R51   130.00   106.00   !adm,dec06   110.6,   PROT   his,   ADM   JR.,   7/20/89
+CGCPY6   CG2R51   OG312    120.00   111.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   NG3P2,   PENALTY=   49
+CGCPY5   CG2R51   NG2R51   130.00   106.00   !adm,dec06   110.6,   PROT   his,   ADM   JR.,   7/20/89
+CGCPY2   CG2R51   NG2R51   35.00    124.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   NG2R51,   PENALTY=   29
+CGCPY2   CG2R51   CGCPY5   35.00    130.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51,   PENALTY=   29
+CG2R51   CGCPY5   CGCPY6   90.00    107.20   !   PYRL,   pyrrole
+CG2R51   CGCPY5   CG331    45.80    130.00   !   PROT   his,   ADM   JR.,   7/22/89,   FC=>CT2CA   CA,BA=>   CRYSTALS
+CGCPY6   CGCPY5   CG331    45.80    130.00   !   PROT   his,   ADM   JR.,   7/22/89,   FC=>CT2CA   CA,BA=>   CRYSTALS
+CG2R51   CGCPY6   CGCPY5   90.00    107.20   !   PYRL,   pyrrole
+CG2DC1   CGCPY6   CG2R51   35.00    130.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51,   PENALTY=   29
+CGCPY5   CGCPY6   CG2DC1   35.00    130.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51,   PENALTY=   29
+CG251O   CGCPY2   CG2R51   29.00    122.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61,   PENALTY=   34
+CG251O   CGCPY2   HGA4     42.00    119.00   !   bv-pfr-c   ,   from   CG2DC1   CG2DC1   HGA4,   PENALTY=   23.5
+CGCPY6   CG2DC1   HGA4     32.00    120.00   !   bv-pfr-c   ,   from   CG2R61   CG2DC1   HGA4,   PENALTY=   8.5
+CG2DC3   CG2DC1   CGCPY6   29.00    122.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61,   PENALTY=   8.5
+CGCPY5   CG331    HGA3     55.00    109.50   !   INDO/TRP
+CG2R51   CGCPY2   HGA4     32.00    120.00   !   bv-pfr-c   ,   from   CG2R61   CG2DC1   HGA4,   PENALTY=   8.5
+CG2DC2   CG252O   NG2R53   40.00    130.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53,   PENALTY=   3.5
+CG25C1   CG252O   CG2DC2   40.00    119.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53,   PENALTY=   9
+CG252O   CG2DC2   HGA4     42.00    119.00   !   bv-pfr-c   ,   from   CG2DC1   CG2DC1   HGA4,   PENALTY=   23.5
+CG252O   CG2DC2   CG2R51   29.00    122.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61,   PENALTY=   34
+CG2R51   CG2DC2   HGA4     32.00    120.00   !   bv-pfr-c   ,   from   CG2R61   CG2DC1   HGA4,   PENALTY=   8.5
+CG2DC2   CG2R51   NG2R51   35.00    124.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   NG2R51,   PENALTY=   29
+CG2DC2   CG2R51   CG2R51   35.00    130.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51,   PENALTY=   29
+CG251O   NG2R51   CG251O  130.00    107.50   !   bv-pfr-c   ,   from   CG2R51   NG2R51   CG2R53,   PENALTY=   7.5
+CG251O   CG2R51   CG321    45.80    130.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG321,   PENALTY=   4
+NG2R51   CG2R51   OG312    45.80    124.00   !   bv-pfr-c   ,   from   CG321   CG2R51   NG2R51,   PENALTY=   55
+CG2R51   CG2R51   OG312    120.00   111.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   NG3P2,   PENALTY=   49
+CGCPY4   CG321    CG321    58.35    114.00   !   INCA   model   for   D3R,   xxwy;   updated   to   match   yxu   par   in   na_rna_modified.prm
+CGCPY4   CG321    HGA2     55.00    109.50   !   INDO/TRP
+CGCPY1   CG2DC1   HGA4     42.00    119.00   !   bv-pfr-c   ,   from   CG2DC1   CG2DC1   HGA4,   PENALTY=   23.5
+CGCPY1   CG2DC1   CG321    48.00    123.50   !   ras-chim   ,   from   CG2DC1   CG2DC1   CG321,   penalty=   23.5
+CG252O   CGCPY1   CG2DC1   33.00    115.50   !   bv-pfr-c   ,   from   CG2DC3   CGCPY1   CG2R53,   PENALTY=   7
+CG2DC1   CGCPY1   CG3C51   40.00    130.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53,   PENALTY=   276
+CG252O   CGCPY1   CG3C51   115.00   109.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG3C52,   PENALTY=   78.4
+CGCPY1   CG3C51   CG2R53   45.00    108.00   !   bv-pfr-c   ,   from   CG2R51   CG3C52   CG2R53,   PENALTY=   6
+CGCPY1   CG3C51   HGA1     52.00    112.60   !   bv-pfr-c   ,   from   CG2R51   CG3C52   HGA2,   PENALTY=   6
+CGCPY1   CG3C51   CG331    45.00    103.00   !   bv-pfr-c   ,   from   CG2R53   CG3C50   CG321,   PENALTY=   12.4
+CG252O   CGCPY3   HGA4     42.00    119.00   !   bv-pfr-c   ,   from   CG2DC1   CG2DC1   HGA4,   PENALTY=   23.5
+CG252O   CGCPY3   CG2R51   29.00    122.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61,   PENALTY=   34
+CG2R51   CGCPY3   HGA4     32.00    120.00   !   bv-pfr-c   ,   from   CG2R61   CG2DC1   HGA4,   PENALTY=   8.5
+CGCPY3   CG2R51   NG2R51   35.00    124.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   NG2R51,   PENALTY=   29
+CGCPY3   CG2R51   CG2R51   35.00    130.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51,   PENALTY=   29
+CG2O2    OG2D1    HGP1     55.00    115.00 ! PROT adm jr. 5/02/91, acetic acid pure solvent
+CG2DC3   CG251O   CG2R51   60.00    127.95 ! RDV , from CG2DC3 CG251O CG2R53, penalty= 3,  equilibrium value MP2/6-31Gd
+CG2DC3   CG251O   NG2R51   40.00    130.00 ! RDV , from CG2DC3 CG251O NG2R53, penalty= 9
+CG2DC3   CG2DC1   CG2R51   29.00    122.00 ! RDV , from CG2DC3 CG2DC1 CG2R61, penalty= 8.5
+CG2R51   CG2DC1   HGA4     32.00    120.00 ! RDV , from CG2R61 CG2DC1 HGA4, penalty= 8.5
+CG251O   CG2R51   CG2R51  100.00    116.50 ! RDV , from CG2R51 CG2R51 CG2R53, penalty= 3.5
+CG251O   CG2R51   CG331    45.80    122.09 ! RDV , from CG2R51 CG2R51 CG331, penalty= 4,   equilibrium value MP2/6-31Gd
+CG2DC1   CG2R51   CG2R51   55.00    127.64 ! RDV , from CG2O1 CG2R51 CG2R51, penalty= 29,    equilibrium value MP2/6-31Gd
+CG2DC1   CG2R51   CG2R53   55.00    124.25 ! RDV , from CG2O1 CG2R51 CG2R51, penalty= 31.5,   equilibrium value MP2/6-31Gd
+CG2R51   CG2R53   NG2R51   50.00    107.00 ! RDV , from CG25C1 CG2R53 NG2R51, penalty= 1.5
+CG251O   NG2R51   CG2R53  130.00    112.15 ! RDV , from CG2R51 NG2R51 CG2R53, penalty= 4, equilibrium value MP2/6-31Gd
+CG2DC1   CG251O   CG2R51    40.00   130.97   !   RCD   ,   from   CG2DC3   CG251O   CG2R53,   penalty=   6.5
+CG2DC1   CG251O   NG2R51   250.00   122.70   !   RCD   ,   from   CG2DC3   CG251O   NG2R53,   penalty=   12.5
+CG2R51   CG251O   NG2R51   116.00   111.00   !   RCD   ,   from   CG2R53   CG251O   NG2R53,   penalty=   12
+CG251O   CG2DC1   CG2R51   170.00   124.84   !   RCD   ,   from   CG2DC3   CG2DC1   CG2R61,   penalty=   34
+CG251O   CG2DC1   HGA4      42.00   119.00   !   RCD   ,   from   CG2DC1   CG2DC1   HGA4,   penalty=   23.5
+CG2DC1   CG2R51   NG2R51    35.00   124.00   !   RCD   ,   from   CG2O1   CG2R51   NG2R51,   penalty=   29
+CG2R53   CG2R51   CG331     40.00   120.54   !   RCD   ,   from   CG2R52   CG2R51   CG321,   penalty=   1.9
+CG2DC1   CG251O   NG2R52  260.00   124.10   !   Z:\home\   ,   from   CG2DC3   CG251O   NG2R53,   penalty=   30.5
+CG2R51   CG251O   NG2R52  116.00   111.00   !   Z:\home\   ,   from   CG2R53   CG251O   NG2R53,   penalty=   30
+CG2R52   CG2R51   CG2R51  215.00   107.73   !   Z:\home\   ,   from   CG2O1   CG2R51   CG2R51,   penalty=   29
+CG2R52   CG2R51   CG331    20.00   130.00   !   Z:\home\   ,   from   CG2R52   CG2R51   CG321,   penalty=   0.9
+CG2R51   CG2R52   CG331    32.00   130.00   !   Z:\home\   ,   from   CG2R51   CG2R52   CG321,   penalty=   0.9
+CG331    CG2R52   NG2R52  125.80   122.10   !   Z:\home\   ,   from   CG321   CG2R51   NG2R52,   penalty=   5.9
+CG2R52   CG331    HGA3     55.00   109.50   !   Z:\home\   ,   from   CG2R53   CG331   HGA3,   penalty=   1
+CG251O   NG2R52   CG2R52  145.00   108.00   !   Z:\home\   ,   from   CG2R51   NG2R52   CG2R53,   penalty=   5
+CG25C1   CG252O   CG2DC3   40.00    129.52   !   ras-chim   ,   from   CG2DC3   CG251O   CG2R53,   penalty=   5.5
+CGCPY1   CG252O   NG2R53  116.00    111.00   !   ras-chim   ,   from   CG2R53   CG251O   NG2R53,   penalty=   5.5
+CG252O   CG25C1   CG2DC1   43.00    124.55   !   ras-chim   ,   from   CG2DC3   CG25C1   CG2R53,   penalty=   7
+CG252O   CG25C1   CG3C51  285.00    107.85   !   ras-chim   ,   from   CG2R51   CG2R51   CG3C52,   penalty=   78.4
+CG2DC1   CG25C1   CG3C51   40.00    130.00   !   ras-chim   ,   from   CG2DC3   CG251O   NG2R53,   penalty=   276
+CG25C1   CG2DC1   CG321    48.00    123.50   !   ras-chim   ,   from   CG2DC1   CG2DC1   CG321,   penalty=   23.5
+CG3C51   CG2R53   NG2R53  120.00    105.50   !   ras-chim   ,   from   CG3C52   CG2R53   NG2R53,   penalty=   0.4
+CG3C51   CG2R53   OG2D1    65.00    126.70   !   ras-chim   ,   from   CG3C52   CG2R53   OG2D1,   penalty=   0.4
+CG2O2    CG311    NG321   380.70    111.29   !   ras-chim   ,   from   CG2O2   CG321   NG321,   penalty=   4
+CG321    CG311    NG321    43.70    110.00   !   ras-chim   ,   from   CG321   CG321   NG311,   penalty=   5.2
+NG321    CG311    HGA1     32.40    113.49    50.00   2.14000   !   ras-chim   ,   from   NG321   CG321   HGA2,   penalty=   4
+CG2DC1   CG321    SG311    65.00    116.02   !   ras-chim   ,   from   CG2O4   CG321   CLGA1,   penalty=   44.6
+HGA2     CG321    SG311    65.00    106.42   !
+CG25C1   CG3C51   CG2R53   45.00    108.00   !   ras-chim   ,   from   CG2R51   CG3C52   CG2R53,   penalty=   6
+CG25C1   CG3C51   CG331    45.00    114.14   !   ras-chim   ,   from   CG2R53   CG3C50   CG321,   penalty=   12.4
+CG25C1   CG3C51   HGA1     52.00    112.60   !   ras-chim   ,   from   CG2R51   CG3C52   HGA2,   penalty=   6
+CG2R53   CG3C51   CG331    45.00    103.00   !   ras-chim   ,   from   CG2R53   CG3C50   CG321,   penalty=   6.9
+CG2R53   CG3C51   HGA1     58.00    111.00   !   ras-chim   ,   from   CG2R53   CG3C52   HGA2,   penalty=   4
+CG311    NG321    HGPAM2   41.00    109.32   !   ras-chim   ,   from   CG321   NG321   HGPAM2,   penalty=   0.6
+CG311    CG321    SG311   180.00    110.67   !  MP2/6-31Gd
+CG2O2    OG311    HGP1    55.000    115.00   ! ALLOW   ALC ARO PEP POL ! adm jr. 5/02/91, acetic acid pure solvent
+CG251O   NG2R51   HGP1     30.00    127.00   20.00   2.14000 ! RDV , from CG2R53 NG2R51 HGP1, penalty= 3.5
+CG321    CG2DC1   HGA4     40.00    116.00 ! RETINOL PROL
+NG2R53   CG2R53   OG2D1    65.00    127.80 ! 2PDO, 2-pyrrolidinone, kevo
+CG2R51   NG2R51   HGP1     30.00    125.50   20.00   2.15000 ! PROT his, adm jr., 6/27/90
+CG2R53   NG2R53   HGP1     38.00    119.50 ! 2PDO, 2-pyrrolidinone (H1-N1-C2), kevo
+CG251O   NG2R53   CG2R53  116.00    117.50 ! MHYO, 5-methylenehydantoin, xxwy
+CG252O   NG2R53   CG2R53   55.00    108.50 ! MRDN, methylidene rhodanine, kevo & xxwy
+CG252O   NG2R53   HGP1     38.00    123.00 ! MHYO, 5-methylenehydantoin, xxwy
+CG331    CG3C51   HGA1     34.60    110.10   22.53   2.179 ! TF2M viv
+CG2R51   NG2R51   CG2R51  100.00    109.00 ! PYRL, pyrrole
+CG2R51   CG2R51   NG2R51  130.00    106.00 !adm,dec06 110.6, PROT his, ADM JR., 7/20/89
+CG2R51   CG2R51   CG2R51   90.00    107.20 ! PYRL, pyrrole
+CG2R51   CG2R51   CG321    45.80    130.00 ! PROT his, ADM JR., 7/22/89, FC=>CT2CA CA,BA=> CRYSTALS
+CG2R51   CG2R51   CG331    45.80    130.00 ! PROT his, ADM JR., 7/22/89, FC=>CT2CA CA,BA=> CRYSTALS
+CG251O   CGCPY4   CG321    45.80    130.00   !   bv-pfr-c   ,   from   CGCPY4   CGCPY4   CG321,   PENALTY=   4
+CG2DC3   CG2DC1   HGA4     42.00    119.00 ! RAB , from CG2DC1 CG2DC1 HGA4, penalty= 23.5
+CG2DC1   CG2DC3   HGA5     45.00    120.50 ! RETINOL 13DB, 1,3-Butadiene
+HGA5     CG2DC3   HGA5     19.00    119.00 ! RETINOL 13DB, 1,3-Butadiene
+CG2DC1   CG321    HGA2     45.00    111.50 ! RETINOL BTE2, 2-butene
+HGA2     CG321    HGA2     35.50    109.00    5.40   1.802  ! PROT alkane update, adm jr., 3/2/92
+HGA3     CG331    HGA3     35.50    108.40    5.40   1.80200 ! PROT alkane update, adm jr., 3/2/92
+CG2R51   CG331    HGA3     55.00    109.50 ! INDO/TRP
+CG3C51   CG331    HGA3     34.60    110.10   22.53   2.179 ! TF2M viv
+CG2O2    CG321    HGA2     33.00    109.50   30.00   2.16300 ! PROT adm jr. 5/02/91, acetic acid pure solvent
+CG321    CG321    HGA2     26.50    110.10   22.53   2.17900 ! PROT alkane update, adm jr., 3/2/92
+CG2O2    CG321    CG321    52.00    108.00 ! LIPID alkane
+CG321    CG2O2    OG2D1    70.00    125.00   20.00   2.44200 ! PROT adm jr. 5/02/91, acetic acid pure solvent; LIPID methyl acetate
+CG321    CG2O2    OG311    55.00    110.50 ! PROT adm jr, 10/17/90, acetic acid vibrations
+OG2D1    CG2O2    OG311    50.00    123.00   210.00   2.26200 ! PROT adm jr, 10/17/90, acetic acid vibrations
+CG2R51   CG321    CG321    58.00    111.00 ! INCA model for D3R, xxwy
+CG2R51   CG321    HGA2     55.00    109.50 ! INDO/TRP
+CT1      C        NG321    80.000   116.5000 ! ALLOW   ALI PEP POL ARO
+NG321    C        O        80.000   122.5000 ! ALLOW   PEP POL ARO
+C        NG321    HGPAM2   34.000   123.0000 ! ALLOW   PEP POL ARO
+CG311    CG2O2    NH1      80.000   116.5000 ! ALLOW   ALI PEP POL ARO
+C        NG321    CG311    50.000   120.0000 ! ALLOW   ALI PEP POL ARO
+NH1      CG2O2    OG2D1    80.000   122.5000 ! ALLOW   PEP POL ARO
+CG2O2    NH1      H        34.000   123.0000 ! ALLOW   PEP POL ARO
+CG2O2    NH1      CT1      50.000   120.0000 ! ALLOW   ALI PEP POL ARO
+CG2O2    NH1      CT2      50.000   120.0000 ! ALLOW   ALI PEP POL ARO
+CG321    CG311    HGA1     34.50    110.10   22.53   2.17900 ! PROT alkane update, adm jr., 3/2/92
+CG2O2    CG311    HGA1     50.00    109.50 ! PROT adm jr. 5/02/91, acetic acid pure solvent
+CG2O2    CG311    CG321    52.00    108.00 ! PROT adm jr. 5/02/91, acetic acid pure solvent
+HGA2     CG321    HGA2     35.50    109.00    5.40   1.802  ! PROT alkane update, adm jr., 3/2/92
+CG311    CG321    HGA2     33.43    110.10   22.53   2.17900 ! PROT alkanes
+CG321    SG311    CG321    34.00     95.00 ! PROTNA sahc
+CG311    CG2O2    OG2D1    70.00    125.00   20.00   2.44200 ! PROT adm jr. 5/02/91, acetic acid pure solvent; LIPID methyl acetate
