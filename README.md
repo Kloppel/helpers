@@ -1,0 +1,1 @@
+# Develop BranchThe develop branch should be used for all new code that is not completely stable.# Develop vs. Main BranchCode that is fully implemented AND tested maturates by merging the developbranch into the main branch.By this, we guarantee only functional code resides in the main branch.
