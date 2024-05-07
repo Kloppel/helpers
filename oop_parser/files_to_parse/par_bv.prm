@@ -1,0 +1,884 @@
+*  --------------------------------------------------------------------------  *
+*>CHARMM22 All-Hydrogen Parameter File for Proteins and Lipids <<
+*>>>>> Includes phi, psi cross term map (CMAP) correction <<<<<<<
+*>>>>>>>>>>>>>>>>>>>>>>   July, 2003   <<<<<<<<<<<<<<<<<<<<<<<<<<
+* All comments to ADM jr. via the CHARMM web site: www.charmm.org
+*               parameter set discussion forum
+*
+
+ATOMS
+! added by Ronald
+MASS  -1  CGCPY1    12.01100   ! analogy to CA / allow for BV ring A
+MASS  -1  CGCPY2    12.01100   ! analogy to CPM / allow for BV methine bridge ring C-D
+MASS  -1  CGCPY3    12.01100   ! analogy to CPM / allow for BV methine bridge ring A-B
+MASS  -1  CGCPY4    12.01100   ! analogy to CPM / allow for BV ring C
+MASS  -1  CGCPY5    12.01100   ! analogy to CA / allow for BV ring D
+MASS  -1  CGCPY6    12.01100   ! analogy to CA / allow for BV ring D
+
+!carbons
+MASS  -1  CG1T2     12.01100   ! terminal alkyne H-C#C
+MASS  -1  CG1N1     12.01100   ! C for cyano group
+MASS  -1  CG2D1     12.01100   ! alkene; RHC= ; imine C
+MASS  -1  CG2D2     12.01100   ! alkene; H2C=
+MASS  -1  CG2D1O    12.01100   ! double bond carbon adjacent to heteroatom. In conjugated systems, the atom to which it is double bonded must be CG2DC1.
+MASS  -1  CG2D2O    12.01100   ! double bond carbon adjacent to heteroatom. In conjugated systems, the atom to which it is double bonded must be CG2DC2.
+MASS  -1  CG2DC1    12.01100   ! conjugated alkenes, R2C=CR2
+MASS  -1  CG2DC2    12.01100   ! conjugated alkenes, R2C=CR2
+MASS  -1  CG2DC3    12.01100   ! conjugated alkenes, H2C=
+MASS  -1  CG2N1     12.01100   ! conjugated C in guanidine/guanidinium
+MASS  -1  CG2N2     12.01100   ! conjugated C in amidinium cation
+MASS  -1  CG2O1     12.01100   ! carbonyl C: amides
+MASS  -1  CG2O2     12.01100   ! carbonyl C: esters, [neutral] carboxylic acids
+MASS  -1  CG2O3     12.01100   ! carbonyl C: [negative] carboxylates
+MASS  -1  CG2O4     12.01100   ! carbonyl C: aldehydes
+MASS  -1  CG2O5     12.01100   ! carbonyl C: ketones
+MASS  -1  CG2O6     12.01100   ! carbonyl C: urea, carbonate
+MASS  -1  CG2O7     12.01100   ! CO2 carbon
+MASS  -1  CG2R51    12.01100   ! 5-mem ring, his CG, CD2(0), trp
+MASS  -1  CG2R52    12.01100   ! 5-mem ring, double bound to N, PYRZ, pyrazole
+MASS  -1  CG2R53    12.01100   ! 5-mem ring, double bound to N and adjacent to another heteroatom, purine C8, his CE1 (0,+1), 2PDO, kevo
+MASS  -1  CG2R57    12.01100   ! 5-mem ring, bipyrroles
+MASS  -1  CG25C1    12.01100   ! same as CG2DC1 but in 5-membered ring with exocyclic double bond
+MASS  -1  CG25C2    12.01100   ! same as CG2DC2 but in 5-membered ring with exocyclic double bond
+MASS  -1  CG251O    12.01100   ! same as CG2D1O but in 5-membered ring with exocyclic double bond
+MASS  -1  CG252O    12.01100   ! same as CG2D2O but in 5-membered ring with exocyclic double bond
+MASS  -1  CG2R61    12.01100   ! 6-mem aromatic C
+MASS  -1  CG2R62    12.01100   ! 6-mem aromatic C for protonated pyridine (NIC) and rings containing carbonyls (see CG2R63) (NA)
+MASS  -1  CG2R63    12.01100   ! 6-mem aromatic amide carbon (NA) (and other 6-mem aromatic carbonyls?)
+MASS  -1  CG3C51    12.01100   ! 5-mem ring aliphatic CH  (proline CA, furanoses)
+MASS  -1  CG2R64    12.01100   ! 6-mem aromatic amidine and guanidine carbon (between 2 or 3 Ns and double-bound to one of them), NA, PYRM
+MASS  -1  CG2R66    12.01100   ! 6-mem aromatic carbon bound to F
+MASS  -1  CG2R67    12.01100   ! 6-mem aromatic carbon of biphenyl
+MASS  -1  CG2RC0    12.01100   ! 6/5-mem ring bridging C, guanine C4,C5, trp
+MASS  -1  CG2R71    12.01100   ! 7-mem ring arom C, AZUL, azulene, kevo
+MASS  -1  CG2RC7    12.01100   ! sp2 ring connection with single bond(!), AZUL, azulene, kevo
+MASS  -1  CG321     12.01100   ! aliphatic C for CH2
+MASS  -1  CG323     12.01100   ! aliphatic C for CH2, thiolate carbon
+MASS  -1  CG324     12.01100   ! aliphatic C for CH2, adjacent to positive N (piperidine) (+)
+MASS  -1  CG331     12.01100   ! aliphatic C for methyl group (-CH3)
+MASS  -1  CG334     12.01100   ! aliphatic C for methyl group (-CH3), adjacent to positive N (PROT NTER) (+)
+MASS  -1  CG3AM1    12.01100   ! aliphatic C for CH3, NEUTRAL dimethylamine methyl carbon (#)
+MASS  -1  CG3AM2    12.01100   ! aliphatic C for CH3, NEUTRAL methylamine methyl carbon (#)
+MASS  -1  CG311     12.01100   ! aliphatic C with 1 H, CH
+
+!hydrogens
+MASS  -1  HGA1       1.00800   ! alphatic proton, CH
+MASS  -1  HGA2       1.00800   ! alphatic proton, CH2
+MASS  -1  HGA3       1.00800   ! alphatic proton, CH3
+MASS  -1  HGA4       1.00800   ! alkene proton; RHC=
+MASS  -1  HGA5       1.00800   ! alkene proton; H2C=CR
+MASS  -1  HGP1       1.00800 ! polar H
+!nitrogens
+MASS  -1  NG2R50    14.00700   ! double bound neutral 5-mem planar ring, purine N7
+MASS  -1  NG2R51    14.00700   ! single bound neutral 5-mem planar (all atom types sp2) ring, his, trp pyrrole (fused)
+MASS  -1  NG2R52    14.00700   ! protonated schiff base, amidinium, guanidinium in 5-membered ring, HIS, 2HPP, kevo
+MASS  -1  NG2R53    14.00700   ! amide in 5-memebered NON-SP2 ring (slightly pyramidized), 2PDO, kevo
+MASS  -1  NG2R57    14.00700   ! 5-mem ring, bipyrroles
+MASS  -1  NG2R60    14.00700   ! double bound neutral 6-mem planar ring, pyr1, pyzn
+MASS  -1  NG2R61    14.00700   ! single bound neutral 6-mem planar ring imino nitrogen; glycosyl linkage
+MASS  -1  NG2R62    14.00700   ! double bound 6-mem planar ring with heteroatoms in o or m, pyrd, pyrm
+MASS  -1  NG2R67    14.00700   ! 6-mem planar ring substituted with 6-mem planar ring (N-phenyl pyridinones etc.)
+MASS  -1  NG321     14.00700   ! neutral methylamine nitrogen
+MASS  -1  HGPAM2     1.00800   ! polar H, NEUTRAL methylamine (#)
+
+!oxygens
+MASS  -1  OG2D1     15.99940   ! carbonyl O: amides, esters, [neutral] carboxylic acids, aldehydes, uera
+MASS  -1  OG2D2     15.99940   ! carbonyl O: negative groups: carboxylates, carbonate
+MASS  -1  OG2D3     15.99940   ! carbonyl O: ketones
+MASS  -1  OG2D4     15.99940   ! 6-mem aromatic carbonyl oxygen (nucleic bases)
+MASS  -1  OG2D5     15.99940   ! CO2 oxygen
+MASS  -1  OG2N1     15.99940   ! NITB, nitrobenzene
+MASS  -1  OG2P1     15.99940   ! =O in phosphate or sulfate
+MASS  -1  OG2R50    15.99940   ! FURA, furan
+MASS  -1  OG3R60    15.99940   ! O in 6-mem cyclic enol ether (PY01, PY02) or ester
+MASS  -1  OG301     15.99940   ! ether -O- !SHOULD WE HAVE A SEPARATE ENOL ETHER??? IF YES, SHOULD WE MERGE IT WITH OG3R60???
+MASS  -1  OG302     15.99940   ! ester -O-
+MASS  -1  OG303     15.99940   ! phosphate/sulfate ester oxygen
+MASS  -1  OG304     15.99940   ! linkage oxygen in pyrophosphate/pyrosulphate
+MASS  -1  OG311     15.99940   ! hydroxyl oxygen
+MASS  -1  OG312     15.99940   ! ionized alcohol oxygen
+MASS  -1  OG3C31    15.99940   ! epoxide oxygen, 1EOX, 1BOX, sc
+MASS  -1  OG3C51    15.99940   ! 5-mem furanose ring oxygen (ether)
+MASS  -1  OG3C61    15.99940   ! DIOX, dioxane, ether in 6-membered ring !SHOULD WE MERGE THIS WITH OG3R60???
+!sulphurs
+MASS  -1  SG311     32.06000   ! sulphur, SH, -S-
+
+! Patch for ring-a-cys
+!MASS  -1  C         12.01100 ! carbonyl C, peptide backbone
+!MASS  -1  CT1       12.01100 ! aliphatic sp3 C for CH
+!MASS  -1  O         15.99900 ! carbonyl oxygen
+!MASS  -1  H          1.00800 ! polar H
+!MASS  -1  NH1       14.00700 ! peptide nitrogen
+
+BONDS
+!-------------------------------------GCFF-bv----------------------------------------------------------
+CG2R51   OG312    525.00   1.2600   !   bv-pfr-c   ,   from   CG2R61   OG312,   PENALTY=   45
+CG252O   CG2DC2   570.00   1.3400   !   bv-pfr-c   ,   from   CG251O   CG2DC3,   PENALTY=   30
+CG252O   CGCPY3   570.00   1.3400   !   bv-pfr-c   ,   from   CG251O   CG2DC3,   PENALTY=   30
+CG2DC2   CG2R51   365.00   1.4500   !   bv-pfr-c   ,   from   CG2DC2   CG2R61,   PENALTY=   45
+CGCPY3   HGA4     360.50   1.1000   !   RETINOL   BTE2,   2-butene
+CGCPY3   CG2R51   365.00   1.4500   !   bv-pfr-c   ,   from   CG2DC2   CG2R61,   PENALTY=   45
+!---------------------------------Rings-C-D----------------------------------------------------
+CG251O   CGCPY2   570.00   1.3400   !   RCD   ,   from   CG251O   CG2DC3,   penalty=   30
+CG251O   CG2R51   255.00   1.4700   !   RCD   ,   from   CG252O   CG2R53,   penalty=   28
+CG251O   NG2R51   200.00   1.4100   !   RCD   ,   from   CG251O   NG2R53,   penalty=   60
+CGCPY2   CG2R51   365.00   1.4500   !   RCD   ,   from   CG2DC1   CG2R61,   penalty=   45
+CGCPY5   CGCPY6   220.00   1.3920   !   Bond   equilibrium   MP2/6-31Gd
+CG2R51   CGCPY5   220.00   1.3920   !   Bond   equilibrium   MP2/6-31Gd
+CG2R51   CGCPY6   220.00   1.3920   !   Bond   equilibrium   MP2/6-31Gd
+CGCPY2   HGA4     360.50   1.1000   !   RETINOL   BTE2,   2-butene
+CGCPY5   CG331    229.63   1.5000   !   PROT   his,   adm   jr.,   7/22/89,   FC   from   CT2CT,   BL   from   crystals
+CGCPY6   CG2DC1   365.00   1.4500   !   RCD   ,   from   CG2DC1   CG2R61,   penalty=   45
+!---------------------------------Rings-B-C--------------------------------------------------------
+CG251O   CG2DC1   570.00   1.3930   !   Z:\home\   ,   from   CG251O   CG2DC3,   penalty=   30
+CG251O   NG2R52   380.00   1.3920   !   Z:\home\   ,   from   CG2R53   NG2R52,   penalty=   64
+CG2R52   NG2R52   380.00   1.3630   !   Z:\home\   ,   from   CG2R53   NG2R52,   penalty=   64
+CG2DC1   CG2R51   365.00   1.3930   !   Z:\home\   ,   from   CG2DC1   CG2R61,   penalty=   45
+CG2R52   CG331    229.63   1.5000   !   Z:\home\   ,   from   CG2R51   CG331,   penalty=   5
+CGCPY4   CG321    229.63   1.5000   !   PROT   his,   adm   jr.,   7/22/89,   FC   from   CT2CT,   BL   from   crystals
+CG251O   CGCPY4   755.00   1.4250   !   Z:\home\   ,   from   CG252O   CG2R53,   penalty=   28
+CGCPY4   CG2R51  1550.00   1.3980   !   Bond   equilibrium   MP2/6-31Gd
+!---------------------------------Ring-A-Cys-------------------------------------------------------
+CG252O   CGCPY1   255.00   1.4800   !   ras-chim   ,   from   CG251O   CG2R53,   penalty=   64
+CGCPY1   CG2DC1   500.00   1.3420   !   ras-chim   ,   from   CG25C1   CG2DC3,   penalty=   30
+CGCPY1   CG3C51   300.00   1.5100   !   ras-chim   ,   from   CG2R53   CG3C52,   penalty=   68
+CG2R53   CG3C51   550.00   1.5250   !   ras-chim   ,   from   CG2R53   CG3C52,   penalty=   4
+CG311    NG321    900.00   1.4570   !   ras-chim   ,   from   CG321   NG321,   penalty=   4
+CG311    CG321    900.00   1.5260   !   ras-chim   ,   from   CG321   NG321,   penalty=   4
+SG311    CG321    500.00   1.8260   !   ras-chim   ,   from   CG321   NG321,   penalty=   4
+CG311    CG2O2    800.00   1.5140   !   ras-chim   ,   from   CG321   NG321,   penalty=   4
+OG311    CG2O2    800.00   1.3550   !   ras-chim   ,   from   CG321   NG321,   penalty=   4
+!C        NG321    370.000  1.3450 ! ALLOW   PEP POL ARO
+                ! Alanine Dipeptide ab initio calc's (LK)
+!CG2O2    NH1       370.000     1.3450 ! ALLOW   PEP POL ARO
+                ! Alanine Dipeptide ab initio calc's (LK)
+OG311    HGP1    545.00     0.9600 ! PROT EMB 11/21/89 methanol vib fit; og tested on MeOH EtOH,...
+CG2DC1   HGA4    360.50     1.1000 ! RETINOL BTE2, 2-butene
+NG2R51   HGP1    474.00     1.0100 ! NA G, adm jr. 11/97
+CG2R51   CG331   229.63     1.5000 ! PROT his, adm jr., 7/22/89, FC from CT2CT, BL from crystals
+CG331    HGA3    322.00     1.1110 ! PROT alkane update, adm jr., 3/2/92
+CG321    HGA2    309.00     1.1110 ! PROT alkane update, adm jr., 3/2/92
+CG321    CG321   222.50     1.5300 ! PROT alkane update, adm jr., 3/2/92
+CG2O2    CG321   200.00     1.5220 ! PROT adm jr. 5/02/91, acetic acid pure solvent
+CG2O2    OG2D1   750.00     1.2200 ! PROT adm jr. 5/02/91, acetic acid pure solvent; LIPID methyl acetate
+CG2R51   NG2R51  400.00     1.3800 ! PROT his, ADM JR., 7/20/89
+CG2DC1   CG2DC3  500.00     1.3420 ! RETINOL 13DB, Butadiene
+CG2DC3   HGA5    365.00     1.1000 ! RETINOL BTE2, 2-butene
+NG2R53   HGP1    470.00     1.0150 !470 440 *NEW* 2PDO, 2-pyrrolidinone, kevo
+CG2R53   NG2R53  460.00     1.3800 !460 370 *NEW* 2PDO, 2-pyrrolidinone, kevo
+CG252O   NG2R53  200.00     1.4100 ! MHYO, 5-methylenehydantoin, xxwy
+CG2R53   OG2D1   570.00     1.2350 !560 620 *NEW* 2PDO, 2-pyrrolidinone, kevo
+CG331    CG3C51  222.50     1.5280 ! TF2M, viv
+CG3C51   HGA1    307.00     1.1000 ! THF, THF neutron diffr., 5/30/06, viv
+CG2DC1   CG321   365.00     1.5020 ! RETINOL MECH
+CG2R51   CG2R51  410.00     1.3600 ! PROT histidine, adm jr., 6/27/90
+CG2R51   CG321   229.63     1.5000 ! PROT his, adm jr., 7/22/89, FC from CT2CT, BL from crystals
+C        NG321   370.000    1.3450 ! ALLOW   PEP POL ARO
+NG321    HGPAM2  453.10     1.0140 ! AMINE aliphatic amines
+CG2O2    NH1     370.000    1.3450 ! ALLOW   PEP POL ARO
+CG311    HGA1    309.00     1.1110 ! PROT alkane update, adm jr., 3/2/92
+
+
+ANGLES
+!-----------------------------GCFFbv´
+CG2DC1   CG251O   CGCPY4   40.00    119.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53,   PENALTY=   6.5
+CGCPY4   CG251O   NG2R51   116.00   111.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   NG2R53,   PENALTY=   12
+CGCPY3   CG252O   NG2R53   40.00    130.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53,   PENALTY=   3.5
+CGCPY1   CG252O   CGCPY3   40.00    119.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53,   PENALTY=   9
+CG2R51   CGCPY4   CG321    45.80    130.00   !   PROT   his,   ADM   JR.,   7/22/89,   FC=>CT2CA   CA,BA=>   CRYSTALS
+CG251O   CGCPY4   CG2R51   100.00   116.50   !   bv-pfr-c   ,   from   CGCPY4   CGCPY4   CG2R53,   PENALTY=   3.5
+CGCPY4   CG2R51   CG251O   100.00   116.50   !   bv-pfr-c   ,   from   CGCPY4   CGCPY4   CG2R53,   PENALTY=   3.5
+CGCPY4   CG2R51   CG331    45.80    130.00   !   PROT   his,   ADM   JR.,   7/22/89,   FC=>CT2CA   CA,BA=>   CRYSTALS
+CGCPY2   CG251O   NG2R51   40.00    130.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53,   PENALTY=   12.5
+CGCPY2   CG251O   CG2R51   40.00    119.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53,   PENALTY=   6.5
+CGCPY6   CG2R51   NG2R51   130.00   106.00   !adm,dec06   110.6,   PROT   his,   ADM   JR.,   7/20/89
+CGCPY6   CG2R51   OG312    120.00   111.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   NG3P2,   PENALTY=   49
+CGCPY5   CG2R51   NG2R51   130.00   106.00   !adm,dec06   110.6,   PROT   his,   ADM   JR.,   7/20/89
+CGCPY2   CG2R51   NG2R51   35.00    124.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   NG2R51,   PENALTY=   29
+CGCPY2   CG2R51   CGCPY5   35.00    130.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51,   PENALTY=   29
+CG2R51   CGCPY5   CGCPY6   90.00    107.20   !   PYRL,   pyrrole
+CG2R51   CGCPY5   CG331    45.80    130.00   !   PROT   his,   ADM   JR.,   7/22/89,   FC=>CT2CA   CA,BA=>   CRYSTALS
+CGCPY6   CGCPY5   CG331    45.80    130.00   !   PROT   his,   ADM   JR.,   7/22/89,   FC=>CT2CA   CA,BA=>   CRYSTALS
+CG2R51   CGCPY6   CGCPY5   90.00    107.20   !   PYRL,   pyrrole
+CG2DC1   CGCPY6   CG2R51   35.00    130.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51,   PENALTY=   29
+CGCPY5   CGCPY6   CG2DC1   35.00    130.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51,   PENALTY=   29
+CG251O   CGCPY2   CG2R51   29.00    122.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61,   PENALTY=   34
+CG251O   CGCPY2   HGA4     42.00    119.00   !   bv-pfr-c   ,   from   CG2DC1   CG2DC1   HGA4,   PENALTY=   23.5
+CGCPY6   CG2DC1   HGA4     32.00    120.00   !   bv-pfr-c   ,   from   CG2R61   CG2DC1   HGA4,   PENALTY=   8.5
+CG2DC3   CG2DC1   CGCPY6   29.00    122.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61,   PENALTY=   8.5
+CGCPY5   CG331    HGA3     55.00    109.50   !   INDO/TRP
+CG2R51   CGCPY2   HGA4     32.00    120.00   !   bv-pfr-c   ,   from   CG2R61   CG2DC1   HGA4,   PENALTY=   8.5
+CG2DC2   CG252O   NG2R53   40.00    130.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53,   PENALTY=   3.5
+CG25C1   CG252O   CG2DC2   40.00    119.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53,   PENALTY=   9
+CG252O   CG2DC2   HGA4     42.00    119.00   !   bv-pfr-c   ,   from   CG2DC1   CG2DC1   HGA4,   PENALTY=   23.5
+CG252O   CG2DC2   CG2R51   29.00    122.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61,   PENALTY=   34
+CG2R51   CG2DC2   HGA4     32.00    120.00   !   bv-pfr-c   ,   from   CG2R61   CG2DC1   HGA4,   PENALTY=   8.5
+CG2DC2   CG2R51   NG2R51   35.00    124.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   NG2R51,   PENALTY=   29
+CG2DC2   CG2R51   CG2R51   35.00    130.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51,   PENALTY=   29
+CG251O   NG2R51   CG251O  130.00    107.50   !   bv-pfr-c   ,   from   CG2R51   NG2R51   CG2R53,   PENALTY=   7.5
+CG251O   CG2R51   CG321    45.80    130.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG321,   PENALTY=   4
+NG2R51   CG2R51   OG312    45.80    124.00   !   bv-pfr-c   ,   from   CG321   CG2R51   NG2R51,   PENALTY=   55
+CG2R51   CG2R51   OG312    120.00   111.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   NG3P2,   PENALTY=   49
+CGCPY4   CG321    CG321    58.35    114.00   !   INCA   model   for   D3R,   xxwy;   updated   to   match   yxu   par   in   na_rna_modified.prm
+CGCPY4   CG321    HGA2     55.00    109.50   !   INDO/TRP
+CGCPY1   CG2DC1   HGA4     42.00    119.00   !   bv-pfr-c   ,   from   CG2DC1   CG2DC1   HGA4,   PENALTY=   23.5
+CGCPY1   CG2DC1   CG321    48.00    123.50   !   ras-chim   ,   from   CG2DC1   CG2DC1   CG321,   penalty=   23.5
+CG252O   CGCPY1   CG2DC1   33.00    115.50   !   bv-pfr-c   ,   from   CG2DC3   CGCPY1   CG2R53,   PENALTY=   7
+CG2DC1   CGCPY1   CG3C51   40.00    130.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53,   PENALTY=   276
+CG252O   CGCPY1   CG3C51   115.00   109.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG3C52,   PENALTY=   78.4
+CGCPY1   CG3C51   CG2R53   45.00    108.00   !   bv-pfr-c   ,   from   CG2R51   CG3C52   CG2R53,   PENALTY=   6
+CGCPY1   CG3C51   HGA1     52.00    112.60   !   bv-pfr-c   ,   from   CG2R51   CG3C52   HGA2,   PENALTY=   6
+CGCPY1   CG3C51   CG331    45.00    103.00   !   bv-pfr-c   ,   from   CG2R53   CG3C50   CG321,   PENALTY=   12.4
+CG252O   CGCPY3   HGA4     42.00    119.00   !   bv-pfr-c   ,   from   CG2DC1   CG2DC1   HGA4,   PENALTY=   23.5
+CG252O   CGCPY3   CG2R51   29.00    122.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61,   PENALTY=   34
+CG2R51   CGCPY3   HGA4     32.00    120.00   !   bv-pfr-c   ,   from   CG2R61   CG2DC1   HGA4,   PENALTY=   8.5
+CGCPY3   CG2R51   NG2R51   35.00    124.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   NG2R51,   PENALTY=   29
+CGCPY3   CG2R51   CG2R51   35.00    130.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51,   PENALTY=   29
+CG2O2    OG2D1    HGP1     55.00    115.00 ! PROT adm jr. 5/02/91, acetic acid pure solvent
+!---------------------------------Ring-D-------------------------------------------------------------------------
+CG2DC3   CG251O   CG2R51   60.00    127.95 ! RDV , from CG2DC3 CG251O CG2R53, penalty= 3,  equilibrium value MP2/6-31Gd
+CG2DC3   CG251O   NG2R51   40.00    130.00 ! RDV , from CG2DC3 CG251O NG2R53, penalty= 9
+CG2DC3   CG2DC1   CG2R51   29.00    122.00 ! RDV , from CG2DC3 CG2DC1 CG2R61, penalty= 8.5
+CG2R51   CG2DC1   HGA4     32.00    120.00 ! RDV , from CG2R61 CG2DC1 HGA4, penalty= 8.5
+CG251O   CG2R51   CG2R51  100.00    116.50 ! RDV , from CG2R51 CG2R51 CG2R53, penalty= 3.5
+CG251O   CG2R51   CG331    45.80    122.09 ! RDV , from CG2R51 CG2R51 CG331, penalty= 4,   equilibrium value MP2/6-31Gd
+CG2DC1   CG2R51   CG2R51   55.00    127.64 ! RDV , from CG2O1 CG2R51 CG2R51, penalty= 29,    equilibrium value MP2/6-31Gd
+CG2DC1   CG2R51   CG2R53   55.00    124.25 ! RDV , from CG2O1 CG2R51 CG2R51, penalty= 31.5,   equilibrium value MP2/6-31Gd
+CG2R51   CG2R53   NG2R51   50.00    107.00 ! RDV , from CG25C1 CG2R53 NG2R51, penalty= 1.5
+CG251O   NG2R51   CG2R53  130.00    112.15 ! RDV , from CG2R51 NG2R51 CG2R53, penalty= 4, equilibrium value MP2/6-31Gd
+!---------------------------------Rings-C-D------------------------------------------------------------------------
+CG2DC1   CG251O   CG2R51    40.00   130.97   !   RCD   ,   from   CG2DC3   CG251O   CG2R53,   penalty=   6.5
+CG2DC1   CG251O   NG2R51   250.00   122.70   !   RCD   ,   from   CG2DC3   CG251O   NG2R53,   penalty=   12.5
+CG2R51   CG251O   NG2R51   116.00   111.00   !   RCD   ,   from   CG2R53   CG251O   NG2R53,   penalty=   12
+CG251O   CG2DC1   CG2R51   170.00   124.84   !   RCD   ,   from   CG2DC3   CG2DC1   CG2R61,   penalty=   34
+CG251O   CG2DC1   HGA4      42.00   119.00   !   RCD   ,   from   CG2DC1   CG2DC1   HGA4,   penalty=   23.5
+CG2DC1   CG2R51   NG2R51    35.00   124.00   !   RCD   ,   from   CG2O1   CG2R51   NG2R51,   penalty=   29
+CG2R53   CG2R51   CG331     40.00   120.54   !   RCD   ,   from   CG2R52   CG2R51   CG321,   penalty=   1.9
+!---------------------------------Rings-B-C------------------------------------------------------------------------
+CG2DC1   CG251O   NG2R52  260.00   124.10   !   Z:\home\   ,   from   CG2DC3   CG251O   NG2R53,   penalty=   30.5
+CG2R51   CG251O   NG2R52  116.00   111.00   !   Z:\home\   ,   from   CG2R53   CG251O   NG2R53,   penalty=   30
+CG2R52   CG2R51   CG2R51  215.00   107.73   !   Z:\home\   ,   from   CG2O1   CG2R51   CG2R51,   penalty=   29
+CG2R52   CG2R51   CG331    20.00   130.00   !   Z:\home\   ,   from   CG2R52   CG2R51   CG321,   penalty=   0.9
+CG2R51   CG2R52   CG331    32.00   130.00   !   Z:\home\   ,   from   CG2R51   CG2R52   CG321,   penalty=   0.9
+CG331    CG2R52   NG2R52  125.80   122.10   !   Z:\home\   ,   from   CG321   CG2R51   NG2R52,   penalty=   5.9
+CG2R52   CG331    HGA3     55.00   109.50   !   Z:\home\   ,   from   CG2R53   CG331   HGA3,   penalty=   1
+CG251O   NG2R52   CG2R52  145.00   108.00   !   Z:\home\   ,   from   CG2R51   NG2R52   CG2R53,   penalty=   5
+
+!---------------------------------Ring-A-Cys-------------------------------------------------------
+CG25C1   CG252O   CG2DC3   40.00    129.52   !   ras-chim   ,   from   CG2DC3   CG251O   CG2R53,   penalty=   5.5
+!CG25C1   CG252O   NG2R53  116.00    111.00   !   ras-chim   ,   from   CG2R53   CG251O   NG2R53,   penalty=   5.5
+CGCPY1   CG252O   NG2R53  116.00    111.00   !   ras-chim   ,   from   CG2R53   CG251O   NG2R53,   penalty=   5.5
+CG252O   CG25C1   CG2DC1   43.00    124.55   !   ras-chim   ,   from   CG2DC3   CG25C1   CG2R53,   penalty=   7
+CG252O   CG25C1   CG3C51  285.00    107.85   !   ras-chim   ,   from   CG2R51   CG2R51   CG3C52,   penalty=   78.4
+CG2DC1   CG25C1   CG3C51   40.00    130.00   !   ras-chim   ,   from   CG2DC3   CG251O   NG2R53,   penalty=   276
+CG25C1   CG2DC1   CG321    48.00    123.50   !   ras-chim   ,   from   CG2DC1   CG2DC1   CG321,   penalty=   23.5
+!CG25C1   CG2DC1   HGA4     42.00    119.00   !   ras-chim   ,   from   CG2DC1   CG2DC1   HGA4,   penalty=   23.5
+CG3C51   CG2R53   NG2R53  120.00    105.50   !   ras-chim   ,   from   CG3C52   CG2R53   NG2R53,   penalty=   0.4
+CG3C51   CG2R53   OG2D1    65.00    126.70   !   ras-chim   ,   from   CG3C52   CG2R53   OG2D1,   penalty=   0.4
+CG2O2    CG311    NG321   380.70    111.29   !   ras-chim   ,   from   CG2O2   CG321   NG321,   penalty=   4
+CG321    CG311    NG321    43.70    110.00   !   ras-chim   ,   from   CG321   CG321   NG311,   penalty=   5.2
+NG321    CG311    HGA1     32.40    113.49    50.00   2.14000   !   ras-chim   ,   from   NG321   CG321   HGA2,   penalty=   4
+CG2DC1   CG321    SG311    65.00    116.02   !   ras-chim   ,   from   CG2O4   CG321   CLGA1,   penalty=   44.6
+HGA2     CG321    SG311    65.00    106.42   !
+CG25C1   CG3C51   CG2R53   45.00    108.00   !   ras-chim   ,   from   CG2R51   CG3C52   CG2R53,   penalty=   6
+CG25C1   CG3C51   CG331    45.00    114.14   !   ras-chim   ,   from   CG2R53   CG3C50   CG321,   penalty=   12.4
+CG25C1   CG3C51   HGA1     52.00    112.60   !   ras-chim   ,   from   CG2R51   CG3C52   HGA2,   penalty=   6
+CG2R53   CG3C51   CG331    45.00    103.00   !   ras-chim   ,   from   CG2R53   CG3C50   CG321,   penalty=   6.9
+CG2R53   CG3C51   HGA1     58.00    111.00   !   ras-chim   ,   from   CG2R53   CG3C52   HGA2,   penalty=   4
+CG311    NG321    HGPAM2   41.00    109.32   !   ras-chim   ,   from   CG321   NG321   HGPAM2,   penalty=   0.6
+CG311    CG321    SG311   180.00    110.67   !  MP2/6-31Gd
+CG2O2    OG311    HGP1    55.000    115.00   ! ALLOW   ALC ARO PEP POL ! adm jr. 5/02/91, acetic acid pure solvent
+CG251O   NG2R51   HGP1     30.00    127.00   20.00   2.14000 ! RDV , from CG2R53 NG2R51 HGP1, penalty= 3.5
+CG321    CG2DC1   HGA4     40.00    116.00 ! RETINOL PROL
+NG2R53   CG2R53   OG2D1    65.00    127.80 ! 2PDO, 2-pyrrolidinone, kevo
+CG2R51   NG2R51   HGP1     30.00    125.50   20.00   2.15000 ! PROT his, adm jr., 6/27/90
+CG2R53   NG2R53   HGP1     38.00    119.50 ! 2PDO, 2-pyrrolidinone (H1-N1-C2), kevo
+CG251O   NG2R53   CG2R53  116.00    117.50 ! MHYO, 5-methylenehydantoin, xxwy
+CG252O   NG2R53   CG2R53   55.00    108.50 ! MRDN, methylidene rhodanine, kevo & xxwy
+CG252O   NG2R53   HGP1     38.00    123.00 ! MHYO, 5-methylenehydantoin, xxwy
+CG331    CG3C51   HGA1     34.60    110.10   22.53   2.179 ! TF2M viv
+CG2R51   NG2R51   CG2R51  100.00    109.00 ! PYRL, pyrrole
+CG2R51   CG2R51   NG2R51  130.00    106.00 !adm,dec06 110.6, PROT his, ADM JR., 7/20/89
+CG2R51   CG2R51   CG2R51   90.00    107.20 ! PYRL, pyrrole
+CG2R51   CG2R51   CG321    45.80    130.00 ! PROT his, ADM JR., 7/22/89, FC=>CT2CA CA,BA=> CRYSTALS
+CG2R51   CG2R51   CG331    45.80    130.00 ! PROT his, ADM JR., 7/22/89, FC=>CT2CA CA,BA=> CRYSTALS
+CG251O   CGCPY4   CG321    45.80    130.00   !   bv-pfr-c   ,   from   CGCPY4   CGCPY4   CG321,   PENALTY=   4
+CG2DC3   CG2DC1   HGA4     42.00    119.00 ! RAB , from CG2DC1 CG2DC1 HGA4, penalty= 23.5
+CG2DC1   CG2DC3   HGA5     45.00    120.50 ! RETINOL 13DB, 1,3-Butadiene
+HGA5     CG2DC3   HGA5     19.00    119.00 ! RETINOL 13DB, 1,3-Butadiene
+CG2DC1   CG321    HGA2     45.00    111.50 ! RETINOL BTE2, 2-butene
+HGA2     CG321    HGA2     35.50    109.00    5.40   1.802  ! PROT alkane update, adm jr., 3/2/92
+HGA3     CG331    HGA3     35.50    108.40    5.40   1.80200 ! PROT alkane update, adm jr., 3/2/92
+CG2R51   CG331    HGA3     55.00    109.50 ! INDO/TRP
+CG3C51   CG331    HGA3     34.60    110.10   22.53   2.179 ! TF2M viv
+CG2O2    CG321    HGA2     33.00    109.50   30.00   2.16300 ! PROT adm jr. 5/02/91, acetic acid pure solvent
+CG321    CG321    HGA2     26.50    110.10   22.53   2.17900 ! PROT alkane update, adm jr., 3/2/92
+CG2O2    CG321    CG321    52.00    108.00 ! LIPID alkane
+CG321    CG2O2    OG2D1    70.00    125.00   20.00   2.44200 ! PROT adm jr. 5/02/91, acetic acid pure solvent; LIPID methyl acetate
+CG321    CG2O2    OG311    55.00    110.50 ! PROT adm jr, 10/17/90, acetic acid vibrations
+OG2D1    CG2O2    OG311    50.00    123.00   210.00   2.26200 ! PROT adm jr, 10/17/90, acetic acid vibrations
+CG2R51   CG321    CG321    58.00    111.00 ! INCA model for D3R, xxwy
+CG2R51   CG321    HGA2     55.00    109.50 ! INDO/TRP
+! patch ring-a-cys------------------------------------------------------------
+CT1      C        NG321    80.000   116.5000 ! ALLOW   ALI PEP POL ARO
+                               ! NMA Vib Modes (LK)
+NG321    C        O        80.000   122.5000 ! ALLOW   PEP POL ARO
+                               ! NMA Vib Modes (LK)
+C        NG321    HGPAM2   34.000   123.0000 ! ALLOW   PEP POL ARO
+                               ! NMA Vib Modes (LK)
+CG311    CG2O2    NH1      80.000   116.5000 ! ALLOW   ALI PEP POL ARO
+                               ! NMA Vib Modes (LK)
+C        NG321    CG311    50.000   120.0000 ! ALLOW   ALI PEP POL ARO
+                               ! NMA Vib Modes (LK)
+NH1      CG2O2    OG2D1    80.000   122.5000 ! ALLOW   PEP POL ARO
+                               ! NMA Vib Modes (LK)
+CG2O2    NH1      H        34.000   123.0000 ! ALLOW   PEP POL ARO
+                               ! NMA Vib Modes (LK)
+CG2O2    NH1      CT1      50.000   120.0000 ! ALLOW   ALI PEP POL ARO
+                               ! NMA Vib Modes (LK)
+CG2O2    NH1      CT2      50.000   120.0000 ! ALLOW   ALI PEP POL ARO
+                               ! NMA Vib Modes
+CG321    CG311    HGA1     34.50    110.10   22.53   2.17900 ! PROT alkane update, adm jr., 3/2/92
+CG2O2    CG311    HGA1     50.00    109.50 ! PROT adm jr. 5/02/91, acetic acid pure solvent
+CG2O2    CG311    CG321    52.00    108.00 ! PROT adm jr. 5/02/91, acetic acid pure solvent
+HGA2     CG321    HGA2     35.50    109.00    5.40   1.802  ! PROT alkane update, adm jr., 3/2/92
+CG311    CG321    HGA2     33.43    110.10   22.53   2.17900 ! PROT alkanes
+CG321    SG311    CG321    34.00     95.00 ! PROTNA sahc
+CG311    CG2O2    OG2D1    70.00    125.00   20.00   2.44200 ! PROT adm jr. 5/02/91, acetic acid pure solvent; LIPID methyl acetate
+
+
+DIHEDRALS
+!------------------------------------------------------------------------------
+! Added by Ronald, BV parameters
+!-------------------------propB-C---------------------------------------------!
+
+OG311    CG2O2    CG321    CG321    0.0500   6   180.00 ! From X    CT2  CC   X
+OG2D1    CG2O2    CG321    HGA2     0.0000  6   180.00 ! PROT adm jr. 3/19/92, from lipid
+OG2D1    CG2O2    CG321    CG321    0.0500  6    180.00 ! propc.pd , from OG311 CG2O2 CG321 CG311, penalty= 0.6
+OG311    CG2O2    CG321    HGA2     0.0000  6   180.00 ! PROT adm jr. 3/19/92, from lipid
+CG2O2    CG321    CG321    CGCPY4   0.2000   3     0.00   !   bv-pfr-c   ,   from   CG2O1   CG311   CG321   CGCPY4,   PENALTY=   6.5
+HGA4     CG2DC1   CG321    HGA2       0.2000  3     0.00 ! RETINOL PROL
+HGA3     CG331    CG3C51   HGA1       0.1600  3     0.00 ! alkane, 4/98, yin and mackerell, tf2m viv
+OG2D1    CG2R53   NG2R53   HGP1       0.8600  2   180.00 ! 2PDO, 2-pyrrolidinone, kevo
+OG2D1    CG2R53   NG2R53   CG252O     6.0000  2   180.00 ! MHYO, 5-methylenehydantoin, xxwy
+CG2R51   CGCPY3   CG252O   CGCPY1     3.3968  2   180.00 ! RMSE = 0.450998
+CG2R51   CG2R51   NG2R51   CG2R51    10.0000  2   180.00 ! PYRL, pyrrole
+CG2R51   CG2R51   CG2R51   CG2R51    15.0000  2   180.00 ! PYRL, pyrrole
+CG2R51   CG2R51   CG2R51   CG321      4.3000  2   180.00 ! hpiz, from DWG, yxu
+CG2R51   CG2R51   CG331    HGA3       0.0000  3     0.00 ! PROT 4-methylimidazole 4-21G//rot bar. adm jr., 9/4/89
+CG2R51   CG2R51   CG2R51   NG2R51     4.0000  2   180.00 ! PYRL, pyrrole
+CG331    CG2R51   CG2R51   NG2R51     3.0000  2   180.00 ! PROT his, ADM JR., 7/22/89
+CG321    CG2R51   CG2R51   NG2R51     3.0000  2   180.00 ! PROT his, ADM JR., 7/22/89
+CG2R51   CG2R51   NG2R51   HGP1       1.0000  2   180.00 ! PROT his, adm jr., 7/20/89
+CG2R51   CG2R51   CG321    CG321      0.2700  2     0.00 ! INCA model for D3R, xxwy
+CG2R51   CG2R51   CG321    HGA2       0.0000  3     0.00 ! PROT 4-methylimidazole 4-21G//rot bar. adm jr., 9/4/89
+CG2R51   CG321    CG321    HGA2       0.2000  3     0.00 ! INCA model for D3R, xxwy
+CG2O2    CG321    CG321    CG2R51       1.11  1   180.00 ! RMSE = 0.416523
+CG2O2    CG321    CG321    CG2R51       0.55  3   180.00 ! RMSE = 0.416523
+OG312    CG2R51   NG2R51   HGP1        1.000  2   180.00   !   bv-pfr-c   ,   from   CG321   CG2R51   NG2R51   HGP1,
+HGA4     CG2DC1   CG2DC3   HGA5       5.2000  2   180.00 ! RETINOL HEP3, 1,3,5-heptatriene
+HGA2     CG321    CG321    HGA2       0.2200  3     0.00 ! LIPID alkanes
+CG2O2    CG321    CG321    HGA2       0.1950  3     0.00 !
+CG2O2    OG2D1    OG311    CG321      96.0000 0     0.00 ! ALLOW   PEP POL ARO
+CG321    CG2O2    OG311    HGP1       2.0500  2   180.00 ! PROT adm jr, 10/17/90, acetic Acid C
+OG2D1    CG2O2    OG311    HGP1       2.0500  2   180.00 ! PROT adm jr, 10/17/90, acetic Acid C
+!-------------------------------------CGCPY1--------------------------------------------------------------------------------------------
+CGCPY3   CG252O   CGCPY1   CG2DC1   0.2000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53   NG2R53,   PENALTY=   152.5
+CGCPY3   CG252O   CGCPY1   CG3C51   0.2000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53   NG2R53,   PENALTY=   155
+NG2R53   CG252O   CGCPY1   CG3C51   0.2000   2   180.00   !   bv-pfr-c   ,   from   NG2R53   CG251O   CG2R53   NG2R53,   PENALTY=   151.5
+CGCPY1   CG252O   CGCPY3   HGA4     3.9000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   35.5
+CGCPY1   CG252O   NG2R53   CG2R53   0.5000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   NG2R53   CG2R53,   PENALTY=   5.5
+CGCPY1   CG252O   NG2R53   HGP1     0.4000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   NG2R53   HGP1,   PENALTY=   5.5
+CG252O   CGCPY1   CG2DC1   HGA4     4.4000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CGCPY1   CG2DC3   HGA5,   PENALTY=   33.5
+CG3C51   CGCPY1   CG2DC1   CG321   10.0000   2   180.00   !   bv-pfr-c   ,   from   CG321   CG2DC1   CG2DC1   CG331,   PENALTY=   255.9
+CG3C51   CGCPY1   CG2DC1   HGA4     4.6000   2   180.00   !   bv-pfr-c   ,   from   NG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   122.5
+CG252O   CGCPY1   CG3C51   CG2R53   3.5000   3   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG3C52   CG2R53,   PENALTY=   82
+CG252O   CGCPY1   CG3C51   CG331    0.0500   3   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG3C52   CG3C52,   PENALTY=   113
+CG252O   CGCPY1   CG3C51   HGA1     0.0000   3     0.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG3C52   HGA2,   PENALTY=   82
+CG2DC1   CGCPY1   CG3C51   CG2R53   3.5000   3   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG3C52   CG2R53,   PENALTY=   140.5
+CG2DC1   CGCPY1   CG3C51   CG331    1.0000   3   180.00   !   bv-pfr-c   ,   from   NG2R53   CG2R53   CG3C50   CG321,   PENALTY=   155.9
+CG2DC1   CGCPY1   CG3C51   HGA1     0.0000   3     0.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG3C52   HGA2,   PENALTY=   140.5
+CGCPY1   CG2DC1   CG321    HGA2     0.0300   3     0.00   !   bv-pfr-c   ,   from   CG2DC1   CG2DC1   CG321   HGA2,   PENALTY=   23.5
+NG2R53   CG2R53   CG3C51   CGCPY1   1.0000   3   180.00   !   bv-pfr-c   ,   from   NG2R53   CG2R53   CG3C50   CG2RC0,   PENALTY=   14
+OG2D1    CG2R53   CG3C51   CGCPY1   0.0800   3     0.00   !   bv-pfr-c   ,   from   OG2D1   CG2R53   CG3C52   CG2R51,   PENALTY=   6
+HGA3     CG331    CG3C51   CGCPY1   0.0000   3     0.00   !   bv-pfr-c   ,   from   HGA2   CG321   CG3C50   CG2R53,   PENALTY=   17.5
+CG2DC1   CG251O   NG2R51   HGP1     0.4000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53   HGP1,   PENALTY=   63.5
+CGCPY2   CG2R51   NG2R51   HGP1     1.0000   2   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   NG2R51   HGP1,   PENALTY=   62.5
+CG2DC1   CG2R51   NG2R51   HGP1     1.0000   2   180.00   !   RCD   ,   from   CG2R51   CG2R51   NG2R51   HGP1,     penalty=   62.5
+CG2R51   CG251O   NG2R51   HGP1     0.4000   2   180.00 ! RAB , from CG2R53 CG251O NG2R53 HGP1, penalty= 63
+CG2R51   CG2R53   NG2R51   HGP1     0.3000   2   180.00 ! RAB , from CG25C1 CG2R53 NG2R51 HGP1, penalty= 1.5
+CG25C1   CG252O   NG2R53   HGP1     0.4000   2   180.00   !   ras-chim   ,   from   CG2R53   CG251O   NG2R53   HGP1,   penalty=   5.5
+CG3C51   CG2R53   NG2R53   HGP1     1.2700   2   180.00   !   ras-chim   ,   from   CG3C52   CG2R53   NG2R53   HGP1,   penalty=   0.4
+
+!-------------------------------------CGCPY2--------------------------------------------------------------------------------------------
+CG2R51   CG251O   CGCPY2   HGA4     3.9000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   33
+NG2R51   CG251O   CGCPY2   HGA4     4.6000   2   180.00   !   bv-pfr-c   ,   from   NG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   39
+!   chb      c4a      c3a     c2a
+CGCPY2   CG251O   CG2R51   CGCPY4   0.0000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53   NG2R53,   PENALTY=   77.5
+!  C_HB      c4a     c3a      cma
+CGCPY2   CG251O   CG2R51   CG331    0.0000   2   180.00   !   RCD   ,   from   CG2O1   CG2R51   CG2R51   CG321,     penalty=   29.9
+!   chb       c4a     na       c1a
+CGCPY2   CG251O   NG2R51   CG251O   1.0000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53   CG2R53,   PENALTY=   67
+CGCPY2   CG251O   NG2R51   HGP1     0.4000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53   HGP1,   PENALTY=   63.5
+HGA4     CGCPY2   CG2R51   CGCPY5   0.6000   2   180.00   !   bv-pfr-c   ,   from   HGA4   CGCPY2   CG2R61   CG2R61,   PENALTY=   93.5
+HGA4     CGCPY2   CG2R51   NG2R51   0.6000   2   180.00   !   bv-pfr-c   ,   from   HGA4   CGCPY2   CG2R61   CG2R61,   PENALTY=   132
+!  C_HB     C1B      C2B      C3B
+CGCPY2   CG2R51   CGCPY5   CGCPY6   0.0000   2   180.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51   CG2R52,   PENALTY=   31
+! C_HB      C1B      c2b      cmb
+CGCPY2   CG2R51   CGCPY5   CG331    0.0000   2   180.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51   CG321,   PENALTY=   29.9, 9°diff
+!   chb       C1B     N_B      C4B
+CGCPY2   CG2R51   NG2R51   CG2R51  10.0000   2   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   NG2R51   CG2R51,   PENALTY=   62.5   8°diff
+
+!-------------------------------------CGCPY3--------------------------------------------------------------------------------------------
+CGCPY3   CG252O   CG25C1   CG2DC1   0.2000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53   NG2R53,   PENALTY=   152.5
+CGCPY3   CG252O   CG25C1   CG3C51   0.2000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53   NG2R53,   PENALTY=   155
+CG25C1   CG252O   CGCPY3   CG2R51   3.9000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   177.5
+CG25C1   CG252O   CGCPY3   HGA4     3.9000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   35.5
+NG2R53   CG252O   CGCPY3   CG2R51   4.6000   2   180.00   !   bv-pfr-c   ,   from   NG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   172
+NG2R53   CG252O   CGCPY3   HGA4     4.6000   2   180.00   !   bv-pfr-c   ,   from   NG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   30
+CGCPY3   CG252O   NG2R53   CG2R53   1.0000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53   CG2R53,   PENALTY=   3.5
+CGCPY3   CG252O   NG2R53   HGP1     0.4000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53   HGP1,   PENALTY=   3.5
+CG252O   CGCPY3   CG2R51   NG2R51   0.7500   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61   CG2R61,   PENALTY=   157.5
+CG252O   CGCPY3   CG2R51   NG2R51   0.1900   4     0.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61   CG2R61,   PENALTY=   157.5
+HGA4     CGCPY3   CG2R51   CG2R51   0.6000   2   180.00   !   bv-pfr-c   ,   from   HGA4   CG2DC1   CG2R61   CG2R61,   PENALTY=   93.5
+HGA4     CGCPY3   CG2R51   NG2R51   0.6000   2   180.00   !   bv-pfr-c   ,   from   HGA4   CG2DC1   CG2R61   CG2R61,   PENALTY=   132
+CGCPY3   CG2R51   CG2R51   CG2R51   0.0000   2   180.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51   CG2R52,   PENALTY=   31
+CGCPY3   CG2R51   CG2R51   CG331    0.0000   2   180.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51   CG321,   PENALTY=   29.9
+CGCPY3   CG2R51   NG2R51   CG2R51  10.0000   2   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   NG2R51   CG2R51,   PENALTY=   62.5
+CGCPY3   CG2R51   NG2R51   HGP1     1.0000   2   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   NG2R51   HGP1,   PENALTY=   62.5
+
+
+!-------------------------------------CGCPY4--------------------------------------------------------------------------------------------
+CGCPY4   CG251O   CG2DC1   HGA4     3.9000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   33
+CG2DC1   CG251O   CGCPY4   CG2R51   0.2000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53   NG2R53,   PENALTY=   77.5
+! C_HA     c1a        c2a     C_AA
+CG2DC1   CG251O   CGCPY4   CG321    0.8000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53   OG2D1,   PENALTY=   105
+CG2DC1   CG251O   CGCPY4   CG331    0.8000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53   OG2D1,   PENALTY=   105
+NG2R51   CG251O   CGCPY4   CG2R51   4.0000   2   180.00   !   bv-pfr-c   ,   from   CGCPY4   CGCPY4   CGCPY4   NG2R51,   PENALTY=   74
+NG2R51   CG251O   CG2R51   CGCPY4   4.0000   2   180.00   !   bv-pfr-c   ,   from   CGCPY4   CGCPY4   CGCPY4   NG2R51,   PENALTY=   74
+NG2R51   CG251O   CGCPY4   CG321    3.0000   2   180.00   !   bv-pfr-c   ,   from   CG321   CGCPY4   CGCPY4   NG2R51,   PENALTY=   74
+CGCPY4   CG251O   NG2R51   CG251O   0.5000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   NG2R53   CG2R53,   PENALTY=   66.5
+CGCPY4   CG251O   NG2R51   HGP1     0.4000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   NG2R53   HGP1,   PENALTY=   63
+HGA4     CG2DC1   CGCPY6   CG2R51   0.6000   2   180.00   !   bv-pfr-c   ,   from   HGA4   CG2DC1   CG2R61   CG2R61,   PENALTY=   93.5
+CG251O   CGCPY4   CG2R51   CG251O  15.0000   2   180.00   !   bv-pfr-c   ,   from   CGCPY4   CGCPY4   CGCPY4   CGCPY4,   PENALTY=   8
+CG251O   CG2R51   CGCPY4   CG321    4.3000   2   180.00   !   bv-pfr-c   ,   from   CGCPY4   CGCPY4   CGCPY4   CG321,   PENALTY=   4
+CG251O   CGCPY4   CG2R51   CG331    4.3000   2   180.00   !   bv-pfr-c   ,   from   CGCPY4   CGCPY4   CGCPY4   CG321,   PENALTY=   4.9
+CG321    CGCPY4   CG2R51   CG331    2.0000   2   180.00   !   bv-pfr-c   ,   from   CG321   CGCPY4   CGCPY4   CG321,   PENALTY=   0.9
+CG251O   CGCPY4   CG321    CG321    0.2000   1     0.00   !   bv-pfr-c   ,   from   CGCPY4   CGCPY4   CG321   CG321,   PENALTY=   4
+CG251O   CGCPY4   CG321    CG321    0.2700   2     0.00   !   bv-pfr-c   ,   from   CGCPY4   CGCPY4   CG321   CG321,   PENALTY=   4
+CG251O   CGCPY4   CG321    HGA2     0.0000   3     0.00   !   bv-pfr-c   ,   from   CGCPY4   CGCPY4   CG321   HGA2,   PENALTY=   4
+CG2R51   CGCPY4   CG321    CG321    0.2000   1     0.00   !   INCA   model   for   D3R,   xxwy
+CG2R51   CGCPY4   CG321    HGA2     0.0000   3     0.00   !   PROT   4-methylimidazole   4-21G//rot   bar.   adm   jr.,   9/4/89
+CGCPY4   CG2R51   CG331    HGA3     0.0000   3     0.00   !   PROT   4-methylimidazole   4-21G//rot   bar.   adm   jr.,   9/4/89
+!CG2O2    CG321    CG321    CGCPY4   0.2000   3     0.00   !   bv-pfr-c   ,   from   CG2O1   CG311   CG321   CGCPY4,   PENALTY=   6.5
+CGCPY4   CG321    CG321    HGA2     0.2000   3     0.00   !   INCA   model   for   D3R,   xxwy
+
+
+!-------------------------------------CGCPY5--------------------------------------------------------------------------------------------
+HGA4     CG2DC1   CGCPY6   CGCPY5   0.6000   2   180.00   !   bv-pfr-c   ,   from   HGA4   CG2DC1   CG2R61   CG2R61,   PENALTY=   93.5
+CGCPY5   CGCPY6   CG2R51   OG312    4.3000   2   180.00   !   bv-pfr-c   ,   from   CGCPY5   CGCPY5   CGCPY5   CG321,   PENALTY=   55
+CG331    CGCPY5   CG2R51   NG2R51   3.0000   2   180.00   !   PROT   his,   ADM   JR.,   7/22/89
+CG2R51   CGCPY5   CG331    HGA3     0.0000   3     0.00   !   PROT   4-methylimidazole   4-21G//rot   bar.   adm   jr.,   9/4/89
+CGCPY6   CGCPY5   CG331    HGA3     0.0000   3     0.00   !   PROT   4-methylimidazole   4-21G//rot   bar.   adm   jr.,   9/4/89
+CGCPY5   CG2R51   NG2R51   CG2R51   10.0000   2   180.00   !   PYRL,   pyrrole
+CGCPY5   CG2R51   NG2R51   HGP1      1.0000   2   180.00   !   PROT   his,   adm   jr.,   7/20/89
+
+
+!-------------------------------------CGCPY6--------------------------------------------------------------------------------------------
+CGCPY6   CG2DC1   CG2DC3   HGA5     3.5000   2   180.00   !   bv-pfr-c   ,   from   CG2R61   CG2DC1   CG2DC3   HGA5,   PENALTY=   8.5
+! cbb     cab      c3b      c4b
+CG2DC3   CG2DC1   CGCPY6   CG2R51     0.7500  2   180.00 ! RDV , from CG2DC3 CG2DC1 CG2R61 CG2R61, penalty= 93.5
+CG2DC3   CG2DC1   CGCPY6   CG2R51     0.1900  4     0.00 ! RDV , from CG2DC3 CG2DC1 CG2R61 CG2R61, penalty= 93.5
+CG2DC1   CGCPY6   CGCPY5   CG2R51   0.0000   2   180.00   !   bv-pfr-c   ,   from   CG2O1   CGCPY6   CGCPY6   CG2R52,   PENALTY=   31
+CG2DC1   CGCPY6   CGCPY5   CG331    0.0000   2   180.00   !   bv-pfr-c   ,   from   CG2O1   CGCPY6   CGCPY6   CG321,   PENALTY=   29.9
+! cab    c3b       c4b      nb
+CG2DC1   CGCPY6   CG2R51   NG2R51   4.0000   2   180.00   !   bv-pfr-c   ,   from   CGCPY6   CGCPY6   CGCPY6   NG2R51,   PENALTY=   62.5
+! cab     c3b      c4b       ob
+!CG2DC1   CGCPY6   CG2R51   OG312    0.0000   2   180.00   !   bv-pfr-c   ,   from   CG2O1   CGCPY6   CGCPY6   CG321,   PENALTY=   84
+CG2DC1   CGCPY6   CG2R51   OG312      1.2000  2   180.00 ! RDV , from CG2R51 CG2R51 CG2R53 OG2D1,  penalty= 62.5
+!   c4b      c3b     c2b      c1b
+CG2R51   CGCPY6   CGCPY5   CG2R51  15.0000   2   180.00   !   PYRL,   pyrrole,  penalty=   6.5
+CG2R51   CGCPY6   CGCPY5   CG331    4.3000   2   180.00   !   bv-pfr-c   ,   from   CGCPY6   CGCPY6   CGCPY6   CG321,   PENALTY=   0.9
+CGCPY5   CGCPY6   CG2R51   NG2R51   4.0000   2   180.00   !   PYRL,   pyrrole
+CGCPY6   CGCPY5   CG2R51   NG2R51   4.0000   2   180.00   !   PYRL,   pyrrole
+CGCPY6   CG2R51   NG2R51   CG2R51  10.0000   2   180.00   !   PYRL,   pyrrole
+CGCPY6   CG2R51   NG2R51   HGP1     1.0000   2   180.00   !   PROT   his,   adm   jr.,   7/20/89
+
+!-------------------------------------------------------------------------------------------------------------------------------------
+CG2R51   CG251O   CG2DC1   CG2R51   3.9000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   175
+CG2R51   CG251O   CG2DC1   HGA4     3.9000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   33
+NG2R51   CG251O   CG2DC1   HGA4     4.6000   2   180.00   !   bv-pfr-c   ,   from   NG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   39
+CG2DC1   CG251O   CG2R51   CG2R51   0.2000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53   NG2R53,   PENALTY=   77.5
+CG2DC1   CG251O   CG2R51   CG321    0.8000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53   OG2D1,   PENALTY=   105
+CG2DC1   CG251O   CG2R51   CG331    0.8000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53   OG2D1,   PENALTY=   105
+NG2R51   CG251O   CG2R51   CG2R51   4.0000   2   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG2R51   NG2R51,   PENALTY=   74
+NG2R51   CG251O   CG2R51   CG321    3.0000   2   180.00   !   bv-pfr-c   ,   from   CG321   CG2R51   CG2R51   NG2R51,   PENALTY=   74
+NG2R51   CG251O   CG2R51   CG331    3.0000   2   180.00   !   bv-pfr-c   ,   from   CG331   CG2R51   CG2R51   NG2R51,   PENALTY=   74
+CG2DC1   CG251O   NG2R51   CG251O   1.0000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53   CG2R53,   PENALTY=   67
+CG2R51   CG251O   NG2R51   CG251O   0.5000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   NG2R53   CG2R53,   PENALTY=   66.5
+CG2DC2   CG252O   CG25C1   CG2DC1   0.2000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53   NG2R53,   PENALTY=   152.5
+CG2DC2   CG252O   CG25C1   CG3C51   0.2000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   CG2R53   NG2R53,   PENALTY=   155
+NG2R53   CG252O   CG25C1   CG3C51   0.2000   2   180.00   !   bv-pfr-c   ,   from   NG2R53   CG251O   CG2R53   NG2R53,   PENALTY=   151.5
+CG25C1   CG252O   CG2DC2   CG2R51   3.9000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   177.5
+CG25C1   CG252O   CG2DC2   HGA4     3.9000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   35.5
+NG2R53   CG252O   CG2DC2   CG2R51   4.6000   2   180.00   !   bv-pfr-c   ,   from   NG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   172
+NG2R53   CG252O   CG2DC2   HGA4     4.6000   2   180.00   !   bv-pfr-c   ,   from   NG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   30
+CG25C1   CG252O   NG2R53   CG2R53   0.5000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG251O   NG2R53   CG2R53,   PENALTY=   5.5
+CG2DC2   CG252O   NG2R53   CG2R53   1.0000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53   CG2R53,   PENALTY=   3.5
+CG2DC2   CG252O   NG2R53   HGP1     0.4000   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG251O   NG2R53   HGP1,   PENALTY=   3.5
+CG252O   CG25C1   CG2DC1   HGA4     4.4000   2   180.00   !   bv-pfr-c   ,   from   CG2R53   CG25C1   CG2DC3   HGA5,   PENALTY=   33.5
+CG3C51   CG25C1   CG2DC1   CG321   10.0000   2   180.00   !   bv-pfr-c   ,   from   CG321   CG2DC1   CG2DC1   CG331,   PENALTY=   255.9
+CG3C51   CG25C1   CG2DC1   HGA4     4.6000   2   180.00   !   bv-pfr-c   ,   from   NG2R53   CG251O   CG2DC3   HGA5,   PENALTY=   122.5
+CG252O   CG25C1   CG3C51   CG331    0.0500   3   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG3C52   CG3C52,   PENALTY=   113
+CG252O   CG25C1   CG3C51   HGA1     0.0000   3     0.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG3C52   HGA2,   PENALTY=   82
+CG2DC1   CG25C1   CG3C51   CG2R53   3.5000   3   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG3C52   CG2R53,   PENALTY=   140.5
+CG2DC1   CG25C1   CG3C51   CG331    1.0000   3   180.00   !   bv-pfr-c   ,   from   NG2R53   CG2R53   CG3C50   CG321,   PENALTY=   155.9
+CG2DC1   CG25C1   CG3C51   HGA1     0.0000   3     0.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG3C52   HGA2,   PENALTY=   140.5
+CG2R51   CG2DC1   CG2DC3   HGA5     3.5000   2   180.00   !   bv-pfr-c   ,   from   CG2R61   CG2DC1   CG2DC3   HGA5,   PENALTY=   8.5
+CG251O   CG2DC1   CG2R51   NG2R51   0.7500   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61   CG2R61,   PENALTY=   157.5
+CG251O   CG2DC1   CG2R51   NG2R51   0.1900   4     0.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61   CG2R61,   PENALTY=   157.5
+CG25C1   CG2DC1   CG321    HGA2     0.0300   3     0.00   !   bv-pfr-c   ,   from   CG2DC1   CG2DC1   CG321   HGA2,   PENALTY=   23.5
+HGA4     CG2DC1   CG321    SG311    0.2000   3     0.00   !   bv-pfr-c   ,   from   HGA4   CG2DC1   CG321   OG3R60,   PENALTY=   122.2
+CG252O   CG2DC2   CG2R51   CG2R51   0.7500   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61   CG2R61,   PENALTY=   119
+CG252O   CG2DC2   CG2R51   CG2R51   0.1900   4     0.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61   CG2R61,   PENALTY=   119
+CG252O   CG2DC2   CG2R51   NG2R51   0.7500   2   180.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61   CG2R61,   PENALTY=   157.5
+CG252O   CG2DC2   CG2R51   NG2R51   0.1900   4     0.00   !   bv-pfr-c   ,   from   CG2DC3   CG2DC1   CG2R61   CG2R61,   PENALTY=   157.5
+HGA4     CG2DC2   CG2R51   CG2R51   0.6000   2   180.00   !   bv-pfr-c   ,   from   HGA4   CG2DC1   CG2R61   CG2R61,   PENALTY=   93.5
+HGA4     CG2DC2   CG2R51   NG2R51   0.6000   2   180.00   !   bv-pfr-c   ,   from   HGA4   CG2DC1   CG2R61   CG2R61,   PENALTY=   132
+CG251O   CG2R51   CG2R51   CG251O  15.0000   2   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG2R51   CG2R51,   PENALTY=   8
+CG251O   CG2R51   CG2R51   CG321    4.3000   2   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG2R51   CG321,   PENALTY=   4
+CG251O   CG2R51   CG2R51   CG331    4.3000   2   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG2R51   CG321,   PENALTY=   4.9
+CG2DC1   CG2R51   CG2R51   CG2R51   0.0000   2   180.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51   CG2R52,   PENALTY=   31
+CG2DC1   CG2R51   CG2R51   CG321    0.0000   2   180.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51   CG321,   PENALTY=   29
+CG2DC1   CG2R51   CG2R51   CG331    0.0000   2   180.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51   CG321,   PENALTY=   29.9
+CG2DC1   CG2R51   CG2R51   NG2R51   4.0000   2   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG2R51   NG2R51,   PENALTY=   62.5
+CG2DC1   CG2R51   CG2R51   OG312    0.0000   2   180.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51   CG321,   PENALTY=   84
+CG2DC2   CG2R51   CG2R51   CG2R51   0.0000   2   180.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51   CG2R52,   PENALTY=   31
+CG2DC2   CG2R51   CG2R51   CG331    0.0000   2   180.00   !   bv-pfr-c   ,   from   CG2O1   CG2R51   CG2R51   CG321,   PENALTY=   29.9
+CG2R51   CG2R51   CG2R51   CG331    4.3000   2   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG2R51   CG321,   PENALTY=   0.9
+CG2R51   CG2R51   CG2R51   OG312    4.3000   2   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG2R51   CG321,   PENALTY=   55
+CG321    CG2R51   CG2R51   CG331    2.0000   2   180.00   !   bv-pfr-c   ,   from   CG321   CG2R51   CG2R51   CG321,   PENALTY=   0.9
+CG251O   CG2R51   CG321    CG321    0.2000   1     0.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG321   CG321,   PENALTY=   4
+CG251O   CG2R51   CG321    CG321    0.2700   2     0.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG321   CG321,   PENALTY=   4
+CG251O   CG2R51   CG321    HGA2     0.0000   3     0.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG321   HGA2,   PENALTY=   4
+CG251O   CG2R51   CG331    HGA3     0.0000   3     0.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   CG331   HGA3,   PENALTY=   4
+CG2DC1   CG2R51   NG2R51   CG2R51  10.0000   2   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   NG2R51   CG2R51,   PENALTY=   62.5
+CG2DC2   CG2R51   NG2R51   CG2R51  10.0000   2   180.00   !   bv-pfr-c   ,   from   CG2R51   CG2R51   NG2R51   CG2R51,   PENALTY=   62.5
+OG312    CG2R51   NG2R51   CG2R51   3.0000   2   180.00   !   bv-pfr-c   ,   from   CG321   CG2R51   NG2R51   CG2R51,   PENALTY=   55
+NG2R53   CG2R53   CG3C51   CG25C1   1.0000   3   180.00   !   bv-pfr-c   ,   from   NG2R53   CG2R53   CG3C50   CG2RC0,   PENALTY=   14
+NG2R53   CG2R53   CG3C51   CG331    1.0000   3   180.00   !   bv-pfr-c   ,   from   NG2R53   CG2R53   CG3C50   CG321,   PENALTY=   6.9
+NG2R53   CG2R53   CG3C51   HGA1     0.0000   3   180.00   !   bv-pfr-c   ,   from   NG2R53   CG2R53   CG3C52   HGA2,   PENALTY=   4
+OG2D1    CG2R53   CG3C51   CG25C1   0.0800   3     0.00   !   bv-pfr-c   ,   from   OG2D1   CG2R53   CG3C52   CG2R51,   PENALTY=   6
+OG2D1    CG2R53   CG3C51   CG331    0.0800   3     0.00   !   bv-pfr-c   ,   from   OG2D1   CG2R53   CG3C50   CG321,   PENALTY=   6.9
+OG2D1    CG2R53   CG3C51   HGA1     0.0000   3     0.00   !   bv-pfr-c   ,   from   OG2D1   CG2R53   CG3C52   HGA2,   PENALTY=   4
+CG3C51   CG2R53   NG2R53   CG252O   0.2000   2   180.00   !   bv-pfr-c   ,   from   CG3C50   CG2R53   NG2R53   CG2RC0,   PENALTY=   8.8
+CG2O2    CG311    CG321    SG311    0.2000   3     0.00   !   bv-pfr-c   ,   from   CG2O1   CG311   CG321   SG311,   PENALTY=   2.5
+NG321    CG311    CG321    SG311    0.2000   3     0.00   !   bv-pfr-c   ,   from   NG3P3   CG314   CG321   SG311,   PENALTY=   37.9
+NG321    CG311    CG321    HGA2     0.1950   3     0.00   !   bv-pfr-c   ,   from   NG311   CG321   CG321   HGA2,   PENALTY=   5.2
+CG2O2    CG311    NG321    HGPAM2   0.1600   3     0.00   !   bv-pfr-c   ,   from   CG2O2   CG321   NG321   HGPAM2,   PENALTY=   4
+HGA1     CG311    NG321    HGPAM2   0.0100   3     0.00   !   bv-pfr-c   ,   from   HGA2   CG321   NG321   HGPAM2,   PENALTY=   4
+HGA3     CG331    CG3C51   CG25C1   0.0000   3     0.00   !   bv-pfr-c   ,   from   HGA2   CG321   CG3C50   CG2R53,   PENALTY=   17.5
+HGA3     CG331    CG3C51   CG2R53   0.0000   3     0.00   !   bv-pfr-c   ,   from   HGA2   CG321   CG3C50   CG2R53,   PENALTY=   12
+
+!---------------------------------Ring-D----------------------------------------------------------------------------------------
+CG2R51   CG251O   CG2DC3   HGA5     3.9000   2   180.00 ! RDV , from CG2R53 CG251O CG2DC3 HGA5,   penalty= 3
+NG2R51   CG251O   CG2DC3   HGA5     4.6000   2   180.00 ! RDV , from NG2R53 CG251O CG2DC3 HGA5,   penalty= 9
+CG2DC3   CG251O   CG2R51   CG2R51   0.2000   2   180.00 ! RDV , from CG2DC3 CG251O CG2R53 NG2R53, penalty= 74
+CG2DC3   CG251O   CG2R51   CG331    0.8000   2   180.00 ! RDV , from CG2DC3 CG251O CG2R53 OG2D1,  penalty= 101.5
+CG2DC3   CG251O   NG2R51   CG2R53   1.0000   2   180.00 ! RDV , from CG2DC3 CG251O NG2R53 CG2R53, penalty= 60
+CG2R51   CG251O   NG2R51   CG2R53   0.5000   2   180.00 ! RDV , from CG2R53 CG251O NG2R53 CG2R53, penalty= 63
+!c2b       c3b     cab      cbb
+CG2DC3   CG2DC1   CGCPY6   CGCPY5   0.85     1   180.00 ! RMSE = 0.21995
+CG2DC3   CG2DC1   CGCPY6   CGCPY5   1.13     2   180.00
+CG2DC3   CG2DC1   CGCPY6   CGCPY5   0.19     3     0.00
+CG2DC3   CG2DC1   CGCPY6   CGCPY5   0.18     4     0.00
+
+
+CG2DC3   CG2DC1   CG2R51   CG2R53   0.7500   2   180.00 ! RDV , from CG2DC3 CG2DC1 CG2R61 CG2R61, penalty= 93.5
+CG2DC3   CG2DC1   CG2R51   CG2R53   0.1900   4     0.00 ! RDV , from CG2DC3 CG2DC1 CG2R61 CG2R61, penalty= 93.5
+HGA4     CG2DC1   CG2R51   CG2R53   0.6000   2   180.00 ! RDV , from HGA4 CG2DC1 CG2R61 CG2R61,   penalty= 93.5
+CG251O   CG2R51   CG2R51   CG2DC1   0.0000   2   180.00 ! RDV , from CG2O1 CG2R51 CG2R51 CG2R52,  penalty= 33.5
+CG251O   CG2R51   CG2R51   CG2R53  15.0000   2   180.00 ! RDV , from CG2R51 CG2R51 CG2R51 CG2R51, penalty= 6.5
+CG2R53   CG2R51   CG2R51   CG331    4.3000   2   180.00 ! RDV , from CG2R51 CG2R51 CG2R51 CG321,  penalty= 3.4
+CG2DC1   CG2R51   CG2R53   NG2R51   4.0000   2   180.00 ! RDV , from CG2R51 CG2R51 CG2R51 NG2R51, penalty= 90.5
+CG2DC1   CG2R51   CG2R53   OG2D1    1.2000   2   180.00 ! RDV , from CG2R51 CG2R51 CG2R53 OG2D1,  penalty= 62.5
+CG2R51   CG2R51   CG2R53   NG2R51   4.0000   2   180.00 ! RDV , from CG2R51 CG2R51 CG2R51 NG2R51, penalty= 28
+CG2R51   CG2R53   NG2R51   CG251O   2.0000   2   180.00 ! RDV , from CG25C1 CG2R53 NG2R51 CG2RC0, penalty= 9.5
+OG2D1    CG2R53   NG2R51   CG251O   2.5000   2   180.00 ! RDV , from OG2D1 CG2R53 NG2R51 CG2RC0,  penalty= 8
+CG251O   CGCPY2   CG2R51   CGCPY5   3.3968   2   180.00 ! RMSE = 0.450998
+
+!c4a      chb      c1b      nb
+CG251O   CGCPY2   CG2R51   NG2R51   4.6000   2   180.00   !   RCD   ,   from   NG2R53   CG251O   CG2DC3   HGA5,   penalty=   181
+NG2R51   CG251O   CG2DC1   CG2R51   4.6000   2   180.00   !   RCD   ,   from   NG2R53   CG251O   CG2DC3   HGA5,   penalty=   181
+!-------------------------------------------------------------------------------------------------------------------------------
+CG2DC1   CG251O   NG2R51   CG2R53   1.0000   2   180.00   !   RCD   ,   from   CG2DC3   CG251O   NG2R53   CG2R53,   penalty=   63.5
+CG2R51   CG251O   CGCPY2   CG2R51   1.20     1     0.00   ! RMSE = 0.356205
+CG2R51   CG251O   CGCPY2   CG2R51   2.58     2   180.00   ! RMSE = 0.356205
+CG2R51   CG251O   CGCPY2   CG2R51   0.68     3     0.00   ! RMSE = 0.356205
+CG2R51   CG251O   CGCPY2   CG2R51   0.40     4     0.00   ! RMSE = 0.356205
+
+!---------------------------------------------------------------------------------------------------------------------------------
+
+NG2R51   CG251O   CGCPY2   CG2R51   0.7500   2   180.00   !   RCD   ,   from   CG2DC3   CG2DC1   CG2R61   CG2R61,   penalty=   157.5
+NG2R51   CG251O   CGCPY2   CG2R51   0.1900   4   0.00     !   RCD   ,   from   CG2DC3   CG2DC1   CG2R61   CG2R61,   penalty=   157.5
+CG331    CG2R51   CG2R53   NG2R51   3.0000   2   180.00   !   RCD   ,   from   CG331   CG2R51   CG2R51   NG2R51,    penalty=   28
+CG331    CG2R51   CG2R53   OG2D1     2.5000  2   180.00   !   RCD   ,   from   CG321   CG2R51   CG2R52   CG321,     penalty=   85.9
+CG2R53   CG2R51   CG331    HGA3     0.0000   3   0.00   !   RCD   ,   from   CG2R51   CG2R51   CG331   HGA3,        penalty=   2.5
+CG331    CG2R51   NG2R51   CG2R51   3.0000   2   180.00   !   RCD   ,   from   CG321   CG2R51   NG2R51   CG2R51,    penalty=   0.9
+NG2R53   CG252O   CGCPY1   CG2DC1   3.0000   2   180.00 ! RAB , from CG331 CG2R51 CG2R51 NG2R51, penalty= 74
+
+
+CG2R51   CG2R51   CGCPY3   CG252O   1.20     1     0.00 ! RMSE = 0.356205
+CG2R51   CG2R51   CGCPY3   CG252O   2.58     2   180.00 ! RMSE = 0.356205
+CG2R51   CG2R51   CGCPY3   CG252O   0.68     3     0.00 ! RMSE = 0.356205
+CG2R51   CG2R51   CGCPY3   CG252O   0.40     4     0.00 ! RMSE = 0.356205
+
+CG331    CG2R51   CG2R51   CG331    2.0000   2   180.00 ! RAB , from CG321 CG2R51 CG2R51 CG321, penalty= 1.8
+!---------------------------------Rings-B-C------------------------------------------------------------------------
+CGCPY4   CG251O   CG2DC1   CG2R51    3.9000  2   180.00  !   Z:\home\   ,   from   CG2R53   CG251O   CG2DC3   HGA5,   penalty=   175
+NG2R52   CG251O   CG2DC1   CG2R51    4.6000  2   180.00  !   Z:\home\   ,   from   NG2R53   CG251O   CG2DC3   HGA5,   penalty=   199
+NG2R52   CG251O   CG2DC1   HGA4      4.6000  2   180.00  !   Z:\home\   ,   from   NG2R53   CG251O   CG2DC3   HGA5,   penalty=   57
+NG2R52   CG251O   CG2R51   CG2R51    4.1500  2   180.00  !   Z:\home\   ,   from   CG2R51   CG2R51   CG2R52   NG2R52,   penalty=   79
+NG2R52   CG251O   CG2R51   CG331     2.5000  2   180.00  !   Z:\home\   ,   from   CG321   CG2R51   CG2R51   NG2R52,   penalty=   74.9
+CG2DC1   CG251O   NG2R52   CG2R52   12.0000  2   180.00  !   Z:\home\   ,   from   CG2R51   CG2R51   NG2R52   CG2R53,   penalty=   137.5
+CG2R51   CG251O   NG2R52   CG2R52   12.0000  2   180.00  !   Z:\home\   ,   from   CG2R51   CG2R51   NG2R52   CG2R53,   penalty=   75
+CG251O   CG2DC1   CG2R51   CG2R51    2.2500  2   180.00  !
+CG251O   CG2DC1   CG2R51   CG2R51    0.1900  3     0.00  !
+HGA4     CG2DC1   CG2R51   CG2R51    0.6000  2   180.00   !   Z:\home\   ,   from   HGA4   CG2DC1   CG2R61   CG2R61,   penalty=   93.5
+HGA4     CG2DC1   CG2R51   NG2R51    0.6000  2   180.00   !   Z:\home\   ,   from   HGA4   CG2DC1   CG2R61   CG2R61,   penalty=   132
+CG251O   CG2R51   CG2R51   CG2R52   15.0000  2   180.00   !   Z:\home\   ,   from   CG2R51   CG2R51   CG2R51   CG2R51,   penalty=   6
+CG2R52   CG2R51   CG2R51   CG331     4.3000  2   180.00   !   Z:\home\   ,   from   CG2R51   CG2R51   CG2R51   CG321,   penalty=   2.9
+CG2R51   CG2R51   CG2R52   CG331     3.0000  2   180.00   !   Z:\home\   ,   from   CG2R51   CG2R51   CG2R52   CG321,   penalty=   0.9
+CG331    CG2R51   CG2R52   CG331     2.5000  2   180.00   !   Z:\home\   ,   from   CG321   CG2R51   CG2R52   CG321,   penalty=   1.8
+CG331    CG2R51   CG2R52   NG2R52    2.5000  2   180.00   !   Z:\home\   ,   from   CG321   CG2R51   CG2R51   NG2R52,   penalty=   5.9
+CG2R52   CG2R51   CG331    HGA3      0.0000  3     0.00   !   Z:\home\   ,   from   CG2R51   CG2R51   CG331   HGA3,   penalty=   2
+CG2R51   CG2R52   CG331    HGA3      0.0000  3     0.00   !   Z:\home\   ,   from   CG2R51   CG2R51   CG331   HGA3,   penalty=   5
+NG2R52   CG2R52   CG331    HGA3      0.1900  3     0.00   !   Z:\home\   ,   from   NG2R52   CG2R51   CG321   HGA2,   penalty=   11
+CG2R51   CG2R52   NG2R52   CG251O   12.0000  2   180.00   !   Z:\home\   ,   from   CG2R51   CG2R51   NG2R52   CG2R53,   penalty=   8.5
+CG331    CG2R52   NG2R52   CG251O    2.5000  2   180.00   !   Z:\home\   ,   from   CG321   CG2R51   NG2R52   CG2R53,   penalty=   9.4
+
+!---------------------------------Ring-A-Cys-------------------------------------------------------------------------
+CG2DC3   CG252O   CG25C1   CG2DC1   0.2000   2   180.00   !   ras-chim   ,   from   CG2DC3   CG251O   CG2R53   NG2R53,   penalty=   149
+CG2DC3   CG252O   CG25C1   CG3C51   0.2000   2   180.00   !   ras-chim   ,   from   CG2DC3   CG251O   CG2R53   NG2R53,   penalty=   151.5
+NG2R53   CG252O   CG25C1   CG2DC1   4.0000   2   180.00 ! RDV
+CG25C1   CG252O   CG2DC3   HGA5     3.9000   2   180.00   !   ras-chim   ,   from   CG2R53   CG251O   CG2DC3   HGA5,   penalty=   5.5
+
+
+!---------------------------------------------------------------------------------------------------------------------
+CG252O   CGCPY1   CG2DC1   CG321    0.752    1     0.00 ! RMSE = 0.164572
+CG252O   CGCPY1   CG2DC1   CG321    3.093    2   180.00 ! RMSE = 0.164572
+CG252O   CGCPY1   CG2DC1   CG321    1.001    3    0.00  ! RMSE = 0.164572
+CG252O   CG25C1   CG3C51   CG2R53   3.5000   3   180.00   !   ras-chim   ,   from   CG2R51   CG2R51   CG3C52   CG2R53,   penalty=   82
+CGCPY1   CG2DC1   CG321    SG311    0.600    2     0.00 ! RMSE = 0.108825
+CGCPY1   CG2DC1   CG321    SG311    0.520    3   180.00 ! RMSE = 0.108825
+OG2D1    CG2O2    CG311    NG321    0.0000   6   180.00   !   ras-chim   ,   from   OG2D1   CG2O2   CG321   NG321,   penalty=   4
+OG311    CG2O2    CG311    NG321    0.0000   6   180.00   !   ras-chim   ,   from   OG311   CG2O2   CG321   NG321,   penalty=   4
+CG2DC1   CG321    SG311    CG321    0.18     1     0.00   ! RMSE = 0.22824
+CG2DC1   CG321    SG311    CG321    0.52     2   180.00   ! RMSE = 0.22824
+CG2DC1   CG321    SG311    CG321    0.28     3   180.00   ! RMSE = 0.471489
+CG2DC1   CG321    SG311    CG321    0.48     4     0.00   ! RMSE = 0.22824
+CG311    CG321    SG311    CG321    0.3700   3     0.00   !   ras-chim   ,   from   CG321   CG321   SG311   CG321,   penalty=   0.6
+
+
+CG321    CG311    CG2O2    OG311    0.03     1     0.00 ! propc.pd mp2/6-31g*
+CG321    CG311    CG2O2    OG311    0.45     2   180.00 ! propc.pd
+CG321    CG311    CG2O2    OG311    0.06     3   180.00 ! propc.pd
+CG321    CG311    CG2O2    OG311    0.05     6     0.00 ! propc.pd
+
+CG321    CG311    CG2O2    OG2D1    0.03     1     0.00 ! propc.pd mp2/6-31g*
+CG321    CG311    CG2O2    OG2D1    0.45     2   180.00 ! propc.pd
+CG321    CG311    CG2O2    OG2D1    0.06     3   180.00 ! propc.pd
+CG321    CG311    CG2O2    OG2D1    0.05     6     0.00 ! propc.pd
+! patch ring-a-cys------------------------------------------------------------
+NH1      CT1      C        NG321      0.6000  1     0.00 !   ALLOW PEP
+                          ! ala dipeptide update for new C VDW Rmin, adm jr., 3/3/93
+CT1      C        NG321    HGPAM2      2.5000  2   180.00 !  ALLOW PEP
+                                 ! Gives appropriate NMA cis/trans barrier. (LK)
+CT1      C        NG321    CG311      1.6000  1     0.00 !  ALLOW PEP
+                                 ! Revised to adjust NMA cis/trans energy difference. (LK)
+HB1      CT1      C        NG321      0.0000  1     0.00 !   ALLOW PEP
+                                 ! Alanine Dipeptide ab initio calc's (LK)
+CT1      CT1      C        NG321      0.0000  1     0.00 !   ALLOW PEP
+                                 ! Alanine Dipeptide ab initio calc's (LK)
+CT2      CT1      C        NG321      0.0000  1     0.00 !   ALLOW PEP
+                                 ! ala dipeptide corrxn for new C VDW Rmin, 4/10/93 (LK)
+C        NG321    CG311    CG321        1.8000  1     0.00 ! ALLOW PEP
+                                 ! ala dipeptide update for new C VDW Rmin, adm jr., 3/3/93c
+C        NG321    CG311    CG2O2        0.2000  1   180.00 ! ALLOW PEP
+                                  ! ala dipeptide update for new C VDW Rmin, adm jr., 3/3/93c
+C        NG321    CG311    HGA1        0.0000  1     0.00 ! ALLOW PEP
+                                 ! Alanine Dipeptide ab initio calc's (LK)
+O        C        NG321    HGPAM2        2.5000  2   180.00 !  ALLOW PEP
+                                 ! Gives appropriate NMA cis/trans barrier. (LK)
+O        C        NG321    CG311      2.5000  2   180.00 !  ALLOW PEP
+                              ! Gives appropriate NMA cis/trans barrier. (LK)
+NG321    CG311    CG2O2    NH1      0.6000  1     0.00 !   ALLOW PEP
+                                 ! ala dipeptide update for new C VDW Rmin, adm jr., 3/3/93
+CG311    CG2O2    NH1      H      2.5000  2   180.00 !  ALLOW PEP
+                               ! Gives appropriate NMA cis/trans barrier. (LK)
+CG311    CG2O2    NH1      CT1      1.6000  1     0.00 !  ALLOW PEP
+                                 ! Revised to adjust NMA cis/trans energy difference. (LK)
+HGA1     CG311    CG2O2    NH1      0.0000  1     0.00 !   ALLOW PEP
+                                 ! Alanine Dipeptide ab initio calc's (LK)
+CG321    CG311    CG2O2    NH1      0.0000  1     0.00 !   ALLOW PEP
+                                 ! ala dipeptide corrxn for new C VDW Rmin, 4/10/93 (LK)
+CG2O2    NH1      CT1      CT2A     1.8000  1     0.00 ! from CT2  CT1  NH1  C
+                                 !
+CG2O2    NH1      CT1      CT3     1.8000  1     0.00 ! from CT2  CT1  NH1  C
+                                 !
+CG2O2    NH1      CT1      C        0.2000  1   180.00 ! ALLOW PEP
+                                 ! ala dipeptide update for new C VDW Rmin, adm jr., 3/3/93c
+CG2O2    NH1      CT1      HB1        0.0000  1     0.00 ! ALLOW PEP
+                                 ! Alanine Dipeptide ab initio calc's (LK)
+OG2D1    CG2O2    NH1      H        2.5000  2   180.00 !  ALLOW PEP
+                               ! Gives appropriate NMA cis/trans barrier. (LK)
+OG2D1    CG2O2    NH1      CT1      2.5000  2   180.00 !  ALLOW PEP
+                          ! Gives appropriate NMA cis/trans barrier. (LK)
+CG321    CG311    NG321    HGPAM2   0.3000   3     0.00   !   bv-pfr-c   ,   from   CG321   CG321   NG311   HGPAM1,   PENALTY=   14.5
+HGA1     CG311    CG321    HGA2       0.1950  3     0.00 ! NA, sugar
+HGA1     CG311    CG321    SG311      0.1950  3     0.00 ! PROTNA sahc
+OG2D1    CG2O2    CG311    HGA1       0.0000  3     0.00 ! AMGA, Alpha Methyl Glu Acid CDCA
+HGA2     CG321    SG311    CG321      0.2800  3     0.00 ! PROT DTN 8/24/90
+CG2O2    CG311    CG321    HGA2       0.2000  3     0.00 ! AMGA, Alpha Methyl Glu Acid CDCA
+IMPROPER
+!------------------------------BV-parameters--added by Ronald--------------------------------------------------
+CG2DC1   CG251O   CG2R51   HGA4     3.0000   0     0.0000 ! for ethene, yin/adm jr., 12/95  ! see param  HE2  HE2  CE2  CE2
+
+!-Ring-A----------------------------------------------------
+CG2R53   CG3C51   NG2R53   OG2D1    90.0000  0     0.00   !   bv-pfr-c   ,  from   CG2R53   CG3C52   NG2R53   OG2D1,   PENALTY=   0.4
+
+!-Ring-D----------------------------------------------------
+CG2R51   CGCPY6   NG2R51   OG312    90.0000  0     0.00   ! RDV , from CG2R53 CG25C1 NG2R51 OG2D1, penalty= 7.4
+
+!-------------patch ring-a-cys----------------------------------------------------------------------------------
+NG321     C        CG311    HGPAM2   20.0000  0      0.0000 ! ALLOW   PEP POL ARO
+                              ! NMA Vibrational Modes (LK)
+CG2O2     CG311    NH1      OG2D1   120.0000  0      0.0000 ! ALLOW   PEP POL ARO
+                              ! NMA Vibrational Modes (LK)
+!----------------------------------------------------------------------------------------------------------------
+CGCPY1    CG3C51   CG252O   CG2DC1   140.0000  0      0.0000 ! ALLOW HEM  !
+CG2O2     OG2D1    OG311    CG321     96.0000  0      0.0000 ! ALLOW   PEP POL ARO
+CG251O    CG2R51   NG2R51   CGCPY2   140.0000  0      0.0000 ! ALLOW HEM
+CGCPY2    CG251O   CG2R51   HGA4     140.4000  0     0.0000 ! ALLOW HEM
+CG2R51    CG2R51   NG2R51   CGCPY3    145.00   0      0.0000 ! ALLOW HEM
+CGCPY3    CG252O   CG2R51   HGA4      29.4000  0      0.0000 ! ALLOW HEM
+CG252O    CGCPY1   NG2R53   CGCPY3   140.0000  0       0.000 ! ALLOW HEM
+CG251O    CG2DC1   NG2R51   CGCPY4    61.0000  0      0.0000 ! ALLOW HEM  !
+CGCPY4    CG251O   CG2R51   CG321     64.0000  0      0.0000 ! ALLOW HEM
+CG2R51    CGCPY4   CG251O   CG331     90.0000  0      0.0000 ! ALLOW HEM
+CG2R51    CGCPY5   NG2R51   CGCPY2      7.0000 0      0.0000 ! ALLOW HEM
+CGCPY5    CG2R51   CGCPY6   CG331      20.0000 0      0.0000 ! ALLOW HEM
+CGCPY6    CG2DC1   CG2R51   CGCPY5    180.0000 0      0.0000 ! ALLOW HEM
+CG2DC1    CG2DC3   CGCPY6   HGA4        3.0000 0      0.0000
+CG2R51    CG2R51   CG2R51   CG331      90.0000 0      0.0000 ! ALLOW HEM
+CG3C51    CGCPY1   CG2R53   CG331      20.0000 0      0.0000 ! mp2/6-31gd
+CG2R51    NG2R51   CGCPY6   OG312     120.0000 0      0.0000 ! ALLOW   PEP POL ARO
+CG2R51    CG2R51   CG2R51   CG321      90.0000 0      0.0000 ! ALLOW HEM
+CG2DC3    CG2DC1   HGA5     HGA5        3.0000 0        0.00
+CG2DC1    CGCPY1   CG321    HGA4        3.0000 0      0.0000
+CG2R51    CG2R51   NG2R51   CG2DC1    200.0000 0      0.0000 ! ALLOW HEM
+NG2R51    CG2R51   CG2R51   HGP1         0.010 0      0.0000 ! ALLOW ARO
+
+NONBONDED nbxmod  5 atom cdiel fshift vatom vdistance vfswitch -
+cutnb 14.0 ctofnb 12.0 ctonnb 10.0 eps 1.0 e14fac 1.0 wmin 1.5
+!hydrogens
+HGA1     0.0       -0.0450     1.3400 ! alkane, igor, 6/05
+HGA2     0.0       -0.0350     1.3400 ! alkane, igor, 6/05
+HGA3     0.0       -0.0240     1.3400 ! alkane, yin and mackerell, 4/98
+HGA4     0.0       -0.0310     1.2500 ! alkene, yin,adm jr., 12/95
+HGA5     0.0       -0.0260     1.2600 ! alkene, yin,adm jr., 12/95
+HGP1     0.0       -0.0460     0.2245 ! polar H
+HGPAM2   0.0       -0.0100     0.8750 ! aliphatic amines
+!carbons
+CG1T2    0.0       -0.1032     1.9925 ! PRPY, propyne, rima & kevo
+CG1N1    0.0       -0.1800     1.8700 ! ACN, acetonitrile; 3CYP, 3-cyanopyridine, kevo
+CG2D1    0.0       -0.0680     2.0900 ! alkene, yin,adm jr., 12/95
+CG2D2    0.0       -0.0640     2.0800 ! alkene, yin,adm jr., 12/95
+CG2D1O   0.0       -0.0680     2.0900 ! double bond carbon adjacent to O (pyran)
+CG2D2O   0.0       -0.0680     2.0900 ! double bond carbon adjacent to O (pyran)
+CG2DC1   0.0       -0.0680     2.0900 ! Butadiene
+CG2DC2   0.0       -0.0680     2.0900 ! Butadiene
+CG2DC3   0.0       -0.0640     2.0800 ! Butadiene
+CG2N1    0.0       -0.1100     2.0000 ! NMA pure solvent, adm jr., 3/3/93
+CG2N2    0.0       -0.1100     2.0000 ! same as CG2N1 of NMA pure solvent, adm jr., 3/3/93
+CG2O1    0.0       -0.1100     2.0000 ! NMA pure solvent, adm jr., 3/3/93
+CG2O2    0.0       -0.0980     1.7000 ! methyl acetate update viv 12/29/06
+CG2O3    0.0       -0.0700     2.0000 ! acetate heat of solvation
+CG2O4    0.0       -0.0600     1.8000 ! adm, acetaldehyde, 11/08
+CG2O5    0.0       -0.0900     2.0000 ! adm, acetone, 11/08
+CG2O6    0.0       -0.0700     2.0000 ! UREA, CO3 (carbonate) from acetate heat of solvation
+CG2O7    0.0       -0.0580     1.5630 ! carbon dioxide, JES
+CG2R51   0.0       -0.0500     2.1000 ! INDO/TRP; bulk solvent of 10 maybridge cmpds (kevo)
+CG2R52   0.0       -0.0200     2.2000 ! PYRZ, pyrazole; bulk solvent of 3 maybridge cmpds (kevo); consistent with CG2R64
+CG2R53   0.0       -0.0200     2.2000 ! IMIA, imidazole; bulk solvent of 5 maybridge cmpds (kevo); consistent with CG2R64
+CG2R57   0.0       -0.0500     2.1000 ! bipyrroles; from CG2R51; lf
+CG25C1   0.0       -0.0680     2.0900 ! same as CG2DC1 but in 5-membered ring with exocyclic double bond
+CG25C2   0.0       -0.0680     2.0900 ! same as CG2DC2 but in 5-membered ring with exocyclic double bond
+CG251O   0.0       -0.0680     2.0900 ! same as CG2D1O but in 5-membered ring with exocyclic double bond
+CG252O   0.0       -0.0680     2.0900 ! same as CG2D2O but in 5-membered ring with exocyclic double bond
+CG2R61   0.0       -0.0700     1.9924 ! INDO/TRP
+CG2R62   0.0       -0.0900     1.9000 ! NA
+CG2R63   0.0       -0.1000     1.9000 ! NA
+CG2R64   0.0       -0.0400     2.1000 ! PYRM, pyrimidine
+CG2R66   0.0       -0.0700     1.9000 ! NA dft
+CG2R67   0.0       -0.0700     1.9924 ! biphenyl
+CG2RC0   0.0       -0.0990     1.8600 ! INDO/TRP
+CG2R71   0.0       -0.0670     1.9948 ! Questionable extrapolation. TO BE REFINED!
+CG2RC7   0.0       -0.0990     1.8600 ! copied from INDO/TRP, ignoring single bond character ==> TO BE REFINED!
+! THESE ARE IGOR'S ALKANE AND THF PARAMS
+CG311    0.0       -0.0320     2.0000   0.0 -0.01 1.9 ! alkane (CT1), isobutane, 6/05 viv
+CG321    0.0       -0.0560     2.0100   0.0 -0.01 1.9 ! alkane (CT2), 4/98, yin, adm jr, also used by viv
+CG323    0.0       -0.1100     2.2000 ! methylthiolate to water and F.E. of solvation, adm jr. 6/1/92
+CG324    0.0       -0.0550     2.1750   0.0 -0.01 1.9 ! PIP1,2,3
+CG331    0.0       -0.0780     2.0500   0.0 -0.01 1.9 ! alkane (CT3), 4/98, yin, adm jr; Rmin/2 modified from 2.04 to 2.05
+CG334    0.0       -0.0770     2.2150   0.0 -0.01 1.9 ! extrapolation based on CG331, CG321 and CG324, kevo
+CG3C51   0.0       -0.0360     2.0100   0.0 -0.01 1.9 ! extrapolation based on CG311, CG321 and CG3C52, kevo
+! "highly specialized amine parameters"
+CG3AM1   0.0       -0.0780     1.9800 ! aliphatic amines
+CG3AM2   0.0       -0.0800     1.9900 ! aliphatic amines
+!nitrogens
+NG321    0.0       -0.0600     1.9900 ! aliphatic amines
+NG2R50   0.0       -0.2000     1.8500 ! IMIA, Imidazole from IMIA/HS[DE]; originally from prot backbone - probably not ideal
+NG2R51   0.0       -0.2000     1.8500 ! PYRL, Pyrrole; IMIA, Imidazole from IMIA/HS[DE] and INDO/TRP; originally from prot backbone - probably not ideal
+NG2R52   0.0       -0.2000     1.8500 ! IMIM, imidazolium from IMIM/HSP; originally from prot backbone - probably not ideal
+NG2R53   0.0       -0.2000     1.8500 ! amide in 5-memebered ring (slightly pyramidized), 2PDO, kevo
+NG2R57   0.0       -0.2000     1.8500 ! bipyrroles; from NG2R51; lf
+NG2R60   0.0       -0.0600     1.8900 ! PYR1, pyridine
+NG2R61   0.0       -0.2000     1.8500 ! NA
+NG2R62   0.0       -0.0500     2.0600 ! PYRM, pyrimidine
+NG2R67   0.0       -0.2000     1.8500 ! N-phenyl pyridinones etc.; from NG2R61; isg
+OG2D1    0.0       -0.1200     1.7000   0.0 -0.12 1.40 ! carbonyl. Also consistent with adm, acetaldehyde, 11/08
+OG2D2    0.0       -0.1200     1.7000 ! PROT
+OG2D3    0.0       -0.0500     1.7000   0.0 -0.12 1.40 ! adm, acetone, 11/08
+OG2D4    0.0       -0.1200     1.7000 ! NA
+OG2D5    0.0       -0.1650     1.6920 ! carbon dioxide, JES
+OG2N1    0.0       -0.1200     1.7000 ! NITR, nitrobenzene
+OG2P1    0.0       -0.1200     1.7000 ! NA
+OG2R50   0.0       -0.1200     1.7000 ! FURA, furan
+OG3R60   0.0       -0.1000     1.6500 ! PY01, PY02, pyran; LJ from THP, sng 1/06
+OG301    0.0       -0.1000     1.6500 ! ether; LJ from THP, sng 1/06 !SHOULD WE HAVE A SEPARATE ENOL ETHER??? IF YES, SHOULD WE MERGE IT WITH OG3R60???
+OG302    0.0       -0.1000     1.6500 ! ester; LJ from THP, sng 1/06
+OG303    0.0       -0.1000     1.6500 ! phosphate/sulfate ester; LJ from THP, sng 1/06
+OG304    0.0       -0.1000     1.6500 ! linkage oxygen in pyrophosphate/pyrosulphate
+OG311    0.0       -0.1921     1.7650 ! og MeOH and EtOH 1/06 (was -0.1521 1.7682)
+OG312    0.0       -0.1200     1.7500 ! PROT, anionic alcohol oxygen
+OG3C31   0.0       -0.1000     1.6500 ! epoxide; from ethers; sc
+OG3C51   0.0       -0.1000     1.6500 ! THF; LJ from THP, tetrahydropyran sng 1/06
+OG3C61   0.0       -0.1000     1.6500 ! DIOX, dioxane; THP, tetrahydropyran sng 1/06 !SHOULD WE MERGE THIS WITH OG3R60???
+!sulphurs
+SG311    0.0       -0.4500     2.0000 ! methanethiol/ethylmethylsulfide pure solvent
+
+!--------------------------------------------BV-parameters-------------------------------------------
+CGCPY1   0.0       -0.0680     2.0900 ! same as CG2DC1 but in 5-membered ring with exocyclic double bond
+
+CGCPY2   0.0       -0.0680     2.0900 ! Butadiene
+
+CGCPY3   0.0       -0.0680     2.0900 ! Butadiene
+
+CGCPY4   0.0       -0.0500     2.1000 ! INDO/TRP; bulk solvent of 10 maybridge cmpds (kevo)
+
+CGCPY5   0.0       -0.0500     2.1000 ! INDO/TRP; bulk solvent of 10 maybridge cmpds (kevo)
+
+CGCPY6   0.0       -0.0500     2.1000 ! INDO/TRP; bulk solvent of 10 maybridge cmpds (kevo)
+!-----------------------------------------------------------------------------------------------------
+END
