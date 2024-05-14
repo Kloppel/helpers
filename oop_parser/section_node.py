@@ -2,6 +2,11 @@ import pandas as pd
 
 debug_mode = False
 
+import logging
+
+# module level logger automatically inheriting from root logger
+logger = logging.getLogger(__name__)
+
 class SectionNode:
     """
     Design Pattern 'Template Pattern' Base Class:
@@ -50,8 +55,9 @@ class SectionNode:
         
         """
         
-        if debug_mode: 
-            print(f"{self} is processing")
+        
+        logger.debug("Current Node processing: '%s'" % (self.__module__))
+
         
         # access current line
         line = remaining_lines[0]

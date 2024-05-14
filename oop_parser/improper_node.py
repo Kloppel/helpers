@@ -1,5 +1,3 @@
-
-
 from section_node import SectionNode
 
 class ImproperNode(SectionNode):
