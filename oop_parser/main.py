@@ -23,6 +23,9 @@ def parse_file(filepath):
     p = Parser(filepath=filepath, 
                config=config,
                StateTransitionManager=StateTransitionManager)
+    
+    # inject configuration class to allow module-wise logging downstream
+    p.add_module_logger(logging_config.ModuleLogging)
                
     # start parsing process           
     p.start()

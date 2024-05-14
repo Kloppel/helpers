@@ -55,24 +55,63 @@ logging.getLogger().addHandler(console_handler)
 logging.getLogger().addHandler(file_handler)
 
 
+# %%% 
+class ModuleLogging:
+    """
+    Utility Class:
+        provides methods to dynamically create a logger name 
+        based on the class and function names where it is used.
+    
+    Allows single implementation in a Base Class Abstract Method in order to 
+    log specific names of multiple child classes and methods.
+    
+    # How to use:
+        - pass ModuleLogging to Base Class via implicit dependency injection
+        - call ModuleLogging.get_function_logger()
+    """
+    
 
+    @staticmethod
+    def get_function_logger():
+        """
+        Dynamically creates a logger name based on the class and function names.
 
-
-# # create logger
-# logger = logging.getLogger("basic_logger")
-# logger.setLevel(logging.DEBUG)
-
-# # create handler
-# console_handler = logging.StreamHandler()
-# console_handler.setLevel(logging.DEBUG)
-
-# # create formatter
-# formatter = logging.Formatter(
-#                         '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-
-# # set formatter
-# console_handler.setFormatter(formatter)
-
-# # add handler to logger
-# logger.addHandler(console_handler)
+        Returns:
+            logging.Logger: A logger object.
+        """
+        # access method via class name
+        logger_name = ModuleLogging.get_caller_function_name(get_class_name=True, depth=2)
+        logger_name = f"{logger_name}"
+        logger = logging.getLogger(logger_name)
+        
+        return logger
+    
+    
+    def get_caller_function_name(get_class_name:bool = False,
+                                  depth:int = 1):
+        """
+        Get the name of the function that called the current function. 
+        Also, get the class name if the caller is a class method.
+    
+        Args:
+        get_class_name (bool, optional):       If True, return the class name as well. Default is False.
+        depth           (int, optional):       The depth of the caller. Default is 1.
+    
+        """
+    
+        # Get the frame of the caller
+        frame = inspect.currentframe()
+        for _ in range(depth):
+            frame = frame.f_back
+        # Get the caller's function name
+        package_name = frame.f_globals.get('__name__', None)
+        caller_function_name = frame.f_code.co_name
+        if get_class_name:
+            # Get the caller's class name
+            caller_class_name = frame.f_locals.get('self', None)
+            if caller_class_name is not None:
+                caller_class_name = caller_class_name.__class__.__name__
+                caller_function_name = caller_class_name + '.' + caller_function_name
+    
+        return package_name+"."+caller_function_name
 

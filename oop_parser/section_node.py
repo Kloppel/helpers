@@ -4,8 +4,8 @@ debug_mode = False
 
 import logging
 
-# module level logger automatically inheriting from root logger
-logger = logging.getLogger(__name__)
+# # module level logger automatically inheriting from root logger
+# logger = logging.getLogger(__name__)
 
 class SectionNode:
     """
@@ -56,7 +56,13 @@ class SectionNode:
         """
         
         
-        logger.debug("Current Node processing: '%s'" % (self.__module__))
+        # logger.debug("Current Node processing: '%s'" % (self.__module__))
+
+        # acces ModuleLogging from parser
+        # instantiate a logger
+        self.logger = parser.ModuleLogging.get_function_logger()
+        
+        self.logger.debug("Current Node is starting to process")
 
         
         # access current line

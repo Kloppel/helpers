@@ -1,4 +1,5 @@
 import re
+import logging
 
 debug_mode = False
 
@@ -63,6 +64,17 @@ class Parser:
         config.select_strategy_by_filetype(file_suffix)
         
         return config
+    
+    
+    @classmethod
+    def add_module_logger(cls, ModuleLogging):
+        """
+        ModuleLogging:
+            Class ModuleLogging
+                from logging_config.py
+        """
+        cls.ModuleLogging = ModuleLogging
+        
     
     
     def read_file(self, filepath):
