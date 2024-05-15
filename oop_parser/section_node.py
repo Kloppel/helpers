@@ -4,8 +4,7 @@ debug_mode = False
 
 import logging
 
-# # module level logger automatically inheriting from root logger
-# logger = logging.getLogger(__name__)
+import inspect
 
 class SectionNode:
     """
@@ -34,6 +33,7 @@ class SectionNode:
         self.section_dataframe = pd.DataFrame(
                         columns=list(self.COL_LABELS_AND_DTYPES))
 
+        self.logger = None
                 
         
     def process(self, parser, remaining_lines: list):
@@ -55,14 +55,13 @@ class SectionNode:
         
         """
         
-        
-        # logger.debug("Current Node processing: '%s'" % (self.__module__))
-
         # acces ModuleLogging from parser
         # instantiate a logger
-        self.logger = parser.ModuleLogging.get_function_logger()
-        
-        self.logger.debug("Current Node is starting to process")
+        if not self.logger:
+            self.logger = parser.ModuleLogging.get_function_logger()
+ 
+    
+        self.logger.debug("process called")
 
         
         # access current line
@@ -128,6 +127,17 @@ class SectionNode:
             allows addition of non_data_specifier conditions in child classes.
         """
         
+        self.method_name = inspect.currentframe().f_code.co_name
+     
+        # verify method name via inspect module
+        self.logger.debug(f"{self.method_name} called")
+
+        # actual event call
+        self.logger.debug("method name for this event is logged automatically")
+
+
+
+        
         # list contains True for each condition that is true
         non_data_specifier_booleans = [line.startswith("\n"), 
                                        line.startswith("!"),
@@ -174,6 +184,15 @@ class SectionNode:
         row_df : pandas DataFrame
             Single row of a df with proper column labels.
         """
+        
+        self.method_name = inspect.currentframe().f_code.co_name
+        
+        # verify method name via inspect module
+        self.logger.debug(f"{self.method_name} called")
+        
+        # actual event call
+        self.logger.debug("method name for this event is logged automatically")
+
         
         # access column labels
         column_labels = list(self.COL_LABELS_AND_DTYPES)

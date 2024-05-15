@@ -1,6 +1,10 @@
 
 # %%% Goals / Documentation
 """
+...::: GOALS :::...
+"""
+
+"""
 Goal:
     Be able to debug efficiently via logging library.
     
@@ -25,6 +29,34 @@ logging statements.
 
 """
 
+
+
+
+"""
+...::: Documentation :::...
+"""
+
+"""
+event (logger.debug() call) has default arg 'stacklevel=1'. that means,
+it automatically passes the calling function name to the LogRecord object.
+
+the LogRecord object contains the function name via its attr 'funcName'.
+
+By that, the logger object, which holds all LogRecords, can directly access
+a records calling function.
+
+This is reflected by the updated formatter:
+    console_formatter = logging.Formatter(
+        '%(asctime)s - %(name)s - %(funcName)s - %(levelname)s - %(message)s')
+
+
+2 do:
+    simplify ModuleLogging by reducing inspect usage to just add 
+    a class/module-specific log file.
+    
+"""
+
+
 # %%% Logging Config
 
 
@@ -37,14 +69,25 @@ LOG_LEVEL = logging.DEBUG  # Adjust as needed
 
 # Configure console handler
 console_handler = logging.StreamHandler()
+# console_formatter = logging.Formatter(
+#                         '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+
 console_formatter = logging.Formatter(
-                        '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+                        '%(asctime)s - %(name)s - %(funcName)s - %(levelname)s - %(message)s')
+
+
 
 console_handler.setFormatter(console_formatter)
 
 # configure file handler
-file_handler = logging.FileHandler("central_log.log")
-file_handler.setFormatter(console_formatter)
+# file_handler = logging.FileHandler("central_log.log")
+
+# file_handler = logging.FileHandler(f"{logging.getLogger().name}.log")
+
+
+
+# file_handler.setFormatter(console_formatter)
 
 # set log level
 logging.getLogger().setLevel(LOG_LEVEL)
@@ -52,7 +95,20 @@ logging.getLogger().setLevel(LOG_LEVEL)
 # add handlers to logger
 logging.getLogger().addHandler(console_handler)
 
-logging.getLogger().addHandler(file_handler)
+# logging.getLogger().addHandler(file_handler)
+
+
+# # %%% Custom Formatter
+
+# class FunctionNameLoggingFormatter(logging.Formatter):
+
+#     def format(self, record):
+#         # Get the caller function name
+#         caller_function = record.funcName if hasattr(record, 'funcName') else "Unknown"
+#         # ... (format the rest of the message)
+#         message = f"{caller_function}: {record.msg}"
+#         # ... (format additional attributes if needed)
+#         return logging.Formatter.format(self, record, message)
 
 
 # %%% 
@@ -83,6 +139,35 @@ class ModuleLogging:
         logger_name = ModuleLogging.get_caller_function_name(get_class_name=True, depth=2)
         logger_name = f"{logger_name}"
         logger = logging.getLogger(logger_name)
+        
+        logger = ModuleLogging.set_module_log_file(logger)
+        
+        return logger
+    
+    # def get_class_name():
+        
+    
+    
+    def set_module_log_file(logger):
+        
+        name = logger.name
+        
+        split_name = name.split(".")
+        
+        # print(split_name)
+        
+        # print(split_name[1].istitle())
+        
+        for i in split_name:
+            if i[0].isupper():
+                print(f"{i} is indeed a class")
+                caller_class_name = i
+        
+    
+                module_log_file_handler = logging.FileHandler(f"{caller_class_name}.log")
+                module_log_file_handler.setFormatter(console_formatter)
+    
+                logger.addHandler(module_log_file_handler)
         
         return logger
     
