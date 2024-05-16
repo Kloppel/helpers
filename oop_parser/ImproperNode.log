@@ -1,0 +1,471 @@
+2024-05-16 10:49:43,248 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,249 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:43,249 - section_node.ImproperNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:43,250 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,250 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,250 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,251 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,251 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG2DC1', 'CG251O', 'CG2R51', 'HGA4', '3.0000', '0', '0.0000', '!', 'for', 'ethene,', 'yin/adm', 'jr.,', '12/95', '!', 'see', 'param', 'HE2', 'HE2', 'CE2', 'CE2'] 
+2024-05-16 10:49:43,251 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! for ethene, yin/adm jr., 12/95 ! see param HE2 HE2 CE2 CE2 
+2024-05-16 10:49:43,251 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG2DC1', 'CG251O', 'CG2R51', 'HGA4', '3.0000', '0', '0.0000', '! for ethene, yin/adm jr., 12/95 ! see param HE2 HE2 CE2 CE2'] 
+2024-05-16 10:49:43,255 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2  ...    psi0                                            comment
+0  CG2DC1  CG251O  ...  0.0000  ! for ethene, yin/adm jr., 12/95 ! see param H...
+
+[1 rows x 8 columns]
+2024-05-16 10:49:43,256 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,256 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,257 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,257 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2DC1   CG251O   CG2R51   HGA4     3.0000   0     0.0000 ! for ethene, yin/adm jr., 12/95  ! see param  HE2  HE2  CE2  CE2
+
+2024-05-16 10:49:43,258 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,258 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [True, False, True, False, False]
+2024-05-16 10:49:43,259 - section_node.ImproperNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:43,259 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,259 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:43,259 - section_node.ImproperNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:43,260 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,260 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,260 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,260 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,261 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG2R53', 'CG3C51', 'NG2R53', 'OG2D1', '90.0000', '0', '0.00', '!', 'bv-pfr-c', ',', 'from', 'CG2R53', 'CG3C52', 'NG2R53', 'OG2D1,', 'PENALTY=', '0.4'] 
+2024-05-16 10:49:43,261 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! bv-pfr-c , from CG2R53 CG3C52 NG2R53 OG2D1, PENALTY= 0.4 
+2024-05-16 10:49:43,261 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG2R53', 'CG3C51', 'NG2R53', 'OG2D1', '90.0000', '0', '0.00', '! bv-pfr-c , from CG2R53 CG3C52 NG2R53 OG2D1, PENALTY= 0.4'] 
+2024-05-16 10:49:43,266 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2  ...  psi0                                            comment
+0  CG2R53  CG3C51  ...  0.00  ! bv-pfr-c , from CG2R53 CG3C52 NG2R53 OG2D1, ...
+
+[1 rows x 8 columns]
+2024-05-16 10:49:43,266 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,266 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,267 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,267 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R53   CG3C51   NG2R53   OG2D1    90.0000  0     0.00   !   bv-pfr-c   ,  from   CG2R53   CG3C52   NG2R53   OG2D1,   PENALTY=   0.4
+
+2024-05-16 10:49:43,267 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,268 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [True, False, True, False, False]
+2024-05-16 10:49:43,268 - section_node.ImproperNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:43,268 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,269 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:43,269 - section_node.ImproperNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:43,270 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,270 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,270 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,270 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,271 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG2R51', 'CGCPY6', 'NG2R51', 'OG312', '90.0000', '0', '0.00', '!', 'RDV', ',', 'from', 'CG2R53', 'CG25C1', 'NG2R51', 'OG2D1,', 'penalty=', '7.4'] 
+2024-05-16 10:49:43,271 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! RDV , from CG2R53 CG25C1 NG2R51 OG2D1, penalty= 7.4 
+2024-05-16 10:49:43,271 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG2R51', 'CGCPY6', 'NG2R51', 'OG312', '90.0000', '0', '0.00', '! RDV , from CG2R53 CG25C1 NG2R51 OG2D1, penalty= 7.4'] 
+2024-05-16 10:49:43,275 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2  ...  psi0                                            comment
+0  CG2R51  CGCPY6  ...  0.00  ! RDV , from CG2R53 CG25C1 NG2R51 OG2D1, penal...
+
+[1 rows x 8 columns]
+2024-05-16 10:49:43,275 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,276 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,276 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,277 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R51   CGCPY6   NG2R51   OG312    90.0000  0     0.00   ! RDV , from CG2R53 CG25C1 NG2R51 OG2D1, penalty= 7.4
+
+2024-05-16 10:49:43,277 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,277 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [True, False, True, False, False]
+2024-05-16 10:49:43,278 - section_node.ImproperNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:43,278 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,279 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:43,279 - section_node.ImproperNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:43,279 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,279 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,280 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,280 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,280 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['NG321', 'C', 'CG311', 'HGPAM2', '20.0000', '0', '0.0000', '!', 'ALLOW', 'PEP', 'POL', 'ARO'] 
+2024-05-16 10:49:43,280 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW PEP POL ARO 
+2024-05-16 10:49:43,281 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['NG321', 'C', 'CG311', 'HGPAM2', '20.0000', '0', '0.0000', '! ALLOW PEP POL ARO'] 
+2024-05-16 10:49:43,285 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1 atom2  atom3   atom4     kpsi  0    psi0              comment
+0  NG321     C  CG311  HGPAM2  20.0000  0  0.0000  ! ALLOW PEP POL ARO
+2024-05-16 10:49:43,285 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,286 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,286 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,287 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ NG321     C        CG311    HGPAM2   20.0000  0      0.0000 ! ALLOW   PEP POL ARO
+
+2024-05-16 10:49:43,287 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,287 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, True, False]
+2024-05-16 10:49:43,288 - section_node.ImproperNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:43,288 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,288 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,289 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,289 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,289 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG2O2', 'CG311', 'NH1', 'OG2D1', '120.0000', '0', '0.0000', '!', 'ALLOW', 'PEP', 'POL', 'ARO'] 
+2024-05-16 10:49:43,289 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW PEP POL ARO 
+2024-05-16 10:49:43,290 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG2O2', 'CG311', 'NH1', 'OG2D1', '120.0000', '0', '0.0000', '! ALLOW PEP POL ARO'] 
+2024-05-16 10:49:43,293 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1  atom2 atom3  atom4      kpsi  0    psi0              comment
+0  CG2O2  CG311   NH1  OG2D1  120.0000  0  0.0000  ! ALLOW PEP POL ARO
+2024-05-16 10:49:43,294 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,294 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,295 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,295 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2O2     CG311    NH1      OG2D1   120.0000  0      0.0000 ! ALLOW   PEP POL ARO
+
+2024-05-16 10:49:43,295 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,295 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, True, False]
+2024-05-16 10:49:43,296 - section_node.ImproperNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:43,296 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,297 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:43,297 - section_node.ImproperNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:43,298 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,298 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,298 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,298 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,299 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CGCPY1', 'CG3C51', 'CG252O', 'CG2DC1', '140.0000', '0', '0.0000', '!', 'ALLOW', 'HEM', '!'] 
+2024-05-16 10:49:43,299 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW HEM ! 
+2024-05-16 10:49:43,299 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CGCPY1', 'CG3C51', 'CG252O', 'CG2DC1', '140.0000', '0', '0.0000', '! ALLOW HEM !'] 
+2024-05-16 10:49:43,303 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3   atom4      kpsi  0    psi0        comment
+0  CGCPY1  CG3C51  CG252O  CG2DC1  140.0000  0  0.0000  ! ALLOW HEM !
+2024-05-16 10:49:43,303 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,303 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,304 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,304 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY1    CG3C51   CG252O   CG2DC1   140.0000  0      0.0000 ! ALLOW HEM  !
+
+2024-05-16 10:49:43,304 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,305 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,305 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,305 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,306 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG2O2', 'OG2D1', 'OG311', 'CG321', '96.0000', '0', '0.0000', '!', 'ALLOW', 'PEP', 'POL', 'ARO'] 
+2024-05-16 10:49:43,306 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW PEP POL ARO 
+2024-05-16 10:49:43,306 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG2O2', 'OG2D1', 'OG311', 'CG321', '96.0000', '0', '0.0000', '! ALLOW PEP POL ARO'] 
+2024-05-16 10:49:43,310 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1  atom2  atom3  atom4     kpsi  0    psi0              comment
+0  CG2O2  OG2D1  OG311  CG321  96.0000  0  0.0000  ! ALLOW PEP POL ARO
+2024-05-16 10:49:43,310 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,311 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,311 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,311 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2O2     OG2D1    OG311    CG321     96.0000  0      0.0000 ! ALLOW   PEP POL ARO
+
+2024-05-16 10:49:43,312 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,312 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,312 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,312 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,313 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG251O', 'CG2R51', 'NG2R51', 'CGCPY2', '140.0000', '0', '0.0000', '!', 'ALLOW', 'HEM'] 
+2024-05-16 10:49:43,313 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW HEM 
+2024-05-16 10:49:43,313 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG251O', 'CG2R51', 'NG2R51', 'CGCPY2', '140.0000', '0', '0.0000', '! ALLOW HEM'] 
+2024-05-16 10:49:43,317 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3   atom4      kpsi  0    psi0      comment
+0  CG251O  CG2R51  NG2R51  CGCPY2  140.0000  0  0.0000  ! ALLOW HEM
+2024-05-16 10:49:43,317 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,318 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,318 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,318 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG251O    CG2R51   NG2R51   CGCPY2   140.0000  0      0.0000 ! ALLOW HEM
+
+2024-05-16 10:49:43,319 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,319 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,319 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,320 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,320 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CGCPY2', 'CG251O', 'CG2R51', 'HGA4', '140.4000', '0', '0.0000', '!', 'ALLOW', 'HEM'] 
+2024-05-16 10:49:43,320 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW HEM 
+2024-05-16 10:49:43,321 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CGCPY2', 'CG251O', 'CG2R51', 'HGA4', '140.4000', '0', '0.0000', '! ALLOW HEM'] 
+2024-05-16 10:49:43,324 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3 atom4      kpsi  0    psi0      comment
+0  CGCPY2  CG251O  CG2R51  HGA4  140.4000  0  0.0000  ! ALLOW HEM
+2024-05-16 10:49:43,325 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,325 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,326 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,326 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY2    CG251O   CG2R51   HGA4     140.4000  0     0.0000 ! ALLOW HEM
+
+2024-05-16 10:49:43,326 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,326 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,327 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,327 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,327 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG2R51', 'CG2R51', 'NG2R51', 'CGCPY3', '145.00', '0', '0.0000', '!', 'ALLOW', 'HEM'] 
+2024-05-16 10:49:43,328 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW HEM 
+2024-05-16 10:49:43,328 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG2R51', 'CG2R51', 'NG2R51', 'CGCPY3', '145.00', '0', '0.0000', '! ALLOW HEM'] 
+2024-05-16 10:49:43,331 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3   atom4    kpsi  0    psi0      comment
+0  CG2R51  CG2R51  NG2R51  CGCPY3  145.00  0  0.0000  ! ALLOW HEM
+2024-05-16 10:49:43,332 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,332 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,332 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,333 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R51    CG2R51   NG2R51   CGCPY3    145.00   0      0.0000 ! ALLOW HEM
+
+2024-05-16 10:49:43,333 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,333 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,333 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,334 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,334 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CGCPY3', 'CG252O', 'CG2R51', 'HGA4', '29.4000', '0', '0.0000', '!', 'ALLOW', 'HEM'] 
+2024-05-16 10:49:43,334 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW HEM 
+2024-05-16 10:49:43,334 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CGCPY3', 'CG252O', 'CG2R51', 'HGA4', '29.4000', '0', '0.0000', '! ALLOW HEM'] 
+2024-05-16 10:49:43,338 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3 atom4     kpsi  0    psi0      comment
+0  CGCPY3  CG252O  CG2R51  HGA4  29.4000  0  0.0000  ! ALLOW HEM
+2024-05-16 10:49:43,338 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,339 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,339 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,340 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY3    CG252O   CG2R51   HGA4      29.4000  0      0.0000 ! ALLOW HEM
+
+2024-05-16 10:49:43,340 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,340 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,340 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,340 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,341 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG252O', 'CGCPY1', 'NG2R53', 'CGCPY3', '140.0000', '0', '0.000', '!', 'ALLOW', 'HEM'] 
+2024-05-16 10:49:43,341 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW HEM 
+2024-05-16 10:49:43,341 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG252O', 'CGCPY1', 'NG2R53', 'CGCPY3', '140.0000', '0', '0.000', '! ALLOW HEM'] 
+2024-05-16 10:49:43,345 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3   atom4      kpsi  0   psi0      comment
+0  CG252O  CGCPY1  NG2R53  CGCPY3  140.0000  0  0.000  ! ALLOW HEM
+2024-05-16 10:49:43,345 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,346 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,347 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,347 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG252O    CGCPY1   NG2R53   CGCPY3   140.0000  0       0.000 ! ALLOW HEM
+
+2024-05-16 10:49:43,347 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,347 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,348 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,348 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,348 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG251O', 'CG2DC1', 'NG2R51', 'CGCPY4', '61.0000', '0', '0.0000', '!', 'ALLOW', 'HEM', '!'] 
+2024-05-16 10:49:43,348 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW HEM ! 
+2024-05-16 10:49:43,349 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG251O', 'CG2DC1', 'NG2R51', 'CGCPY4', '61.0000', '0', '0.0000', '! ALLOW HEM !'] 
+2024-05-16 10:49:43,352 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3   atom4     kpsi  0    psi0        comment
+0  CG251O  CG2DC1  NG2R51  CGCPY4  61.0000  0  0.0000  ! ALLOW HEM !
+2024-05-16 10:49:43,353 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,353 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,354 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,354 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG251O    CG2DC1   NG2R51   CGCPY4    61.0000  0      0.0000 ! ALLOW HEM  !
+
+2024-05-16 10:49:43,354 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,354 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,355 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,355 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,355 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CGCPY4', 'CG251O', 'CG2R51', 'CG321', '64.0000', '0', '0.0000', '!', 'ALLOW', 'HEM'] 
+2024-05-16 10:49:43,355 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW HEM 
+2024-05-16 10:49:43,356 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CGCPY4', 'CG251O', 'CG2R51', 'CG321', '64.0000', '0', '0.0000', '! ALLOW HEM'] 
+2024-05-16 10:49:43,359 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3  atom4     kpsi  0    psi0      comment
+0  CGCPY4  CG251O  CG2R51  CG321  64.0000  0  0.0000  ! ALLOW HEM
+2024-05-16 10:49:43,360 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,360 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,361 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,361 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY4    CG251O   CG2R51   CG321     64.0000  0      0.0000 ! ALLOW HEM
+
+2024-05-16 10:49:43,361 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,362 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,362 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,362 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,363 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG2R51', 'CGCPY4', 'CG251O', 'CG331', '90.0000', '0', '0.0000', '!', 'ALLOW', 'HEM'] 
+2024-05-16 10:49:43,363 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW HEM 
+2024-05-16 10:49:43,363 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG2R51', 'CGCPY4', 'CG251O', 'CG331', '90.0000', '0', '0.0000', '! ALLOW HEM'] 
+2024-05-16 10:49:43,367 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3  atom4     kpsi  0    psi0      comment
+0  CG2R51  CGCPY4  CG251O  CG331  90.0000  0  0.0000  ! ALLOW HEM
+2024-05-16 10:49:43,367 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,368 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,368 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,368 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R51    CGCPY4   CG251O   CG331     90.0000  0      0.0000 ! ALLOW HEM
+
+2024-05-16 10:49:43,369 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,369 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,369 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,369 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,370 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG2R51', 'CGCPY5', 'NG2R51', 'CGCPY2', '7.0000', '0', '0.0000', '!', 'ALLOW', 'HEM'] 
+2024-05-16 10:49:43,370 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW HEM 
+2024-05-16 10:49:43,370 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG2R51', 'CGCPY5', 'NG2R51', 'CGCPY2', '7.0000', '0', '0.0000', '! ALLOW HEM'] 
+2024-05-16 10:49:43,374 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3   atom4    kpsi  0    psi0      comment
+0  CG2R51  CGCPY5  NG2R51  CGCPY2  7.0000  0  0.0000  ! ALLOW HEM
+2024-05-16 10:49:43,374 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,375 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,375 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,376 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R51    CGCPY5   NG2R51   CGCPY2      7.0000 0      0.0000 ! ALLOW HEM
+
+2024-05-16 10:49:43,376 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,376 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,376 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,377 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,377 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CGCPY5', 'CG2R51', 'CGCPY6', 'CG331', '20.0000', '0', '0.0000', '!', 'ALLOW', 'HEM'] 
+2024-05-16 10:49:43,377 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW HEM 
+2024-05-16 10:49:43,377 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CGCPY5', 'CG2R51', 'CGCPY6', 'CG331', '20.0000', '0', '0.0000', '! ALLOW HEM'] 
+2024-05-16 10:49:43,381 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3  atom4     kpsi  0    psi0      comment
+0  CGCPY5  CG2R51  CGCPY6  CG331  20.0000  0  0.0000  ! ALLOW HEM
+2024-05-16 10:49:43,381 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,382 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,382 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,382 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY5    CG2R51   CGCPY6   CG331      20.0000 0      0.0000 ! ALLOW HEM
+
+2024-05-16 10:49:43,383 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,383 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,383 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,384 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,384 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CGCPY6', 'CG2DC1', 'CG2R51', 'CGCPY5', '180.0000', '0', '0.0000', '!', 'ALLOW', 'HEM'] 
+2024-05-16 10:49:43,384 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW HEM 
+2024-05-16 10:49:43,384 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CGCPY6', 'CG2DC1', 'CG2R51', 'CGCPY5', '180.0000', '0', '0.0000', '! ALLOW HEM'] 
+2024-05-16 10:49:43,388 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3   atom4      kpsi  0    psi0      comment
+0  CGCPY6  CG2DC1  CG2R51  CGCPY5  180.0000  0  0.0000  ! ALLOW HEM
+2024-05-16 10:49:43,388 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,389 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,389 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,389 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY6    CG2DC1   CG2R51   CGCPY5    180.0000 0      0.0000 ! ALLOW HEM
+
+2024-05-16 10:49:43,390 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,390 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,390 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,391 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,391 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG2DC1', 'CG2DC3', 'CGCPY6', 'HGA4', '3.0000', '0', '0.0000'] 
+2024-05-16 10:49:43,391 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment:  
+2024-05-16 10:49:43,391 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG2DC1', 'CG2DC3', 'CGCPY6', 'HGA4', '3.0000', '0', '0.0000', ''] 
+2024-05-16 10:49:43,395 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3 atom4    kpsi  0    psi0 comment
+0  CG2DC1  CG2DC3  CGCPY6  HGA4  3.0000  0  0.0000        
+2024-05-16 10:49:43,395 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,396 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,396 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,396 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2DC1    CG2DC3   CGCPY6   HGA4        3.0000 0      0.0000
+
+2024-05-16 10:49:43,397 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,397 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,397 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,397 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,398 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG2R51', 'CG2R51', 'CG2R51', 'CG331', '90.0000', '0', '0.0000', '!', 'ALLOW', 'HEM'] 
+2024-05-16 10:49:43,398 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW HEM 
+2024-05-16 10:49:43,398 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG2R51', 'CG2R51', 'CG2R51', 'CG331', '90.0000', '0', '0.0000', '! ALLOW HEM'] 
+2024-05-16 10:49:43,402 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3  atom4     kpsi  0    psi0      comment
+0  CG2R51  CG2R51  CG2R51  CG331  90.0000  0  0.0000  ! ALLOW HEM
+2024-05-16 10:49:43,402 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,402 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,403 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,403 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R51    CG2R51   CG2R51   CG331      90.0000 0      0.0000 ! ALLOW HEM
+
+2024-05-16 10:49:43,403 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,404 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,404 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,404 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,405 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG3C51', 'CGCPY1', 'CG2R53', 'CG331', '20.0000', '0', '0.0000', '!', 'mp2/6-31gd'] 
+2024-05-16 10:49:43,405 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! mp2/6-31gd 
+2024-05-16 10:49:43,405 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG3C51', 'CGCPY1', 'CG2R53', 'CG331', '20.0000', '0', '0.0000', '! mp2/6-31gd'] 
+2024-05-16 10:49:43,408 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3  atom4     kpsi  0    psi0       comment
+0  CG3C51  CGCPY1  CG2R53  CG331  20.0000  0  0.0000  ! mp2/6-31gd
+2024-05-16 10:49:43,409 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,409 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,410 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,410 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG3C51    CGCPY1   CG2R53   CG331      20.0000 0      0.0000 ! mp2/6-31gd
+
+2024-05-16 10:49:43,410 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,411 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,411 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,411 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,411 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG2R51', 'NG2R51', 'CGCPY6', 'OG312', '120.0000', '0', '0.0000', '!', 'ALLOW', 'PEP', 'POL', 'ARO'] 
+2024-05-16 10:49:43,412 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW PEP POL ARO 
+2024-05-16 10:49:43,412 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG2R51', 'NG2R51', 'CGCPY6', 'OG312', '120.0000', '0', '0.0000', '! ALLOW PEP POL ARO'] 
+2024-05-16 10:49:43,415 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3  atom4      kpsi  0    psi0              comment
+0  CG2R51  NG2R51  CGCPY6  OG312  120.0000  0  0.0000  ! ALLOW PEP POL ARO
+2024-05-16 10:49:43,416 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,416 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,417 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,417 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R51    NG2R51   CGCPY6   OG312     120.0000 0      0.0000 ! ALLOW   PEP POL ARO
+
+2024-05-16 10:49:43,417 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,417 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,418 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,418 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,418 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG2R51', 'CG2R51', 'CG2R51', 'CG321', '90.0000', '0', '0.0000', '!', 'ALLOW', 'HEM'] 
+2024-05-16 10:49:43,418 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW HEM 
+2024-05-16 10:49:43,419 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG2R51', 'CG2R51', 'CG2R51', 'CG321', '90.0000', '0', '0.0000', '! ALLOW HEM'] 
+2024-05-16 10:49:43,422 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3  atom4     kpsi  0    psi0      comment
+0  CG2R51  CG2R51  CG2R51  CG321  90.0000  0  0.0000  ! ALLOW HEM
+2024-05-16 10:49:43,422 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,423 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,423 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,424 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R51    CG2R51   CG2R51   CG321      90.0000 0      0.0000 ! ALLOW HEM
+
+2024-05-16 10:49:43,424 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,424 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,424 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,425 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,425 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG2DC3', 'CG2DC1', 'HGA5', 'HGA5', '3.0000', '0', '0.00'] 
+2024-05-16 10:49:43,425 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment:  
+2024-05-16 10:49:43,425 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG2DC3', 'CG2DC1', 'HGA5', 'HGA5', '3.0000', '0', '0.00', ''] 
+2024-05-16 10:49:43,429 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2 atom3 atom4    kpsi  0  psi0 comment
+0  CG2DC3  CG2DC1  HGA5  HGA5  3.0000  0  0.00        
+2024-05-16 10:49:43,429 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,430 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,430 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,431 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2DC3    CG2DC1   HGA5     HGA5        3.0000 0        0.00
+
+2024-05-16 10:49:43,431 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,431 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,432 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,432 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,432 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG2DC1', 'CGCPY1', 'CG321', 'HGA4', '3.0000', '0', '0.0000'] 
+2024-05-16 10:49:43,432 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment:  
+2024-05-16 10:49:43,433 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG2DC1', 'CGCPY1', 'CG321', 'HGA4', '3.0000', '0', '0.0000', ''] 
+2024-05-16 10:49:43,436 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2  atom3 atom4    kpsi  0    psi0 comment
+0  CG2DC1  CGCPY1  CG321  HGA4  3.0000  0  0.0000        
+2024-05-16 10:49:43,436 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,437 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,437 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,438 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2DC1    CGCPY1   CG321    HGA4        3.0000 0      0.0000
+
+2024-05-16 10:49:43,438 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,438 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,438 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,439 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,439 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['CG2R51', 'CG2R51', 'NG2R51', 'CG2DC1', '200.0000', '0', '0.0000', '!', 'ALLOW', 'HEM'] 
+2024-05-16 10:49:43,439 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW HEM 
+2024-05-16 10:49:43,440 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['CG2R51', 'CG2R51', 'NG2R51', 'CG2DC1', '200.0000', '0', '0.0000', '! ALLOW HEM'] 
+2024-05-16 10:49:43,443 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3   atom4      kpsi  0    psi0      comment
+0  CG2R51  CG2R51  NG2R51  CG2DC1  200.0000  0  0.0000  ! ALLOW HEM
+2024-05-16 10:49:43,443 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,444 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,444 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,444 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R51    CG2R51   NG2R51   CG2DC1    200.0000 0      0.0000 ! ALLOW HEM
+
+2024-05-16 10:49:43,445 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,445 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:43,445 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:43,446 - section_node.ImproperNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:43,446 - section_node.ImproperNode.process - extract_column_values - DEBUG - split values: ['NG2R51', 'CG2R51', 'CG2R51', 'HGP1', '0.010', '0', '0.0000', '!', 'ALLOW', 'ARO'] 
+2024-05-16 10:49:43,446 - section_node.ImproperNode.process - extract_column_values - DEBUG - comment: ! ALLOW ARO 
+2024-05-16 10:49:43,446 - section_node.ImproperNode.process - extract_column_values - DEBUG - final row: ['NG2R51', 'CG2R51', 'CG2R51', 'HGP1', '0.010', '0', '0.0000', '! ALLOW ARO'] 
+2024-05-16 10:49:43,450 - section_node.ImproperNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2   atom3 atom4   kpsi  0    psi0      comment
+0  NG2R51  CG2R51  CG2R51  HGP1  0.010  0  0.0000  ! ALLOW ARO
+2024-05-16 10:49:43,450 - section_node.ImproperNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:43,451 - section_node.ImproperNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:43,451 - section_node.ImproperNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:43,452 - section_node.ImproperNode.process - process - INFO - return remaining lines pruned by current line:
+ NG2R51    CG2R51   CG2R51   HGP1         0.010 0      0.0000 ! ALLOW ARO
+
+2024-05-16 10:49:43,452 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:43,452 - section_node.ImproperNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [True, False, True, False, False]
+2024-05-16 10:49:43,453 - section_node.ImproperNode.process - process - WARNING - line is None => return remaining lines pruned by non data line

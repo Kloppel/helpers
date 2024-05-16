@@ -5,9 +5,6 @@ from dihedrals_node import DihedralsNode
 from nonbonded_node import NonbondedNode
 from improper_node import ImproperNode
 
-
-        
-
     
 class Config:
     """
@@ -45,11 +42,6 @@ class Config:
         
         self.file_type = None
         
-        # # boolean attribute associated with a certain filetype
-        # # to indicate if StateTransitionManager should instantiate multiple
-        # # node objects upon state switching or switch to an existing node
-        # self.single_node_creation_mode = True
-        
 
     @property
     def file_type(self):
@@ -82,6 +74,7 @@ class Config:
         
         # return node classes for required strategy
         return self.NODE_CLASSES[self.file_type]
+    
     
     def get_file_end_specifier(self):
         """

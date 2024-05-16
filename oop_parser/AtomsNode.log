@@ -1,0 +1,1499 @@
+2024-05-16 10:49:37,172 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,172 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:37,173 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,173 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,174 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,174 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,174 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,175 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CGCPY1', '12.01100', '!', 'analogy', 'to', 'CA', '/', 'allow', 'for', 'BV', 'ring', 'A'] 
+2024-05-16 10:49:37,175 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! analogy to CA / allow for BV ring A 
+2024-05-16 10:49:37,175 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CGCPY1', '12.01100', '! analogy to CA / allow for BV ring A'] 
+2024-05-16 10:49:37,180 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                                comment
+0  MASS     -1   CGCPY1   12.01100  ! analogy to CA / allow for BV ring A
+2024-05-16 10:49:37,180 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,181 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,182 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,182 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CGCPY1    12.01100   ! analogy to CA / allow for BV ring A
+
+2024-05-16 10:49:37,182 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,183 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,183 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,183 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,184 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CGCPY2', '12.01100', '!', 'analogy', 'to', 'CPM', '/', 'allow', 'for', 'BV', 'methine', 'bridge', 'ring', 'C-D'] 
+2024-05-16 10:49:37,184 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! analogy to CPM / allow for BV methine bridge ring C-D 
+2024-05-16 10:49:37,184 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CGCPY2', '12.01100', '! analogy to CPM / allow for BV methine bridge ring C-D'] 
+2024-05-16 10:49:37,188 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! analogy to CPM / allow for BV methine bridge...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,188 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,189 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,189 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,189 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CGCPY2    12.01100   ! analogy to CPM / allow for BV methine bridge ring C-D
+
+2024-05-16 10:49:37,190 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,190 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,190 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,190 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,191 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CGCPY3', '12.01100', '!', 'analogy', 'to', 'CPM', '/', 'allow', 'for', 'BV', 'methine', 'bridge', 'ring', 'A-B'] 
+2024-05-16 10:49:37,191 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! analogy to CPM / allow for BV methine bridge ring A-B 
+2024-05-16 10:49:37,191 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CGCPY3', '12.01100', '! analogy to CPM / allow for BV methine bridge ring A-B'] 
+2024-05-16 10:49:37,194 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! analogy to CPM / allow for BV methine bridge...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,195 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,195 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,195 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,196 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CGCPY3    12.01100   ! analogy to CPM / allow for BV methine bridge ring A-B
+
+2024-05-16 10:49:37,196 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,196 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,196 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,197 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,197 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CGCPY4', '12.01100', '!', 'analogy', 'to', 'CPM', '/', 'allow', 'for', 'BV', 'ring', 'C'] 
+2024-05-16 10:49:37,197 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! analogy to CPM / allow for BV ring C 
+2024-05-16 10:49:37,197 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CGCPY4', '12.01100', '! analogy to CPM / allow for BV ring C'] 
+2024-05-16 10:49:37,200 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                                 comment
+0  MASS     -1   CGCPY4   12.01100  ! analogy to CPM / allow for BV ring C
+2024-05-16 10:49:37,200 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,201 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,201 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,202 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CGCPY4    12.01100   ! analogy to CPM / allow for BV ring C
+
+2024-05-16 10:49:37,202 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,202 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,202 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,203 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,203 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CGCPY5', '12.01100', '!', 'analogy', 'to', 'CA', '/', 'allow', 'for', 'BV', 'ring', 'D'] 
+2024-05-16 10:49:37,203 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! analogy to CA / allow for BV ring D 
+2024-05-16 10:49:37,203 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CGCPY5', '12.01100', '! analogy to CA / allow for BV ring D'] 
+2024-05-16 10:49:37,206 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                                comment
+0  MASS     -1   CGCPY5   12.01100  ! analogy to CA / allow for BV ring D
+2024-05-16 10:49:37,206 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,207 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,207 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,208 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CGCPY5    12.01100   ! analogy to CA / allow for BV ring D
+
+2024-05-16 10:49:37,208 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,208 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,208 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,209 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,209 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CGCPY6', '12.01100', '!', 'analogy', 'to', 'CA', '/', 'allow', 'for', 'BV', 'ring', 'D'] 
+2024-05-16 10:49:37,209 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! analogy to CA / allow for BV ring D 
+2024-05-16 10:49:37,210 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CGCPY6', '12.01100', '! analogy to CA / allow for BV ring D'] 
+2024-05-16 10:49:37,212 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                                comment
+0  MASS     -1   CGCPY6   12.01100  ! analogy to CA / allow for BV ring D
+2024-05-16 10:49:37,213 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,213 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,214 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,214 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CGCPY6    12.01100   ! analogy to CA / allow for BV ring D
+
+2024-05-16 10:49:37,214 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,214 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [True, False, True, False, False]
+2024-05-16 10:49:37,215 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,215 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,216 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:37,216 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,216 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,217 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,217 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,217 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,217 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG1T2', '12.01100', '!', 'terminal', 'alkyne', 'H-C#C'] 
+2024-05-16 10:49:37,218 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! terminal alkyne H-C#C 
+2024-05-16 10:49:37,218 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG1T2', '12.01100', '! terminal alkyne H-C#C'] 
+2024-05-16 10:49:37,221 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                  comment
+0  MASS     -1    CG1T2   12.01100  ! terminal alkyne H-C#C
+2024-05-16 10:49:37,221 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,222 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,222 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,222 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG1T2     12.01100   ! terminal alkyne H-C#C
+
+2024-05-16 10:49:37,223 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,223 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,223 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,223 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,224 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG1N1', '12.01100', '!', 'C', 'for', 'cyano', 'group'] 
+2024-05-16 10:49:37,224 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! C for cyano group 
+2024-05-16 10:49:37,224 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG1N1', '12.01100', '! C for cyano group'] 
+2024-05-16 10:49:37,227 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value              comment
+0  MASS     -1    CG1N1   12.01100  ! C for cyano group
+2024-05-16 10:49:37,227 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,228 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,228 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,228 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG1N1     12.01100   ! C for cyano group
+
+2024-05-16 10:49:37,229 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,229 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,229 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,230 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,230 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2D1', '12.01100', '!', 'alkene;', 'RHC=', ';', 'imine', 'C'] 
+2024-05-16 10:49:37,230 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! alkene; RHC= ; imine C 
+2024-05-16 10:49:37,230 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2D1', '12.01100', '! alkene; RHC= ; imine C'] 
+2024-05-16 10:49:37,233 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                   comment
+0  MASS     -1    CG2D1   12.01100  ! alkene; RHC= ; imine C
+2024-05-16 10:49:37,233 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,234 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,234 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,235 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2D1     12.01100   ! alkene; RHC= ; imine C
+
+2024-05-16 10:49:37,235 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,235 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,235 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,236 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,236 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2D2', '12.01100', '!', 'alkene;', 'H2C='] 
+2024-05-16 10:49:37,236 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! alkene; H2C= 
+2024-05-16 10:49:37,236 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2D2', '12.01100', '! alkene; H2C='] 
+2024-05-16 10:49:37,239 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value         comment
+0  MASS     -1    CG2D2   12.01100  ! alkene; H2C=
+2024-05-16 10:49:37,239 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,240 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,240 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,241 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2D2     12.01100   ! alkene; H2C=
+
+2024-05-16 10:49:37,241 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,241 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,241 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,242 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,242 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2D1O', '12.01100', '!', 'double', 'bond', 'carbon', 'adjacent', 'to', 'heteroatom.', 'In', 'conjugated', 'systems,', 'the', 'atom', 'to', 'which', 'it', 'is', 'double', 'bonded', 'must', 'be', 'CG2DC1.'] 
+2024-05-16 10:49:37,242 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! double bond carbon adjacent to heteroatom. In conjugated systems, the atom to which it is double bonded must be CG2DC1. 
+2024-05-16 10:49:37,242 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2D1O', '12.01100', '! double bond carbon adjacent to heteroatom. In conjugated systems, the atom to which it is double bonded must be CG2DC1.'] 
+2024-05-16 10:49:37,246 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! double bond carbon adjacent to heteroatom. I...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,246 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,247 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,247 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,247 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2D1O    12.01100   ! double bond carbon adjacent to heteroatom. In conjugated systems, the atom to which it is double bonded must be CG2DC1.
+
+2024-05-16 10:49:37,248 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,248 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,248 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,248 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,249 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2D2O', '12.01100', '!', 'double', 'bond', 'carbon', 'adjacent', 'to', 'heteroatom.', 'In', 'conjugated', 'systems,', 'the', 'atom', 'to', 'which', 'it', 'is', 'double', 'bonded', 'must', 'be', 'CG2DC2.'] 
+2024-05-16 10:49:37,249 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! double bond carbon adjacent to heteroatom. In conjugated systems, the atom to which it is double bonded must be CG2DC2. 
+2024-05-16 10:49:37,249 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2D2O', '12.01100', '! double bond carbon adjacent to heteroatom. In conjugated systems, the atom to which it is double bonded must be CG2DC2.'] 
+2024-05-16 10:49:37,252 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! double bond carbon adjacent to heteroatom. I...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,253 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,253 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,254 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,254 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2D2O    12.01100   ! double bond carbon adjacent to heteroatom. In conjugated systems, the atom to which it is double bonded must be CG2DC2.
+
+2024-05-16 10:49:37,254 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,255 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,255 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,255 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,255 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2DC1', '12.01100', '!', 'conjugated', 'alkenes,', 'R2C=CR2'] 
+2024-05-16 10:49:37,256 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! conjugated alkenes, R2C=CR2 
+2024-05-16 10:49:37,256 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2DC1', '12.01100', '! conjugated alkenes, R2C=CR2'] 
+2024-05-16 10:49:37,259 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                        comment
+0  MASS     -1   CG2DC1   12.01100  ! conjugated alkenes, R2C=CR2
+2024-05-16 10:49:37,259 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,260 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,260 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,260 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2DC1    12.01100   ! conjugated alkenes, R2C=CR2
+
+2024-05-16 10:49:37,261 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,261 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,261 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,261 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,262 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2DC2', '12.01100', '!', 'conjugated', 'alkenes,', 'R2C=CR2'] 
+2024-05-16 10:49:37,262 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! conjugated alkenes, R2C=CR2 
+2024-05-16 10:49:37,262 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2DC2', '12.01100', '! conjugated alkenes, R2C=CR2'] 
+2024-05-16 10:49:37,265 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                        comment
+0  MASS     -1   CG2DC2   12.01100  ! conjugated alkenes, R2C=CR2
+2024-05-16 10:49:37,265 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,266 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,266 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,266 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2DC2    12.01100   ! conjugated alkenes, R2C=CR2
+
+2024-05-16 10:49:37,267 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,267 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,267 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,268 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,268 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2DC3', '12.01100', '!', 'conjugated', 'alkenes,', 'H2C='] 
+2024-05-16 10:49:37,268 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! conjugated alkenes, H2C= 
+2024-05-16 10:49:37,269 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2DC3', '12.01100', '! conjugated alkenes, H2C='] 
+2024-05-16 10:49:37,271 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                     comment
+0  MASS     -1   CG2DC3   12.01100  ! conjugated alkenes, H2C=
+2024-05-16 10:49:37,272 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,272 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,272 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,273 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2DC3    12.01100   ! conjugated alkenes, H2C=
+
+2024-05-16 10:49:37,273 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,273 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,274 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,274 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,274 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2N1', '12.01100', '!', 'conjugated', 'C', 'in', 'guanidine/guanidinium'] 
+2024-05-16 10:49:37,275 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! conjugated C in guanidine/guanidinium 
+2024-05-16 10:49:37,275 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2N1', '12.01100', '! conjugated C in guanidine/guanidinium'] 
+2024-05-16 10:49:37,278 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                                  comment
+0  MASS     -1    CG2N1   12.01100  ! conjugated C in guanidine/guanidinium
+2024-05-16 10:49:37,278 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,278 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,279 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,279 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2N1     12.01100   ! conjugated C in guanidine/guanidinium
+
+2024-05-16 10:49:37,279 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,280 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,280 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,280 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,280 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2N2', '12.01100', '!', 'conjugated', 'C', 'in', 'amidinium', 'cation'] 
+2024-05-16 10:49:37,281 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! conjugated C in amidinium cation 
+2024-05-16 10:49:37,281 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2N2', '12.01100', '! conjugated C in amidinium cation'] 
+2024-05-16 10:49:37,284 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                             comment
+0  MASS     -1    CG2N2   12.01100  ! conjugated C in amidinium cation
+2024-05-16 10:49:37,284 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,284 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,285 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,285 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2N2     12.01100   ! conjugated C in amidinium cation
+
+2024-05-16 10:49:37,285 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,286 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,286 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,286 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,286 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2O1', '12.01100', '!', 'carbonyl', 'C:', 'amides'] 
+2024-05-16 10:49:37,287 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! carbonyl C: amides 
+2024-05-16 10:49:37,287 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2O1', '12.01100', '! carbonyl C: amides'] 
+2024-05-16 10:49:37,289 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value               comment
+0  MASS     -1    CG2O1   12.01100  ! carbonyl C: amides
+2024-05-16 10:49:37,290 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,290 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,291 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,291 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2O1     12.01100   ! carbonyl C: amides
+
+2024-05-16 10:49:37,291 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,291 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,292 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,292 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,292 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2O2', '12.01100', '!', 'carbonyl', 'C:', 'esters,', '[neutral]', 'carboxylic', 'acids'] 
+2024-05-16 10:49:37,292 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! carbonyl C: esters, [neutral] carboxylic acids 
+2024-05-16 10:49:37,293 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2O2', '12.01100', '! carbonyl C: esters, [neutral] carboxylic acids'] 
+2024-05-16 10:49:37,296 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                           comment
+0  MASS     -1  ...   12.01100  ! carbonyl C: esters, [neutral] carboxylic acids
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,296 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,297 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,297 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,298 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2O2     12.01100   ! carbonyl C: esters, [neutral] carboxylic acids
+
+2024-05-16 10:49:37,298 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,298 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,298 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,299 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,299 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2O3', '12.01100', '!', 'carbonyl', 'C:', '[negative]', 'carboxylates'] 
+2024-05-16 10:49:37,299 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! carbonyl C: [negative] carboxylates 
+2024-05-16 10:49:37,299 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2O3', '12.01100', '! carbonyl C: [negative] carboxylates'] 
+2024-05-16 10:49:37,303 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                                comment
+0  MASS     -1    CG2O3   12.01100  ! carbonyl C: [negative] carboxylates
+2024-05-16 10:49:37,303 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,304 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,304 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,304 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2O3     12.01100   ! carbonyl C: [negative] carboxylates
+
+2024-05-16 10:49:37,305 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,305 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,305 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,306 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,306 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2O4', '12.01100', '!', 'carbonyl', 'C:', 'aldehydes'] 
+2024-05-16 10:49:37,306 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! carbonyl C: aldehydes 
+2024-05-16 10:49:37,307 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2O4', '12.01100', '! carbonyl C: aldehydes'] 
+2024-05-16 10:49:37,309 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                  comment
+0  MASS     -1    CG2O4   12.01100  ! carbonyl C: aldehydes
+2024-05-16 10:49:37,310 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,310 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,311 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,311 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2O4     12.01100   ! carbonyl C: aldehydes
+
+2024-05-16 10:49:37,311 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,312 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,312 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,312 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,313 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2O5', '12.01100', '!', 'carbonyl', 'C:', 'ketones'] 
+2024-05-16 10:49:37,313 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! carbonyl C: ketones 
+2024-05-16 10:49:37,313 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2O5', '12.01100', '! carbonyl C: ketones'] 
+2024-05-16 10:49:37,316 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                comment
+0  MASS     -1    CG2O5   12.01100  ! carbonyl C: ketones
+2024-05-16 10:49:37,316 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,317 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,317 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,317 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2O5     12.01100   ! carbonyl C: ketones
+
+2024-05-16 10:49:37,318 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,318 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,318 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,319 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,319 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2O6', '12.01100', '!', 'carbonyl', 'C:', 'urea,', 'carbonate'] 
+2024-05-16 10:49:37,319 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! carbonyl C: urea, carbonate 
+2024-05-16 10:49:37,319 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2O6', '12.01100', '! carbonyl C: urea, carbonate'] 
+2024-05-16 10:49:37,322 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                        comment
+0  MASS     -1    CG2O6   12.01100  ! carbonyl C: urea, carbonate
+2024-05-16 10:49:37,323 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,323 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,323 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,324 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2O6     12.01100   ! carbonyl C: urea, carbonate
+
+2024-05-16 10:49:37,324 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,324 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,325 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,325 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,325 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2O7', '12.01100', '!', 'CO2', 'carbon'] 
+2024-05-16 10:49:37,326 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! CO2 carbon 
+2024-05-16 10:49:37,326 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2O7', '12.01100', '! CO2 carbon'] 
+2024-05-16 10:49:37,329 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value       comment
+0  MASS     -1    CG2O7   12.01100  ! CO2 carbon
+2024-05-16 10:49:37,329 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,329 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,330 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,330 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2O7     12.01100   ! CO2 carbon
+
+2024-05-16 10:49:37,330 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,331 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,331 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,331 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,332 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2R51', '12.01100', '!', '5-mem', 'ring,', 'his', 'CG,', 'CD2(0),', 'trp'] 
+2024-05-16 10:49:37,332 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 5-mem ring, his CG, CD2(0), trp 
+2024-05-16 10:49:37,332 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2R51', '12.01100', '! 5-mem ring, his CG, CD2(0), trp'] 
+2024-05-16 10:49:37,335 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                            comment
+0  MASS     -1   CG2R51   12.01100  ! 5-mem ring, his CG, CD2(0), trp
+2024-05-16 10:49:37,335 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,336 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,336 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,336 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2R51    12.01100   ! 5-mem ring, his CG, CD2(0), trp
+
+2024-05-16 10:49:37,337 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,337 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,337 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,338 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,338 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2R52', '12.01100', '!', '5-mem', 'ring,', 'double', 'bound', 'to', 'N,', 'PYRZ,', 'pyrazole'] 
+2024-05-16 10:49:37,338 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 5-mem ring, double bound to N, PYRZ, pyrazole 
+2024-05-16 10:49:37,338 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2R52', '12.01100', '! 5-mem ring, double bound to N, PYRZ, pyrazole'] 
+2024-05-16 10:49:37,342 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                          comment
+0  MASS     -1  ...   12.01100  ! 5-mem ring, double bound to N, PYRZ, pyrazole
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,342 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,343 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,343 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,343 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2R52    12.01100   ! 5-mem ring, double bound to N, PYRZ, pyrazole
+
+2024-05-16 10:49:37,344 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,344 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,344 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,345 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,345 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2R53', '12.01100', '!', '5-mem', 'ring,', 'double', 'bound', 'to', 'N', 'and', 'adjacent', 'to', 'another', 'heteroatom,', 'purine', 'C8,', 'his', 'CE1', '(0,+1),', '2PDO,', 'kevo'] 
+2024-05-16 10:49:37,345 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 5-mem ring, double bound to N and adjacent to another heteroatom, purine C8, his CE1 (0,+1), 2PDO, kevo 
+2024-05-16 10:49:37,345 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2R53', '12.01100', '! 5-mem ring, double bound to N and adjacent to another heteroatom, purine C8, his CE1 (0,+1), 2PDO, kevo'] 
+2024-05-16 10:49:37,349 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! 5-mem ring, double bound to N and adjacent t...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,349 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,350 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,350 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,350 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2R53    12.01100   ! 5-mem ring, double bound to N and adjacent to another heteroatom, purine C8, his CE1 (0,+1), 2PDO, kevo
+
+2024-05-16 10:49:37,351 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,351 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,351 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,351 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,352 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2R57', '12.01100', '!', '5-mem', 'ring,', 'bipyrroles'] 
+2024-05-16 10:49:37,352 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 5-mem ring, bipyrroles 
+2024-05-16 10:49:37,352 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2R57', '12.01100', '! 5-mem ring, bipyrroles'] 
+2024-05-16 10:49:37,355 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                   comment
+0  MASS     -1   CG2R57   12.01100  ! 5-mem ring, bipyrroles
+2024-05-16 10:49:37,355 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,356 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,356 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,357 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2R57    12.01100   ! 5-mem ring, bipyrroles
+
+2024-05-16 10:49:37,357 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,357 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,357 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,358 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,358 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG25C1', '12.01100', '!', 'same', 'as', 'CG2DC1', 'but', 'in', '5-membered', 'ring', 'with', 'exocyclic', 'double', 'bond'] 
+2024-05-16 10:49:37,358 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! same as CG2DC1 but in 5-membered ring with exocyclic double bond 
+2024-05-16 10:49:37,359 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG25C1', '12.01100', '! same as CG2DC1 but in 5-membered ring with exocyclic double bond'] 
+2024-05-16 10:49:37,362 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! same as CG2DC1 but in 5-membered ring with e...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,362 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,363 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,363 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,363 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG25C1    12.01100   ! same as CG2DC1 but in 5-membered ring with exocyclic double bond
+
+2024-05-16 10:49:37,364 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,364 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,364 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,364 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,365 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG25C2', '12.01100', '!', 'same', 'as', 'CG2DC2', 'but', 'in', '5-membered', 'ring', 'with', 'exocyclic', 'double', 'bond'] 
+2024-05-16 10:49:37,365 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! same as CG2DC2 but in 5-membered ring with exocyclic double bond 
+2024-05-16 10:49:37,365 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG25C2', '12.01100', '! same as CG2DC2 but in 5-membered ring with exocyclic double bond'] 
+2024-05-16 10:49:37,368 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! same as CG2DC2 but in 5-membered ring with e...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,369 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,369 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,370 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,370 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG25C2    12.01100   ! same as CG2DC2 but in 5-membered ring with exocyclic double bond
+
+2024-05-16 10:49:37,370 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,371 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,371 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,371 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,371 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG251O', '12.01100', '!', 'same', 'as', 'CG2D1O', 'but', 'in', '5-membered', 'ring', 'with', 'exocyclic', 'double', 'bond'] 
+2024-05-16 10:49:37,372 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! same as CG2D1O but in 5-membered ring with exocyclic double bond 
+2024-05-16 10:49:37,372 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG251O', '12.01100', '! same as CG2D1O but in 5-membered ring with exocyclic double bond'] 
+2024-05-16 10:49:37,375 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! same as CG2D1O but in 5-membered ring with e...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,376 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,376 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,376 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,377 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG251O    12.01100   ! same as CG2D1O but in 5-membered ring with exocyclic double bond
+
+2024-05-16 10:49:37,377 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,377 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,378 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,378 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,378 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG252O', '12.01100', '!', 'same', 'as', 'CG2D2O', 'but', 'in', '5-membered', 'ring', 'with', 'exocyclic', 'double', 'bond'] 
+2024-05-16 10:49:37,378 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! same as CG2D2O but in 5-membered ring with exocyclic double bond 
+2024-05-16 10:49:37,379 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG252O', '12.01100', '! same as CG2D2O but in 5-membered ring with exocyclic double bond'] 
+2024-05-16 10:49:37,382 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! same as CG2D2O but in 5-membered ring with e...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,382 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,383 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,383 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,383 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG252O    12.01100   ! same as CG2D2O but in 5-membered ring with exocyclic double bond
+
+2024-05-16 10:49:37,384 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,384 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,384 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,385 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,385 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2R61', '12.01100', '!', '6-mem', 'aromatic', 'C'] 
+2024-05-16 10:49:37,385 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 6-mem aromatic C 
+2024-05-16 10:49:37,385 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2R61', '12.01100', '! 6-mem aromatic C'] 
+2024-05-16 10:49:37,388 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value             comment
+0  MASS     -1   CG2R61   12.01100  ! 6-mem aromatic C
+2024-05-16 10:49:37,388 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,389 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,389 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,390 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2R61    12.01100   ! 6-mem aromatic C
+
+2024-05-16 10:49:37,390 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,390 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,390 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,391 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,391 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2R62', '12.01100', '!', '6-mem', 'aromatic', 'C', 'for', 'protonated', 'pyridine', '(NIC)', 'and', 'rings', 'containing', 'carbonyls', '(see', 'CG2R63)', '(NA)'] 
+2024-05-16 10:49:37,391 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 6-mem aromatic C for protonated pyridine (NIC) and rings containing carbonyls (see CG2R63) (NA) 
+2024-05-16 10:49:37,392 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2R62', '12.01100', '! 6-mem aromatic C for protonated pyridine (NIC) and rings containing carbonyls (see CG2R63) (NA)'] 
+2024-05-16 10:49:37,395 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! 6-mem aromatic C for protonated pyridine (NI...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,395 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,396 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,396 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,396 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2R62    12.01100   ! 6-mem aromatic C for protonated pyridine (NIC) and rings containing carbonyls (see CG2R63) (NA)
+
+2024-05-16 10:49:37,397 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,397 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,397 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,397 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,398 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2R63', '12.01100', '!', '6-mem', 'aromatic', 'amide', 'carbon', '(NA)', '(and', 'other', '6-mem', 'aromatic', 'carbonyls?)'] 
+2024-05-16 10:49:37,398 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 6-mem aromatic amide carbon (NA) (and other 6-mem aromatic carbonyls?) 
+2024-05-16 10:49:37,398 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2R63', '12.01100', '! 6-mem aromatic amide carbon (NA) (and other 6-mem aromatic carbonyls?)'] 
+2024-05-16 10:49:37,401 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! 6-mem aromatic amide carbon (NA) (and other ...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,402 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,402 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,402 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,403 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2R63    12.01100   ! 6-mem aromatic amide carbon (NA) (and other 6-mem aromatic carbonyls?)
+
+2024-05-16 10:49:37,403 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,403 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,403 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,404 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,404 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG3C51', '12.01100', '!', '5-mem', 'ring', 'aliphatic', 'CH', '(proline', 'CA,', 'furanoses)'] 
+2024-05-16 10:49:37,404 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 5-mem ring aliphatic CH (proline CA, furanoses) 
+2024-05-16 10:49:37,405 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG3C51', '12.01100', '! 5-mem ring aliphatic CH (proline CA, furanoses)'] 
+2024-05-16 10:49:37,408 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! 5-mem ring aliphatic CH (proline CA, furanoses)
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,408 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,409 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,409 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,409 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG3C51    12.01100   ! 5-mem ring aliphatic CH  (proline CA, furanoses)
+
+2024-05-16 10:49:37,410 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,410 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,410 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,411 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,411 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2R64', '12.01100', '!', '6-mem', 'aromatic', 'amidine', 'and', 'guanidine', 'carbon', '(between', '2', 'or', '3', 'Ns', 'and', 'double-bound', 'to', 'one', 'of', 'them),', 'NA,', 'PYRM'] 
+2024-05-16 10:49:37,411 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 6-mem aromatic amidine and guanidine carbon (between 2 or 3 Ns and double-bound to one of them), NA, PYRM 
+2024-05-16 10:49:37,411 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2R64', '12.01100', '! 6-mem aromatic amidine and guanidine carbon (between 2 or 3 Ns and double-bound to one of them), NA, PYRM'] 
+2024-05-16 10:49:37,415 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! 6-mem aromatic amidine and guanidine carbon ...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,415 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,415 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,416 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,416 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2R64    12.01100   ! 6-mem aromatic amidine and guanidine carbon (between 2 or 3 Ns and double-bound to one of them), NA, PYRM
+
+2024-05-16 10:49:37,417 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,417 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,417 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,418 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,418 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2R66', '12.01100', '!', '6-mem', 'aromatic', 'carbon', 'bound', 'to', 'F'] 
+2024-05-16 10:49:37,418 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 6-mem aromatic carbon bound to F 
+2024-05-16 10:49:37,418 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2R66', '12.01100', '! 6-mem aromatic carbon bound to F'] 
+2024-05-16 10:49:37,421 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                             comment
+0  MASS     -1   CG2R66   12.01100  ! 6-mem aromatic carbon bound to F
+2024-05-16 10:49:37,422 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,422 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,423 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,423 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2R66    12.01100   ! 6-mem aromatic carbon bound to F
+
+2024-05-16 10:49:37,423 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,424 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,424 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,424 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,424 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2R67', '12.01100', '!', '6-mem', 'aromatic', 'carbon', 'of', 'biphenyl'] 
+2024-05-16 10:49:37,425 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 6-mem aromatic carbon of biphenyl 
+2024-05-16 10:49:37,425 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2R67', '12.01100', '! 6-mem aromatic carbon of biphenyl'] 
+2024-05-16 10:49:37,428 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                              comment
+0  MASS     -1   CG2R67   12.01100  ! 6-mem aromatic carbon of biphenyl
+2024-05-16 10:49:37,428 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,429 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,429 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,429 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2R67    12.01100   ! 6-mem aromatic carbon of biphenyl
+
+2024-05-16 10:49:37,430 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,430 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,430 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,430 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,431 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2RC0', '12.01100', '!', '6/5-mem', 'ring', 'bridging', 'C,', 'guanine', 'C4,C5,', 'trp'] 
+2024-05-16 10:49:37,431 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 6/5-mem ring bridging C, guanine C4,C5, trp 
+2024-05-16 10:49:37,431 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2RC0', '12.01100', '! 6/5-mem ring bridging C, guanine C4,C5, trp'] 
+2024-05-16 10:49:37,434 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                        comment
+0  MASS     -1  ...   12.01100  ! 6/5-mem ring bridging C, guanine C4,C5, trp
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,435 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,435 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,436 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,436 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2RC0    12.01100   ! 6/5-mem ring bridging C, guanine C4,C5, trp
+
+2024-05-16 10:49:37,437 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,437 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,437 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,437 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,438 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2R71', '12.01100', '!', '7-mem', 'ring', 'arom', 'C,', 'AZUL,', 'azulene,', 'kevo'] 
+2024-05-16 10:49:37,438 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 7-mem ring arom C, AZUL, azulene, kevo 
+2024-05-16 10:49:37,438 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2R71', '12.01100', '! 7-mem ring arom C, AZUL, azulene, kevo'] 
+2024-05-16 10:49:37,441 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                                   comment
+0  MASS     -1   CG2R71   12.01100  ! 7-mem ring arom C, AZUL, azulene, kevo
+2024-05-16 10:49:37,441 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,442 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,442 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,443 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2R71    12.01100   ! 7-mem ring arom C, AZUL, azulene, kevo
+
+2024-05-16 10:49:37,443 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,443 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,444 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,444 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,444 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG2RC7', '12.01100', '!', 'sp2', 'ring', 'connection', 'with', 'single', 'bond(!),', 'AZUL,', 'azulene,', 'kevo'] 
+2024-05-16 10:49:37,445 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! sp2 ring connection with single bond(!), AZUL, azulene, kevo 
+2024-05-16 10:49:37,445 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG2RC7', '12.01100', '! sp2 ring connection with single bond(!), AZUL, azulene, kevo'] 
+2024-05-16 10:49:37,448 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! sp2 ring connection with single bond(!), AZU...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,449 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,449 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,450 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,450 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG2RC7    12.01100   ! sp2 ring connection with single bond(!), AZUL, azulene, kevo
+
+2024-05-16 10:49:37,450 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,451 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,451 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,451 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,451 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG321', '12.01100', '!', 'aliphatic', 'C', 'for', 'CH2'] 
+2024-05-16 10:49:37,452 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! aliphatic C for CH2 
+2024-05-16 10:49:37,452 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG321', '12.01100', '! aliphatic C for CH2'] 
+2024-05-16 10:49:37,455 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                comment
+0  MASS     -1    CG321   12.01100  ! aliphatic C for CH2
+2024-05-16 10:49:37,455 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,456 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,456 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,456 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG321     12.01100   ! aliphatic C for CH2
+
+2024-05-16 10:49:37,457 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,457 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,457 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,457 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,458 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG323', '12.01100', '!', 'aliphatic', 'C', 'for', 'CH2,', 'thiolate', 'carbon'] 
+2024-05-16 10:49:37,458 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! aliphatic C for CH2, thiolate carbon 
+2024-05-16 10:49:37,458 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG323', '12.01100', '! aliphatic C for CH2, thiolate carbon'] 
+2024-05-16 10:49:37,461 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                                 comment
+0  MASS     -1    CG323   12.01100  ! aliphatic C for CH2, thiolate carbon
+2024-05-16 10:49:37,461 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,462 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,462 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,462 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG323     12.01100   ! aliphatic C for CH2, thiolate carbon
+
+2024-05-16 10:49:37,463 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,463 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,463 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,464 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,464 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG324', '12.01100', '!', 'aliphatic', 'C', 'for', 'CH2,', 'adjacent', 'to', 'positive', 'N', '(piperidine)', '(+)'] 
+2024-05-16 10:49:37,464 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! aliphatic C for CH2, adjacent to positive N (piperidine) (+) 
+2024-05-16 10:49:37,464 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG324', '12.01100', '! aliphatic C for CH2, adjacent to positive N (piperidine) (+)'] 
+2024-05-16 10:49:37,468 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! aliphatic C for CH2, adjacent to positive N ...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,468 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,468 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,469 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,469 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG324     12.01100   ! aliphatic C for CH2, adjacent to positive N (piperidine) (+)
+
+2024-05-16 10:49:37,469 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,470 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,470 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,470 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,470 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG331', '12.01100', '!', 'aliphatic', 'C', 'for', 'methyl', 'group', '(-CH3)'] 
+2024-05-16 10:49:37,471 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! aliphatic C for methyl group (-CH3) 
+2024-05-16 10:49:37,471 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG331', '12.01100', '! aliphatic C for methyl group (-CH3)'] 
+2024-05-16 10:49:37,474 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                                comment
+0  MASS     -1    CG331   12.01100  ! aliphatic C for methyl group (-CH3)
+2024-05-16 10:49:37,474 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,475 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,475 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,475 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG331     12.01100   ! aliphatic C for methyl group (-CH3)
+
+2024-05-16 10:49:37,476 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,476 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,476 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,476 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,477 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG334', '12.01100', '!', 'aliphatic', 'C', 'for', 'methyl', 'group', '(-CH3),', 'adjacent', 'to', 'positive', 'N', '(PROT', 'NTER)', '(+)'] 
+2024-05-16 10:49:37,477 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! aliphatic C for methyl group (-CH3), adjacent to positive N (PROT NTER) (+) 
+2024-05-16 10:49:37,477 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG334', '12.01100', '! aliphatic C for methyl group (-CH3), adjacent to positive N (PROT NTER) (+)'] 
+2024-05-16 10:49:37,481 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! aliphatic C for methyl group (-CH3), adjacen...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,481 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,482 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,482 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,482 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG334     12.01100   ! aliphatic C for methyl group (-CH3), adjacent to positive N (PROT NTER) (+)
+
+2024-05-16 10:49:37,483 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,483 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,483 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,484 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,484 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG3AM1', '12.01100', '!', 'aliphatic', 'C', 'for', 'CH3,', 'NEUTRAL', 'dimethylamine', 'methyl', 'carbon', '(#)'] 
+2024-05-16 10:49:37,484 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! aliphatic C for CH3, NEUTRAL dimethylamine methyl carbon (#) 
+2024-05-16 10:49:37,485 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG3AM1', '12.01100', '! aliphatic C for CH3, NEUTRAL dimethylamine methyl carbon (#)'] 
+2024-05-16 10:49:37,488 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! aliphatic C for CH3, NEUTRAL dimethylamine m...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,488 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,489 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,489 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,489 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG3AM1    12.01100   ! aliphatic C for CH3, NEUTRAL dimethylamine methyl carbon (#)
+
+2024-05-16 10:49:37,489 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,490 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,490 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,490 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,491 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG3AM2', '12.01100', '!', 'aliphatic', 'C', 'for', 'CH3,', 'NEUTRAL', 'methylamine', 'methyl', 'carbon', '(#)'] 
+2024-05-16 10:49:37,491 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! aliphatic C for CH3, NEUTRAL methylamine methyl carbon (#) 
+2024-05-16 10:49:37,491 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG3AM2', '12.01100', '! aliphatic C for CH3, NEUTRAL methylamine methyl carbon (#)'] 
+2024-05-16 10:49:37,495 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   12.01100  ! aliphatic C for CH3, NEUTRAL methylamine met...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,495 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,495 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,496 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,496 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG3AM2    12.01100   ! aliphatic C for CH3, NEUTRAL methylamine methyl carbon (#)
+
+2024-05-16 10:49:37,497 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,497 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,532 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,532 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,532 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'CG311', '12.01100', '!', 'aliphatic', 'C', 'with', '1', 'H,', 'CH'] 
+2024-05-16 10:49:37,533 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! aliphatic C with 1 H, CH 
+2024-05-16 10:49:37,533 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'CG311', '12.01100', '! aliphatic C with 1 H, CH'] 
+2024-05-16 10:49:37,536 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                     comment
+0  MASS     -1    CG311   12.01100  ! aliphatic C with 1 H, CH
+2024-05-16 10:49:37,536 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,536 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,537 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,537 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  CG311     12.01100   ! aliphatic C with 1 H, CH
+
+2024-05-16 10:49:37,538 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,538 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [True, False, True, False, False]
+2024-05-16 10:49:37,538 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,539 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,539 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:37,539 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,540 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,540 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,540 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,541 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,541 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'HGA1', '1.00800', '!', 'alphatic', 'proton,', 'CH'] 
+2024-05-16 10:49:37,541 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! alphatic proton, CH 
+2024-05-16 10:49:37,541 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'HGA1', '1.00800', '! alphatic proton, CH'] 
+2024-05-16 10:49:37,544 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                comment
+0  MASS     -1     HGA1    1.00800  ! alphatic proton, CH
+2024-05-16 10:49:37,545 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,545 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,546 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,546 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  HGA1       1.00800   ! alphatic proton, CH
+
+2024-05-16 10:49:37,546 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,547 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,547 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,547 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,547 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'HGA2', '1.00800', '!', 'alphatic', 'proton,', 'CH2'] 
+2024-05-16 10:49:37,548 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! alphatic proton, CH2 
+2024-05-16 10:49:37,548 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'HGA2', '1.00800', '! alphatic proton, CH2'] 
+2024-05-16 10:49:37,550 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                 comment
+0  MASS     -1     HGA2    1.00800  ! alphatic proton, CH2
+2024-05-16 10:49:37,551 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,551 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,552 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,552 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  HGA2       1.00800   ! alphatic proton, CH2
+
+2024-05-16 10:49:37,552 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,553 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,553 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,553 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,553 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'HGA3', '1.00800', '!', 'alphatic', 'proton,', 'CH3'] 
+2024-05-16 10:49:37,554 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! alphatic proton, CH3 
+2024-05-16 10:49:37,554 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'HGA3', '1.00800', '! alphatic proton, CH3'] 
+2024-05-16 10:49:37,557 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                 comment
+0  MASS     -1     HGA3    1.00800  ! alphatic proton, CH3
+2024-05-16 10:49:37,557 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,558 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,558 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,558 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  HGA3       1.00800   ! alphatic proton, CH3
+
+2024-05-16 10:49:37,559 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,559 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,559 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,560 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,560 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'HGA4', '1.00800', '!', 'alkene', 'proton;', 'RHC='] 
+2024-05-16 10:49:37,560 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! alkene proton; RHC= 
+2024-05-16 10:49:37,560 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'HGA4', '1.00800', '! alkene proton; RHC='] 
+2024-05-16 10:49:37,563 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                comment
+0  MASS     -1     HGA4    1.00800  ! alkene proton; RHC=
+2024-05-16 10:49:37,563 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,564 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,564 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,565 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  HGA4       1.00800   ! alkene proton; RHC=
+
+2024-05-16 10:49:37,565 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,565 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,565 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,566 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,566 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'HGA5', '1.00800', '!', 'alkene', 'proton;', 'H2C=CR'] 
+2024-05-16 10:49:37,566 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! alkene proton; H2C=CR 
+2024-05-16 10:49:37,567 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'HGA5', '1.00800', '! alkene proton; H2C=CR'] 
+2024-05-16 10:49:37,569 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                  comment
+0  MASS     -1     HGA5    1.00800  ! alkene proton; H2C=CR
+2024-05-16 10:49:37,570 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,570 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,571 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,571 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  HGA5       1.00800   ! alkene proton; H2C=CR
+
+2024-05-16 10:49:37,571 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,571 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,572 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,572 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,572 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'HGP1', '1.00800', '!', 'polar', 'H'] 
+2024-05-16 10:49:37,573 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! polar H 
+2024-05-16 10:49:37,573 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'HGP1', '1.00800', '! polar H'] 
+2024-05-16 10:49:37,575 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value    comment
+0  MASS     -1     HGP1    1.00800  ! polar H
+2024-05-16 10:49:37,576 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,576 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,577 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,577 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  HGP1       1.00800 ! polar H
+
+2024-05-16 10:49:37,577 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,578 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:37,578 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,579 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,579 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,579 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,579 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,580 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'NG2R50', '14.00700', '!', 'double', 'bound', 'neutral', '5-mem', 'planar', 'ring,', 'purine', 'N7'] 
+2024-05-16 10:49:37,580 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! double bound neutral 5-mem planar ring, purine N7 
+2024-05-16 10:49:37,580 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'NG2R50', '14.00700', '! double bound neutral 5-mem planar ring, purine N7'] 
+2024-05-16 10:49:37,583 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   14.00700  ! double bound neutral 5-mem planar ring, puri...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,584 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,584 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,585 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,585 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  NG2R50    14.00700   ! double bound neutral 5-mem planar ring, purine N7
+
+2024-05-16 10:49:37,585 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,585 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,586 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,586 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,586 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'NG2R51', '14.00700', '!', 'single', 'bound', 'neutral', '5-mem', 'planar', '(all', 'atom', 'types', 'sp2)', 'ring,', 'his,', 'trp', 'pyrrole', '(fused)'] 
+2024-05-16 10:49:37,586 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! single bound neutral 5-mem planar (all atom types sp2) ring, his, trp pyrrole (fused) 
+2024-05-16 10:49:37,587 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'NG2R51', '14.00700', '! single bound neutral 5-mem planar (all atom types sp2) ring, his, trp pyrrole (fused)'] 
+2024-05-16 10:49:37,590 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   14.00700  ! single bound neutral 5-mem planar (all atom ...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,590 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,591 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,591 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,591 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  NG2R51    14.00700   ! single bound neutral 5-mem planar (all atom types sp2) ring, his, trp pyrrole (fused)
+
+2024-05-16 10:49:37,592 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,592 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,592 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,592 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,593 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'NG2R52', '14.00700', '!', 'protonated', 'schiff', 'base,', 'amidinium,', 'guanidinium', 'in', '5-membered', 'ring,', 'HIS,', '2HPP,', 'kevo'] 
+2024-05-16 10:49:37,593 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! protonated schiff base, amidinium, guanidinium in 5-membered ring, HIS, 2HPP, kevo 
+2024-05-16 10:49:37,593 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'NG2R52', '14.00700', '! protonated schiff base, amidinium, guanidinium in 5-membered ring, HIS, 2HPP, kevo'] 
+2024-05-16 10:49:37,597 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   14.00700  ! protonated schiff base, amidinium, guanidini...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,597 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,597 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,598 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,598 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  NG2R52    14.00700   ! protonated schiff base, amidinium, guanidinium in 5-membered ring, HIS, 2HPP, kevo
+
+2024-05-16 10:49:37,599 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,599 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,599 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,599 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,600 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'NG2R53', '14.00700', '!', 'amide', 'in', '5-memebered', 'NON-SP2', 'ring', '(slightly', 'pyramidized),', '2PDO,', 'kevo'] 
+2024-05-16 10:49:37,600 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! amide in 5-memebered NON-SP2 ring (slightly pyramidized), 2PDO, kevo 
+2024-05-16 10:49:37,600 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'NG2R53', '14.00700', '! amide in 5-memebered NON-SP2 ring (slightly pyramidized), 2PDO, kevo'] 
+2024-05-16 10:49:37,603 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   14.00700  ! amide in 5-memebered NON-SP2 ring (slightly ...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,604 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,604 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,605 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,605 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  NG2R53    14.00700   ! amide in 5-memebered NON-SP2 ring (slightly pyramidized), 2PDO, kevo
+
+2024-05-16 10:49:37,605 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,605 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,606 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,606 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,606 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'NG2R57', '14.00700', '!', '5-mem', 'ring,', 'bipyrroles'] 
+2024-05-16 10:49:37,606 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 5-mem ring, bipyrroles 
+2024-05-16 10:49:37,607 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'NG2R57', '14.00700', '! 5-mem ring, bipyrroles'] 
+2024-05-16 10:49:37,609 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                   comment
+0  MASS     -1   NG2R57   14.00700  ! 5-mem ring, bipyrroles
+2024-05-16 10:49:37,610 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,610 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,611 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,611 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  NG2R57    14.00700   ! 5-mem ring, bipyrroles
+
+2024-05-16 10:49:37,611 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,612 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,612 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,612 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,613 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'NG2R60', '14.00700', '!', 'double', 'bound', 'neutral', '6-mem', 'planar', 'ring,', 'pyr1,', 'pyzn'] 
+2024-05-16 10:49:37,613 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! double bound neutral 6-mem planar ring, pyr1, pyzn 
+2024-05-16 10:49:37,613 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'NG2R60', '14.00700', '! double bound neutral 6-mem planar ring, pyr1, pyzn'] 
+2024-05-16 10:49:37,616 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   14.00700  ! double bound neutral 6-mem planar ring, pyr1...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,617 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,617 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,618 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,618 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  NG2R60    14.00700   ! double bound neutral 6-mem planar ring, pyr1, pyzn
+
+2024-05-16 10:49:37,618 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,618 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,619 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,619 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,619 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'NG2R61', '14.00700', '!', 'single', 'bound', 'neutral', '6-mem', 'planar', 'ring', 'imino', 'nitrogen;', 'glycosyl', 'linkage'] 
+2024-05-16 10:49:37,619 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! single bound neutral 6-mem planar ring imino nitrogen; glycosyl linkage 
+2024-05-16 10:49:37,620 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'NG2R61', '14.00700', '! single bound neutral 6-mem planar ring imino nitrogen; glycosyl linkage'] 
+2024-05-16 10:49:37,623 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   14.00700  ! single bound neutral 6-mem planar ring imino...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,623 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,624 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,624 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,624 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  NG2R61    14.00700   ! single bound neutral 6-mem planar ring imino nitrogen; glycosyl linkage
+
+2024-05-16 10:49:37,625 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,625 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,625 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,625 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,626 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'NG2R62', '14.00700', '!', 'double', 'bound', '6-mem', 'planar', 'ring', 'with', 'heteroatoms', 'in', 'o', 'or', 'm,', 'pyrd,', 'pyrm'] 
+2024-05-16 10:49:37,626 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! double bound 6-mem planar ring with heteroatoms in o or m, pyrd, pyrm 
+2024-05-16 10:49:37,626 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'NG2R62', '14.00700', '! double bound 6-mem planar ring with heteroatoms in o or m, pyrd, pyrm'] 
+2024-05-16 10:49:37,629 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   14.00700  ! double bound 6-mem planar ring with heteroat...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,630 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,630 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,631 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,631 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  NG2R62    14.00700   ! double bound 6-mem planar ring with heteroatoms in o or m, pyrd, pyrm
+
+2024-05-16 10:49:37,631 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,632 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,632 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,632 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,632 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'NG2R67', '14.00700', '!', '6-mem', 'planar', 'ring', 'substituted', 'with', '6-mem', 'planar', 'ring', '(N-phenyl', 'pyridinones', 'etc.)'] 
+2024-05-16 10:49:37,632 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 6-mem planar ring substituted with 6-mem planar ring (N-phenyl pyridinones etc.) 
+2024-05-16 10:49:37,633 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'NG2R67', '14.00700', '! 6-mem planar ring substituted with 6-mem planar ring (N-phenyl pyridinones etc.)'] 
+2024-05-16 10:49:37,636 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   14.00700  ! 6-mem planar ring substituted with 6-mem pla...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,636 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,637 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,637 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,638 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  NG2R67    14.00700   ! 6-mem planar ring substituted with 6-mem planar ring (N-phenyl pyridinones etc.)
+
+2024-05-16 10:49:37,638 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,638 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,638 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,639 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,639 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'NG321', '14.00700', '!', 'neutral', 'methylamine', 'nitrogen'] 
+2024-05-16 10:49:37,639 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! neutral methylamine nitrogen 
+2024-05-16 10:49:37,640 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'NG321', '14.00700', '! neutral methylamine nitrogen'] 
+2024-05-16 10:49:37,642 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                         comment
+0  MASS     -1    NG321   14.00700  ! neutral methylamine nitrogen
+2024-05-16 10:49:37,643 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,643 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,644 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,644 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  NG321     14.00700   ! neutral methylamine nitrogen
+
+2024-05-16 10:49:37,644 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,645 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,645 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,645 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,645 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'HGPAM2', '1.00800', '!', 'polar', 'H,', 'NEUTRAL', 'methylamine', '(#)'] 
+2024-05-16 10:49:37,646 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! polar H, NEUTRAL methylamine (#) 
+2024-05-16 10:49:37,646 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'HGPAM2', '1.00800', '! polar H, NEUTRAL methylamine (#)'] 
+2024-05-16 10:49:37,649 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                             comment
+0  MASS     -1   HGPAM2    1.00800  ! polar H, NEUTRAL methylamine (#)
+2024-05-16 10:49:37,649 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,650 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,650 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,651 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  HGPAM2     1.00800   ! polar H, NEUTRAL methylamine (#)
+
+2024-05-16 10:49:37,651 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,651 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [True, False, True, False, False]
+2024-05-16 10:49:37,652 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,652 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,652 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:37,653 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,653 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,653 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,654 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,654 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,654 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG2D1', '15.99940', '!', 'carbonyl', 'O:', 'amides,', 'esters,', '[neutral]', 'carboxylic', 'acids,', 'aldehydes,', 'uera'] 
+2024-05-16 10:49:37,655 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! carbonyl O: amides, esters, [neutral] carboxylic acids, aldehydes, uera 
+2024-05-16 10:49:37,655 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG2D1', '15.99940', '! carbonyl O: amides, esters, [neutral] carboxylic acids, aldehydes, uera'] 
+2024-05-16 10:49:37,658 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   15.99940  ! carbonyl O: amides, esters, [neutral] carbox...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,658 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,659 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,659 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,660 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG2D1     15.99940   ! carbonyl O: amides, esters, [neutral] carboxylic acids, aldehydes, uera
+
+2024-05-16 10:49:37,660 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,660 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,660 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,661 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,661 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG2D2', '15.99940', '!', 'carbonyl', 'O:', 'negative', 'groups:', 'carboxylates,', 'carbonate'] 
+2024-05-16 10:49:37,661 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! carbonyl O: negative groups: carboxylates, carbonate 
+2024-05-16 10:49:37,662 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG2D2', '15.99940', '! carbonyl O: negative groups: carboxylates, carbonate'] 
+2024-05-16 10:49:37,665 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   15.99940  ! carbonyl O: negative groups: carboxylates, c...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,665 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,666 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,666 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,666 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG2D2     15.99940   ! carbonyl O: negative groups: carboxylates, carbonate
+
+2024-05-16 10:49:37,667 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,667 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,667 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,668 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,668 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG2D3', '15.99940', '!', 'carbonyl', 'O:', 'ketones'] 
+2024-05-16 10:49:37,668 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! carbonyl O: ketones 
+2024-05-16 10:49:37,668 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG2D3', '15.99940', '! carbonyl O: ketones'] 
+2024-05-16 10:49:37,671 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                comment
+0  MASS     -1    OG2D3   15.99940  ! carbonyl O: ketones
+2024-05-16 10:49:37,671 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,672 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,672 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,673 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG2D3     15.99940   ! carbonyl O: ketones
+
+2024-05-16 10:49:37,673 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,673 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,673 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,674 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,674 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG2D4', '15.99940', '!', '6-mem', 'aromatic', 'carbonyl', 'oxygen', '(nucleic', 'bases)'] 
+2024-05-16 10:49:37,674 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 6-mem aromatic carbonyl oxygen (nucleic bases) 
+2024-05-16 10:49:37,674 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG2D4', '15.99940', '! 6-mem aromatic carbonyl oxygen (nucleic bases)'] 
+2024-05-16 10:49:37,678 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                           comment
+0  MASS     -1  ...   15.99940  ! 6-mem aromatic carbonyl oxygen (nucleic bases)
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,678 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,679 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,679 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,680 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG2D4     15.99940   ! 6-mem aromatic carbonyl oxygen (nucleic bases)
+
+2024-05-16 10:49:37,680 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,680 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,680 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,681 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,681 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG2D5', '15.99940', '!', 'CO2', 'oxygen'] 
+2024-05-16 10:49:37,681 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! CO2 oxygen 
+2024-05-16 10:49:37,681 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG2D5', '15.99940', '! CO2 oxygen'] 
+2024-05-16 10:49:37,684 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value       comment
+0  MASS     -1    OG2D5   15.99940  ! CO2 oxygen
+2024-05-16 10:49:37,684 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,685 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,685 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,686 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG2D5     15.99940   ! CO2 oxygen
+
+2024-05-16 10:49:37,686 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,686 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,686 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,687 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,687 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG2N1', '15.99940', '!', 'NITB,', 'nitrobenzene'] 
+2024-05-16 10:49:37,687 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! NITB, nitrobenzene 
+2024-05-16 10:49:37,687 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG2N1', '15.99940', '! NITB, nitrobenzene'] 
+2024-05-16 10:49:37,690 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value               comment
+0  MASS     -1    OG2N1   15.99940  ! NITB, nitrobenzene
+2024-05-16 10:49:37,690 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,691 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,691 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,692 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG2N1     15.99940   ! NITB, nitrobenzene
+
+2024-05-16 10:49:37,692 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,692 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,693 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,693 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,693 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG2P1', '15.99940', '!', '=O', 'in', 'phosphate', 'or', 'sulfate'] 
+2024-05-16 10:49:37,693 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! =O in phosphate or sulfate 
+2024-05-16 10:49:37,694 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG2P1', '15.99940', '! =O in phosphate or sulfate'] 
+2024-05-16 10:49:37,696 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                       comment
+0  MASS     -1    OG2P1   15.99940  ! =O in phosphate or sulfate
+2024-05-16 10:49:37,697 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,697 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,698 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,698 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG2P1     15.99940   ! =O in phosphate or sulfate
+
+2024-05-16 10:49:37,698 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,698 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,699 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,699 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,699 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG2R50', '15.99940', '!', 'FURA,', 'furan'] 
+2024-05-16 10:49:37,699 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! FURA, furan 
+2024-05-16 10:49:37,700 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG2R50', '15.99940', '! FURA, furan'] 
+2024-05-16 10:49:37,702 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value        comment
+0  MASS     -1   OG2R50   15.99940  ! FURA, furan
+2024-05-16 10:49:37,703 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,703 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,704 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,704 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG2R50    15.99940   ! FURA, furan
+
+2024-05-16 10:49:37,704 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,704 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,705 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,754 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,755 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG3R60', '15.99940', '!', 'O', 'in', '6-mem', 'cyclic', 'enol', 'ether', '(PY01,', 'PY02)', 'or', 'ester'] 
+2024-05-16 10:49:37,755 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! O in 6-mem cyclic enol ether (PY01, PY02) or ester 
+2024-05-16 10:49:37,755 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG3R60', '15.99940', '! O in 6-mem cyclic enol ether (PY01, PY02) or ester'] 
+2024-05-16 10:49:37,759 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   15.99940  ! O in 6-mem cyclic enol ether (PY01, PY02) or...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,759 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,759 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,760 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,760 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG3R60    15.99940   ! O in 6-mem cyclic enol ether (PY01, PY02) or ester
+
+2024-05-16 10:49:37,761 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,761 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,761 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,761 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,762 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG301', '15.99940', '!', 'ether', '-O-', '!SHOULD', 'WE', 'HAVE', 'A', 'SEPARATE', 'ENOL', 'ETHER???', 'IF', 'YES,', 'SHOULD', 'WE', 'MERGE', 'IT', 'WITH', 'OG3R60???'] 
+2024-05-16 10:49:37,762 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! ether -O- !SHOULD WE HAVE A SEPARATE ENOL ETHER??? IF YES, SHOULD WE MERGE IT WITH OG3R60??? 
+2024-05-16 10:49:37,762 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG301', '15.99940', '! ether -O- !SHOULD WE HAVE A SEPARATE ENOL ETHER??? IF YES, SHOULD WE MERGE IT WITH OG3R60???'] 
+2024-05-16 10:49:37,765 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   15.99940  ! ether -O- !SHOULD WE HAVE A SEPARATE ENOL ET...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,766 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,766 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,767 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,767 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG301     15.99940   ! ether -O- !SHOULD WE HAVE A SEPARATE ENOL ETHER??? IF YES, SHOULD WE MERGE IT WITH OG3R60???
+
+2024-05-16 10:49:37,767 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,767 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,768 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,768 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,768 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG302', '15.99940', '!', 'ester', '-O-'] 
+2024-05-16 10:49:37,769 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! ester -O- 
+2024-05-16 10:49:37,769 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG302', '15.99940', '! ester -O-'] 
+2024-05-16 10:49:37,771 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value      comment
+0  MASS     -1    OG302   15.99940  ! ester -O-
+2024-05-16 10:49:37,772 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,772 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,773 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,773 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG302     15.99940   ! ester -O-
+
+2024-05-16 10:49:37,773 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,774 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,774 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,774 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,774 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG303', '15.99940', '!', 'phosphate/sulfate', 'ester', 'oxygen'] 
+2024-05-16 10:49:37,774 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! phosphate/sulfate ester oxygen 
+2024-05-16 10:49:37,775 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG303', '15.99940', '! phosphate/sulfate ester oxygen'] 
+2024-05-16 10:49:37,777 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                           comment
+0  MASS     -1    OG303   15.99940  ! phosphate/sulfate ester oxygen
+2024-05-16 10:49:37,778 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,778 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,779 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,779 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG303     15.99940   ! phosphate/sulfate ester oxygen
+
+2024-05-16 10:49:37,779 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,779 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,780 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,780 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,780 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG304', '15.99940', '!', 'linkage', 'oxygen', 'in', 'pyrophosphate/pyrosulphate'] 
+2024-05-16 10:49:37,781 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! linkage oxygen in pyrophosphate/pyrosulphate 
+2024-05-16 10:49:37,781 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG304', '15.99940', '! linkage oxygen in pyrophosphate/pyrosulphate'] 
+2024-05-16 10:49:37,784 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                         comment
+0  MASS     -1  ...   15.99940  ! linkage oxygen in pyrophosphate/pyrosulphate
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,784 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,785 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,785 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,786 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG304     15.99940   ! linkage oxygen in pyrophosphate/pyrosulphate
+
+2024-05-16 10:49:37,786 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,786 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,787 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,787 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,787 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG311', '15.99940', '!', 'hydroxyl', 'oxygen'] 
+2024-05-16 10:49:37,787 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! hydroxyl oxygen 
+2024-05-16 10:49:37,788 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG311', '15.99940', '! hydroxyl oxygen'] 
+2024-05-16 10:49:37,790 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value            comment
+0  MASS     -1    OG311   15.99940  ! hydroxyl oxygen
+2024-05-16 10:49:37,791 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,791 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,792 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,792 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG311     15.99940   ! hydroxyl oxygen
+
+2024-05-16 10:49:37,792 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,792 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,793 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,793 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,793 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG312', '15.99940', '!', 'ionized', 'alcohol', 'oxygen'] 
+2024-05-16 10:49:37,793 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! ionized alcohol oxygen 
+2024-05-16 10:49:37,794 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG312', '15.99940', '! ionized alcohol oxygen'] 
+2024-05-16 10:49:37,796 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                   comment
+0  MASS     -1    OG312   15.99940  ! ionized alcohol oxygen
+2024-05-16 10:49:37,797 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,797 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,798 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,798 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG312     15.99940   ! ionized alcohol oxygen
+
+2024-05-16 10:49:37,798 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,799 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,799 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,799 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,799 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG3C31', '15.99940', '!', 'epoxide', 'oxygen,', '1EOX,', '1BOX,', 'sc'] 
+2024-05-16 10:49:37,800 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! epoxide oxygen, 1EOX, 1BOX, sc 
+2024-05-16 10:49:37,800 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG3C31', '15.99940', '! epoxide oxygen, 1EOX, 1BOX, sc'] 
+2024-05-16 10:49:37,803 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                           comment
+0  MASS     -1   OG3C31   15.99940  ! epoxide oxygen, 1EOX, 1BOX, sc
+2024-05-16 10:49:37,803 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,803 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,804 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,804 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG3C31    15.99940   ! epoxide oxygen, 1EOX, 1BOX, sc
+
+2024-05-16 10:49:37,804 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,805 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,805 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,805 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,805 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG3C51', '15.99940', '!', '5-mem', 'furanose', 'ring', 'oxygen', '(ether)'] 
+2024-05-16 10:49:37,806 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! 5-mem furanose ring oxygen (ether) 
+2024-05-16 10:49:37,806 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG3C51', '15.99940', '! 5-mem furanose ring oxygen (ether)'] 
+2024-05-16 10:49:37,809 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value                               comment
+0  MASS     -1   OG3C51   15.99940  ! 5-mem furanose ring oxygen (ether)
+2024-05-16 10:49:37,809 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,809 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,810 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,810 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG3C51    15.99940   ! 5-mem furanose ring oxygen (ether)
+
+2024-05-16 10:49:37,810 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,811 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,811 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,811 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,811 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'OG3C61', '15.99940', '!', 'DIOX,', 'dioxane,', 'ether', 'in', '6-membered', 'ring', '!SHOULD', 'WE', 'MERGE', 'THIS', 'WITH', 'OG3R60???'] 
+2024-05-16 10:49:37,812 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! DIOX, dioxane, ether in 6-membered ring !SHOULD WE MERGE THIS WITH OG3R60??? 
+2024-05-16 10:49:37,812 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'OG3C61', '15.99940', '! DIOX, dioxane, ether in 6-membered ring !SHOULD WE MERGE THIS WITH OG3R60???'] 
+2024-05-16 10:49:37,815 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number  ... mass_value                                            comment
+0  MASS     -1  ...   15.99940  ! DIOX, dioxane, ether in 6-membered ring !SHO...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,816 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,816 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,816 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,817 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  OG3C61    15.99940   ! DIOX, dioxane, ether in 6-membered ring !SHOULD WE MERGE THIS WITH OG3R60???
+
+2024-05-16 10:49:37,817 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,817 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:37,818 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,818 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,818 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,818 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,819 - section_node.AtomsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,819 - section_node.AtomsNode.process - extract_column_values - DEBUG - split values: ['MASS', '-1', 'SG311', '32.06000', '!', 'sulphur,', 'SH,', '-S-'] 
+2024-05-16 10:49:37,819 - section_node.AtomsNode.process - extract_column_values - DEBUG - comment: ! sulphur, SH, -S- 
+2024-05-16 10:49:37,819 - section_node.AtomsNode.process - extract_column_values - DEBUG - final row: ['MASS', '-1', 'SG311', '32.06000', '! sulphur, SH, -S-'] 
+2024-05-16 10:49:37,822 - section_node.AtomsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    mass number atomtype mass_value             comment
+0  MASS     -1    SG311   32.06000  ! sulphur, SH, -S-
+2024-05-16 10:49:37,822 - section_node.AtomsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,823 - section_node.AtomsNode.process - validate_datatypes - DEBUG - successfully casted column mass to <class 'str'>
+2024-05-16 10:49:37,823 - section_node.AtomsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,824 - section_node.AtomsNode.process - process - INFO - return remaining lines pruned by current line:
+ MASS  -1  SG311     32.06000   ! sulphur, SH, -S-
+
+2024-05-16 10:49:37,824 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,824 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [True, False, True, False, False]
+2024-05-16 10:49:37,825 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,825 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,825 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:37,826 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,826 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,826 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:37,827 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,827 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,827 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:37,828 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,828 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,828 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:37,829 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,829 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,829 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:37,830 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,830 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,830 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:37,830 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,831 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,831 - section_node.AtomsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [True, False, True, False, False]
+2024-05-16 10:49:37,831 - section_node.AtomsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line

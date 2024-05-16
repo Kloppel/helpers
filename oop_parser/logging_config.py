@@ -178,3 +178,38 @@ class ModuleLogging:
     
         return package_name+"."+caller_function_name
 
+    ##!!! integrate in future
+    # def setup_logger(logger_name:str, log_file:str, 
+    #                   mode: str = 'w',
+    #                   level:int = logging.DEBUG, filter = None,
+    #                   format:str = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'):
+    #     """
+    #     Set up logging for the charmm_manager class.
+    
+    #     Args:
+    #     logger_name (str):                          Logger name.
+    #     log_file    (str):                          Log file name.
+    #     mode        (str, optional):                Mode to open the log file. Default is 'w'.
+    #     level       (int, optional):                Logging level. Default is logging.DEBUG.
+    #     filter      (str or str list, optional):    Filter to apply to the logger. Default is None.
+    #     format      (str, optional):                Format of the log message. Default is '%(asctime)s - %(name)s - %(levelname)s - %(message)s'.
+    
+    #     """
+    #     debug_handler = logging.FileHandler(log_file, mode=mode)
+    #     debug_handler.setLevel(level)  # Set the handler's level to DEBUG
+    
+    #     # Create a formatter for the handler
+    #     formatter = logging.Formatter(format)
+    #     debug_handler.setFormatter(formatter)
+    
+    #     if filter is not None:
+    #         if isinstance(filter, list):
+    #             for f in filter:
+    #                 debug_handler.addFilter(logging.Filter(f))
+    #         else:
+    #             debug_handler.addFilter(logging.Filter(filter))
+    
+    #     # Add the handler to the logger
+    #     logger=logging.getLogger(logger_name)
+    #     logger.addHandler(debug_handler)
+    #     logger.setLevel(level)  

@@ -1,0 +1,972 @@
+2024-05-16 10:49:37,833 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,833 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:37,834 - section_node.BondsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,834 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,834 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,835 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,835 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,835 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2R51', 'OG312', '525.00', '1.2600', '!', 'bv-pfr-c', ',', 'from', 'CG2R61', 'OG312,', 'PENALTY=', '45'] 
+2024-05-16 10:49:37,836 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! bv-pfr-c , from CG2R61 OG312, PENALTY= 45 
+2024-05-16 10:49:37,836 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2R51', 'OG312', '525.00', '1.2600', '! bv-pfr-c , from CG2R61 OG312, PENALTY= 45'] 
+2024-05-16 10:49:37,838 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1  atom2      kb      b0                                      comment
+0  CG2R51  OG312  525.00  1.2600  ! bv-pfr-c , from CG2R61 OG312, PENALTY= 45
+2024-05-16 10:49:37,839 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,839 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,840 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,840 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R51   OG312    525.00   1.2600   !   bv-pfr-c   ,   from   CG2R61   OG312,   PENALTY=   45
+
+2024-05-16 10:49:37,841 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,841 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,841 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,842 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,842 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG252O', 'CG2DC2', '570.00', '1.3400', '!', 'bv-pfr-c', ',', 'from', 'CG251O', 'CG2DC3,', 'PENALTY=', '30'] 
+2024-05-16 10:49:37,842 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! bv-pfr-c , from CG251O CG2DC3, PENALTY= 30 
+2024-05-16 10:49:37,842 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG252O', 'CG2DC2', '570.00', '1.3400', '! bv-pfr-c , from CG251O CG2DC3, PENALTY= 30'] 
+2024-05-16 10:49:37,845 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                       comment
+0  CG252O  CG2DC2  570.00  1.3400  ! bv-pfr-c , from CG251O CG2DC3, PENALTY= 30
+2024-05-16 10:49:37,846 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,846 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,847 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,847 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG252O   CG2DC2   570.00   1.3400   !   bv-pfr-c   ,   from   CG251O   CG2DC3,   PENALTY=   30
+
+2024-05-16 10:49:37,848 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,848 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,848 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,848 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,849 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG252O', 'CGCPY3', '570.00', '1.3400', '!', 'bv-pfr-c', ',', 'from', 'CG251O', 'CG2DC3,', 'PENALTY=', '30'] 
+2024-05-16 10:49:37,849 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! bv-pfr-c , from CG251O CG2DC3, PENALTY= 30 
+2024-05-16 10:49:37,849 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG252O', 'CGCPY3', '570.00', '1.3400', '! bv-pfr-c , from CG251O CG2DC3, PENALTY= 30'] 
+2024-05-16 10:49:37,852 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                       comment
+0  CG252O  CGCPY3  570.00  1.3400  ! bv-pfr-c , from CG251O CG2DC3, PENALTY= 30
+2024-05-16 10:49:37,852 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,853 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,853 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,854 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG252O   CGCPY3   570.00   1.3400   !   bv-pfr-c   ,   from   CG251O   CG2DC3,   PENALTY=   30
+
+2024-05-16 10:49:37,854 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,854 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,854 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,855 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,855 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2DC2', 'CG2R51', '365.00', '1.4500', '!', 'bv-pfr-c', ',', 'from', 'CG2DC2', 'CG2R61,', 'PENALTY=', '45'] 
+2024-05-16 10:49:37,855 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! bv-pfr-c , from CG2DC2 CG2R61, PENALTY= 45 
+2024-05-16 10:49:37,855 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2DC2', 'CG2R51', '365.00', '1.4500', '! bv-pfr-c , from CG2DC2 CG2R61, PENALTY= 45'] 
+2024-05-16 10:49:37,858 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                       comment
+0  CG2DC2  CG2R51  365.00  1.4500  ! bv-pfr-c , from CG2DC2 CG2R61, PENALTY= 45
+2024-05-16 10:49:37,859 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,859 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,859 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,860 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2DC2   CG2R51   365.00   1.4500   !   bv-pfr-c   ,   from   CG2DC2   CG2R61,   PENALTY=   45
+
+2024-05-16 10:49:37,860 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,860 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,861 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,861 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,861 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CGCPY3', 'HGA4', '360.50', '1.1000', '!', 'RETINOL', 'BTE2,', '2-butene'] 
+2024-05-16 10:49:37,861 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! RETINOL BTE2, 2-butene 
+2024-05-16 10:49:37,862 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CGCPY3', 'HGA4', '360.50', '1.1000', '! RETINOL BTE2, 2-butene'] 
+2024-05-16 10:49:37,864 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1 atom2      kb      b0                   comment
+0  CGCPY3  HGA4  360.50  1.1000  ! RETINOL BTE2, 2-butene
+2024-05-16 10:49:37,865 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,865 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,866 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,866 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY3   HGA4     360.50   1.1000   !   RETINOL   BTE2,   2-butene
+
+2024-05-16 10:49:37,866 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,867 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,867 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,867 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,867 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CGCPY3', 'CG2R51', '365.00', '1.4500', '!', 'bv-pfr-c', ',', 'from', 'CG2DC2', 'CG2R61,', 'PENALTY=', '45'] 
+2024-05-16 10:49:37,868 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! bv-pfr-c , from CG2DC2 CG2R61, PENALTY= 45 
+2024-05-16 10:49:37,868 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CGCPY3', 'CG2R51', '365.00', '1.4500', '! bv-pfr-c , from CG2DC2 CG2R61, PENALTY= 45'] 
+2024-05-16 10:49:37,871 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                       comment
+0  CGCPY3  CG2R51  365.00  1.4500  ! bv-pfr-c , from CG2DC2 CG2R61, PENALTY= 45
+2024-05-16 10:49:37,871 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,871 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,872 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,872 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY3   CG2R51   365.00   1.4500   !   bv-pfr-c   ,   from   CG2DC2   CG2R61,   PENALTY=   45
+
+2024-05-16 10:49:37,872 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,873 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:37,873 - section_node.BondsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,874 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,874 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,874 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,874 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,875 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG251O', 'CGCPY2', '570.00', '1.3400', '!', 'RCD', ',', 'from', 'CG251O', 'CG2DC3,', 'penalty=', '30'] 
+2024-05-16 10:49:37,875 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! RCD , from CG251O CG2DC3, penalty= 30 
+2024-05-16 10:49:37,875 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG251O', 'CGCPY2', '570.00', '1.3400', '! RCD , from CG251O CG2DC3, penalty= 30'] 
+2024-05-16 10:49:37,878 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                  comment
+0  CG251O  CGCPY2  570.00  1.3400  ! RCD , from CG251O CG2DC3, penalty= 30
+2024-05-16 10:49:37,878 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,879 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,879 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,879 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG251O   CGCPY2   570.00   1.3400   !   RCD   ,   from   CG251O   CG2DC3,   penalty=   30
+
+2024-05-16 10:49:37,880 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,880 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,880 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,880 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,881 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG251O', 'CG2R51', '255.00', '1.4700', '!', 'RCD', ',', 'from', 'CG252O', 'CG2R53,', 'penalty=', '28'] 
+2024-05-16 10:49:37,881 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! RCD , from CG252O CG2R53, penalty= 28 
+2024-05-16 10:49:37,881 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG251O', 'CG2R51', '255.00', '1.4700', '! RCD , from CG252O CG2R53, penalty= 28'] 
+2024-05-16 10:49:37,884 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                  comment
+0  CG251O  CG2R51  255.00  1.4700  ! RCD , from CG252O CG2R53, penalty= 28
+2024-05-16 10:49:37,884 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,885 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,885 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,886 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG251O   CG2R51   255.00   1.4700   !   RCD   ,   from   CG252O   CG2R53,   penalty=   28
+
+2024-05-16 10:49:37,886 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,886 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,887 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,887 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,887 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG251O', 'NG2R51', '200.00', '1.4100', '!', 'RCD', ',', 'from', 'CG251O', 'NG2R53,', 'penalty=', '60'] 
+2024-05-16 10:49:37,887 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! RCD , from CG251O NG2R53, penalty= 60 
+2024-05-16 10:49:37,888 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG251O', 'NG2R51', '200.00', '1.4100', '! RCD , from CG251O NG2R53, penalty= 60'] 
+2024-05-16 10:49:37,891 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                  comment
+0  CG251O  NG2R51  200.00  1.4100  ! RCD , from CG251O NG2R53, penalty= 60
+2024-05-16 10:49:37,891 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,892 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,892 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,892 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG251O   NG2R51   200.00   1.4100   !   RCD   ,   from   CG251O   NG2R53,   penalty=   60
+
+2024-05-16 10:49:37,893 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,893 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,893 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,894 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,894 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CGCPY2', 'CG2R51', '365.00', '1.4500', '!', 'RCD', ',', 'from', 'CG2DC1', 'CG2R61,', 'penalty=', '45'] 
+2024-05-16 10:49:37,894 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! RCD , from CG2DC1 CG2R61, penalty= 45 
+2024-05-16 10:49:37,894 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CGCPY2', 'CG2R51', '365.00', '1.4500', '! RCD , from CG2DC1 CG2R61, penalty= 45'] 
+2024-05-16 10:49:37,897 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                  comment
+0  CGCPY2  CG2R51  365.00  1.4500  ! RCD , from CG2DC1 CG2R61, penalty= 45
+2024-05-16 10:49:37,898 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,898 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,898 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,899 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY2   CG2R51   365.00   1.4500   !   RCD   ,   from   CG2DC1   CG2R61,   penalty=   45
+
+2024-05-16 10:49:37,899 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,899 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,900 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,900 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,900 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CGCPY5', 'CGCPY6', '220.00', '1.3920', '!', 'Bond', 'equilibrium', 'MP2/6-31Gd'] 
+2024-05-16 10:49:37,901 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! Bond equilibrium MP2/6-31Gd 
+2024-05-16 10:49:37,901 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CGCPY5', 'CGCPY6', '220.00', '1.3920', '! Bond equilibrium MP2/6-31Gd'] 
+2024-05-16 10:49:37,903 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                        comment
+0  CGCPY5  CGCPY6  220.00  1.3920  ! Bond equilibrium MP2/6-31Gd
+2024-05-16 10:49:37,904 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,904 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,905 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,905 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY5   CGCPY6   220.00   1.3920   !   Bond   equilibrium   MP2/6-31Gd
+
+2024-05-16 10:49:37,905 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,905 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,906 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,906 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,906 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2R51', 'CGCPY5', '220.00', '1.3920', '!', 'Bond', 'equilibrium', 'MP2/6-31Gd'] 
+2024-05-16 10:49:37,907 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! Bond equilibrium MP2/6-31Gd 
+2024-05-16 10:49:37,907 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2R51', 'CGCPY5', '220.00', '1.3920', '! Bond equilibrium MP2/6-31Gd'] 
+2024-05-16 10:49:37,910 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                        comment
+0  CG2R51  CGCPY5  220.00  1.3920  ! Bond equilibrium MP2/6-31Gd
+2024-05-16 10:49:37,910 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,911 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,911 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,911 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R51   CGCPY5   220.00   1.3920   !   Bond   equilibrium   MP2/6-31Gd
+
+2024-05-16 10:49:37,912 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,912 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,912 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,913 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,913 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2R51', 'CGCPY6', '220.00', '1.3920', '!', 'Bond', 'equilibrium', 'MP2/6-31Gd'] 
+2024-05-16 10:49:37,913 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! Bond equilibrium MP2/6-31Gd 
+2024-05-16 10:49:37,913 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2R51', 'CGCPY6', '220.00', '1.3920', '! Bond equilibrium MP2/6-31Gd'] 
+2024-05-16 10:49:37,916 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                        comment
+0  CG2R51  CGCPY6  220.00  1.3920  ! Bond equilibrium MP2/6-31Gd
+2024-05-16 10:49:37,917 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,917 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,917 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,918 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R51   CGCPY6   220.00   1.3920   !   Bond   equilibrium   MP2/6-31Gd
+
+2024-05-16 10:49:37,918 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,918 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,919 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,969 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,970 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CGCPY2', 'HGA4', '360.50', '1.1000', '!', 'RETINOL', 'BTE2,', '2-butene'] 
+2024-05-16 10:49:37,970 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! RETINOL BTE2, 2-butene 
+2024-05-16 10:49:37,970 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CGCPY2', 'HGA4', '360.50', '1.1000', '! RETINOL BTE2, 2-butene'] 
+2024-05-16 10:49:37,973 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1 atom2      kb      b0                   comment
+0  CGCPY2  HGA4  360.50  1.1000  ! RETINOL BTE2, 2-butene
+2024-05-16 10:49:37,974 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,974 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,975 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,975 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY2   HGA4     360.50   1.1000   !   RETINOL   BTE2,   2-butene
+
+2024-05-16 10:49:37,975 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,975 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,976 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,976 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,976 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CGCPY5', 'CG331', '229.63', '1.5000', '!', 'PROT', 'his,', 'adm', 'jr.,', '7/22/89,', 'FC', 'from', 'CT2CT,', 'BL', 'from', 'crystals'] 
+2024-05-16 10:49:37,977 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! PROT his, adm jr., 7/22/89, FC from CT2CT, BL from crystals 
+2024-05-16 10:49:37,977 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CGCPY5', 'CG331', '229.63', '1.5000', '! PROT his, adm jr., 7/22/89, FC from CT2CT, BL from crystals'] 
+2024-05-16 10:49:37,980 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1  atom2  ...      b0                                            comment
+0  CGCPY5  CG331  ...  1.5000  ! PROT his, adm jr., 7/22/89, FC from CT2CT, B...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:37,981 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,981 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,982 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,982 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY5   CG331    229.63   1.5000   !   PROT   his,   adm   jr.,   7/22/89,   FC   from   CT2CT,   BL   from   crystals
+
+2024-05-16 10:49:37,982 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,982 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,983 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,983 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,983 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CGCPY6', 'CG2DC1', '365.00', '1.4500', '!', 'RCD', ',', 'from', 'CG2DC1', 'CG2R61,', 'penalty=', '45'] 
+2024-05-16 10:49:37,983 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! RCD , from CG2DC1 CG2R61, penalty= 45 
+2024-05-16 10:49:37,984 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CGCPY6', 'CG2DC1', '365.00', '1.4500', '! RCD , from CG2DC1 CG2R61, penalty= 45'] 
+2024-05-16 10:49:37,986 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                  comment
+0  CGCPY6  CG2DC1  365.00  1.4500  ! RCD , from CG2DC1 CG2R61, penalty= 45
+2024-05-16 10:49:37,987 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,987 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,988 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,988 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY6   CG2DC1   365.00   1.4500   !   RCD   ,   from   CG2DC1   CG2R61,   penalty=   45
+
+2024-05-16 10:49:37,988 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,989 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:37,989 - section_node.BondsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:37,989 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,990 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,990 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,990 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,990 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG251O', 'CG2DC1', '570.00', '1.3930', '!', 'Z:\\home\\', ',', 'from', 'CG251O', 'CG2DC3,', 'penalty=', '30'] 
+2024-05-16 10:49:37,991 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! Z:\home\ , from CG251O CG2DC3, penalty= 30 
+2024-05-16 10:49:37,991 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG251O', 'CG2DC1', '570.00', '1.3930', '! Z:\\home\\ , from CG251O CG2DC3, penalty= 30'] 
+2024-05-16 10:49:37,994 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                       comment
+0  CG251O  CG2DC1  570.00  1.3930  ! Z:\home\ , from CG251O CG2DC3, penalty= 30
+2024-05-16 10:49:37,994 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:37,995 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:37,995 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:37,996 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG251O   CG2DC1   570.00   1.3930   !   Z:\home\   ,   from   CG251O   CG2DC3,   penalty=   30
+
+2024-05-16 10:49:37,996 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:37,996 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:37,996 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:37,997 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:37,997 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG251O', 'NG2R52', '380.00', '1.3920', '!', 'Z:\\home\\', ',', 'from', 'CG2R53', 'NG2R52,', 'penalty=', '64'] 
+2024-05-16 10:49:37,997 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! Z:\home\ , from CG2R53 NG2R52, penalty= 64 
+2024-05-16 10:49:37,998 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG251O', 'NG2R52', '380.00', '1.3920', '! Z:\\home\\ , from CG2R53 NG2R52, penalty= 64'] 
+2024-05-16 10:49:38,000 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                       comment
+0  CG251O  NG2R52  380.00  1.3920  ! Z:\home\ , from CG2R53 NG2R52, penalty= 64
+2024-05-16 10:49:38,001 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,001 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,002 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,002 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG251O   NG2R52   380.00   1.3920   !   Z:\home\   ,   from   CG2R53   NG2R52,   penalty=   64
+
+2024-05-16 10:49:38,002 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,003 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,003 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,003 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,004 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2R52', 'NG2R52', '380.00', '1.3630', '!', 'Z:\\home\\', ',', 'from', 'CG2R53', 'NG2R52,', 'penalty=', '64'] 
+2024-05-16 10:49:38,004 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! Z:\home\ , from CG2R53 NG2R52, penalty= 64 
+2024-05-16 10:49:38,004 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2R52', 'NG2R52', '380.00', '1.3630', '! Z:\\home\\ , from CG2R53 NG2R52, penalty= 64'] 
+2024-05-16 10:49:38,007 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                       comment
+0  CG2R52  NG2R52  380.00  1.3630  ! Z:\home\ , from CG2R53 NG2R52, penalty= 64
+2024-05-16 10:49:38,007 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,008 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,008 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,009 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R52   NG2R52   380.00   1.3630   !   Z:\home\   ,   from   CG2R53   NG2R52,   penalty=   64
+
+2024-05-16 10:49:38,009 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,009 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,009 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,010 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,010 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2DC1', 'CG2R51', '365.00', '1.3930', '!', 'Z:\\home\\', ',', 'from', 'CG2DC1', 'CG2R61,', 'penalty=', '45'] 
+2024-05-16 10:49:38,010 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! Z:\home\ , from CG2DC1 CG2R61, penalty= 45 
+2024-05-16 10:49:38,010 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2DC1', 'CG2R51', '365.00', '1.3930', '! Z:\\home\\ , from CG2DC1 CG2R61, penalty= 45'] 
+2024-05-16 10:49:38,013 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                       comment
+0  CG2DC1  CG2R51  365.00  1.3930  ! Z:\home\ , from CG2DC1 CG2R61, penalty= 45
+2024-05-16 10:49:38,014 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,014 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,014 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,015 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2DC1   CG2R51   365.00   1.3930   !   Z:\home\   ,   from   CG2DC1   CG2R61,   penalty=   45
+
+2024-05-16 10:49:38,015 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,015 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,015 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,016 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,016 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2R52', 'CG331', '229.63', '1.5000', '!', 'Z:\\home\\', ',', 'from', 'CG2R51', 'CG331,', 'penalty=', '5'] 
+2024-05-16 10:49:38,016 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! Z:\home\ , from CG2R51 CG331, penalty= 5 
+2024-05-16 10:49:38,017 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2R52', 'CG331', '229.63', '1.5000', '! Z:\\home\\ , from CG2R51 CG331, penalty= 5'] 
+2024-05-16 10:49:38,019 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1  atom2      kb      b0                                     comment
+0  CG2R52  CG331  229.63  1.5000  ! Z:\home\ , from CG2R51 CG331, penalty= 5
+2024-05-16 10:49:38,020 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,020 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,021 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,021 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R52   CG331    229.63   1.5000   !   Z:\home\   ,   from   CG2R51   CG331,   penalty=   5
+
+2024-05-16 10:49:38,021 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,021 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,022 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,022 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,022 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CGCPY4', 'CG321', '229.63', '1.5000', '!', 'PROT', 'his,', 'adm', 'jr.,', '7/22/89,', 'FC', 'from', 'CT2CT,', 'BL', 'from', 'crystals'] 
+2024-05-16 10:49:38,022 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! PROT his, adm jr., 7/22/89, FC from CT2CT, BL from crystals 
+2024-05-16 10:49:38,023 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CGCPY4', 'CG321', '229.63', '1.5000', '! PROT his, adm jr., 7/22/89, FC from CT2CT, BL from crystals'] 
+2024-05-16 10:49:38,026 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1  atom2  ...      b0                                            comment
+0  CGCPY4  CG321  ...  1.5000  ! PROT his, adm jr., 7/22/89, FC from CT2CT, B...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:38,027 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,027 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,027 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,028 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY4   CG321    229.63   1.5000   !   PROT   his,   adm   jr.,   7/22/89,   FC   from   CT2CT,   BL   from   crystals
+
+2024-05-16 10:49:38,028 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,028 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,029 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,029 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,029 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG251O', 'CGCPY4', '755.00', '1.4250', '!', 'Z:\\home\\', ',', 'from', 'CG252O', 'CG2R53,', 'penalty=', '28'] 
+2024-05-16 10:49:38,030 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! Z:\home\ , from CG252O CG2R53, penalty= 28 
+2024-05-16 10:49:38,030 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG251O', 'CGCPY4', '755.00', '1.4250', '! Z:\\home\\ , from CG252O CG2R53, penalty= 28'] 
+2024-05-16 10:49:38,033 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                       comment
+0  CG251O  CGCPY4  755.00  1.4250  ! Z:\home\ , from CG252O CG2R53, penalty= 28
+2024-05-16 10:49:38,033 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,034 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,034 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,034 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG251O   CGCPY4   755.00   1.4250   !   Z:\home\   ,   from   CG252O   CG2R53,   penalty=   28
+
+2024-05-16 10:49:38,035 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,035 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,035 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,035 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,036 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CGCPY4', 'CG2R51', '1550.00', '1.3980', '!', 'Bond', 'equilibrium', 'MP2/6-31Gd'] 
+2024-05-16 10:49:38,036 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! Bond equilibrium MP2/6-31Gd 
+2024-05-16 10:49:38,036 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CGCPY4', 'CG2R51', '1550.00', '1.3980', '! Bond equilibrium MP2/6-31Gd'] 
+2024-05-16 10:49:38,039 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2       kb      b0                        comment
+0  CGCPY4  CG2R51  1550.00  1.3980  ! Bond equilibrium MP2/6-31Gd
+2024-05-16 10:49:38,040 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,040 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,041 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,041 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY4   CG2R51  1550.00   1.3980   !   Bond   equilibrium   MP2/6-31Gd
+
+2024-05-16 10:49:38,041 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,041 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:38,042 - section_node.BondsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:38,042 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,043 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,043 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,043 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,043 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG252O', 'CGCPY1', '255.00', '1.4800', '!', 'ras-chim', ',', 'from', 'CG251O', 'CG2R53,', 'penalty=', '64'] 
+2024-05-16 10:49:38,043 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! ras-chim , from CG251O CG2R53, penalty= 64 
+2024-05-16 10:49:38,044 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG252O', 'CGCPY1', '255.00', '1.4800', '! ras-chim , from CG251O CG2R53, penalty= 64'] 
+2024-05-16 10:49:38,046 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                       comment
+0  CG252O  CGCPY1  255.00  1.4800  ! ras-chim , from CG251O CG2R53, penalty= 64
+2024-05-16 10:49:38,047 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,047 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,048 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,048 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG252O   CGCPY1   255.00   1.4800   !   ras-chim   ,   from   CG251O   CG2R53,   penalty=   64
+
+2024-05-16 10:49:38,048 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,049 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,049 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,049 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,049 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CGCPY1', 'CG2DC1', '500.00', '1.3420', '!', 'ras-chim', ',', 'from', 'CG25C1', 'CG2DC3,', 'penalty=', '30'] 
+2024-05-16 10:49:38,050 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! ras-chim , from CG25C1 CG2DC3, penalty= 30 
+2024-05-16 10:49:38,050 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CGCPY1', 'CG2DC1', '500.00', '1.3420', '! ras-chim , from CG25C1 CG2DC3, penalty= 30'] 
+2024-05-16 10:49:38,053 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                       comment
+0  CGCPY1  CG2DC1  500.00  1.3420  ! ras-chim , from CG25C1 CG2DC3, penalty= 30
+2024-05-16 10:49:38,053 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,054 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,054 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,054 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY1   CG2DC1   500.00   1.3420   !   ras-chim   ,   from   CG25C1   CG2DC3,   penalty=   30
+
+2024-05-16 10:49:38,055 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,055 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,055 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,055 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,056 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CGCPY1', 'CG3C51', '300.00', '1.5100', '!', 'ras-chim', ',', 'from', 'CG2R53', 'CG3C52,', 'penalty=', '68'] 
+2024-05-16 10:49:38,056 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! ras-chim , from CG2R53 CG3C52, penalty= 68 
+2024-05-16 10:49:38,056 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CGCPY1', 'CG3C51', '300.00', '1.5100', '! ras-chim , from CG2R53 CG3C52, penalty= 68'] 
+2024-05-16 10:49:38,059 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                       comment
+0  CGCPY1  CG3C51  300.00  1.5100  ! ras-chim , from CG2R53 CG3C52, penalty= 68
+2024-05-16 10:49:38,059 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,060 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,060 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,060 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CGCPY1   CG3C51   300.00   1.5100   !   ras-chim   ,   from   CG2R53   CG3C52,   penalty=   68
+
+2024-05-16 10:49:38,061 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,061 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,061 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,062 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,062 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2R53', 'CG3C51', '550.00', '1.5250', '!', 'ras-chim', ',', 'from', 'CG2R53', 'CG3C52,', 'penalty=', '4'] 
+2024-05-16 10:49:38,062 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! ras-chim , from CG2R53 CG3C52, penalty= 4 
+2024-05-16 10:49:38,062 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2R53', 'CG3C51', '550.00', '1.5250', '! ras-chim , from CG2R53 CG3C52, penalty= 4'] 
+2024-05-16 10:49:38,065 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                      comment
+0  CG2R53  CG3C51  550.00  1.5250  ! ras-chim , from CG2R53 CG3C52, penalty= 4
+2024-05-16 10:49:38,065 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,066 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,066 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,067 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R53   CG3C51   550.00   1.5250   !   ras-chim   ,   from   CG2R53   CG3C52,   penalty=   4
+
+2024-05-16 10:49:38,067 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,067 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,067 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,068 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,068 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG311', 'NG321', '900.00', '1.4570', '!', 'ras-chim', ',', 'from', 'CG321', 'NG321,', 'penalty=', '4'] 
+2024-05-16 10:49:38,068 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! ras-chim , from CG321 NG321, penalty= 4 
+2024-05-16 10:49:38,068 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG311', 'NG321', '900.00', '1.4570', '! ras-chim , from CG321 NG321, penalty= 4'] 
+2024-05-16 10:49:38,071 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1  atom2      kb      b0                                    comment
+0  CG311  NG321  900.00  1.4570  ! ras-chim , from CG321 NG321, penalty= 4
+2024-05-16 10:49:38,072 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,072 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,073 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,073 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG311    NG321    900.00   1.4570   !   ras-chim   ,   from   CG321   NG321,   penalty=   4
+
+2024-05-16 10:49:38,073 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,073 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,074 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,074 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,074 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG311', 'CG321', '900.00', '1.5260', '!', 'ras-chim', ',', 'from', 'CG321', 'NG321,', 'penalty=', '4'] 
+2024-05-16 10:49:38,074 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! ras-chim , from CG321 NG321, penalty= 4 
+2024-05-16 10:49:38,074 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG311', 'CG321', '900.00', '1.5260', '! ras-chim , from CG321 NG321, penalty= 4'] 
+2024-05-16 10:49:38,077 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1  atom2      kb      b0                                    comment
+0  CG311  CG321  900.00  1.5260  ! ras-chim , from CG321 NG321, penalty= 4
+2024-05-16 10:49:38,078 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,078 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,079 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,079 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG311    CG321    900.00   1.5260   !   ras-chim   ,   from   CG321   NG321,   penalty=   4
+
+2024-05-16 10:49:38,079 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,080 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,080 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,080 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,080 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['SG311', 'CG321', '500.00', '1.8260', '!', 'ras-chim', ',', 'from', 'CG321', 'NG321,', 'penalty=', '4'] 
+2024-05-16 10:49:38,080 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! ras-chim , from CG321 NG321, penalty= 4 
+2024-05-16 10:49:38,081 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['SG311', 'CG321', '500.00', '1.8260', '! ras-chim , from CG321 NG321, penalty= 4'] 
+2024-05-16 10:49:38,084 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1  atom2      kb      b0                                    comment
+0  SG311  CG321  500.00  1.8260  ! ras-chim , from CG321 NG321, penalty= 4
+2024-05-16 10:49:38,084 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,084 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,085 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,085 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ SG311    CG321    500.00   1.8260   !   ras-chim   ,   from   CG321   NG321,   penalty=   4
+
+2024-05-16 10:49:38,085 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,086 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,086 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,086 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,087 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG311', 'CG2O2', '800.00', '1.5140', '!', 'ras-chim', ',', 'from', 'CG321', 'NG321,', 'penalty=', '4'] 
+2024-05-16 10:49:38,087 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! ras-chim , from CG321 NG321, penalty= 4 
+2024-05-16 10:49:38,087 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG311', 'CG2O2', '800.00', '1.5140', '! ras-chim , from CG321 NG321, penalty= 4'] 
+2024-05-16 10:49:38,090 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1  atom2      kb      b0                                    comment
+0  CG311  CG2O2  800.00  1.5140  ! ras-chim , from CG321 NG321, penalty= 4
+2024-05-16 10:49:38,090 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,091 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,091 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,092 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG311    CG2O2    800.00   1.5140   !   ras-chim   ,   from   CG321   NG321,   penalty=   4
+
+2024-05-16 10:49:38,092 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,092 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,093 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,093 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,093 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['OG311', 'CG2O2', '800.00', '1.3550', '!', 'ras-chim', ',', 'from', 'CG321', 'NG321,', 'penalty=', '4'] 
+2024-05-16 10:49:38,093 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! ras-chim , from CG321 NG321, penalty= 4 
+2024-05-16 10:49:38,094 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['OG311', 'CG2O2', '800.00', '1.3550', '! ras-chim , from CG321 NG321, penalty= 4'] 
+2024-05-16 10:49:38,096 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1  atom2      kb      b0                                    comment
+0  OG311  CG2O2  800.00  1.3550  ! ras-chim , from CG321 NG321, penalty= 4
+2024-05-16 10:49:38,097 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,097 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,098 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,098 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ OG311    CG2O2    800.00   1.3550   !   ras-chim   ,   from   CG321   NG321,   penalty=   4
+
+2024-05-16 10:49:38,098 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,099 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:38,099 - section_node.BondsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:38,099 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,100 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, True, False]
+2024-05-16 10:49:38,100 - section_node.BondsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:38,100 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,101 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, True, False, True, False]
+2024-05-16 10:49:38,101 - section_node.BondsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:38,101 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,101 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, True, False]
+2024-05-16 10:49:38,102 - section_node.BondsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:38,102 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,102 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,103 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,103 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,103 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['OG311', 'HGP1', '545.00', '0.9600', '!', 'PROT', 'EMB', '11/21/89', 'methanol', 'vib', 'fit;', 'og', 'tested', 'on', 'MeOH', 'EtOH,...'] 
+2024-05-16 10:49:38,103 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! PROT EMB 11/21/89 methanol vib fit; og tested on MeOH EtOH,... 
+2024-05-16 10:49:38,104 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['OG311', 'HGP1', '545.00', '0.9600', '! PROT EMB 11/21/89 methanol vib fit; og tested on MeOH EtOH,...'] 
+2024-05-16 10:49:38,107 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1 atom2  ...      b0                                            comment
+0  OG311  HGP1  ...  0.9600  ! PROT EMB 11/21/89 methanol vib fit; og teste...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:38,108 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,108 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,109 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,109 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ OG311    HGP1    545.00     0.9600 ! PROT EMB 11/21/89 methanol vib fit; og tested on MeOH EtOH,...
+
+2024-05-16 10:49:38,109 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,109 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,110 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,110 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,110 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2DC1', 'HGA4', '360.50', '1.1000', '!', 'RETINOL', 'BTE2,', '2-butene'] 
+2024-05-16 10:49:38,110 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! RETINOL BTE2, 2-butene 
+2024-05-16 10:49:38,111 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2DC1', 'HGA4', '360.50', '1.1000', '! RETINOL BTE2, 2-butene'] 
+2024-05-16 10:49:38,113 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1 atom2      kb      b0                   comment
+0  CG2DC1  HGA4  360.50  1.1000  ! RETINOL BTE2, 2-butene
+2024-05-16 10:49:38,114 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,114 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,115 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,115 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2DC1   HGA4    360.50     1.1000 ! RETINOL BTE2, 2-butene
+
+2024-05-16 10:49:38,116 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,116 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,116 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,116 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,117 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['NG2R51', 'HGP1', '474.00', '1.0100', '!', 'NA', 'G,', 'adm', 'jr.', '11/97'] 
+2024-05-16 10:49:38,117 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! NA G, adm jr. 11/97 
+2024-05-16 10:49:38,117 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['NG2R51', 'HGP1', '474.00', '1.0100', '! NA G, adm jr. 11/97'] 
+2024-05-16 10:49:38,120 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1 atom2      kb      b0                comment
+0  NG2R51  HGP1  474.00  1.0100  ! NA G, adm jr. 11/97
+2024-05-16 10:49:38,120 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,121 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,121 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,121 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ NG2R51   HGP1    474.00     1.0100 ! NA G, adm jr. 11/97
+
+2024-05-16 10:49:38,122 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,122 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,122 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,123 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,123 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2R51', 'CG331', '229.63', '1.5000', '!', 'PROT', 'his,', 'adm', 'jr.,', '7/22/89,', 'FC', 'from', 'CT2CT,', 'BL', 'from', 'crystals'] 
+2024-05-16 10:49:38,123 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! PROT his, adm jr., 7/22/89, FC from CT2CT, BL from crystals 
+2024-05-16 10:49:38,123 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2R51', 'CG331', '229.63', '1.5000', '! PROT his, adm jr., 7/22/89, FC from CT2CT, BL from crystals'] 
+2024-05-16 10:49:38,127 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1  atom2  ...      b0                                            comment
+0  CG2R51  CG331  ...  1.5000  ! PROT his, adm jr., 7/22/89, FC from CT2CT, B...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:38,128 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,128 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,129 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,129 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R51   CG331   229.63     1.5000 ! PROT his, adm jr., 7/22/89, FC from CT2CT, BL from crystals
+
+2024-05-16 10:49:38,129 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,129 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,130 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,130 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,130 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG331', 'HGA3', '322.00', '1.1110', '!', 'PROT', 'alkane', 'update,', 'adm', 'jr.,', '3/2/92'] 
+2024-05-16 10:49:38,130 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! PROT alkane update, adm jr., 3/2/92 
+2024-05-16 10:49:38,131 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG331', 'HGA3', '322.00', '1.1110', '! PROT alkane update, adm jr., 3/2/92'] 
+2024-05-16 10:49:38,133 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1 atom2      kb      b0                                comment
+0  CG331  HGA3  322.00  1.1110  ! PROT alkane update, adm jr., 3/2/92
+2024-05-16 10:49:38,134 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,134 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,135 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,135 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG331    HGA3    322.00     1.1110 ! PROT alkane update, adm jr., 3/2/92
+
+2024-05-16 10:49:38,135 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,136 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,136 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,136 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,136 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG321', 'HGA2', '309.00', '1.1110', '!', 'PROT', 'alkane', 'update,', 'adm', 'jr.,', '3/2/92'] 
+2024-05-16 10:49:38,137 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! PROT alkane update, adm jr., 3/2/92 
+2024-05-16 10:49:38,137 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG321', 'HGA2', '309.00', '1.1110', '! PROT alkane update, adm jr., 3/2/92'] 
+2024-05-16 10:49:38,139 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1 atom2      kb      b0                                comment
+0  CG321  HGA2  309.00  1.1110  ! PROT alkane update, adm jr., 3/2/92
+2024-05-16 10:49:38,140 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,140 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,141 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,141 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG321    HGA2    309.00     1.1110 ! PROT alkane update, adm jr., 3/2/92
+
+2024-05-16 10:49:38,142 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,192 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,192 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,193 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,193 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG321', 'CG321', '222.50', '1.5300', '!', 'PROT', 'alkane', 'update,', 'adm', 'jr.,', '3/2/92'] 
+2024-05-16 10:49:38,194 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! PROT alkane update, adm jr., 3/2/92 
+2024-05-16 10:49:38,194 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG321', 'CG321', '222.50', '1.5300', '! PROT alkane update, adm jr., 3/2/92'] 
+2024-05-16 10:49:38,197 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1  atom2      kb      b0                                comment
+0  CG321  CG321  222.50  1.5300  ! PROT alkane update, adm jr., 3/2/92
+2024-05-16 10:49:38,198 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,198 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,199 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,199 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG321    CG321   222.50     1.5300 ! PROT alkane update, adm jr., 3/2/92
+
+2024-05-16 10:49:38,200 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,200 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,201 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,201 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,201 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2O2', 'CG321', '200.00', '1.5220', '!', 'PROT', 'adm', 'jr.', '5/02/91,', 'acetic', 'acid', 'pure', 'solvent'] 
+2024-05-16 10:49:38,201 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! PROT adm jr. 5/02/91, acetic acid pure solvent 
+2024-05-16 10:49:38,202 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2O2', 'CG321', '200.00', '1.5220', '! PROT adm jr. 5/02/91, acetic acid pure solvent'] 
+2024-05-16 10:49:38,205 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1  atom2  ...      b0                                           comment
+0  CG2O2  CG321  ...  1.5220  ! PROT adm jr. 5/02/91, acetic acid pure solvent
+
+[1 rows x 5 columns]
+2024-05-16 10:49:38,205 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,206 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,207 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,207 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2O2    CG321   200.00     1.5220 ! PROT adm jr. 5/02/91, acetic acid pure solvent
+
+2024-05-16 10:49:38,208 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,208 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,209 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,209 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,209 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2O2', 'OG2D1', '750.00', '1.2200', '!', 'PROT', 'adm', 'jr.', '5/02/91,', 'acetic', 'acid', 'pure', 'solvent;', 'LIPID', 'methyl', 'acetate'] 
+2024-05-16 10:49:38,209 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! PROT adm jr. 5/02/91, acetic acid pure solvent; LIPID methyl acetate 
+2024-05-16 10:49:38,210 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2O2', 'OG2D1', '750.00', '1.2200', '! PROT adm jr. 5/02/91, acetic acid pure solvent; LIPID methyl acetate'] 
+2024-05-16 10:49:38,213 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1  atom2  ...      b0                                            comment
+0  CG2O2  OG2D1  ...  1.2200  ! PROT adm jr. 5/02/91, acetic acid pure solve...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:38,214 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,214 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,215 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,216 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2O2    OG2D1   750.00     1.2200 ! PROT adm jr. 5/02/91, acetic acid pure solvent; LIPID methyl acetate
+
+2024-05-16 10:49:38,216 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,216 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,217 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,217 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,218 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2R51', 'NG2R51', '400.00', '1.3800', '!', 'PROT', 'his,', 'ADM', 'JR.,', '7/20/89'] 
+2024-05-16 10:49:38,218 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! PROT his, ADM JR., 7/20/89 
+2024-05-16 10:49:38,218 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2R51', 'NG2R51', '400.00', '1.3800', '! PROT his, ADM JR., 7/20/89'] 
+2024-05-16 10:49:38,221 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                       comment
+0  CG2R51  NG2R51  400.00  1.3800  ! PROT his, ADM JR., 7/20/89
+2024-05-16 10:49:38,222 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,222 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,223 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,223 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R51   NG2R51  400.00     1.3800 ! PROT his, ADM JR., 7/20/89
+
+2024-05-16 10:49:38,223 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,224 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,224 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,224 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,225 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2DC1', 'CG2DC3', '500.00', '1.3420', '!', 'RETINOL', '13DB,', 'Butadiene'] 
+2024-05-16 10:49:38,226 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! RETINOL 13DB, Butadiene 
+2024-05-16 10:49:38,226 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2DC1', 'CG2DC3', '500.00', '1.3420', '! RETINOL 13DB, Butadiene'] 
+2024-05-16 10:49:38,229 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                    comment
+0  CG2DC1  CG2DC3  500.00  1.3420  ! RETINOL 13DB, Butadiene
+2024-05-16 10:49:38,230 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,231 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,231 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,231 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2DC1   CG2DC3  500.00     1.3420 ! RETINOL 13DB, Butadiene
+
+2024-05-16 10:49:38,232 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,232 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,233 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,233 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,234 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2DC3', 'HGA5', '365.00', '1.1000', '!', 'RETINOL', 'BTE2,', '2-butene'] 
+2024-05-16 10:49:38,234 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! RETINOL BTE2, 2-butene 
+2024-05-16 10:49:38,235 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2DC3', 'HGA5', '365.00', '1.1000', '! RETINOL BTE2, 2-butene'] 
+2024-05-16 10:49:38,238 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1 atom2      kb      b0                   comment
+0  CG2DC3  HGA5  365.00  1.1000  ! RETINOL BTE2, 2-butene
+2024-05-16 10:49:38,239 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,239 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,240 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,240 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2DC3   HGA5    365.00     1.1000 ! RETINOL BTE2, 2-butene
+
+2024-05-16 10:49:38,240 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,241 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,241 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,242 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,243 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['NG2R53', 'HGP1', '470.00', '1.0150', '!470', '440', '*NEW*', '2PDO,', '2-pyrrolidinone,', 'kevo'] 
+2024-05-16 10:49:38,244 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: !470 440 *NEW* 2PDO, 2-pyrrolidinone, kevo 
+2024-05-16 10:49:38,244 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['NG2R53', 'HGP1', '470.00', '1.0150', '!470 440 *NEW* 2PDO, 2-pyrrolidinone, kevo'] 
+2024-05-16 10:49:38,248 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1 atom2      kb      b0                                     comment
+0  NG2R53  HGP1  470.00  1.0150  !470 440 *NEW* 2PDO, 2-pyrrolidinone, kevo
+2024-05-16 10:49:38,249 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,250 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,251 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,251 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ NG2R53   HGP1    470.00     1.0150 !470 440 *NEW* 2PDO, 2-pyrrolidinone, kevo
+
+2024-05-16 10:49:38,252 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,253 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,253 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,253 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,253 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2R53', 'NG2R53', '460.00', '1.3800', '!460', '370', '*NEW*', '2PDO,', '2-pyrrolidinone,', 'kevo'] 
+2024-05-16 10:49:38,254 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: !460 370 *NEW* 2PDO, 2-pyrrolidinone, kevo 
+2024-05-16 10:49:38,254 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2R53', 'NG2R53', '460.00', '1.3800', '!460 370 *NEW* 2PDO, 2-pyrrolidinone, kevo'] 
+2024-05-16 10:49:38,258 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                                     comment
+0  CG2R53  NG2R53  460.00  1.3800  !460 370 *NEW* 2PDO, 2-pyrrolidinone, kevo
+2024-05-16 10:49:38,259 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,260 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,261 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,261 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R53   NG2R53  460.00     1.3800 !460 370 *NEW* 2PDO, 2-pyrrolidinone, kevo
+
+2024-05-16 10:49:38,261 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,262 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,263 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,263 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,264 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG252O', 'NG2R53', '200.00', '1.4100', '!', 'MHYO,', '5-methylenehydantoin,', 'xxwy'] 
+2024-05-16 10:49:38,264 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! MHYO, 5-methylenehydantoin, xxwy 
+2024-05-16 10:49:38,265 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG252O', 'NG2R53', '200.00', '1.4100', '! MHYO, 5-methylenehydantoin, xxwy'] 
+2024-05-16 10:49:38,269 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                             comment
+0  CG252O  NG2R53  200.00  1.4100  ! MHYO, 5-methylenehydantoin, xxwy
+2024-05-16 10:49:38,271 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,272 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,275 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,276 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG252O   NG2R53  200.00     1.4100 ! MHYO, 5-methylenehydantoin, xxwy
+
+2024-05-16 10:49:38,276 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,276 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,277 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,278 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,280 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2R53', 'OG2D1', '570.00', '1.2350', '!560', '620', '*NEW*', '2PDO,', '2-pyrrolidinone,', 'kevo'] 
+2024-05-16 10:49:38,280 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: !560 620 *NEW* 2PDO, 2-pyrrolidinone, kevo 
+2024-05-16 10:49:38,281 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2R53', 'OG2D1', '570.00', '1.2350', '!560 620 *NEW* 2PDO, 2-pyrrolidinone, kevo'] 
+2024-05-16 10:49:38,285 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1  atom2      kb      b0                                     comment
+0  CG2R53  OG2D1  570.00  1.2350  !560 620 *NEW* 2PDO, 2-pyrrolidinone, kevo
+2024-05-16 10:49:38,286 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,287 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,288 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,289 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R53   OG2D1   570.00     1.2350 !560 620 *NEW* 2PDO, 2-pyrrolidinone, kevo
+
+2024-05-16 10:49:38,290 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,290 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,291 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,293 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,294 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG331', 'CG3C51', '222.50', '1.5280', '!', 'TF2M,', 'viv'] 
+2024-05-16 10:49:38,295 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! TF2M, viv 
+2024-05-16 10:49:38,296 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG331', 'CG3C51', '222.50', '1.5280', '! TF2M, viv'] 
+2024-05-16 10:49:38,299 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1   atom2      kb      b0      comment
+0  CG331  CG3C51  222.50  1.5280  ! TF2M, viv
+2024-05-16 10:49:38,300 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,301 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,301 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,302 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG331    CG3C51  222.50     1.5280 ! TF2M, viv
+
+2024-05-16 10:49:38,302 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,303 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,304 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,304 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,305 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG3C51', 'HGA1', '307.00', '1.1000', '!', 'THF,', 'THF', 'neutron', 'diffr.,', '5/30/06,', 'viv'] 
+2024-05-16 10:49:38,305 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! THF, THF neutron diffr., 5/30/06, viv 
+2024-05-16 10:49:38,306 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG3C51', 'HGA1', '307.00', '1.1000', '! THF, THF neutron diffr., 5/30/06, viv'] 
+2024-05-16 10:49:38,309 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1 atom2      kb      b0                                  comment
+0  CG3C51  HGA1  307.00  1.1000  ! THF, THF neutron diffr., 5/30/06, viv
+2024-05-16 10:49:38,310 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,311 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,312 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,312 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG3C51   HGA1    307.00     1.1000 ! THF, THF neutron diffr., 5/30/06, viv
+
+2024-05-16 10:49:38,313 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,313 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,313 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,314 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,314 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2DC1', 'CG321', '365.00', '1.5020', '!', 'RETINOL', 'MECH'] 
+2024-05-16 10:49:38,315 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! RETINOL MECH 
+2024-05-16 10:49:38,316 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2DC1', 'CG321', '365.00', '1.5020', '! RETINOL MECH'] 
+2024-05-16 10:49:38,320 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1  atom2      kb      b0         comment
+0  CG2DC1  CG321  365.00  1.5020  ! RETINOL MECH
+2024-05-16 10:49:38,321 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,322 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,322 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,323 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2DC1   CG321   365.00     1.5020 ! RETINOL MECH
+
+2024-05-16 10:49:38,326 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,328 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,328 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,329 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,329 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2R51', 'CG2R51', '410.00', '1.3600', '!', 'PROT', 'histidine,', 'adm', 'jr.,', '6/27/90'] 
+2024-05-16 10:49:38,330 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! PROT histidine, adm jr., 6/27/90 
+2024-05-16 10:49:38,330 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2R51', 'CG2R51', '410.00', '1.3600', '! PROT histidine, adm jr., 6/27/90'] 
+2024-05-16 10:49:38,334 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1   atom2      kb      b0                             comment
+0  CG2R51  CG2R51  410.00  1.3600  ! PROT histidine, adm jr., 6/27/90
+2024-05-16 10:49:38,337 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,337 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,338 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,340 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R51   CG2R51  410.00     1.3600 ! PROT histidine, adm jr., 6/27/90
+
+2024-05-16 10:49:38,342 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,343 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,343 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,343 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,343 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2R51', 'CG321', '229.63', '1.5000', '!', 'PROT', 'his,', 'adm', 'jr.,', '7/22/89,', 'FC', 'from', 'CT2CT,', 'BL', 'from', 'crystals'] 
+2024-05-16 10:49:38,344 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! PROT his, adm jr., 7/22/89, FC from CT2CT, BL from crystals 
+2024-05-16 10:49:38,344 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2R51', 'CG321', '229.63', '1.5000', '! PROT his, adm jr., 7/22/89, FC from CT2CT, BL from crystals'] 
+2024-05-16 10:49:38,349 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+     atom1  atom2  ...      b0                                            comment
+0  CG2R51  CG321  ...  1.5000  ! PROT his, adm jr., 7/22/89, FC from CT2CT, B...
+
+[1 rows x 5 columns]
+2024-05-16 10:49:38,349 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,349 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,350 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,350 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2R51   CG321   229.63     1.5000 ! PROT his, adm jr., 7/22/89, FC from CT2CT, BL from crystals
+
+2024-05-16 10:49:38,351 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,351 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,353 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,354 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,354 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['C', 'NG321', '370.000', '1.3450', '!', 'ALLOW', 'PEP', 'POL', 'ARO'] 
+2024-05-16 10:49:38,355 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! ALLOW PEP POL ARO 
+2024-05-16 10:49:38,356 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['C', 'NG321', '370.000', '1.3450', '! ALLOW PEP POL ARO'] 
+2024-05-16 10:49:38,359 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+   atom1  atom2       kb      b0              comment
+0     C  NG321  370.000  1.3450  ! ALLOW PEP POL ARO
+2024-05-16 10:49:38,361 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,361 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,363 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,363 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ C        NG321   370.000    1.3450 ! ALLOW   PEP POL ARO
+
+2024-05-16 10:49:38,364 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,364 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,366 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,367 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,367 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['NG321', 'HGPAM2', '453.10', '1.0140', '!', 'AMINE', 'aliphatic', 'amines'] 
+2024-05-16 10:49:38,369 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! AMINE aliphatic amines 
+2024-05-16 10:49:38,369 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['NG321', 'HGPAM2', '453.10', '1.0140', '! AMINE aliphatic amines'] 
+2024-05-16 10:49:38,373 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1   atom2      kb      b0                   comment
+0  NG321  HGPAM2  453.10  1.0140  ! AMINE aliphatic amines
+2024-05-16 10:49:38,373 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,374 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,376 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,377 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ NG321    HGPAM2  453.10     1.0140 ! AMINE aliphatic amines
+
+2024-05-16 10:49:38,377 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,378 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,379 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,379 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,379 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG2O2', 'NH1', '370.000', '1.3450', '!', 'ALLOW', 'PEP', 'POL', 'ARO'] 
+2024-05-16 10:49:38,380 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! ALLOW PEP POL ARO 
+2024-05-16 10:49:38,380 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG2O2', 'NH1', '370.000', '1.3450', '! ALLOW PEP POL ARO'] 
+2024-05-16 10:49:38,382 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1 atom2       kb      b0              comment
+0  CG2O2   NH1  370.000  1.3450  ! ALLOW PEP POL ARO
+2024-05-16 10:49:38,383 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,383 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,384 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,384 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG2O2    NH1     370.000    1.3450 ! ALLOW   PEP POL ARO
+
+2024-05-16 10:49:38,384 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,385 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [False, False, False, False, False]
+2024-05-16 10:49:38,385 - section_node.BondsNode.process - remove_non_data_line - DEBUG - None removes its non-data lines
+2024-05-16 10:49:38,385 - section_node.BondsNode.process - extract_column_values - DEBUG - None calls extract_column_values
+2024-05-16 10:49:38,385 - section_node.BondsNode.process - extract_column_values - DEBUG - split values: ['CG311', 'HGA1', '309.00', '1.1110', '!', 'PROT', 'alkane', 'update,', 'adm', 'jr.,', '3/2/92'] 
+2024-05-16 10:49:38,386 - section_node.BondsNode.process - extract_column_values - DEBUG - comment: ! PROT alkane update, adm jr., 3/2/92 
+2024-05-16 10:49:38,386 - section_node.BondsNode.process - extract_column_values - DEBUG - final row: ['CG311', 'HGA1', '309.00', '1.1110', '! PROT alkane update, adm jr., 3/2/92'] 
+2024-05-16 10:49:38,389 - section_node.BondsNode.process - extract_column_values - DEBUG - successfully extracted data values to df row:
+    atom1 atom2      kb      b0                                comment
+0  CG311  HGA1  309.00  1.1110  ! PROT alkane update, adm jr., 3/2/92
+2024-05-16 10:49:38,389 - section_node.BondsNode.process - validate_datatypes - DEBUG - validate dtypes of df
+2024-05-16 10:49:38,389 - section_node.BondsNode.process - validate_datatypes - DEBUG - successfully casted column atom1 to <class 'str'>
+2024-05-16 10:49:38,390 - section_node.BondsNode.process - append_row_to_df - WARNING - successfully concatenated row to section df
+2024-05-16 10:49:38,390 - section_node.BondsNode.process - process - INFO - return remaining lines pruned by current line:
+ CG311    HGA1    309.00     1.1110 ! PROT alkane update, adm jr., 3/2/92
+
+2024-05-16 10:49:38,390 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,391 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [True, False, True, False, False]
+2024-05-16 10:49:38,391 - section_node.BondsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line
+2024-05-16 10:49:38,391 - section_node.BondsNode.process - remove_non_data_line - DEBUG - called
+2024-05-16 10:49:38,392 - section_node.BondsNode.process - remove_non_data_line - DEBUG - non_data_specifier booleans: [True, False, True, False, False]
+2024-05-16 10:49:38,393 - section_node.BondsNode.process - process - WARNING - line is None => return remaining lines pruned by non data line

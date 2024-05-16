@@ -1,0 +1,7 @@
+2024-05-16 10:49:37,168 - state_transition_manager.StateTransitionManager.process - process - DEBUG - initiate node container
+2024-05-16 10:49:37,171 - state_transition_manager.StateTransitionManager.process - process - DEBUG - starting to process Node ATOMS
+2024-05-16 10:49:37,832 - state_transition_manager.StateTransitionManager.process - process - DEBUG - starting to process Node BONDS
+2024-05-16 10:49:38,393 - state_transition_manager.StateTransitionManager.process - process - DEBUG - starting to process Node ANGLES
+2024-05-16 10:49:40,163 - state_transition_manager.StateTransitionManager.process - process - DEBUG - starting to process Node DIHEDRALS
+2024-05-16 10:49:43,248 - state_transition_manager.StateTransitionManager.process - process - DEBUG - starting to process Node IMPROPER
+2024-05-16 10:49:43,453 - state_transition_manager.StateTransitionManager.process - process - DEBUG - starting to process Node NONBONDED

@@ -1,5 +1,4 @@
 import logging
-debug_mode = False
 
 class StateTransitionManager:
     """
@@ -43,8 +42,10 @@ class StateTransitionManager:
         
         # initialize a node container once
         if not parser.nodes:
-            if debug_mode: 
-                print(f"initiate node container")
+            # instantiate logger once
+            self.logger = parser.ModuleLogging.get_function_logger()
+            
+            self.logger.debug("initiate node container")
 
             # container for nodes; instantiated with key:val pairs like
             # "node_class_name: []"
@@ -61,19 +62,15 @@ class StateTransitionManager:
             # select node class
             NodeClass = node_classes[node_name]
             
-
-            if debug_mode: 
-                print(f"looping over node {NodeClass}")
-            
-            if debug_mode: 
-                print(remaining_lines[0])
-
             # instantiate node if specifier is detected
             if NodeClass.START_SPECIFIER in remaining_lines[0]:
-                # if debug_mode: print(f"{NodeClass.START_SPECIFIER} is current start specifier: bonds detected")
-
+                
                 node = NodeClass()
-                # if debug_mode: print(f"starting to process Node {node.START_SPECIFIER}")
+                
+                self.logger.debug(
+                        f"starting to process Node {node.START_SPECIFIER}")
+
+
                 # append node object to container
                 parser.nodes[node_name].append(node)
                 # switch parser state to that node object
@@ -88,7 +85,6 @@ class StateTransitionManager:
             # add last node to container
             if file_end_specifier in remaining_lines[0]:
                 
-                # parser.nodes[node_name].append(node)
                 # empty list signalizes parser to stop processing
                 return []
             
@@ -100,6 +96,6 @@ class StateTransitionManager:
             
             
         # discard line if no specifier was detected nor node is active
-            # => e.g. line of introductory paragraph, preamble
+            # => e.g. line of introductory paragraph/preamble
         return remaining_lines[1:]
     

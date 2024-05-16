@@ -1,14 +1,10 @@
-import re
-
 from optional_columns_processor import OptionalColumnsProcessor
-
-import pandas as pd
 
 class NonbondedNode(OptionalColumnsProcessor):
     """
-    Template Pattern Child Class of 'SectionNode'.
+    Template Pattern Child Class of 'OptionalColumnsProcessor'.
     
-    Inherits
+    OptionalColumnsProcessor is Child Class of SectionNode.
     """
     
     START_SPECIFIER = "NONBONDED"

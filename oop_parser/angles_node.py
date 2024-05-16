@@ -1,15 +1,10 @@
-import re
-import pandas as pd
-
 from optional_columns_processor import OptionalColumnsProcessor
-
-
-debug_mode = False
 
 
 class AnglesNode(OptionalColumnsProcessor):
     """
-    Template Pattern Child Class of 'SectionNode'.
+    Template Pattern Child Class of 'OptionalColumnsProcessor'.
+    OptionalColumnsProcessor is Child Class of SectionNode.
     """
     
     START_SPECIFIER = "ANGLES"
@@ -51,10 +46,7 @@ class AnglesNode(OptionalColumnsProcessor):
                 1) got 4 float values (full length line)
                 2) got 2 float values (optional line)
         """
-        
-        if debug_mode:
-            print("using extract_column_values from angle node")
-        
+
         # optional line has 2 floating point values
         amount_floating_point_values = 2
 
