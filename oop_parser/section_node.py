@@ -1,10 +1,8 @@
 import pandas as pd
 
-debug_mode = False
-
 import logging
 
-import inspect
+# import inspect
 
 class SectionNode:
     """
@@ -59,9 +57,6 @@ class SectionNode:
         # instantiate a logger
         if not self.logger:
             self.logger = parser.ModuleLogging.get_function_logger()
- 
-    
-        self.logger.debug("process called")
 
         
         # access current line
@@ -77,36 +72,30 @@ class SectionNode:
         # assign None to line if line doesn't contain tabular data
         line = self.remove_non_data_line(line)
         
-        if debug_mode: print(f"is line none?: {line}")
-        
         # remove non-data line line from remaining lines and break
         if line is None:
-            if debug_mode: 
-                print(f"line is None => return remaining lines pruned by non data line")
+            self.logger.warning(
+            "line is None => return remaining lines pruned by non data line")
+    
+            # set state to STM
             parser.state = parser.state_transition_manager
+            
             return remaining_lines[1:]
             
-        if debug_mode: 
-            print(f"extracting col vals")
 
         # extract column values of line to a single-row pandas DataFrame
         row_df = self.extract_column_values(line, parser)
         
-        if debug_mode: 
-            print(f"validating dtypes of values")
-
         # raise error if a value is of wrong datatype
         validated_row_df = self.validate_datatypes(row_df)
         
-        if debug_mode: 
-            print(f"append row to section df")
-
         # append row to section df
         self.section_dataframe = self.append_row_to_df(self.section_dataframe, 
                                            validated_row_df)
             
-        if debug_mode: 
-            print(f"return remaining lines pruned by current line")
+        
+        self.logger.info(
+                    f"return remaining lines pruned by current line:\n {line}")
 
         # set parser state to state transition manager
         parser.state = parser.state_transition_manager
@@ -127,15 +116,8 @@ class SectionNode:
             allows addition of non_data_specifier conditions in child classes.
         """
         
-        self.method_name = inspect.currentframe().f_code.co_name
-     
-        # verify method name via inspect module
-        self.logger.debug(f"{self.method_name} called")
-
         # actual event call
-        self.logger.debug("method name for this event is logged automatically")
-
-
+        self.logger.debug("called")
 
         
         # list contains True for each condition that is true
@@ -148,19 +130,16 @@ class SectionNode:
         # allows child class to override method easily
         if specific_non_data_condition:
             non_data_specifier_booleans.append(specific_non_data_condition)
-            
-        
-        if debug_mode: 
-            print(non_data_specifier_booleans)
+
+        self.logger.debug(
+            f"non_data_specifier booleans: {non_data_specifier_booleans}")
         
         # if specifier detected that renders line a non data line, return None
         if any(non_data_specifier_booleans):
-            if debug_mode: 
-                print("found non data line specifier")
+            logging.warning("found non data line specifier and return None")
             return None
         
-        if debug_mode: 
-            print(f"{self.section_name} removes its non-data lines")
+        self.logger.debug(f"{self.section_name} removes its non-data lines")
 
         return line
         
@@ -185,20 +164,16 @@ class SectionNode:
             Single row of a df with proper column labels.
         """
         
-        self.method_name = inspect.currentframe().f_code.co_name
+        self.logger.debug(f"{self.section_name} calls extract_column_values")
         
-        # verify method name via inspect module
-        self.logger.debug(f"{self.method_name} called")
-        
-        # actual event call
-        self.logger.debug("method name for this event is logged automatically")
-
         
         # access column labels
         column_labels = list(self.COL_LABELS_AND_DTYPES)
                 
         # allows child classes to set alternative labels and dtypes
         if optional_column_labels_and_dtypes is not None:
+            self.logger.warning(
+                f"using optional_column_labels_and_dtypes for line:\n {line}")
             column_labels = list(optional_column_labels_and_dtypes)
             
         # assign index of "comment" label
@@ -216,18 +191,24 @@ class SectionNode:
         # append comment value to data_values
         data_values.append(comment)
         
-        if debug_mode: 
-            print(f"split values: {values} ")
-            print(f"comment: {comment} ")
-            print(f"final row: {data_values} ")
+        self.logger.debug(f"split values: {values} ")
+        self.logger.debug(f"comment: {comment} ")
+        self.logger.debug(f"final row: {data_values} ")
         
         # instantiate single-row dataframe
         try:
             row_df = pd.DataFrame([data_values], columns=column_labels)
+            
+            self.logger.debug(
+                f"successfully extracted data values to df row:\n {row_df}")
+
+            
         # raise value error and print out line that couldn't be extracted
         except ValueError:
-            raise ValueError(
-    f"Extract vals FAILED! @ parser state: {parser.state} for line:\n {line}")
+            msg = f"Extract vals FAILED!!! --- for line:\n {line}"
+            self.logger.critical(f"{msg}")
+            raise ValueError(msg)
+    
 
         return row_df
         
@@ -246,6 +227,8 @@ class SectionNode:
         # concatenate row to section dataframe
         section_df = pd.concat([section_dataframe, row_df], 
                                ignore_index=True, join="outer")
+        
+        self.logger.warning("successfully concatenated row to section df")
 
         return section_df
         
@@ -258,14 +241,18 @@ class SectionNode:
         Raises Value Error if any value cannot be changed to correct datatype.
         """
         
-        if debug_mode: 
-            print(f"{self} validates dtypes of df")
+        self.logger.debug("validate dtypes of df")
+
             
         # full length column labels
         col_labels_and_dtypes = self.COL_LABELS_AND_DTYPES
         
         # enable abstract method overriding in child classes
         if optional_col_labels_and_dtypes is not None:
+            
+            self.logger.warning(
+                f"using optional_column_labels_and_dtypes for row:\n {row}")
+            
             # use optional columns injected by child
             col_labels_and_dtypes = optional_col_labels_and_dtypes
               
@@ -273,11 +260,18 @@ class SectionNode:
         for label, dtype in col_labels_and_dtypes.items():
             try:
                 row[label] = row[label].astype(dtype)
+                self.logger.debug(
+                    f"successfully casted column {label} to {dtype}")
                 return row
+            
             # raise exception if not possible to cast dtype
             except ValueError:
-                raise ValueError(f"Column {label} contains values of invalid\
-                                  dtype")
+                msg = f"Column {label} contains values of invalid\
+                                  dtype: {row[label].dtype}"
+                
+                self.logger.critical(msg)
+                
+                raise ValueError(msg)
 
         
         

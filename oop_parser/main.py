@@ -1,13 +1,12 @@
 from state_transition_manager import StateTransitionManager
 from config import Config
+import logging
 
 # import the logging config will set up the root logger from which
 # module-level loggers automatically inherit from
 import logging_config
 
 from parser import Parser
-
-
 
 def parse_file(filepath):
     """

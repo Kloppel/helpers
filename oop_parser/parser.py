@@ -1,8 +1,4 @@
 import re
-import logging
-
-debug_mode = False
-
 
 class Parser:
     """
@@ -19,9 +15,6 @@ class Parser:
         """
         Initialize and set variables required for starting the parsing process.
         """
-        
-        if debug_mode: 
-            print("parser initiated")
 
         self.filepath = filepath
         
@@ -54,9 +47,6 @@ class Parser:
         Tightly coupled to the config, which specifies allowed file types.
         """
         
-        if debug_mode: 
-            print("selecting config") 
-
         # extract file suffix from filepath
         file_suffix = re.search(r"\.(\w+)$", self.filepath).groups()[0]
 
@@ -84,9 +74,6 @@ class Parser:
         
         with open(filepath, "r") as file:
             lines = file.readlines()
-        
-            if debug_mode: 
-                print("reading file content into list") 
             
             return lines
     
@@ -99,24 +86,11 @@ class Parser:
         
         Resembles the object-oriented design pattern "State Pattern".
         """
-        
-        if debug_mode: 
-            print(f"Parser calls process of STATE {self.state} for line {lines[0]}") 
-
-        if debug_mode: 
-            print(f"Contents of Nodes container 1: {self.nodes}")        
 
         # call monkey patched "process" method of state
         remaining_lines = self.state.process(self, lines)
-        
-        
-        if debug_mode: 
-            print(f"Parser is in state {self.state}")
-        
-        if debug_mode: 
-            print(f"Contents of Nodes container 2: {self.nodes}")  
-        
-        
+
+        # parse until end of file
         if remaining_lines: 
             self.process(remaining_lines) 
     
@@ -125,10 +99,7 @@ class Parser:
         """
         Starts parsing of the file.
         """
-        
-        if debug_mode: 
-            print("start processing") 
-
+ 
         # start parsing
         self.process(self.lines) 
 
